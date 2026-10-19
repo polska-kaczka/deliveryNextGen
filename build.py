@@ -50,6 +50,7 @@ COMPANY = {
     "privacy_email": "danielmedinabello5@gmail.com",
     "phone": "+34 683 405 430",
     "phone_href": "+34683405430",
+    # TODO: update when hosting moves away from GitHub Pages (also revisit DOCS_UPDATED)
     "hosting": "GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA",
     "mail_provider": "Google Ireland Ltd (Gmail / Google Workspace)",
     "law": {"en": "Spanish law", "pl": "prawo hiszpańskie"},
