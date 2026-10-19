@@ -1,12 +1,11 @@
 <svg class="art-retail" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
               <defs>
-                <filter id="trShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity=".14"/></filter>
-                <linearGradient id="trBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3c79c"/><stop offset="1" stop-color="#cfae7d"/></linearGradient>
               </defs>
               <rect y="268" width="600" height="52" fill="#e9ebee"/>
               <rect y="268" width="600" height="2" fill="#dde0e4"/>
               <!-- shelving -->
               <g fill="#ffffff" stroke="#000" stroke-opacity=".07"><rect x="40" y="64" width="250" height="204" rx="6"/></g>
+              <g fill="#dde0e4"><rect x="40" y="290" width="1.5" height="30"/><rect x="160" y="290" width="1.5" height="30"/><rect x="280" y="290" width="1.5" height="30"/><rect x="400" y="290" width="1.5" height="30"/><rect x="520" y="290" width="1.5" height="30"/></g>
               <g fill="#e6e9ed"><rect x="48" y="122" width="234" height="6" rx="3"/><rect x="48" y="186" width="234" height="6" rx="3"/><rect x="48" y="250" width="234" height="6" rx="3"/></g>
               <g fill="#dfe3e8"><rect x="62" y="84" width="44" height="38" rx="4"/><rect x="114" y="94" width="36" height="28" rx="4"/><rect x="160" y="80" width="54" height="42" rx="4"/><rect x="222" y="92" width="46" height="30" rx="4"/>
                 <rect x="62" y="152" width="58" height="34" rx="4"/><rect x="128" y="158" width="40" height="28" rx="4"/><rect x="238" y="146" width="34" height="40" rx="4"/>
@@ -14,11 +13,12 @@
               <!-- highlighted product slot -->
               <rect class="slot-hl" x="176" y="150" width="54" height="36" rx="6" fill="none" stroke="#00a3c4" stroke-width="2.5"/>
               <!-- phone -->
-              <g filter="url(#trShadow)"><rect x="330" y="40" width="120" height="216" rx="22" fill="#1d1d1f"/></g>
+              <g filter="url(#dngDropL)"><rect x="330" y="40" width="120" height="216" rx="22" fill="#1d1d1f"/></g>
               <rect x="336" y="46" width="108" height="204" rx="17" fill="#ffffff"/>
+              <rect x="450" y="92" width="2.5" height="28" rx="1.2" fill="#1d1d1f"/>
               <rect x="372" y="52" width="36" height="9" rx="4.5" fill="#1d1d1f"/>
               <rect x="348" y="76" width="84" height="56" rx="10" fill="#f5f5f7"/>
-              <rect x="366" y="88" width="48" height="32" rx="4" fill="url(#trBox)"/>
+              <rect x="366" y="88" width="48" height="32" rx="4" fill="url(#dngBox)"/>
               <rect x="348" y="142" width="60" height="7" rx="3.5" fill="#1d1d1f" fill-opacity=".85"/>
               <rect x="348" y="156" width="80" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
               <rect x="348" y="166" width="44" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
@@ -32,10 +32,10 @@
                 <rect x="358" y="166" width="64" height="7" rx="3.5" fill="#1d1d1f" fill-opacity=".85"/>
                 <rect x="366" y="180" width="48" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
               </g>
-              <!-- parcel -->
+              <!-- parcel: from the shelf into the robot's cargo bay -->
               <g class="retail-box">
-                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.3;.46;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M203 168 C 260 90, 460 110, 512 190"/>
-                <g transform="translate(-18 -14)"><rect width="36" height="28" rx="4" fill="url(#trBox)"/><rect x="15" width="6" height="28" fill="#fff" fill-opacity=".45"/></g>
+                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.3;.46;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M203 168 C 260 80, 470 100, 504 227"/>
+                <g transform="scale(1.8)">{{shared:parcel}}</g>
               </g>
               <!-- robot -->
               <g class="retail-bot"><g transform="translate(452 178) scale(.9)">{{shared:robot-mini}}</g></g>

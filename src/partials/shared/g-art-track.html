@@ -1,7 +1,4 @@
 <svg class="art-track" viewBox="0 0 400 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-              <defs>
-                <filter id="gaTrackShadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity=".18"/></filter>
-              </defs>
               <rect width="400" height="260" fill="#f2f3f5"/>
               <g fill="#ffffff">
                 <rect x="10" y="10" width="110" height="70" rx="8"/><rect x="136" y="10" width="120" height="44" rx="8"/><rect x="272" y="10" width="118" height="96" rx="8"/>
@@ -13,27 +10,22 @@
               <path d="M44 236 C 92 236, 88 186, 138 184 S 238 160, 254 116 S 300 64, 338 60" fill="none" stroke="#00a3c4" stroke-width="5" stroke-linecap="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1">
                 <animate attributeName="stroke-dashoffset" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.06;.78;1" values="1;1;0;0" keySplines="0 0 1 1;.4 0 .4 1;0 0 1 1"/>
               </path>
-              <circle cx="44" cy="236" r="7" fill="#1d1d1f" stroke="#fff" stroke-width="3"/>
+              <g transform="translate(44 236) scale(.8)">{{shared:pin-origin}}</g>
               <!-- destination -->
-              <g transform="translate(338 60)">
-                <circle r="10" fill="#1e8e3e" fill-opacity="0">
-                  <animate attributeName="r" dur="8s" repeatCount="indefinite" keyTimes="0;.78;1" values="10;10;34"/>
-                  <animate attributeName="fill-opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.779;.78;1" values="0;0;.35;0"/>
-                </circle>
-                <circle r="10" fill="#1e8e3e" stroke="#fff" stroke-width="3"/>
-                <path d="M-4 0 L-1.2 2.8 L4 -2.4" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </g>
+              <g class="track-dest" transform="translate(338 60) scale(.9)">{{shared:pin-dest}}</g>
               <!-- robot -->
-              <g filter="url(#gaTrackShadow)">
-                <animateMotion dur="8s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.06;.78;1" keySplines="0 0 1 1;.4 0 .4 1;0 0 1 1" path="M44 236 C 92 236, 88 186, 138 184 S 238 160, 254 116 S 300 64, 338 60"/>
-                <circle r="16" fill="#00a3c4" fill-opacity=".2" class="map-pin-ring"/>
-                <circle r="8.5" fill="#00a3c4" stroke="#fff" stroke-width="3"/>
+              <g filter="url(#dngDropS)">
+                <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.06;.78;1" keySplines="0 0 1 1;.4 0 .4 1;0 0 1 1" path="M44 236 C 92 236, 88 186, 138 184 S 238 160, 254 116 S 300 64, 338 60"/>
+                <path class="heading" d="M0 -22 L8 -10 H-8 Z" transform="rotate(90)" fill="#00a3c4" fill-opacity=".5"/>
+                {{shared:bot-marker}}
               </g>
               <!-- ETA card -->
-              <g transform="translate(24 24)" filter="url(#gaTrackShadow)">
+              <g transform="translate(24 24)" filter="url(#dngDropS)">
                 <rect width="118" height="50" rx="14" fill="#1d1d1f"/>
                 <rect x="12" y="13" width="24" height="24" rx="8" fill="#00a3c4" fill-opacity=".25"/>
-                <path d="M24 18 V25 L28.5 28" fill="none" stroke="#5ce6f7" stroke-width="2.2" stroke-linecap="round"/>
+                <circle cx="24" cy="25" r="7.5" fill="none" stroke="#5ce6f7" stroke-width="1.8"/>
+                <path class="eta-hand" d="M24 25 V20" stroke="#5ce6f7" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 25 L27.5 27" stroke="#5ce6f7" stroke-width="2" stroke-linecap="round"/>
                 <g font-family="Inter, Arial, sans-serif" font-size="17" font-weight="600" fill="#fff">
                   <text class="eta e1" x="46" y="31">9 min</text>
                   <text class="eta e2" x="46" y="31">6 min</text>

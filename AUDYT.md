@@ -308,3 +308,40 @@ Wszystko w kodzie (SVG + CSS + SMIL + JS), bez filmów, zdjęć i elementów 3D.
   - animacje działają tylko, gdy są na ekranie (IntersectionObserver wstrzymuje CSS, SMIL i pętle JS);
   - pomiar w podglądzie: 240 kl./s bez zgubionych klatek;
   - przy „ogranicz ruch” wszystko się zatrzymuje.
+
+## 10. Motion design — dopracowanie (v2.3)
+
+Założenia i układ bez zmian. Ulepszone tylko modele i animacje.
+
+- **Jeden model, cztery widoki:**
+  - robot z boku, z przodu, w miniaturze i z góry ma te same proporcje i materiały (`dng-defs.html`);
+  - wcześniej miniatura i widok z góry były osobnymi, uproszczonymi rysunkami.
+- **Nowe elementy robota:**
+  - klapa schowka na zawiasie z izolowanym wnętrzem;
+  - lidar na nosie (i na dachu w widoku z przodu) z obracającym się promieniem;
+  - reflektory (w ciemnym motywie świecą na jezdnię), światło stopu;
+  - czujniki w zderzaku, odblaski boczne, port ładowania, śruby felg, wahacz z przegubami.
+- **Fizyka (JS):**
+  - antena to tłumiona sprężyna: przy hamowaniu wychyla się do przodu, przy jeździe lekko odchyla na wietrze;
+  - światło stopu zapala się proporcjonalnie do opóźnienia i łagodnie gaśnie.
+- **Sceny branż:**
+  - klapa otwiera się, paczka lub torba wpada do schowka, pasek świetlny zmienia kolor na zielony;
+  - kółka obracają się dokładnie o przejechaną drogę, wyliczoną z długości trasy;
+  - zamiast cofania na miejsce podjeżdża kolejny robot;
+  - logistyka: bus z przesuwnymi drzwiami, kręcącymi się kołami i odjazdem;
+  - restauracja: dzwonek nad drzwiami; kampus: fontanna z falami.
+- **Galeria:**
+  - „zasięg”: robot z góry, bus z kabiną i lusterkami, światła stopu i awaryjne;
+  - „noc”: robot na jezdni, plamy światła latarni, kręcące się koła;
+  - PIN: fala pod klawiszem;
+  - bateria: pęcherzyki i wtyczka;
+  - śledzenie: tykający zegar, pinezka celu z potwierdzeniem.
+- **Ujednolicone:**
+  - pinezki startu i celu, znacznik robota (telefon, panel floty, galeria) i paczki;
+  - cel potwierdza dotarcie falą i ptaszkiem, także w telefonie w historii.
+- **Miasto (hero):**
+  - chmury (w nocy gwiazdy), okna zapalające się i gasnące;
+  - stożki światła latarni, przystanek, hydrant, kosz, skrzynka, znak, studzienki;
+  - zabudowa bez zmian, bo detale mają osobne ziarno losowości.
+- Kopia wersji sprzed zmian: `../_backup_v2_przed-motion_2026-10-19/`.
+

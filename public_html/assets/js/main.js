@@ -212,6 +212,7 @@
       if (statusEl && statuses[idx]) statusEl.textContent = statuses[idx];
       if (bar) bar.style.setProperty('--jp', p.toFixed(3));
       mapBox.classList.toggle('show-obstacle', p > 0.42 && p < 0.8);
+      mapBox.classList.toggle('arrived', p >= 0.95);
       var arrived = p >= 0.97;
       phone.classList.toggle('show-pin', arrived);
       if (arrived) typePin(); else if (typed && p < 0.9) resetPin();
@@ -417,7 +418,10 @@
     this.body = $('.rb-body', svg);
     this.drive = $('.robot-drive', svg);
     this.shadow = $('.rb-shadow', svg);
+    this.antenna = $('.rb-antenna', svg);
+    this.brake = $('.rb-brake', svg);
     this.tilt = 0; this.tiltV = 0; this.phase = 0;
+    this.ant = 0; this.antV = 0; this.brakeOn = 0;
   }
   // x: horizontal offset (SVG units), travel: distance (SVG units), speed: units/s
   Rig.prototype.update = function (dt, x, travel, speed, accel, t) {
@@ -435,6 +439,19 @@
     this.body.setAttribute('transform', 'translate(0 ' + bob.toFixed(2) + ') rotate(' + this.tilt.toFixed(3) + ' 262 272)');
     var sx = 1 + bob * 0.006;
     this.shadow.setAttribute('transform', 'translate(' + x.toFixed(2) + ' 0) translate(262 308) scale(' + sx.toFixed(4) + ' 1) translate(-262 -308)');
+    // antenna: a looser spring than the body, so it whips forward when braking and trails a little in the wind
+    if (this.antenna) {
+      var antTarget = clamp(-accel * 0.022, -11, 11) - Math.min(speed * 0.012, 4);
+      this.antV += ((antTarget - this.ant) * 90 - this.antV * 7) * dt;
+      this.ant += this.antV * dt;
+      this.antenna.setAttribute('transform', 'rotate(' + (this.ant + bob * 0.8).toFixed(2) + ' 118 104)');
+    }
+    // brake light follows deceleration, fades out gently once stopped
+    if (this.brake) {
+      var want = clamp((-accel - 25) / 110, 0, 1);
+      this.brakeOn += (want - this.brakeOn) * Math.min(1, dt * (want > this.brakeOn ? 14 : 2.5));
+      this.brake.setAttribute('opacity', this.brakeOn.toFixed(3));
+    }
   };
 
   function loopWhileVisible(el, step) {

@@ -1,7 +1,4 @@
-<svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
-              <defs>
-                <filter id="gaReachShadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
-              </defs>
+<svg class="art-reach" viewBox="0 0 400 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
               <!-- map -->
               <rect width="400" height="260" fill="#eceef1"/>
               <g fill="#ffffff">
@@ -15,24 +12,31 @@
                 <rect x="232" y="116" width="72" height="56" rx="5"/><rect x="316" y="116" width="70" height="56" rx="5"/><rect x="232" y="184" width="70" height="60" rx="5"/>
               </g>
               <rect x="316" y="184" width="70" height="60" rx="5" fill="#dcefe1"/>
-              <!-- avenue lane markings -->
+              <g fill="#cfe4d5"><circle cx="336" cy="204" r="8"/><circle cx="364" cy="226" r="10"/><circle cx="352" cy="200" r="5"/></g>
+              <!-- avenue lane markings + parked cars -->
               <path d="M0 75 H400" stroke="#d9dde2" stroke-width="2" stroke-dasharray="12 12"/>
+              <g fill="#d7dbe0"><rect x="250" y="88" width="34" height="10" rx="4"/><rect x="296" y="88" width="30" height="10" rx="4"/><rect x="340" y="88" width="34" height="10" rx="4"/></g>
               <!-- alley (2.1 m) -->
               <rect x="190" y="100" width="20" height="170" fill="#eceef1"/>
               <path d="M187 100 V270 M213 100 V270" stroke="#d3d8de" stroke-width="1.5"/>
+              <g fill="#d3d8de"><rect x="193" y="140" width="14" height="1.5"/><rect x="193" y="170" width="14" height="1.5"/><rect x="193" y="200" width="14" height="1.5"/></g>
 
               <g opacity="0">
                 <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.04;.93;1" values="0;1;1;0"/>
 
-                <!-- van: drives up the avenue, brakes at the alley mouth -->
-                <g filter="url(#gaReachShadow)">
+                <!-- van: drives up the avenue, brakes at the alley mouth, hazards on -->
+                <g filter="url(#dngDropS)">
                   <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" calcMode="spline"
                     keyTimes="0;.26;1" values="-80 0;142 0;142 0" keySplines=".25 .7 .35 1;0 0 1 1"/>
-                  <rect x="0" y="54" width="50" height="24" rx="5" fill="#3a3f46"/>
-                  <rect x="38" y="57" width="10" height="18" rx="3" fill="#8ea0b2"/>
-                  <rect x="6" y="58" width="26" height="16" rx="2" fill="#4a5058"/>
-                  <rect x="48" y="56" width="3" height="5" rx="1.5" fill="#ffd27a"/>
-                  <rect x="48" y="71" width="3" height="5" rx="1.5" fill="#ffd27a"/>
+                  <rect x="0" y="54" width="52" height="24" rx="5" fill="#3a3f46"/>
+                  <rect x="4" y="57.5" width="30" height="17" rx="2.5" fill="#454b53"/>
+                  <path d="M12 57.5 V74.5 M20 57.5 V74.5 M28 57.5 V74.5" stroke="#000" stroke-opacity=".18" stroke-width=".8"/>
+                  <path d="M37 57 H44 Q49 57 49 61 V71 Q49 75 44 75 H37 Z" fill="#8ea0b2"/>
+                  <path d="M38.5 58.5 H43 Q46.5 58.5 46.5 61.5 V64" fill="none" stroke="#fff" stroke-opacity=".45" stroke-width="1"/>
+                  <rect x="38" y="51.5" width="4" height="3" rx="1" fill="#3a3f46"/><rect x="38" y="77.5" width="4" height="3" rx="1" fill="#3a3f46"/>
+                  <rect x="50.5" y="56" width="2.5" height="5" rx="1.2" fill="#ffd27a"/><rect x="50.5" y="71" width="2.5" height="5" rx="1.2" fill="#ffd27a"/>
+                  <g class="van-brake"><rect x="-1" y="55.5" width="2.5" height="5" rx="1.2" fill="#ff3b30"/><rect x="-1" y="71.5" width="2.5" height="5" rx="1.2" fill="#ff3b30"/></g>
+                  <g class="van-hazard" fill="#ffb020"><circle cx="1.5" cy="54.5" r="2"/><circle cx="1.5" cy="77.5" r="2"/><circle cx="50" cy="54.5" r="2"/><circle cx="50" cy="77.5" r="2"/></g>
                 </g>
 
                 <!-- no entry -->
@@ -49,34 +53,23 @@
                 </g>
 
                 <!-- route trail -->
+                <path d="M40 86 H186 Q200 86 200 100 V226" fill="none" stroke="#00a3c4" stroke-opacity=".18" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="1 8"/>
                 <path d="M40 86 H186 Q200 86 200 100 V226" fill="none" stroke="#00a3c4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1">
                   <animate attributeName="stroke-dashoffset" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.34;.84;1" values="1;1;0;0" keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1"/>
                 </path>
 
                 <!-- restaurant pin -->
-                <circle cx="40" cy="86" r="7" fill="#1d1d1f" stroke="#fff" stroke-width="3"/>
+                <g transform="translate(40 86) scale(.66)">{{shared:pin-origin}}</g>
 
                 <!-- customer pin + arrival -->
-                <g transform="translate(200 232)">
-                  <circle r="8" fill="#1e8e3e" fill-opacity="0">
-                    <animate attributeName="r" dur="8s" repeatCount="indefinite" keyTimes="0;.84;1" values="8;8;30"/>
-                    <animate attributeName="fill-opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.839;.84;1" values="0;0;.4;0"/>
-                  </circle>
-                  <circle r="9" fill="#1e8e3e" stroke="#fff" stroke-width="3"/>
-                  <path d="M-3.6 0.2 L-1 2.8 L3.8 -2.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0">
-                    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.84;.87;1" values="0;0;1;1"/>
-                  </path>
-                </g>
+                <g class="reach-dest" transform="translate(200 232) scale(.78)">{{shared:pin-dest}}</g>
 
                 <!-- robot (top-down) -->
-                <g filter="url(#gaReachShadow)">
+                <g filter="url(#dngDropS)">
                   <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.34;.84;1"
                     keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1" path="M40 86 H186 Q200 86 200 100 V226"/>
-                  <rect x="-10" y="-8" width="20" height="16" rx="5" fill="#ffffff" stroke="#000" stroke-opacity=".12"/>
-                  <rect x="4" y="-6" width="6" height="12" rx="3" fill="#15181c"/>
-                  <rect x="6.5" y="-4" width="1.6" height="3" rx=".8" fill="#5ce6f7"/>
-                  <rect x="6.5" y="1" width="1.6" height="3" rx=".8" fill="#5ce6f7"/>
                   <path d="M10 -5 L24 -11 V11 L10 5 Z" fill="#5ce6f7" fill-opacity=".18"/>
+                  <g transform="scale(.21)">{{shared:robot-top}}</g>
                 </g>
               </g>
             </svg>

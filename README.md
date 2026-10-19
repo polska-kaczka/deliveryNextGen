@@ -17,6 +17,7 @@ Przed wdrożeniem skopiuj `public_html/includes/config.example.php` do `public_h
   - teksty wspólne dla wielu stron (makieta panelu, przyciski): `common.txt`.
 - **Cennik, FAQ, Kontakt, dokumenty prawne:** osobne pliki na język w `src/pages/en/*.html` i `src/pages/pl/*.html` (nagłówek `---` z tytułem i opisem SEO).
 - **Wspólne sekcje:** `src/partials/<język>/` (formularz, CTA, plany) oraz `src/partials/shared/` (ilustracja robota, mapa w telefonie, panel floty, grafiki galerii i branż).
+- **Jeden model robota w czterech widokach:** `robot-side` (bok), `robot-mini` (ta sama geometria w miniaturze), `robot-front` (przód), `robot-top` (z góry). Materiały (gradienty, filtry, cienie) są w jednym miejscu: `dng-defs.html`, wstawianym raz w `layout.html`. Wspólne elementy scen: `pin-origin`, `pin-dest`, `bot-marker`, `parcel`.
 - Nawigacja, stopka, baner cookies: `src/layout.html` + teksty w `STR` w `build.py`.
 - Dane firmy do noty prawnej, polityk i regulaminu: `COMPANY` w `build.py`.
 - Style: `public_html/assets/css/main.css` · Skrypty: `public_html/assets/js/main.js`.

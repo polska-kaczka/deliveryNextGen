@@ -33,6 +33,56 @@
 </head>
 <body class="">
   <a class="skip-link" href="#main">Przejdź do treści</a>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <!-- Shared materials for every robot view, map pin and parcel (one source of truth). -->
+    <defs>
+      <!-- pearl shell -->
+      <linearGradient id="dngShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f3f4f6"/><stop offset=".78" stop-color="#e2e5ea"/><stop offset="1" stop-color="#cfd4db"/></linearGradient>
+      <linearGradient id="dngShellSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".09"/><stop offset=".1" stop-color="#000" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+      <linearGradient id="dngShellEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+      <radialGradient id="dngShellTop" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f1f2f5"/><stop offset="1" stop-color="#d6dbe1"/></radialGradient>
+      <!-- graphite chassis -->
+      <linearGradient id="dngChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".35" stop-color="#2e3238"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+      <!-- cargo bay (insulated liner) -->
+      <linearGradient id="dngBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1e22"/><stop offset="1" stop-color="#3b4149"/></linearGradient>
+      <!-- smoked visor -->
+      <linearGradient id="dngVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a414b"/><stop offset=".55" stop-color="#14181d"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39404a"/><stop offset=".6" stop-color="#12161b"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <!-- lidar puck -->
+      <linearGradient id="dngPuck" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d0f12"/><stop offset=".45" stop-color="#3a4048"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+      <!-- wheels -->
+      <radialGradient id="dngTyre" cx=".5" cy=".42" r=".6"><stop offset=".6" stop-color="#30343a"/><stop offset="1" stop-color="#121417"/></radialGradient>
+      <linearGradient id="dngTyreFront" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121417"/><stop offset=".5" stop-color="#34383e"/><stop offset="1" stop-color="#121417"/></linearGradient>
+      <radialGradient id="dngRim" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dde2"/><stop offset="1" stop-color="#8d96a1"/></radialGradient>
+      <!-- light -->
+      <linearGradient id="dngSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity=".2"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e6fbff" stop-opacity=".55"/><stop offset=".35" stop-color="#9befff" stop-opacity=".22"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="dngPool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd58a" stop-opacity=".4"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngAO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <!-- parcels -->
+      <linearGradient id="dngBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6cba1"/><stop offset="1" stop-color="#cba873"/></linearGradient>
+      <linearGradient id="dngBag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfae7d"/><stop offset=".4" stop-color="#e0c494"/><stop offset="1" stop-color="#c9a671"/></linearGradient>
+      <!-- clips (user space of the side-view robot, so the miniature reuses them) -->
+      <clipPath id="dngStatusClip"><rect x="98" y="201.5" width="340" height="5" rx="2.5"/></clipPath>
+      <clipPath id="dngGlassClip"><path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z"/></clipPath>
+      <clipPath id="dngPuckClip"><rect x="400" y="88" width="26" height="9" rx="3"/></clipPath>
+      <clipPath id="dngFrontVisorClip"><rect x="380" y="252" width="240" height="112" rx="52"/></clipPath>
+      <clipPath id="dngFrontPuckClip"><rect x="452" y="146" width="96" height="22" rx="8"/></clipPath>
+      <!-- glow & softness -->
+      <filter id="dngGlow" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngGlowL" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+      <filter id="dngSoftL" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+      <!-- drop shadows: S = objects on maps, M = props, L = devices -->
+      <filter id="dngDropS" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+      <filter id="dngDropM" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".14"/></filter>
+      <filter id="dngDropL" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".13"/></filter>
+    </defs>
+  </svg>
+
 
   <header class="gnav" id="gnav">
     <div class="container gnav-inner">
@@ -97,12 +147,11 @@
               <defs>
                 <linearGradient id="taWarm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4dc"/><stop offset="1" stop-color="#ffe2a8"/></linearGradient>
                 <radialGradient id="taSpill" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffd27a" stop-opacity=".45"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
-                <filter id="taShadow" x="-20%" y="-20%" width="140%" height="160%"><feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#000" flood-opacity=".1"/></filter>
               </defs>
               <rect y="268" width="600" height="52" fill="#e9ebee"/>
               <rect y="268" width="600" height="2" fill="#dde0e4"/>
               <!-- storefront -->
-              <g filter="url(#taShadow)"><rect x="58" y="92" width="276" height="176" rx="4" fill="#ffffff"/></g>
+              <g filter="url(#dngDropM)"><rect x="58" y="92" width="276" height="176" rx="4" fill="#ffffff"/></g>
               <rect x="58" y="92" width="276" height="176" rx="4" fill="none" stroke="#000" stroke-opacity=".07"/>
               <rect x="78" y="70" width="236" height="22" rx="4" fill="#1d1d1f"/>
               <rect x="166" y="77" width="60" height="8" rx="4" fill="#fff" fill-opacity=".85"/>
@@ -122,42 +171,61 @@
               <rect class="door-spill" x="248" y="140" width="66" height="128" fill="url(#taSpill)"/>
               <g class="door-leaf"><rect x="250" y="142" width="62" height="126" rx="2" fill="#f5f5f7" stroke="#000" stroke-opacity=".1"/><rect x="258" y="152" width="46" height="60" rx="2" fill="#e8ebef"/><circle cx="302" cy="214" r="3.2" fill="#1d1d1f"/></g>
               <path class="door-light" d="M248 268 L314 268 L372 304 H190 Z" fill="url(#taSpill)"/>
+              <g transform="translate(281 134)"><g class="door-bell"><path d="M0 -4 V-1" stroke="#1d1d1f" stroke-width="1.2"/><path d="M-3.5 3 Q-3.5 -1.5 0 -1.5 Q3.5 -1.5 3.5 3 Z" fill="#d9b25c"/><circle cy="3.6" r="1" fill="#b8913f"/></g></g>
+              <g fill="#dde0e4"><rect x="40" y="290" width="1.5" height="30"/><rect x="160" y="290" width="1.5" height="30"/><rect x="280" y="290" width="1.5" height="30"/><rect x="400" y="290" width="1.5" height="30"/><rect x="520" y="290" width="1.5" height="30"/></g>
               <!-- plants -->
               <g><rect x="62" y="248" width="16" height="20" rx="3" fill="#d6dadf"/><circle cx="70" cy="240" r="12" fill="#cfe2d4"/><rect x="226" y="248" width="16" height="20" rx="3" fill="#d6dadf"/><circle cx="234" cy="240" r="12" fill="#cfe2d4"/></g>
-              <!-- robot -->
-              <g class="rest-bot">
-                <g transform="translate(372 176) scale(1.05)"><g class="robot-mini">
-            <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
-            <line x1="26" y1="30" x2="26" y2="4" stroke="#c6ccd3" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="26" cy="3.5" r="1.4" fill="#00d4f0"/>
-            <path d="M27 5 L39 8.5 L27 12 Z" fill="#00a9c7"/>
-            <path d="M34 82 L52 78 H82 L98 82" fill="none" stroke="#24282d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="82" r="10" fill="#202327"/><circle cx="34" cy="82" r="6.4" fill="#d9dde2"/><circle cx="34" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="66" cy="82" r="10" fill="#202327"/><circle cx="66" cy="82" r="6.4" fill="#d9dde2"/><circle cx="66" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="98" cy="82" r="10" fill="#202327"/><circle cx="98" cy="82" r="6.4" fill="#d9dde2"/><circle cx="98" cy="82" r="2.2" fill="#2b2f35"/>
-            <path d="M14 58 H120 V66 C120 71 116 74 111 74 H23 C18 74 14 71 14 66 Z" fill="#2b2f35"/>
-            <path d="M21 63 C 17 63 13 60 13 56 V 45 C 13 36 20 30 30 30 H 104 C 115 30 123 38 124 48 L 125 58 C 125 61 123 63 120 63 Z" fill="#f6f7f9" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
-            <path d="M28 33 C 50 32 80 32 104 33" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M15 43 H109" stroke="#000" stroke-opacity=".08" stroke-width=".8"/>
-            <path d="M109 35 C 118 36 124 42 125 49 L 125.5 56 C 122 58 115 59 109 58.5 C 107 51 107 42 109 35 Z" fill="#15181c"/>
-            <rect x="113" y="43" width="3" height="6.5" rx="1.5" fill="#5ce6f7"/>
-            <rect x="118" y="44" width="3" height="6" rx="1.5" fill="#5ce6f7"/>
-            <path d="M22 60 H118" stroke="#00d4f0" stroke-width="1.4" stroke-linecap="round"/>
-            <rect x="13.5" y="48" width="1.6" height="6" rx=".8" fill="#ff5a4e"/>
-          </g>
-</g>
-                <circle class="rest-ok" cx="444" cy="167" r="10" fill="#1e8e3e"/>
-                <path class="rest-ok" d="M439.5 167 L442.8 170.3 L448.8 164" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-              </g>
               <!-- paper bag on its way to the robot -->
               <g class="rest-bag">
-                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.2;.36;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M286 230 C 330 150, 400 150, 432 196"/>
+                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.2;.36;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M286 230 C 330 140, 410 140, 433 226"/>
                 <g transform="translate(-12 -16)">
-                  <path d="M2 8 H22 L24 32 H0 Z" fill="#d9b98a"/>
+                  <path d="M2 8 H22 L24 32 H0 Z" fill="url(#dngBag)"/>
                   <path d="M2 8 H22 L23 14 H1 Z" fill="#cdaa77"/>
                   <path d="M8 8 V4 A4 4 0 0 1 16 4 V8" fill="none" stroke="#a98455" stroke-width="1.8"/>
                   <rect x="7" y="18" width="10" height="7" rx="2" fill="#fff" fill-opacity=".7"/>
                 </g>
+              </g>
+              <!-- robot -->
+              <g class="rest-bot">
+                <g transform="translate(372 176) scale(1.05)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
+            <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
+          </g>
+</g>
+                <circle class="rest-ok" cx="444" cy="167" r="10" fill="#1e8e3e"/>
+                <path class="rest-ok" d="M439.5 167 L442.8 170.3 L448.8 164" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
             </svg>
 </div>
@@ -173,13 +241,12 @@
           </div>
           <div class="panel-art" data-anim><svg class="art-retail" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
               <defs>
-                <filter id="trShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000" flood-opacity=".14"/></filter>
-                <linearGradient id="trBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3c79c"/><stop offset="1" stop-color="#cfae7d"/></linearGradient>
               </defs>
               <rect y="268" width="600" height="52" fill="#e9ebee"/>
               <rect y="268" width="600" height="2" fill="#dde0e4"/>
               <!-- shelving -->
               <g fill="#ffffff" stroke="#000" stroke-opacity=".07"><rect x="40" y="64" width="250" height="204" rx="6"/></g>
+              <g fill="#dde0e4"><rect x="40" y="290" width="1.5" height="30"/><rect x="160" y="290" width="1.5" height="30"/><rect x="280" y="290" width="1.5" height="30"/><rect x="400" y="290" width="1.5" height="30"/><rect x="520" y="290" width="1.5" height="30"/></g>
               <g fill="#e6e9ed"><rect x="48" y="122" width="234" height="6" rx="3"/><rect x="48" y="186" width="234" height="6" rx="3"/><rect x="48" y="250" width="234" height="6" rx="3"/></g>
               <g fill="#dfe3e8"><rect x="62" y="84" width="44" height="38" rx="4"/><rect x="114" y="94" width="36" height="28" rx="4"/><rect x="160" y="80" width="54" height="42" rx="4"/><rect x="222" y="92" width="46" height="30" rx="4"/>
                 <rect x="62" y="152" width="58" height="34" rx="4"/><rect x="128" y="158" width="40" height="28" rx="4"/><rect x="238" y="146" width="34" height="40" rx="4"/>
@@ -187,11 +254,12 @@
               <!-- highlighted product slot -->
               <rect class="slot-hl" x="176" y="150" width="54" height="36" rx="6" fill="none" stroke="#00a3c4" stroke-width="2.5"/>
               <!-- phone -->
-              <g filter="url(#trShadow)"><rect x="330" y="40" width="120" height="216" rx="22" fill="#1d1d1f"/></g>
+              <g filter="url(#dngDropL)"><rect x="330" y="40" width="120" height="216" rx="22" fill="#1d1d1f"/></g>
               <rect x="336" y="46" width="108" height="204" rx="17" fill="#ffffff"/>
+              <rect x="450" y="92" width="2.5" height="28" rx="1.2" fill="#1d1d1f"/>
               <rect x="372" y="52" width="36" height="9" rx="4.5" fill="#1d1d1f"/>
               <rect x="348" y="76" width="84" height="56" rx="10" fill="#f5f5f7"/>
-              <rect x="366" y="88" width="48" height="32" rx="4" fill="url(#trBox)"/>
+              <rect x="366" y="88" width="48" height="32" rx="4" fill="url(#dngBox)"/>
               <rect x="348" y="142" width="60" height="7" rx="3.5" fill="#1d1d1f" fill-opacity=".85"/>
               <rect x="348" y="156" width="80" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
               <rect x="348" y="166" width="44" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
@@ -205,30 +273,55 @@
                 <rect x="358" y="166" width="64" height="7" rx="3.5" fill="#1d1d1f" fill-opacity=".85"/>
                 <rect x="366" y="180" width="48" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
               </g>
-              <!-- parcel -->
+              <!-- parcel: from the shelf into the robot's cargo bay -->
               <g class="retail-box">
-                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.3;.46;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M203 168 C 260 90, 460 110, 512 190"/>
-                <g transform="translate(-18 -14)"><rect width="36" height="28" rx="4" fill="url(#trBox)"/><rect x="15" width="6" height="28" fill="#fff" fill-opacity=".45"/></g>
+                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.3;.46;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M203 168 C 260 80, 470 100, 504 227"/>
+                <g transform="scale(1.8)"><g class="parcel">
+                  <!-- Parcel 20 × 16, centred on 0 0. -->
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="url(#dngBox)"/>
+                  <rect x="-10" y="-8" width="20" height="4.2" rx="2" fill="#fff" fill-opacity=".18"/>
+                  <rect x="-1.8" y="-8" width="3.6" height="16" fill="#fff" fill-opacity=".38"/>
+                  <rect x="3.6" y="1.6" width="4.4" height="3.2" rx=".8" fill="#fff" fill-opacity=".75"/>
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="none" stroke="#7a5a2c" stroke-opacity=".18" stroke-width=".8"/>
+                </g>
+</g>
               </g>
               <!-- robot -->
               <g class="retail-bot"><g transform="translate(452 178) scale(.9)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
             <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
-            <line x1="26" y1="30" x2="26" y2="4" stroke="#c6ccd3" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="26" cy="3.5" r="1.4" fill="#00d4f0"/>
-            <path d="M27 5 L39 8.5 L27 12 Z" fill="#00a9c7"/>
-            <path d="M34 82 L52 78 H82 L98 82" fill="none" stroke="#24282d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="82" r="10" fill="#202327"/><circle cx="34" cy="82" r="6.4" fill="#d9dde2"/><circle cx="34" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="66" cy="82" r="10" fill="#202327"/><circle cx="66" cy="82" r="6.4" fill="#d9dde2"/><circle cx="66" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="98" cy="82" r="10" fill="#202327"/><circle cx="98" cy="82" r="6.4" fill="#d9dde2"/><circle cx="98" cy="82" r="2.2" fill="#2b2f35"/>
-            <path d="M14 58 H120 V66 C120 71 116 74 111 74 H23 C18 74 14 71 14 66 Z" fill="#2b2f35"/>
-            <path d="M21 63 C 17 63 13 60 13 56 V 45 C 13 36 20 30 30 30 H 104 C 115 30 123 38 124 48 L 125 58 C 125 61 123 63 120 63 Z" fill="#f6f7f9" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
-            <path d="M28 33 C 50 32 80 32 104 33" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M15 43 H109" stroke="#000" stroke-opacity=".08" stroke-width=".8"/>
-            <path d="M109 35 C 118 36 124 42 125 49 L 125.5 56 C 122 58 115 59 109 58.5 C 107 51 107 42 109 35 Z" fill="#15181c"/>
-            <rect x="113" y="43" width="3" height="6.5" rx="1.5" fill="#5ce6f7"/>
-            <rect x="118" y="44" width="3" height="6" rx="1.5" fill="#5ce6f7"/>
-            <path d="M22 60 H118" stroke="#00d4f0" stroke-width="1.4" stroke-linecap="round"/>
-            <rect x="13.5" y="48" width="1.6" height="6" rx=".8" fill="#ff5a4e"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
           </g>
 </g></g>
             </svg>
@@ -244,134 +337,205 @@
             <a class="btn" href="kontakt.html?type=logistics">Porozmawiajmy o współpracy</a>
           </div>
           <div class="panel-art" data-anim><svg class="art-logi" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
-              <defs>
-                <filter id="tlShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".14"/></filter>
-                <linearGradient id="tlBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e3c79c"/><stop offset="1" stop-color="#cfae7d"/></linearGradient>
-              </defs>
               <rect y="268" width="600" height="52" fill="#e9ebee"/>
               <rect y="268" width="600" height="2" fill="#dde0e4"/>
+              <g fill="#dde0e4"><rect x="40" y="290" width="1.5" height="30"/><rect x="160" y="290" width="1.5" height="30"/><rect x="280" y="290" width="1.5" height="30"/><rect x="400" y="290" width="1.5" height="30"/><rect x="520" y="290" width="1.5" height="30"/></g>
               <!-- old-town boundary -->
               <path d="M236 40 V300" stroke="#1d1d1f" stroke-opacity=".16" stroke-width="2" stroke-dasharray="6 8"/>
               <rect x="244" y="44" width="70" height="20" rx="10" fill="#1d1d1f" fill-opacity=".06"/>
               <rect x="256" y="51" width="46" height="6" rx="3" fill="#1d1d1f" fill-opacity=".25"/>
               <!-- houses -->
-              <g filter="url(#tlShadow)" fill="#ffffff">
+              <g filter="url(#dngDropM)" fill="#ffffff">
                 <path d="M442 120 l32 -26 l32 26 v58 h-64 Z"/>
                 <path d="M512 186 l28 -22 l28 22 v50 h-56 Z"/>
                 <path d="M398 212 l26 -20 l26 20 v44 h-52 Z"/>
               </g>
               <g fill="#e6e9ed"><rect x="466" y="138" width="16" height="16" rx="2"/><rect x="532" y="198" width="14" height="14" rx="2"/><rect x="416" y="222" width="14" height="14" rx="2"/></g>
               <g fill="#ffd27a"><rect class="hw hw1" x="466" y="138" width="16" height="16" rx="2"/><rect class="hw hw2" x="532" y="198" width="14" height="14" rx="2"/><rect class="hw hw3" x="416" y="222" width="14" height="14" rx="2"/></g>
+              <g fill="#d3d8de"><rect x="490" y="160" width="10" height="18" rx="1.5"/><rect x="552" y="220" width="9" height="16" rx="1.5"/><rect x="434" y="242" width="9" height="14" rx="1.5"/></g>
               <!-- delivery paths -->
               <g fill="none" stroke="#00a3c4" stroke-opacity=".45" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2 8" class="logi-paths">
                 <path d="M262 250 C 330 250, 400 220, 474 180"/><path d="M262 254 C 360 260, 470 262, 540 238"/><path d="M262 258 C 320 272, 380 270, 424 258"/>
               </g>
-              <!-- van -->
-              <g class="logi-van" filter="url(#tlShadow)">
+              <!-- van: drives in, slides the side door open, leaves when the round is done -->
+              <g class="logi-van" filter="url(#dngDropM)">
                 <rect x="40" y="186" width="130" height="70" rx="10" fill="#ffffff" stroke="#000" stroke-opacity=".08"/>
+                <rect x="40" y="186" width="130" height="10" rx="5" fill="#000" fill-opacity=".03"/>
+                <rect x="118" y="194" width="48" height="56" rx="3" fill="#2b3036"/>
+                <g fill="url(#dngBox)"><rect x="124" y="226" width="16" height="12" rx="2"/><rect x="142" y="230" width="18" height="14" rx="2"/><rect x="128" y="212" width="14" height="12" rx="2"/></g>
+                <g class="logi-door"><rect x="118" y="194" width="48" height="56" rx="3" fill="#f7f8fa" stroke="#000" stroke-opacity=".1"/><rect x="122" y="218" width="8" height="3" rx="1.5" fill="#c4c9d0"/></g>
                 <path d="M170 204 H200 L222 232 V256 H170 Z" fill="#f5f5f7" stroke="#000" stroke-opacity=".08"/>
                 <path d="M180 210 H198 L212 230 H180 Z" fill="#cfd8e2"/>
-                <rect x="56" y="206" width="70" height="10" rx="5" fill="#00a3c4" fill-opacity=".25"/>
-                <circle cx="76" cy="258" r="15" fill="#202327"/><circle cx="76" cy="258" r="6" fill="#c9ced5"/>
-                <circle cx="190" cy="258" r="15" fill="#202327"/><circle cx="190" cy="258" r="6" fill="#c9ced5"/>
+                <path d="M183 213 H196 L203 223" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1.4"/>
+                <rect x="56" y="206" width="50" height="10" rx="5" fill="#00a3c4" fill-opacity=".25"/>
+                <rect x="56" y="222" width="34" height="5" rx="2.5" fill="#00a3c4" fill-opacity=".15"/>
+                <g class="van-wheel"><circle cx="76" cy="258" r="15" fill="#202327"/><circle cx="76" cy="258" r="7" fill="#c9ced5"/><path d="M76 252 V255 M81.2 256.3 L78.6 257.2 M79.2 262.9 L77.6 260.4 M72.8 262.9 L74.4 260.4 M70.8 256.3 L73.4 257.2" stroke="#7d8691" stroke-width="1.6" stroke-linecap="round"/></g>
+                <g class="van-wheel"><circle cx="190" cy="258" r="15" fill="#202327"/><circle cx="190" cy="258" r="7" fill="#c9ced5"/><path d="M190 252 V255 M195.2 256.3 L192.6 257.2 M193.2 262.9 L191.6 260.4 M186.8 262.9 L188.4 260.4 M184.8 256.3 L187.4 257.2" stroke="#7d8691" stroke-width="1.6" stroke-linecap="round"/></g>
                 <rect x="216" y="236" width="6" height="8" rx="2" fill="#ffd27a"/>
+                <rect x="40" y="238" width="4" height="9" rx="2" fill="#ff5a4e"/>
               </g>
-              <!-- parcels hop from the van onto waiting robots, robots ride out -->
-              <g filter="url(#tlShadow)" opacity="0">
+              <!-- parcels hop from the van into the waiting robots' cargo bays, robots ride out -->
+              <g filter="url(#dngDropM)" opacity="0">
                 <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.23;0.24;0.33;0.331;1" values="0;0;1;1;0;0"/>
-                <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.24;0.33;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M196 222 Q 229 146 262 211"/>
-                <rect x="-9" y="-7" width="18" height="14" rx="3" fill="url(#tlBox)"/>
+                <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.24;0.33;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M150 226 Q 206 140 262 228"/>
+                <g transform="scale(.9)"><g class="parcel">
+                  <!-- Parcel 20 × 16, centred on 0 0. -->
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="url(#dngBox)"/>
+                  <rect x="-10" y="-8" width="20" height="4.2" rx="2" fill="#fff" fill-opacity=".18"/>
+                  <rect x="-1.8" y="-8" width="3.6" height="16" fill="#fff" fill-opacity=".38"/>
+                  <rect x="3.6" y="1.6" width="4.4" height="3.2" rx=".8" fill="#fff" fill-opacity=".75"/>
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="none" stroke="#7a5a2c" stroke-opacity=".18" stroke-width=".8"/>
+                </g>
+</g>
               </g>
-              <g filter="url(#tlShadow)">
+              <g class="lr lr1" filter="url(#dngDropM)">
                 <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.42;0.74;1" keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1" path="M262 240 C 330 240, 400 208, 474 172"/>
                 <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;.04;.92;.98;1" values="0;1;1;0;0"/>
                 <g transform="translate(-22 -32) scale(.34)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
             <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
-            <line x1="26" y1="30" x2="26" y2="4" stroke="#c6ccd3" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="26" cy="3.5" r="1.4" fill="#00d4f0"/>
-            <path d="M27 5 L39 8.5 L27 12 Z" fill="#00a9c7"/>
-            <path d="M34 82 L52 78 H82 L98 82" fill="none" stroke="#24282d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="82" r="10" fill="#202327"/><circle cx="34" cy="82" r="6.4" fill="#d9dde2"/><circle cx="34" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="66" cy="82" r="10" fill="#202327"/><circle cx="66" cy="82" r="6.4" fill="#d9dde2"/><circle cx="66" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="98" cy="82" r="10" fill="#202327"/><circle cx="98" cy="82" r="6.4" fill="#d9dde2"/><circle cx="98" cy="82" r="2.2" fill="#2b2f35"/>
-            <path d="M14 58 H120 V66 C120 71 116 74 111 74 H23 C18 74 14 71 14 66 Z" fill="#2b2f35"/>
-            <path d="M21 63 C 17 63 13 60 13 56 V 45 C 13 36 20 30 30 30 H 104 C 115 30 123 38 124 48 L 125 58 C 125 61 123 63 120 63 Z" fill="#f6f7f9" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
-            <path d="M28 33 C 50 32 80 32 104 33" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M15 43 H109" stroke="#000" stroke-opacity=".08" stroke-width=".8"/>
-            <path d="M109 35 C 118 36 124 42 125 49 L 125.5 56 C 122 58 115 59 109 58.5 C 107 51 107 42 109 35 Z" fill="#15181c"/>
-            <rect x="113" y="43" width="3" height="6.5" rx="1.5" fill="#5ce6f7"/>
-            <rect x="118" y="44" width="3" height="6" rx="1.5" fill="#5ce6f7"/>
-            <path d="M22 60 H118" stroke="#00d4f0" stroke-width="1.4" stroke-linecap="round"/>
-            <rect x="13.5" y="48" width="1.6" height="6" rx=".8" fill="#ff5a4e"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
           </g>
 </g>
-                <rect x="-9" y="-36" width="18" height="14" rx="3" fill="url(#tlBox)" opacity="0">
-                  <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.33;0.331;.92;1" values="0;0;1;1;0"/>
-                </rect>
               </g>
-              <g filter="url(#tlShadow)" opacity="0">
+              <g filter="url(#dngDropM)" opacity="0">
                 <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.27;0.28;0.37;0.371;1" values="0;0;1;1;0;0"/>
-                <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.28;0.37;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M196 222 Q 244 146 292 223"/>
-                <rect x="-9" y="-7" width="18" height="14" rx="3" fill="url(#tlBox)"/>
+                <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.28;0.37;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M150 226 Q 221 140 292 240"/>
+                <g transform="scale(.9)"><g class="parcel">
+                  <!-- Parcel 20 × 16, centred on 0 0. -->
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="url(#dngBox)"/>
+                  <rect x="-10" y="-8" width="20" height="4.2" rx="2" fill="#fff" fill-opacity=".18"/>
+                  <rect x="-1.8" y="-8" width="3.6" height="16" fill="#fff" fill-opacity=".38"/>
+                  <rect x="3.6" y="1.6" width="4.4" height="3.2" rx=".8" fill="#fff" fill-opacity=".75"/>
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="none" stroke="#7a5a2c" stroke-opacity=".18" stroke-width=".8"/>
+                </g>
+</g>
               </g>
-              <g filter="url(#tlShadow)">
+              <g class="lr lr2" filter="url(#dngDropM)">
                 <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.46;0.80;1" keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1" path="M292 252 C 380 256, 470 254, 540 236"/>
                 <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;.04;.92;.98;1" values="0;1;1;0;0"/>
                 <g transform="translate(-22 -32) scale(.34)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
             <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
-            <line x1="26" y1="30" x2="26" y2="4" stroke="#c6ccd3" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="26" cy="3.5" r="1.4" fill="#00d4f0"/>
-            <path d="M27 5 L39 8.5 L27 12 Z" fill="#00a9c7"/>
-            <path d="M34 82 L52 78 H82 L98 82" fill="none" stroke="#24282d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="82" r="10" fill="#202327"/><circle cx="34" cy="82" r="6.4" fill="#d9dde2"/><circle cx="34" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="66" cy="82" r="10" fill="#202327"/><circle cx="66" cy="82" r="6.4" fill="#d9dde2"/><circle cx="66" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="98" cy="82" r="10" fill="#202327"/><circle cx="98" cy="82" r="6.4" fill="#d9dde2"/><circle cx="98" cy="82" r="2.2" fill="#2b2f35"/>
-            <path d="M14 58 H120 V66 C120 71 116 74 111 74 H23 C18 74 14 71 14 66 Z" fill="#2b2f35"/>
-            <path d="M21 63 C 17 63 13 60 13 56 V 45 C 13 36 20 30 30 30 H 104 C 115 30 123 38 124 48 L 125 58 C 125 61 123 63 120 63 Z" fill="#f6f7f9" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
-            <path d="M28 33 C 50 32 80 32 104 33" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M15 43 H109" stroke="#000" stroke-opacity=".08" stroke-width=".8"/>
-            <path d="M109 35 C 118 36 124 42 125 49 L 125.5 56 C 122 58 115 59 109 58.5 C 107 51 107 42 109 35 Z" fill="#15181c"/>
-            <rect x="113" y="43" width="3" height="6.5" rx="1.5" fill="#5ce6f7"/>
-            <rect x="118" y="44" width="3" height="6" rx="1.5" fill="#5ce6f7"/>
-            <path d="M22 60 H118" stroke="#00d4f0" stroke-width="1.4" stroke-linecap="round"/>
-            <rect x="13.5" y="48" width="1.6" height="6" rx=".8" fill="#ff5a4e"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
           </g>
 </g>
-                <rect x="-9" y="-36" width="18" height="14" rx="3" fill="url(#tlBox)" opacity="0">
-                  <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.37;0.371;.92;1" values="0;0;1;1;0"/>
-                </rect>
               </g>
-              <g filter="url(#tlShadow)" opacity="0">
+              <g filter="url(#dngDropM)" opacity="0">
                 <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.31;0.32;0.41;0.411;1" values="0;0;1;1;0;0"/>
-                <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.32;0.41;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M196 222 Q 259 146 322 233"/>
-                <rect x="-9" y="-7" width="18" height="14" rx="3" fill="url(#tlBox)"/>
+                <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.32;0.41;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M150 226 Q 236 140 322 250"/>
+                <g transform="scale(.9)"><g class="parcel">
+                  <!-- Parcel 20 × 16, centred on 0 0. -->
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="url(#dngBox)"/>
+                  <rect x="-10" y="-8" width="20" height="4.2" rx="2" fill="#fff" fill-opacity=".18"/>
+                  <rect x="-1.8" y="-8" width="3.6" height="16" fill="#fff" fill-opacity=".38"/>
+                  <rect x="3.6" y="1.6" width="4.4" height="3.2" rx=".8" fill="#fff" fill-opacity=".75"/>
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="none" stroke="#7a5a2c" stroke-opacity=".18" stroke-width=".8"/>
+                </g>
+</g>
               </g>
-              <g filter="url(#tlShadow)">
+              <g class="lr lr3" filter="url(#dngDropM)">
                 <animateMotion dur="10s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;0.50;0.72;1" keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1" path="M322 262 C 360 268, 400 266, 424 254"/>
                 <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;.04;.92;.98;1" values="0;1;1;0;0"/>
                 <g transform="translate(-22 -32) scale(.34)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
             <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
-            <line x1="26" y1="30" x2="26" y2="4" stroke="#c6ccd3" stroke-width="1.4" stroke-linecap="round"/>
-            <circle cx="26" cy="3.5" r="1.4" fill="#00d4f0"/>
-            <path d="M27 5 L39 8.5 L27 12 Z" fill="#00a9c7"/>
-            <path d="M34 82 L52 78 H82 L98 82" fill="none" stroke="#24282d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-            <circle cx="34" cy="82" r="10" fill="#202327"/><circle cx="34" cy="82" r="6.4" fill="#d9dde2"/><circle cx="34" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="66" cy="82" r="10" fill="#202327"/><circle cx="66" cy="82" r="6.4" fill="#d9dde2"/><circle cx="66" cy="82" r="2.2" fill="#2b2f35"/>
-            <circle cx="98" cy="82" r="10" fill="#202327"/><circle cx="98" cy="82" r="6.4" fill="#d9dde2"/><circle cx="98" cy="82" r="2.2" fill="#2b2f35"/>
-            <path d="M14 58 H120 V66 C120 71 116 74 111 74 H23 C18 74 14 71 14 66 Z" fill="#2b2f35"/>
-            <path d="M21 63 C 17 63 13 60 13 56 V 45 C 13 36 20 30 30 30 H 104 C 115 30 123 38 124 48 L 125 58 C 125 61 123 63 120 63 Z" fill="#f6f7f9" stroke="#000" stroke-opacity=".1" stroke-width=".8"/>
-            <path d="M28 33 C 50 32 80 32 104 33" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
-            <path d="M15 43 H109" stroke="#000" stroke-opacity=".08" stroke-width=".8"/>
-            <path d="M109 35 C 118 36 124 42 125 49 L 125.5 56 C 122 58 115 59 109 58.5 C 107 51 107 42 109 35 Z" fill="#15181c"/>
-            <rect x="113" y="43" width="3" height="6.5" rx="1.5" fill="#5ce6f7"/>
-            <rect x="118" y="44" width="3" height="6" rx="1.5" fill="#5ce6f7"/>
-            <path d="M22 60 H118" stroke="#00d4f0" stroke-width="1.4" stroke-linecap="round"/>
-            <rect x="13.5" y="48" width="1.6" height="6" rx=".8" fill="#ff5a4e"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
           </g>
 </g>
-                <rect x="-9" y="-36" width="18" height="14" rx="3" fill="url(#tlBox)" opacity="0">
-                  <animate attributeName="opacity" dur="10s" repeatCount="indefinite" keyTimes="0;0.41;0.411;.92;1" values="0;0;1;1;0"/>
-                </rect>
               </g>
             </svg>
 </div>
@@ -386,28 +550,74 @@
             <a class="btn" href="kontakt.html?type=campus">Zaplanuj pilotaż na kampusie</a>
           </div>
           <div class="panel-art" data-anim><svg class="art-campus" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
-              <defs>
-                <filter id="tcShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity=".12"/></filter>
-              </defs>
               <rect width="600" height="320" fill="#e7f1ea"/>
               <path d="M0 160 H600 M300 0 V320" stroke="#ffffff" stroke-width="22"/>
               <path d="M90 40 C 170 120, 230 140, 300 160 M510 40 C 430 120, 370 140, 300 160 M90 290 C 170 210, 230 180, 300 160 M510 290 C 430 210, 370 180, 300 160" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>
               <g class="campus-flow" fill="none" stroke="#00a3c4" stroke-opacity=".35" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 10">
                 <path d="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><path d="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><path d="M0 160 H600"/>
               </g>
-              <g filter="url(#tcShadow)" fill="#ffffff"><rect x="40" y="24" width="120" height="76" rx="10"/><rect x="440" y="24" width="120" height="76" rx="10"/><rect x="40" y="222" width="120" height="76" rx="10"/><rect x="440" y="222" width="120" height="76" rx="10"/></g>
+              <g filter="url(#dngDropS)" fill="#ffffff"><rect x="40" y="24" width="120" height="76" rx="10"/><rect x="440" y="24" width="120" height="76" rx="10"/><rect x="40" y="222" width="120" height="76" rx="10"/><rect x="440" y="222" width="120" height="76" rx="10"/></g>
               <g fill="#e6e9ed"><rect x="56" y="40" width="40" height="10" rx="5"/><rect x="456" y="40" width="40" height="10" rx="5"/><rect x="56" y="238" width="40" height="10" rx="5"/><rect x="456" y="238" width="40" height="10" rx="5"/></g>
+              <g fill="#d3d8de"><rect x="140" y="96" width="14" height="4" rx="2"/><rect x="446" y="96" width="14" height="4" rx="2"/><rect x="140" y="222" width="14" height="4" rx="2"/><rect x="446" y="222" width="14" height="4" rx="2"/></g>
               <g fill="#cfe4d5"><circle class="tree" cx="230" cy="70" r="16"/><circle class="tree" cx="260" cy="252" r="14"/><circle class="tree" cx="372" cy="80" r="12"/><circle class="tree" cx="390" cy="246" r="18"/></g>
+              <!-- plaza fountain -->
               <circle cx="300" cy="160" r="34" fill="#ffffff" stroke="#1e8e3e" stroke-opacity=".3" stroke-width="2"/>
-              <circle cx="300" cy="160" r="10" fill="#1e8e3e" fill-opacity=".18"/>
+              <circle cx="300" cy="160" r="20" fill="#d6ebf5"/>
+              <g fill="none" stroke="#fff" stroke-width="1.6"><circle class="ripple rp1" cx="300" cy="160" r="6"/><circle class="ripple rp2" cx="300" cy="160" r="6"/><circle class="ripple rp3" cx="300" cy="160" r="6"/></g>
+              <circle cx="300" cy="160" r="4" fill="#ffffff"/>
               <!-- delivery confirmations at building entrances -->
               <g fill="none" stroke="#1e8e3e" stroke-width="2.5">
                 <circle class="ping p1" cx="150" cy="100" r="6"/><circle class="ping p2" cx="450" cy="100" r="6"/><circle class="ping p3" cx="150" cy="222" r="6"/><circle class="ping p4" cx="450" cy="222" r="6"/>
               </g>
-              <g filter="url(#tcShadow)">
-                <g><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><rect x="-9" y="-7" width="18" height="14" rx="4.5" fill="#fff" stroke="#000" stroke-opacity=".12"/><rect x="4" y="-5" width="5" height="10" rx="2.5" fill="#15181c"/></g>
-                <g><animateMotion dur="11s" repeatCount="indefinite" rotate="auto" path="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><rect x="-9" y="-7" width="18" height="14" rx="4.5" fill="#fff" stroke="#000" stroke-opacity=".12"/><rect x="4" y="-5" width="5" height="10" rx="2.5" fill="#15181c"/></g>
-                <g><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M0 160 H600"/><rect x="-9" y="-7" width="18" height="14" rx="4.5" fill="#fff" stroke="#000" stroke-opacity=".12"/><rect x="4" y="-5" width="5" height="10" rx="2.5" fill="#15181c"/></g>
+              <g filter="url(#dngDropS)">
+                <g><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><g transform="scale(.19)"><g class="robot-top">
+                <!-- Top-down view of the same robot, centred on 0 0 and facing +x (100 × 64 units; scale where used). -->
+                <g fill="#1d2025"><rect x="-40" y="-37" width="18" height="9" rx="4.5"/><rect x="-10" y="-37" width="18" height="9" rx="4.5"/><rect x="20" y="-37" width="18" height="9" rx="4.5"/><rect x="-40" y="28" width="18" height="9" rx="4.5"/><rect x="-10" y="28" width="18" height="9" rx="4.5"/><rect x="20" y="28" width="18" height="9" rx="4.5"/></g>
+                <rect x="-50" y="-32" width="100" height="64" rx="24" fill="url(#dngShellTop)"/>
+                <rect class="status" x="-49" y="-31" width="98" height="62" rx="23" fill="none" stroke="#00d4f0" stroke-width="1.8" stroke-opacity=".85"/>
+                <rect x="-44" y="-25" width="78" height="50" rx="17" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1.6"/>
+                <path d="M-36 -18 C -20 -22 10 -22 28 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <rect x="-14" y="-4" width="26" height="8" rx="4" fill="#000" fill-opacity=".07"/>
+                <path d="M34 -27 C 45 -25 50 -13 50 0 C 50 13 45 25 34 27 C 37 10 37 -10 34 -27 Z" fill="url(#dngVisor)"/>
+                <g fill="#5ce6f7"><rect class="eye" x="41" y="-11" width="4" height="7" rx="2"/><rect class="eye" x="41" y="4" width="4" height="7" rx="2"/></g>
+                <circle cx="24" cy="0" r="6" fill="url(#dngPuck)"/>
+                <g transform="translate(24 0)"><path class="rt-sweep" d="M0 0 L6.5 -2.5 A 7 7 0 0 1 6.5 2.5 Z" fill="#5ce6f7" fill-opacity=".8"/></g>
+                <rect x="-51" y="-10" width="3" height="20" rx="1.5" fill="#ff5a4e"/>
+                <circle cx="-34" cy="-18" r="3" fill="#00d4f0" stroke="#fff" stroke-width="1.2"/>
+              </g>
+</g></g>
+                <g><animateMotion dur="11s" repeatCount="indefinite" rotate="auto" path="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><g transform="scale(.19)"><g class="robot-top">
+                <!-- Top-down view of the same robot, centred on 0 0 and facing +x (100 × 64 units; scale where used). -->
+                <g fill="#1d2025"><rect x="-40" y="-37" width="18" height="9" rx="4.5"/><rect x="-10" y="-37" width="18" height="9" rx="4.5"/><rect x="20" y="-37" width="18" height="9" rx="4.5"/><rect x="-40" y="28" width="18" height="9" rx="4.5"/><rect x="-10" y="28" width="18" height="9" rx="4.5"/><rect x="20" y="28" width="18" height="9" rx="4.5"/></g>
+                <rect x="-50" y="-32" width="100" height="64" rx="24" fill="url(#dngShellTop)"/>
+                <rect class="status" x="-49" y="-31" width="98" height="62" rx="23" fill="none" stroke="#00d4f0" stroke-width="1.8" stroke-opacity=".85"/>
+                <rect x="-44" y="-25" width="78" height="50" rx="17" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1.6"/>
+                <path d="M-36 -18 C -20 -22 10 -22 28 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <rect x="-14" y="-4" width="26" height="8" rx="4" fill="#000" fill-opacity=".07"/>
+                <path d="M34 -27 C 45 -25 50 -13 50 0 C 50 13 45 25 34 27 C 37 10 37 -10 34 -27 Z" fill="url(#dngVisor)"/>
+                <g fill="#5ce6f7"><rect class="eye" x="41" y="-11" width="4" height="7" rx="2"/><rect class="eye" x="41" y="4" width="4" height="7" rx="2"/></g>
+                <circle cx="24" cy="0" r="6" fill="url(#dngPuck)"/>
+                <g transform="translate(24 0)"><path class="rt-sweep" d="M0 0 L6.5 -2.5 A 7 7 0 0 1 6.5 2.5 Z" fill="#5ce6f7" fill-opacity=".8"/></g>
+                <rect x="-51" y="-10" width="3" height="20" rx="1.5" fill="#ff5a4e"/>
+                <circle cx="-34" cy="-18" r="3" fill="#00d4f0" stroke="#fff" stroke-width="1.2"/>
+              </g>
+</g></g>
+                <g><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M0 160 H600"/><g transform="scale(.19)"><g class="robot-top">
+                <!-- Top-down view of the same robot, centred on 0 0 and facing +x (100 × 64 units; scale where used). -->
+                <g fill="#1d2025"><rect x="-40" y="-37" width="18" height="9" rx="4.5"/><rect x="-10" y="-37" width="18" height="9" rx="4.5"/><rect x="20" y="-37" width="18" height="9" rx="4.5"/><rect x="-40" y="28" width="18" height="9" rx="4.5"/><rect x="-10" y="28" width="18" height="9" rx="4.5"/><rect x="20" y="28" width="18" height="9" rx="4.5"/></g>
+                <rect x="-50" y="-32" width="100" height="64" rx="24" fill="url(#dngShellTop)"/>
+                <rect class="status" x="-49" y="-31" width="98" height="62" rx="23" fill="none" stroke="#00d4f0" stroke-width="1.8" stroke-opacity=".85"/>
+                <rect x="-44" y="-25" width="78" height="50" rx="17" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1.6"/>
+                <path d="M-36 -18 C -20 -22 10 -22 28 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <rect x="-14" y="-4" width="26" height="8" rx="4" fill="#000" fill-opacity=".07"/>
+                <path d="M34 -27 C 45 -25 50 -13 50 0 C 50 13 45 25 34 27 C 37 10 37 -10 34 -27 Z" fill="url(#dngVisor)"/>
+                <g fill="#5ce6f7"><rect class="eye" x="41" y="-11" width="4" height="7" rx="2"/><rect class="eye" x="41" y="4" width="4" height="7" rx="2"/></g>
+                <circle cx="24" cy="0" r="6" fill="url(#dngPuck)"/>
+                <g transform="translate(24 0)"><path class="rt-sweep" d="M0 0 L6.5 -2.5 A 7 7 0 0 1 6.5 2.5 Z" fill="#5ce6f7" fill-opacity=".8"/></g>
+                <rect x="-51" y="-10" width="3" height="20" rx="1.5" fill="#ff5a4e"/>
+                <circle cx="-34" cy="-18" r="3" fill="#00d4f0" stroke="#fff" stroke-width="1.2"/>
+              </g>
+</g></g>
               </g>
             </svg>
 </div>

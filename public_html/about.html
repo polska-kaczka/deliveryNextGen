@@ -33,6 +33,56 @@
 </head>
 <body class="">
   <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <!-- Shared materials for every robot view, map pin and parcel (one source of truth). -->
+    <defs>
+      <!-- pearl shell -->
+      <linearGradient id="dngShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f3f4f6"/><stop offset=".78" stop-color="#e2e5ea"/><stop offset="1" stop-color="#cfd4db"/></linearGradient>
+      <linearGradient id="dngShellSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".09"/><stop offset=".1" stop-color="#000" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+      <linearGradient id="dngShellEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+      <radialGradient id="dngShellTop" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f1f2f5"/><stop offset="1" stop-color="#d6dbe1"/></radialGradient>
+      <!-- graphite chassis -->
+      <linearGradient id="dngChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".35" stop-color="#2e3238"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+      <!-- cargo bay (insulated liner) -->
+      <linearGradient id="dngBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1e22"/><stop offset="1" stop-color="#3b4149"/></linearGradient>
+      <!-- smoked visor -->
+      <linearGradient id="dngVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a414b"/><stop offset=".55" stop-color="#14181d"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39404a"/><stop offset=".6" stop-color="#12161b"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <!-- lidar puck -->
+      <linearGradient id="dngPuck" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d0f12"/><stop offset=".45" stop-color="#3a4048"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+      <!-- wheels -->
+      <radialGradient id="dngTyre" cx=".5" cy=".42" r=".6"><stop offset=".6" stop-color="#30343a"/><stop offset="1" stop-color="#121417"/></radialGradient>
+      <linearGradient id="dngTyreFront" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121417"/><stop offset=".5" stop-color="#34383e"/><stop offset="1" stop-color="#121417"/></linearGradient>
+      <radialGradient id="dngRim" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dde2"/><stop offset="1" stop-color="#8d96a1"/></radialGradient>
+      <!-- light -->
+      <linearGradient id="dngSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity=".2"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e6fbff" stop-opacity=".55"/><stop offset=".35" stop-color="#9befff" stop-opacity=".22"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="dngPool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd58a" stop-opacity=".4"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngAO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <!-- parcels -->
+      <linearGradient id="dngBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6cba1"/><stop offset="1" stop-color="#cba873"/></linearGradient>
+      <linearGradient id="dngBag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfae7d"/><stop offset=".4" stop-color="#e0c494"/><stop offset="1" stop-color="#c9a671"/></linearGradient>
+      <!-- clips (user space of the side-view robot, so the miniature reuses them) -->
+      <clipPath id="dngStatusClip"><rect x="98" y="201.5" width="340" height="5" rx="2.5"/></clipPath>
+      <clipPath id="dngGlassClip"><path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z"/></clipPath>
+      <clipPath id="dngPuckClip"><rect x="400" y="88" width="26" height="9" rx="3"/></clipPath>
+      <clipPath id="dngFrontVisorClip"><rect x="380" y="252" width="240" height="112" rx="52"/></clipPath>
+      <clipPath id="dngFrontPuckClip"><rect x="452" y="146" width="96" height="22" rx="8"/></clipPath>
+      <!-- glow & softness -->
+      <filter id="dngGlow" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngGlowL" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+      <filter id="dngSoftL" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+      <!-- drop shadows: S = objects on maps, M = props, L = devices -->
+      <filter id="dngDropS" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+      <filter id="dngDropM" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".14"/></filter>
+      <filter id="dngDropL" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".13"/></filter>
+    </defs>
+  </svg>
+
 
   <header class="gnav" id="gnav">
     <div class="container gnav-inner">

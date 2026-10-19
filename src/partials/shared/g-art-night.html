@@ -3,7 +3,6 @@
                 <linearGradient id="gaSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#080c10"/><stop offset="1" stop-color="#121a24"/></linearGradient>
                 <radialGradient id="gaMoonHalo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#cfe9ff" stop-opacity=".28"/><stop offset="1" stop-color="#cfe9ff" stop-opacity="0"/></radialGradient>
                 <radialGradient id="gaLampCone" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffd58a" stop-opacity=".32"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
-                <linearGradient id="gaHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9befff" stop-opacity=".5"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
                 <linearGradient id="gaRoadShine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity="0"/><stop offset=".5" stop-color="#5ce6f7" stop-opacity=".35"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
               </defs>
               <rect width="400" height="260" fill="url(#gaSky)"/>
@@ -30,11 +29,14 @@
               </g>
               <!-- road -->
               <rect x="0" y="232" width="400" height="28" fill="#0d1217"/>
+              <rect x="0" y="232" width="400" height="1.5" fill="#1c232a"/>
+              <ellipse class="lamp-cone" cx="88" cy="238" rx="38" ry="6" fill="url(#dngPool)"/>
+              <ellipse class="lamp-cone lc2" cx="318" cy="238" rx="38" ry="6" fill="url(#dngPool)"/>
               <g class="night-dashes" fill="#1f262e"><rect x="0" y="245" width="26" height="3" rx="1.5"/><rect x="60" y="245" width="26" height="3" rx="1.5"/><rect x="120" y="245" width="26" height="3" rx="1.5"/><rect x="180" y="245" width="26" height="3" rx="1.5"/><rect x="240" y="245" width="26" height="3" rx="1.5"/><rect x="300" y="245" width="26" height="3" rx="1.5"/><rect x="360" y="245" width="26" height="3" rx="1.5"/><rect x="420" y="245" width="26" height="3" rx="1.5"/></g>
               <!-- robot cruising through the night -->
               <g class="night-bot">
-                <path d="M120 206 L230 186 V236 L120 222 Z" fill="url(#gaHeadBeam)"/>
-                <rect x="40" y="234" width="80" height="4" rx="2" fill="url(#gaRoadShine)"/>
-                <g transform="translate(0 154) scale(.62)">{{shared:robot-mini}}</g>
+                <path d="M75 232 L210 220 L210 254 L75 238 Z" fill="url(#dngHeadBeam)"/>
+                <rect x="10" y="248" width="70" height="3" rx="1.5" fill="url(#gaRoadShine)"/>
+                <g transform="translate(0 193) scale(.62)">{{shared:robot-mini}}</g>
               </g>
             </svg>

@@ -1,25 +1,26 @@
 <svg class="art-campus" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
-              <defs>
-                <filter id="tcShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#000" flood-opacity=".12"/></filter>
-              </defs>
               <rect width="600" height="320" fill="#e7f1ea"/>
               <path d="M0 160 H600 M300 0 V320" stroke="#ffffff" stroke-width="22"/>
               <path d="M90 40 C 170 120, 230 140, 300 160 M510 40 C 430 120, 370 140, 300 160 M90 290 C 170 210, 230 180, 300 160 M510 290 C 430 210, 370 180, 300 160" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>
               <g class="campus-flow" fill="none" stroke="#00a3c4" stroke-opacity=".35" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 10">
                 <path d="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><path d="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><path d="M0 160 H600"/>
               </g>
-              <g filter="url(#tcShadow)" fill="#ffffff"><rect x="40" y="24" width="120" height="76" rx="10"/><rect x="440" y="24" width="120" height="76" rx="10"/><rect x="40" y="222" width="120" height="76" rx="10"/><rect x="440" y="222" width="120" height="76" rx="10"/></g>
+              <g filter="url(#dngDropS)" fill="#ffffff"><rect x="40" y="24" width="120" height="76" rx="10"/><rect x="440" y="24" width="120" height="76" rx="10"/><rect x="40" y="222" width="120" height="76" rx="10"/><rect x="440" y="222" width="120" height="76" rx="10"/></g>
               <g fill="#e6e9ed"><rect x="56" y="40" width="40" height="10" rx="5"/><rect x="456" y="40" width="40" height="10" rx="5"/><rect x="56" y="238" width="40" height="10" rx="5"/><rect x="456" y="238" width="40" height="10" rx="5"/></g>
+              <g fill="#d3d8de"><rect x="140" y="96" width="14" height="4" rx="2"/><rect x="446" y="96" width="14" height="4" rx="2"/><rect x="140" y="222" width="14" height="4" rx="2"/><rect x="446" y="222" width="14" height="4" rx="2"/></g>
               <g fill="#cfe4d5"><circle class="tree" cx="230" cy="70" r="16"/><circle class="tree" cx="260" cy="252" r="14"/><circle class="tree" cx="372" cy="80" r="12"/><circle class="tree" cx="390" cy="246" r="18"/></g>
+              <!-- plaza fountain -->
               <circle cx="300" cy="160" r="34" fill="#ffffff" stroke="#1e8e3e" stroke-opacity=".3" stroke-width="2"/>
-              <circle cx="300" cy="160" r="10" fill="#1e8e3e" fill-opacity=".18"/>
+              <circle cx="300" cy="160" r="20" fill="#d6ebf5"/>
+              <g fill="none" stroke="#fff" stroke-width="1.6"><circle class="ripple rp1" cx="300" cy="160" r="6"/><circle class="ripple rp2" cx="300" cy="160" r="6"/><circle class="ripple rp3" cx="300" cy="160" r="6"/></g>
+              <circle cx="300" cy="160" r="4" fill="#ffffff"/>
               <!-- delivery confirmations at building entrances -->
               <g fill="none" stroke="#1e8e3e" stroke-width="2.5">
                 <circle class="ping p1" cx="150" cy="100" r="6"/><circle class="ping p2" cx="450" cy="100" r="6"/><circle class="ping p3" cx="150" cy="222" r="6"/><circle class="ping p4" cx="450" cy="222" r="6"/>
               </g>
-              <g filter="url(#tcShadow)">
-                <g><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><rect x="-9" y="-7" width="18" height="14" rx="4.5" fill="#fff" stroke="#000" stroke-opacity=".12"/><rect x="4" y="-5" width="5" height="10" rx="2.5" fill="#15181c"/></g>
-                <g><animateMotion dur="11s" repeatCount="indefinite" rotate="auto" path="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><rect x="-9" y="-7" width="18" height="14" rx="4.5" fill="#fff" stroke="#000" stroke-opacity=".12"/><rect x="4" y="-5" width="5" height="10" rx="2.5" fill="#15181c"/></g>
-                <g><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M0 160 H600"/><rect x="-9" y="-7" width="18" height="14" rx="4.5" fill="#fff" stroke="#000" stroke-opacity=".12"/><rect x="4" y="-5" width="5" height="10" rx="2.5" fill="#15181c"/></g>
+              <g filter="url(#dngDropS)">
+                <g><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><g transform="scale(.19)">{{shared:robot-top}}</g></g>
+                <g><animateMotion dur="11s" repeatCount="indefinite" rotate="auto" path="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><g transform="scale(.19)">{{shared:robot-top}}</g></g>
+                <g><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M0 160 H600"/><g transform="scale(.19)">{{shared:robot-top}}</g></g>
               </g>
             </svg>

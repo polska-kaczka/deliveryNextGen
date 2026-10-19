@@ -3,14 +3,14 @@
                 <clipPath id="gaCell"><rect x="112" y="80" width="186" height="110" rx="20"/></clipPath>
                 <linearGradient id="gaCharge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34c759"/><stop offset="1" stop-color="#1e8e3e"/></linearGradient>
                 <radialGradient id="gaCellGlow" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#34c759" stop-opacity=".22"/><stop offset="1" stop-color="#34c759" stop-opacity="0"/></radialGradient>
-                <filter id="gaCellShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".12"/></filter>
               </defs>
               <circle class="cell-glow" cx="205" cy="135" r="140" fill="url(#gaCellGlow)"/>
               <!-- cable with energy pulses -->
               <path d="M-10 214 C 40 214, 60 160, 100 150 C 106 148, 106 140, 104 136" fill="none" stroke="#d4d7dc" stroke-width="8" stroke-linecap="round"/>
               <path class="energy" d="M-10 214 C 40 214, 60 160, 100 150 C 106 148, 106 140, 104 136" fill="none" stroke="#34c759" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="4 18"/>
+              <rect x="92" y="128" width="14" height="18" rx="4" fill="#c9cdd3"/><rect x="88" y="131" width="6" height="3" rx="1.5" fill="#b0b5bc"/><rect x="88" y="140" width="6" height="3" rx="1.5" fill="#b0b5bc"/>
               <!-- cell -->
-              <g filter="url(#gaCellShadow)">
+              <g filter="url(#dngDropL)">
                 <rect x="104" y="72" width="202" height="126" rx="28" fill="#ffffff"/>
               </g>
               <rect x="104" y="72" width="202" height="126" rx="28" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="1.5"/>
@@ -21,6 +21,7 @@
                   <g class="charge-wave">
                     <path d="M0 0 Q 24 -8 48 0 T 96 0 T 144 0 T 192 0 T 240 0 T 288 0 T 336 0 T 384 0 T 432 0 T 480 0 V 140 H0 Z" fill="url(#gaCharge)" transform="translate(64 80)"/>
                   </g>
+                  <g class="charge-bubbles" fill="#fff" fill-opacity=".45"><circle class="bub b1" cx="150" cy="180" r="2.4"/><circle class="bub b2" cx="196" cy="182" r="1.8"/><circle class="bub b3" cx="240" cy="180" r="2.2"/><circle class="bub b4" cx="272" cy="183" r="1.6"/></g>
                 </g>
               </g>
               <path class="charge-bolt" d="M213 98 L190 138 H206 L198 172 L224 128 H208 L218 98 Z" fill="#fff" stroke="#1d1d1f" stroke-opacity=".08"/>

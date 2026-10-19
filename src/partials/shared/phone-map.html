@@ -24,16 +24,15 @@
                 <path class="route-base" d="M60 390 L60 300 Q60 286 74 286 L150 286 Q164 286 164 272 L164 170 Q164 156 178 156 L232 156 Q246 156 246 142 L246 70"/>
                 <path class="route" d="M60 390 L60 300 Q60 286 74 286 L150 286 Q164 286 164 272 L164 170 Q164 156 178 156 L232 156 Q246 156 246 142 L246 70"/>
                 <!-- obstacle -->
-                <g class="map-obstacle" transform="translate(150 214)"><circle r="8" fill="#ffb020" stroke="#fff" stroke-width="2"/><path d="M0 -3.5 V1 M0 3.6 V3.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></g>
+                <g transform="translate(150 214)"><g class="map-obstacle"><circle class="obstacle-ring" r="8" fill="none" stroke="#ffb020" stroke-width="2"/><circle r="8" fill="#ffb020" stroke="#fff" stroke-width="2"/><path d="M0 -3.5 V1 M0 3.6 V3.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></g></g>
                 <!-- restaurant -->
-                <g transform="translate(60 390)"><circle r="11" fill="#1d1d1f" stroke="#fff" stroke-width="3"/><path d="M-3 -5 V5 M3 -5 V-1 Q3 1 1 1 H-1 M3 1 V5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" fill="none"/></g>
+                <g transform="translate(60 390)">{{shared:pin-origin}}</g>
                 <!-- customer -->
-                <g transform="translate(246 70)"><circle r="12" fill="#1e8e3e" stroke="#fff" stroke-width="3"/><path d="M-5 1 L0 -4 L5 1 M-3.5 0 V5 H3.5 V0" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/></g>
+                <g class="map-dest" transform="translate(246 70)">{{shared:pin-dest}}</g>
                 <!-- robot (moved by JS) -->
                 <g class="robot-marker" transform="translate(60 390)">
-                  <circle class="map-pin-ring" r="9" fill="#00a3c4" fill-opacity=".35"/>
-                  <path class="heading" d="M0 -20 L7 -9 H-7 Z" fill="#00a3c4" fill-opacity=".55"/>
-                  <circle r="8" fill="#00a3c4" stroke="#fff" stroke-width="3"/>
+                  <path class="heading" d="M0 -22 L8 -10 H-8 Z" fill="#00a3c4" fill-opacity=".55"/>
+                  {{shared:bot-marker}}
                 </g>
                 </g>
               </svg>
