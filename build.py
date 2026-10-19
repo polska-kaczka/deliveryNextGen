@@ -41,7 +41,7 @@ COMPANY = {
     "name": "[Full legal name of the company]",
     "form": "[Legal form, e.g. sp. z o.o. / S.L. / sole trader]",
     "address": "[Registered address: street, number, postcode, city]",
-    "country": "[Country of registered office]",
+    "country": {"en": "Spain", "pl": "Hiszpania"},
     "tax_id": "[Tax ID: NIP (PL) / NIF or CIF (ES)]",
     "vat_id": "[EU VAT number, e.g. PL0000000000 / ESX0000000X]",
     "registry": "[Register entry: KRS no. and court (PL) / Registro Mercantil, tomo, folio, hoja (ES) / CEIDG (PL sole trader)]",
@@ -50,10 +50,10 @@ COMPANY = {
     "privacy_email": "danielmedinabello5@gmail.com",
     "phone": "+34 683 405 430",
     "phone_href": "+34683405430",
-    "hosting": "[Hosting provider: name and address, e.g. SEOHost.pl / Seohost sp. z o.o.]",
+    "hosting": "GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA",
     "mail_provider": "Google Ireland Ltd (Gmail / Google Workspace)",
-    "law": "[Governing law, e.g. Polish law / Spanish law]",
-    "court": "[Competent court, e.g. the common court competent for the registered office of the Service Provider]",
+    "law": {"en": "Spanish law", "pl": "prawo hiszpańskie"},
+    "court": {"en": "the Spanish courts competent for the registered office of the Service Provider", "pl": "sąd hiszpański właściwy dla siedziby Usługodawcy"},
     "permits": "[Authorisations for operating delivery robots in public space, if required in a given city — or remove]",
 }
 
@@ -270,8 +270,10 @@ def load_strings(lang, page):
     return out
 
 
-def company_value(k):
+def company_value(k, lang="en"):
     v = COMPANY[k]
+    if isinstance(v, dict):          # per-language value: {"en": ..., "pl": ...}
+        v = v.get(lang, v["en"])
     if v.startswith("["):
         TODO_FOUND.add(f"COMPANY['{k}']")
         return f'<mark class="todo">{html.escape(v)}</mark>'
@@ -302,7 +304,7 @@ def render_tokens(text, lang, root, ctx):
                 raise KeyError(f"Missing string '{k}' for {lang}/{ctx.get('page')}")
             return ctx["strings"][k]
         if tok.startswith("c."):
-            return company_value(tok[2:])
+            return company_value(tok[2:], lang)
         if tok.startswith("raw."):
             return html.escape(COMPANY[tok[4:]])
         if tok.startswith("icon:"):
