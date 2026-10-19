@@ -1,0 +1,76 @@
+    <section class="page-hero theme-light center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="{{t:bc.label}}" data-reveal><li><a href="{{url:home}}">{{t:bc.home}}</a></li><li aria-current="page">{{t:bc.here}}</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>{{t:hero.eyebrow}}</p>
+        <h1 class="headline-xl" id="page-title" data-split>{{t:hero.title}}</h1>
+        <p class="intro" data-reveal data-delay="0.3">{{t:hero.intro}}</p>
+      </div>
+    </section>
+
+    <section class="band theme-dark" aria-labelledby="mission-title">
+      <div class="container container--narrow">
+        <p class="eyebrow" data-reveal>{{t:mission.eyebrow}}</p>
+        <h2 class="sr-only" id="mission-title">{{t:mission.eyebrow}}</h2>
+        <p class="scrub">{{t:mission.text}}</p>
+      </div>
+    </section>
+
+    <section class="band theme-light" aria-labelledby="launch-title">
+      <div class="container split-row">
+        <div>
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:launch.eyebrow}}</p>
+          <h2 class="headline-m" id="launch-title" data-split>{{t:launch.title}}</h2>
+          <p class="intro" data-reveal data-delay="0.2">{{t:launch.intro}}</p>
+        </div>
+        <div class="timeline">
+          <span class="line-fill" aria-hidden="true"></span>
+          <ol role="list">
+            <li><span class="k">{{t:launch.1.k}}</span><h3>{{t:launch.1.t}}</h3><p>{{t:launch.1.p}}</p></li>
+            <li><span class="k">{{t:launch.2.k}}</span><h3>{{t:launch.2.t}}</h3><p>{{t:launch.2.p}}</p></li>
+            <li><span class="k">{{t:launch.3.k}}</span><h3>{{t:launch.3.t}}</h3><p>{{t:launch.3.p}}</p></li>
+            <li><span class="k">{{t:launch.4.k}}</span><h3>{{t:launch.4.t}}</h3><p>{{t:launch.4.p}}</p></li>
+            <li><span class="k">{{t:launch.5.k}}</span><h3>{{t:launch.5.t}}</h3><p>{{t:launch.5.p}}</p></li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="band theme-grey" aria-labelledby="values-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:values.eyebrow}}</p>
+          <h2 class="headline-m" id="values-title" data-split>{{t:values.title}}</h2>
+        </div>
+        <div class="values" data-stagger>
+          <article class="value"><div class="f-ic">{{icon:shield}}</div><h3>{{t:values.1.t}}</h3><p>{{t:values.1.p}}</p></article>
+          <article class="value"><div class="f-ic">{{icon:leaf}}</div><h3>{{t:values.2.t}}</h3><p>{{t:values.2.p}}</p></article>
+          <article class="value"><div class="f-ic">{{icon:users}}</div><h3>{{t:values.3.t}}</h3><p>{{t:values.3.p}}</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="band theme-light" id="team" aria-labelledby="team-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:team.eyebrow}}</p>
+          <h2 class="headline-m" id="team-title" data-split>{{t:team.title}}</h2>
+        </div>
+        <div class="team" data-stagger>
+          <article class="member"><div class="avatar" aria-hidden="true">DM</div><h3>Daniel Medina</h3><p class="role">{{t:team.1.r}}</p><p>{{t:team.1.p}}</p></article>
+          <article class="member"><div class="avatar" aria-hidden="true">RL</div><h3>{{t:team.2.n}}</h3><p class="role">{{t:team.2.r}}</p><p>{{t:team.2.p}}</p></article>
+          <article class="member"><div class="avatar" aria-hidden="true">OD</div><h3>{{t:team.3.n}}</h3><p class="role">{{t:team.3.r}}</p><p>{{t:team.3.p}}</p></article>
+          <article class="member"><div class="avatar" aria-hidden="true">GL</div><h3>{{t:team.4.n}}</h3><p class="role">{{t:team.4.r}}</p><p>{{t:team.4.p}}</p></article>
+        </div>
+        <p class="footnote" data-reveal>{{t:team.note}}</p>
+      </div>
+    </section>
+
+    <section class="band theme-grey band--tight" aria-labelledby="careers-title">
+      <div class="container center">
+        <h2 class="headline-s" id="careers-title" data-reveal>{{t:careers.title}}</h2>
+        <p class="muted" data-reveal data-delay="0.1">{{t:careers.text}}</p>
+        <p data-reveal data-delay="0.2"><a class="more" href="mailto:{{raw.email}}?subject={{t:careers.subject}}">{{t:careers.link}}</a></p>
+      </div>
+    </section>
+
+{{partial:cta}}

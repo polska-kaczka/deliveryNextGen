@@ -1,0 +1,55 @@
+---
+title: Deklaracja dostępności — DeliveryNextGen
+description: Nasze podejście do dostępności serwisu, stosowane rozwiązania, znane ograniczenia i sposób zgłaszania problemów z dostępnością.
+---
+    <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+        <ol class="breadcrumbs" aria-label="Ścieżka nawigacji" data-reveal><li><a href="{{url:home}}">Start</a></li><li aria-current="page">Dostępność</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Informacje prawne</p>
+        <h1 class="display" id="page-title" data-split>Deklaracja dostępności</h1>
+        <p class="lead" data-reveal data-delay="0.2">Chcemy, aby każdy mógł korzystać z serwisu — niezależnie od urządzenia, sprawności czy technologii wspomagających.</p>
+        <div class="legal-meta" data-reveal data-delay="0.3"><span><b>{{s.legal_updated}}:</b> {{updated}}</span><span><b>Cel:</b> WCAG 2.2, poziom AA</span></div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-label="Deklaracja dostępności">
+      <div class="container legal-wrap">
+        <aside class="toc">
+          <b>{{s.legal_toc}}</b>
+          <ol>
+            <li><a href="#a1">1. Zobowiązanie</a></li>
+            <li><a href="#a2">2. Rozwiązania</a></li>
+            <li><a href="#a3">3. Ruch i animacje</a></li>
+            <li><a href="#a4">4. Znane ograniczenia</a></li>
+            <li><a href="#a5">5. Zgłoszenia</a></li>
+          </ol>
+          <button class="btn btn--ghost btn--sm" type="button" data-print>{{icon:print}} {{s.legal_print}}</button>
+        </aside>
+        <article class="prose">
+          <h2 id="a1">1. Zobowiązanie</h2>
+          <p>Dążymy do spełnienia wytycznych WCAG 2.2 na poziomie AA, czyli standardu referencyjnego normy EN 301 549. Deklarację publikujemy dobrowolnie — nasze usługi są oferowane wyłącznie przedsiębiorcom.</p>
+
+          <h2 id="a2">2. Rozwiązania</h2>
+          <ul>
+            <li>semantyczny HTML z punktami orientacyjnymi, nagłówkami w logicznej kolejności i linkiem „Przejdź do treści”;</li>
+            <li>pełna obsługa z klawiatury z widocznym wskaźnikiem fokusu, także dla menu, FAQ, ustawień cookies i formularza;</li>
+            <li>pola formularza z etykietami, oznaczonymi polami wymaganymi i komunikatami o błędach odczytywanymi przez czytniki ekranu;</li>
+            <li>teksty alternatywne dla grafik niosących treść; grafiki dekoracyjne są ukryte przed technologiami wspomagającymi;</li>
+            <li>kontrast kolorów sprawdzony dla tekstu i elementów sterujących w ciemnym motywie;</li>
+            <li>treść dopasowująca się do małych ekranów i powiększenia do 200%.</li>
+          </ul>
+
+          <h2 id="a3">3. Ruch i animacje</h2>
+          <p>Serwis wykorzystuje animacje powiązane z przewijaniem, aby opowiedzieć historię dostawy. Jeśli na Twoim urządzeniu włączone jest <strong>ograniczenie ruchu</strong> („Ogranicz ruch” w macOS/iOS, wyłączone „Pokazuj animacje” w Windows, „Usuń animacje” w Androidzie), wszystkie animacje są wyłączane, a treść wyświetla się od razu. Żadna treść nie miga częściej niż trzy razy na sekundę.</p>
+
+          <h2 id="a4">4. Znane ograniczenia</h2>
+          <ul>
+            <li>Interaktywna mapa trasy na stronie głównej ma charakter ilustracyjny; te same informacje są podane tekstowo na liście kroków obok niej.</li>
+            <li>W niektórych sieciach firmowych zewnętrzne czcionki mogą się nie załadować; serwis używa wtedy czcionek systemowych bez utraty treści.</li>
+          </ul>
+
+          <h2 id="a5">5. Zgłoszenia</h2>
+          <p>Jeśli napotkasz barierę lub potrzebujesz informacji w innej formie, napisz na <a href="mailto:{{raw.email}}">{{raw.email}}</a>. Odpowiemy w ciągu 14 dni.</p>
+        </article>
+      </div>
+    </section>

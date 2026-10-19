@@ -1,0 +1,155 @@
+@@ meta.title
+DeliveryNextGen — Autonomiczne roboty dostawcze ostatniej mili
+@@ meta.description
+Elektryczne roboty dostawcze, które przez całą dobę docierają do wąskich ulic, stref pieszych i zamkniętych osiedli. Dla restauracji, handlu i firm logistycznych.
+@@ hero.eyebrow
+DeliveryNextGen
+@@ hero.title
+Dostawy, które nigdy nie utkną.
+@@ hero.intro
+Kompaktowy, elektryczny robot na ostatnie dwa kilometry — zaułki, strefy piesze i zamknięte osiedla, do których bus nie wjedzie.
+@@ hero.link
+Zobacz dostawę
+@@ hero.caption
+W pełni elektryczny. Nadzorowany przez całą dobę. Stworzony na chodnik.
+@@ statement.label
+Po co istniejemy
+@@ statement.text
+Większość dostaw nie zawodzi na autostradzie. Zawodzi na ostatnich stu metrach — <span class="hl">na uliczce za wąskiej dla busa</span>, przy bramie bez kodu, przez kuriera, który nie dojeżdża. Zbudowaliśmy robota dokładnie na te metry.
+@@ hl.title
+Najważniejsze w skrócie.
+@@ hl.prev
+Poprzednie
+@@ hl.next
+Następne
+@@ hl.1.k
+Dostęp
+@@ hl.1.t
+Wjedzie tam, gdzie bus nie da rady.
+@@ hl.2.k
+Bezpieczeństwo
+@@ hl.2.t
+Otwiera się tylko dla odbiorcy.
+@@ hl.3.k
+Dostępność
+@@ hl.3.t
+Pracuje na nocną zmianę. Każdej nocy.
+@@ hl.4.k
+Energia
+@@ hl.4.t
+W 100% elektryczny. Zero emisji z rury wydechowej.
+@@ hl.5.k
+Widoczność
+@@ hl.5.t
+Śledzony aż pod same drzwi.
+@@ story.eyebrow
+Jedno zamówienie od początku do końca
+@@ story.title
+Szesnaście minut od drzwi do drzwi.
+@@ story.1.t
+Zamówienie złożone
+@@ story.1.p
+Kolacja zamówiona w aplikacji restauracji. Nasza platforma odbiera zlecenie w mniej niż sekundę.
+@@ story.2.t
+Robot przydzielony
+@@ story.2.p
+Najbliższy robot rusza trasą przez zaułek, do którego żaden bus by nie wjechał.
+@@ story.3.t
+W drodze
+@@ story.3.p
+Zaparkowana hulajnoga blokuje przejście. Robot ją widzi i omija. Klient śledzi to na żywo.
+@@ story.4.t
+Dostarczone
+@@ story.4.p
+Jednorazowy PIN otwiera izolowany schowek. Potwierdzone i zapisane automatycznie.
+@@ story.phone_label
+Telefon pokazujący dostawę śledzoną na mapie i otwieraną kodem PIN
+@@ story.eta
+Będzie za {m} min
+@@ story.arrived
+Twój robot czeka
+@@ story.eta_start
+Będzie za 16 min
+@@ story.statuses
+Zamówienie przyjęte|Robot przydzielony|W drodze · stare miasto|Pod Twoimi drzwiami
+@@ story.status_start
+Zamówienie przyjęte
+@@ story.unit
+Izolowany · 2 torby
+@@ story.live
+Na żywo
+@@ story.pin_title
+Wpisz swój PIN
+@@ story.pin_text
+Wysłaliśmy go SMS-em.
+@@ story.pin_done
+Schowek otwarty
+@@ platform.eyebrow
+Platforma
+@@ platform.title
+Cała flota. Jeden ekran.
+@@ platform.intro
+Dispatch, śledzenie na żywo, potwierdzenia doręczeń i koszty — w panelu, który zespół opanuje w jedno popołudnie.
+@@ platform.caption
+Interfejs poglądowy. Pokazane dane są przykładowe.
+@@ platform.f1.t
+Trasy, które się dostosowują
+@@ platform.f1.p
+Przeszkody są wykrywane na bieżąco, a trasa przeliczana, zanim stracisz choćby minutę.
+@@ platform.f2.t
+Łączy się z tym, czego używasz
+@@ platform.f2.p
+REST API, webhooki i gotowe wtyczki do popularnych sklepów i systemów POS. Większość firm startuje w około dwa dni.
+@@ platform.f3.t
+Ludzie za robotami
+@@ platform.f3.p
+Centrum operacyjne nadzoruje każdy kurs i w kilka sekund może przejąć zdalne sterowanie.
+@@ numbers.title
+Stworzony na godziny, które się liczą.
+@@ numbers.1
+Praca bez zmian, nocy i weekendów wolnych.
+@@ numbers.2
+Niższy koszt dostawy w porównaniu z kurierami.
+@@ numbers.3
+Typowy czas od startu do działającej integracji.
+@@ numbers.4
+CO₂ z rury wydechowej na kurs. Flota jest w pełni elektryczna.
+@@ ind.eyebrow
+Rozwiązania
+@@ ind.title
+Jedna flota. Cztery rodzaje ostatniej mili.
+@@ ind.1.k
+Restauracje
+@@ ind.1.t
+Ciepłe jedzenie bez kurierskiej loterii.
+@@ ind.1.p
+Izolowane schowki i priorytetowa kolejka w godzinach szczytu.
+@@ ind.2.k
+E-commerce i handel
+@@ ind.2.t
+Dostawa tego samego dnia z Twojej półki.
+@@ ind.2.p
+Zamówienia wyjeżdżają ze sklepu lub mikromagazynu w kilka minut.
+@@ ind.3.k
+Partnerzy logistyczni
+@@ ind.3.t
+Oddaj nam najtrudniejsze ostatnie odcinki.
+@@ ind.3.p
+Busy zatrzymują się na granicy starówki. Dalej jadą roboty.
+@@ ind.4.k
+Kampusy i osiedla
+@@ ind.4.t
+Sieć dostaw za Twoją bramą.
+@@ ind.4.p
+Stałe trasy dla uczelni, parków biurowych i osiedli grodzonych.
+@@ price.eyebrow
+Cennik
+@@ price.title
+Proste plany. Skaluj, kiedy chcesz.
+@@ price.intro
+Od jednego robota do pełnej floty. Wszystkie ceny netto, dla przedsiębiorców.
+@@ price.link
+Porównaj plany i oszacuj koszt
+@@ footnotes
+<li id="fn-1">Szacunek orientacyjny w porównaniu z dostawą ostatniej mili realizowaną przez kurierów; rzeczywiste wyniki zależą od wolumenu, trasy i warunków lokalnych. Podstawa szacunku: <mark class="todo">[uzupełnij źródło / metodologię przed publikacją]</mark></li>
+<li id="fn-2">Dotyczy bezpośrednich emisji (z rury wydechowej) robotów podczas dostawy. Nie obejmuje emisji związanych z wytwarzaniem energii elektrycznej ani produkcją.</li>

@@ -1,0 +1,155 @@
+@@ meta.title
+DeliveryNextGen — Autonomous last-mile delivery robots
+@@ meta.description
+Electric delivery robots that reach narrow streets, pedestrian zones and gated estates around the clock. For restaurants, retailers and logistics teams.
+@@ hero.eyebrow
+DeliveryNextGen
+@@ hero.title
+Deliveries that never get stuck.
+@@ hero.intro
+A compact electric robot for the last two kilometres — the alleys, pedestrian zones and gated estates where vans can't go.
+@@ hero.link
+See a delivery
+@@ hero.caption
+Fully electric. Supervised around the clock. Built for the pavement.
+@@ statement.label
+Why we exist
+@@ statement.text
+Most deliveries don't fail on the motorway. They fail in the last hundred metres — <span class="hl">the street too narrow for a van</span>, the gate without a code, the courier who never comes. We built a robot for exactly those metres.
+@@ hl.title
+Get the highlights.
+@@ hl.prev
+Previous highlights
+@@ hl.next
+Next highlights
+@@ hl.1.k
+Access
+@@ hl.1.t
+Goes where vans can't.
+@@ hl.2.k
+Security
+@@ hl.2.t
+Opens only for the recipient.
+@@ hl.3.k
+Availability
+@@ hl.3.t
+Works the night shift. Every night.
+@@ hl.4.k
+Energy
+@@ hl.4.t
+100% electric. Zero tailpipe emissions.
+@@ hl.5.k
+Visibility
+@@ hl.5.t
+Tracked to the doorstep.
+@@ story.eyebrow
+One order, start to finish
+@@ story.title
+Sixteen minutes, door to door.
+@@ story.1.t
+Order placed
+@@ story.1.p
+Dinner is ordered through the restaurant's own app. Our platform receives it in under a second.
+@@ story.2.t
+Robot assigned
+@@ story.2.p
+The nearest robot is dispatched on a route through an alley no van could enter.
+@@ story.3.t
+On the way
+@@ story.3.p
+A parked scooter blocks the path. The robot sees it and goes around. The customer watches live.
+@@ story.4.t
+Delivered
+@@ story.4.p
+A one-time PIN opens the insulated compartment. Confirmed and logged automatically.
+@@ story.phone_label
+A phone showing the delivery being tracked on a map and opened with a PIN
+@@ story.eta
+Arriving in {m} min
+@@ story.arrived
+Your robot is here
+@@ story.eta_start
+Arriving in 16 min
+@@ story.statuses
+Order received|Robot assigned|On the way · old town|Arrived at your door
+@@ story.status_start
+Order received
+@@ story.unit
+Insulated · 2 bags
+@@ story.live
+Live
+@@ story.pin_title
+Enter your PIN
+@@ story.pin_text
+Sent to you by text message.
+@@ story.pin_done
+Compartment unlocked
+@@ platform.eyebrow
+The platform
+@@ platform.title
+Your whole fleet. One screen.
+@@ platform.intro
+Dispatch, live tracking, proof of delivery and costs — in a dashboard your team learns in an afternoon.
+@@ platform.caption
+Illustrative interface. Figures shown are examples.
+@@ platform.f1.t
+Routing that adapts
+@@ platform.f1.p
+Obstacles are detected in real time and routes are recalculated before they cost you minutes.
+@@ platform.f2.t
+Plugs into what you use
+@@ platform.f2.p
+REST API, webhooks and ready-made plugins for popular shop and POS systems. Most teams go live in about two days.
+@@ platform.f3.t
+People behind the robots
+@@ platform.f3.p
+An operations centre supervises every trip and can take over remotely within seconds.
+@@ numbers.title
+Built for the hours that matter.
+@@ numbers.1
+Operation without shifts, nights or weekends off.
+@@ numbers.2
+Lower cost per delivery compared with couriers.
+@@ numbers.3
+Typical time from kick-off to a live integration.
+@@ numbers.4
+Tailpipe CO₂ per trip. The fleet is fully electric.
+@@ ind.eyebrow
+Solutions
+@@ ind.title
+One fleet. Four kinds of last mile.
+@@ ind.1.k
+Restaurants
+@@ ind.1.t
+Hot food, without the courier lottery.
+@@ ind.1.p
+Insulated compartments and a priority queue for peak hours.
+@@ ind.2.k
+E-commerce and retail
+@@ ind.2.t
+Same-day delivery from your own shelf.
+@@ ind.2.p
+Orders leave your shop or micro-warehouse within minutes.
+@@ ind.3.k
+Logistics partners
+@@ ind.3.t
+Hand over the hardest final drops.
+@@ ind.3.p
+Vans stop at the edge of the old town. Robots take it from there.
+@@ ind.4.k
+Campuses and estates
+@@ ind.4.t
+A delivery network inside your gates.
+@@ ind.4.p
+Fixed routes for universities, business parks and gated estates.
+@@ price.eyebrow
+Pricing
+@@ price.title
+Simple plans. Scale when you're ready.
+@@ price.intro
+From a single robot to a full fleet. All prices are net, for business customers.
+@@ price.link
+Compare plans and estimate your cost
+@@ footnotes
+<li id="fn-1">Indicative estimate compared with courier-based last-mile delivery; actual results depend on volume, route and local conditions. Basis of the estimate: <mark class="todo">[add the source / methodology before publishing]</mark></li>
+<li id="fn-2">Refers to direct (tailpipe) emissions of the robots during delivery. It does not include emissions from electricity generation or manufacturing.</li>

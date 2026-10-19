@@ -1,0 +1,98 @@
+@@ meta.title
+How it works — DeliveryNextGen
+@@ meta.description
+From order to doorstep in four automated steps: order intake, dispatch, autonomous navigation and PIN-secured hand-over. See what's inside the robot.
+@@ bc.label
+Breadcrumb
+@@ bc.home
+Home
+@@ bc.here
+How it works
+@@ hero.eyebrow
+How it works
+@@ hero.title
+From order to doorstep. Automatically.
+@@ hero.intro
+Our platform handles everything between “order placed” and “delivered”. Your team keeps cooking, packing and selling.
+@@ steps.eyebrow
+Four steps
+@@ steps.title
+What happens during a delivery.
+@@ steps.intro
+Every trip follows the same four steps — whether it's dinner, a parcel or lab samples.
+@@ steps.1.t
+Order placed
+@@ steps.1.p
+An order arrives from your app, online shop, POS or our API, with pickup point, address and time window.
+@@ steps.2.t
+Dispatched
+@@ steps.2.p
+The nearest robot with enough charge is assigned and the route is planned for current conditions.
+@@ steps.3.t
+On the way
+@@ steps.3.p
+The robot drives on pavements and pedestrian areas, avoiding obstacles. Everyone can follow it live.
+@@ steps.4.t
+Handed over
+@@ steps.4.p
+A one-time PIN opens the compartment. Proof of delivery is logged and the robot heads to its next job.
+@@ inside.eyebrow
+Inside the robot
+@@ inside.title
+Small enough for the pavement. Smart enough for the city.
+@@ inside.1.t
+Connectivity
+@@ inside.1.p
+Mobile data and satellite positioning for live tracking and remote supervision.
+@@ inside.2.t
+Multi-wheel chassis
+@@ inside.2.p
+Stable on cobbles, kerb ramps and uneven old-town surfaces.
+@@ inside.3.t
+Insulated compartment
+@@ inside.3.p
+Keeps food warm and parcels dry. Opens only with the recipient's PIN.
+@@ inside.4.t
+Perception sensors
+@@ inside.4.p
+Cameras and distance sensors detect pedestrians, kerbs and obstacles.
+@@ inside.5.t
+Electric drive
+@@ inside.5.p
+Fully electric, recharged at stations between jobs.
+@@ inside.note
+Technical specifications (dimensions, payload, range, speed) are provided for each deployment. <mark class="todo">[add the official specification sheet when available]</mark>
+@@ safety.eyebrow
+Safety and compliance
+@@ safety.title
+Designed to share the street responsibly.
+@@ safety.1.t
+A person in the loop
+@@ safety.1.p
+If a robot can't resolve a situation itself, an operator is alerted and can take remote control within seconds.
+@@ safety.2.t
+Permits handled
+@@ safety.2.p
+Rules for delivery robots differ by city. We handle permits and confirm coverage before you sign.
+@@ safety.3.t
+Privacy by design
+@@ safety.3.p
+Navigation data is used to drive safely, not to profile people. Details are agreed in each deployment's data processing terms.
+@@ api.eyebrow
+Integration
+@@ api.title
+Live in about 48 hours.
+@@ api.intro
+Use the REST API and webhooks, a ready-made plugin, or dispatch from the dashboard while you test.
+@@ api.1
+Webhooks for every status change
+@@ api.2
+Plugins for popular e-commerce and POS systems
+@@ api.3
+No-code dashboard for manual dispatch
+@@ api.4
+Guided onboarding with our team
+@@ api.link
+Talk to our team
+@@ api.code_label
+Example API request creating a delivery and the response

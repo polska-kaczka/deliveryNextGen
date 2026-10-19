@@ -1,0 +1,82 @@
+<svg viewBox="0 0 400 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+              <defs>
+                <filter id="gaReachShadow" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+              </defs>
+              <!-- map -->
+              <rect width="400" height="260" fill="#eceef1"/>
+              <g fill="#ffffff">
+                <rect x="-10" y="-10" width="420" height="60" rx="0"/>
+                <rect x="-10" y="100" width="194" height="170" rx="12"/>
+                <rect x="216" y="100" width="204" height="170" rx="12"/>
+              </g>
+              <g fill="#e6e9ed">
+                <rect x="14" y="14" width="52" height="26" rx="4"/><rect x="78" y="14" width="78" height="26" rx="4"/><rect x="168" y="14" width="64" height="26" rx="4"/><rect x="244" y="14" width="70" height="26" rx="4"/><rect x="326" y="14" width="60" height="26" rx="4"/>
+                <rect x="14" y="116" width="70" height="56" rx="5"/><rect x="96" y="116" width="72" height="56" rx="5"/><rect x="14" y="184" width="154" height="60" rx="5"/>
+                <rect x="232" y="116" width="72" height="56" rx="5"/><rect x="316" y="116" width="70" height="56" rx="5"/><rect x="232" y="184" width="70" height="60" rx="5"/>
+              </g>
+              <rect x="316" y="184" width="70" height="60" rx="5" fill="#dcefe1"/>
+              <!-- avenue lane markings -->
+              <path d="M0 75 H400" stroke="#d9dde2" stroke-width="2" stroke-dasharray="12 12"/>
+              <!-- alley (2.1 m) -->
+              <rect x="190" y="100" width="20" height="170" fill="#eceef1"/>
+              <path d="M187 100 V270 M213 100 V270" stroke="#d3d8de" stroke-width="1.5"/>
+
+              <g opacity="0">
+                <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.04;.93;1" values="0;1;1;0"/>
+
+                <!-- van: drives up the avenue, brakes at the alley mouth -->
+                <g filter="url(#gaReachShadow)">
+                  <animateTransform attributeName="transform" type="translate" dur="8s" repeatCount="indefinite" calcMode="spline"
+                    keyTimes="0;.26;1" values="-80 0;142 0;142 0" keySplines=".25 .7 .35 1;0 0 1 1"/>
+                  <rect x="0" y="54" width="50" height="24" rx="5" fill="#3a3f46"/>
+                  <rect x="38" y="57" width="10" height="18" rx="3" fill="#8ea0b2"/>
+                  <rect x="6" y="58" width="26" height="16" rx="2" fill="#4a5058"/>
+                  <rect x="48" y="56" width="3" height="5" rx="1.5" fill="#ffd27a"/>
+                  <rect x="48" y="71" width="3" height="5" rx="1.5" fill="#ffd27a"/>
+                </g>
+
+                <!-- no entry -->
+                <g transform="translate(200 92)">
+                  <g opacity="0">
+                    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.27;.31;.86;.9;1" values="0;0;1;1;0;0"/>
+                    <circle r="16" fill="#ff3b30" fill-opacity=".14">
+                      <animate attributeName="r" dur="8s" repeatCount="indefinite" keyTimes="0;.28;.4;1" values="9;9;22;22"/>
+                      <animate attributeName="fill-opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.28;.4;1" values=".3;.3;0;0"/>
+                    </circle>
+                    <circle r="9" fill="#ff3b30" stroke="#fff" stroke-width="2.5"/>
+                    <rect x="-5" y="-1.6" width="10" height="3.2" rx="1.6" fill="#fff"/>
+                  </g>
+                </g>
+
+                <!-- route trail -->
+                <path d="M40 86 H186 Q200 86 200 100 V226" fill="none" stroke="#00a3c4" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1" stroke-dasharray="1 1" stroke-dashoffset="1">
+                  <animate attributeName="stroke-dashoffset" dur="8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.34;.84;1" values="1;1;0;0" keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1"/>
+                </path>
+
+                <!-- restaurant pin -->
+                <circle cx="40" cy="86" r="7" fill="#1d1d1f" stroke="#fff" stroke-width="3"/>
+
+                <!-- customer pin + arrival -->
+                <g transform="translate(200 232)">
+                  <circle r="8" fill="#1e8e3e" fill-opacity="0">
+                    <animate attributeName="r" dur="8s" repeatCount="indefinite" keyTimes="0;.84;1" values="8;8;30"/>
+                    <animate attributeName="fill-opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.839;.84;1" values="0;0;.4;0"/>
+                  </circle>
+                  <circle r="9" fill="#1e8e3e" stroke="#fff" stroke-width="3"/>
+                  <path d="M-3.6 0.2 L-1 2.8 L3.8 -2.2" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0">
+                    <animate attributeName="opacity" dur="8s" repeatCount="indefinite" keyTimes="0;.84;.87;1" values="0;0;1;1"/>
+                  </path>
+                </g>
+
+                <!-- robot (top-down) -->
+                <g filter="url(#gaReachShadow)">
+                  <animateMotion dur="8s" repeatCount="indefinite" rotate="auto" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.34;.84;1"
+                    keySplines="0 0 1 1;.45 0 .3 1;0 0 1 1" path="M40 86 H186 Q200 86 200 100 V226"/>
+                  <rect x="-10" y="-8" width="20" height="16" rx="5" fill="#ffffff" stroke="#000" stroke-opacity=".12"/>
+                  <rect x="4" y="-6" width="6" height="12" rx="3" fill="#15181c"/>
+                  <rect x="6.5" y="-4" width="1.6" height="3" rx=".8" fill="#5ce6f7"/>
+                  <rect x="6.5" y="1" width="1.6" height="3" rx=".8" fill="#5ce6f7"/>
+                  <path d="M10 -5 L24 -11 V11 L10 5 Z" fill="#5ce6f7" fill-opacity=".18"/>
+                </g>
+              </g>
+            </svg>

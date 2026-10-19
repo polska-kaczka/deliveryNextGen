@@ -1,0 +1,108 @@
+@@ meta.title
+O nas — DeliveryNextGen
+@@ meta.description
+DeliveryNextGen powstało, by naprawić dostawy, które każdego dnia zawodzą, bo nie mogą dotrzeć do celu. Poznaj zespół i zobacz, jak startujemy w nowym mieście.
+@@ bc.label
+Ścieżka nawigacji
+@@ bc.home
+Start
+@@ bc.here
+O nas
+@@ hero.eyebrow
+O nas
+@@ hero.title
+Budujemy na ostatnie sto metrów.
+@@ hero.intro
+Każdego dnia miliony dostaw zawodzą, bo nie mogą dotrzeć pod drzwi. Założyliśmy DeliveryNextGen, żeby to zmienić — dzielnica po dzielnicy.
+@@ mission.eyebrow
+Nasza misja
+@@ mission.text
+Sprawić, by każdy adres był osiągalny — zaułek, strefa piesza, zamknięte osiedle — <span class="hl">bez kolejnego busa</span> na ulicach, które nigdy nie były dla niego budowane.
+@@ launch.eyebrow
+Jak startujemy w nowym mieście
+@@ launch.title
+Od pierwszej rozmowy do działającej floty.
+@@ launch.intro
+Każde wdrożenie przebiega w tych samych pięciu krokach, więc zanim cokolwiek wyjedzie na ulicę, wiesz, co i kiedy się wydarzy.
+@@ launch.1.k
+Krok 1
+@@ launch.1.t
+Sprawdzenie zasięgu
+@@ launch.1.p
+Mapujemy obszar dostaw, chodniki i punkty dostępu oraz potwierdzamy, że roboty mogą tam pracować.
+@@ launch.2.k
+Krok 2
+@@ launch.2.t
+Zgodność z lokalnymi przepisami
+@@ launch.2.p
+Uzyskujemy zezwolenia i uzgodnienia wymagane przez miasto lub właściciela terenu.
+@@ launch.3.k
+Krok 3
+@@ launch.3.t
+Pilotaż
+@@ launch.3.p
+Mała flota startuje na wybranych trasach. Razem z Tobą mierzymy czasy dostaw i niezawodność.
+@@ launch.4.k
+Krok 4
+@@ launch.4.t
+Integracja
+@@ launch.4.p
+Zamówienia płyną automatycznie z Twojej aplikacji, sklepu lub POS do naszej platformy.
+@@ launch.5.k
+Krok 5
+@@ launch.5.t
+Skalowanie
+@@ launch.5.p
+Na podstawie danych z pilotażu rozbudowujemy flotę pod Twój wolumen i godziny pracy.
+@@ values.eyebrow
+W co wierzymy
+@@ values.title
+Trzy zasady stojące za każdym robotem.
+@@ values.1.t
+Bezpieczeństwo przede wszystkim
+@@ values.1.p
+Roboty dzielą chodnik z ludźmi. Nadzór, ostrożne prędkości i zdalni operatorzy są ważniejsi niż wydajność.
+@@ values.2.t
+Lżejsze miasta
+@@ values.2.p
+Elektryczne, kompaktowe i ciche — mniej ruchu i zero emisji z rury wydechowej tam, gdzie ludzie mieszkają.
+@@ values.3.t
+Uczciwa współpraca
+@@ values.3.p
+Jasne ceny, jasne umowy i zasięg potwierdzony przed podpisaniem.
+@@ team.eyebrow
+Zespół
+@@ team.title
+Ludzie stojący za flotą.
+@@ team.1.r
+Założyciel i CEO
+@@ team.1.p
+Przedsiębiorca z branży logistycznej, pasjonat robotyki i mobilności miejskiej.
+@@ team.2.n
+Robotics Lead
+@@ team.2.r
+Szef inżynierii
+@@ team.2.p
+Były inżynier pojazdów autonomicznych, ponad osiem lat w systemach embedded AI.
+@@ team.3.n
+Dyrektor operacyjny
+@@ team.3.r
+Operacje
+@@ team.3.p
+Specjalista łańcucha dostaw, który skalował logistykę ostatniej mili na trzech kontynentach.
+@@ team.4.n
+Growth Lead
+@@ team.4.r
+Partnerstwa
+@@ team.4.p
+Strateg B2B z doświadczeniem w food-tech i handlu.
+@@ team.note
+<mark class="todo">[Uzupełnij imiona, nazwiska i zdjęcia członków zespołu przed publikacją]</mark>
+@@ careers.title
+Chcesz budować to z nami?
+@@ careers.text
+Zawsze chętnie poznajemy inżynierów, operatorów i partnerów z miast.
+@@ careers.subject
+Kariera
+@@ careers.link
+Napisz do nas

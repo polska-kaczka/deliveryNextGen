@@ -1,0 +1,80 @@
+    <section class="page-hero theme-light center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="{{t:bc.label}}" data-reveal><li><a href="{{url:home}}">{{t:bc.home}}</a></li><li aria-current="page">{{t:bc.here}}</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>{{t:hero.eyebrow}}</p>
+        <h1 class="headline-xl" id="page-title" data-split>{{t:hero.title}}</h1>
+        <p class="intro" data-reveal data-delay="0.3">{{t:hero.intro}}</p>
+      </div>
+    </section>
+
+    <section class="band theme-grey band--tight" aria-label="{{t:tabs.label}}">
+      <div class="container center" data-tabs id="industries">
+        <div class="segmented" role="tablist" aria-label="{{t:tabs.label}}">
+          <span class="seg-thumb" aria-hidden="true"></span>
+          <button type="button" role="tab" id="tab-restaurants" aria-controls="panel-restaurants" aria-selected="true" data-hash="restaurants">{{t:p1.tab}}</button>
+          <button type="button" role="tab" id="tab-retail" aria-controls="panel-retail" aria-selected="false" data-hash="retail">{{t:p2.tab}}</button>
+          <button type="button" role="tab" id="tab-logistics" aria-controls="panel-logistics" aria-selected="false" data-hash="logistics">{{t:p3.tab}}</button>
+          <button type="button" role="tab" id="tab-campus" aria-controls="panel-campus" aria-selected="false" data-hash="campus">{{t:p4.tab}}</button>
+        </div>
+
+        <div class="panel" id="panel-restaurants" role="tabpanel" aria-labelledby="tab-restaurants" tabindex="0">
+          <div>
+            <p class="eyebrow eyebrow--brand">{{t:p1.tab}}</p>
+            <h2 class="headline-s">{{t:p1.title}}</h2>
+            <p class="muted">{{t:p1.text}}</p>
+            <ul class="ticks"><li>{{t:p1.1}}</li><li>{{t:p1.2}}</li><li>{{t:p1.3}}</li><li>{{t:p1.4}}</li></ul>
+            <a class="btn" href="{{url:contact}}?type=restaurant">{{t:p1.cta}}</a>
+          </div>
+          <div class="panel-art" data-anim>{{shared:t-art-restaurant}}</div>
+        </div>
+
+        <div class="panel" id="panel-retail" role="tabpanel" aria-labelledby="tab-retail" tabindex="0" hidden>
+          <div>
+            <p class="eyebrow eyebrow--brand">{{t:p2.tab}}</p>
+            <h2 class="headline-s">{{t:p2.title}}</h2>
+            <p class="muted">{{t:p2.text}}</p>
+            <ul class="ticks"><li>{{t:p2.1}}</li><li>{{t:p2.2}}</li><li>{{t:p2.3}}</li><li>{{t:p2.4}}</li></ul>
+            <a class="btn" href="{{url:contact}}?type=ecommerce">{{t:p2.cta}}</a>
+          </div>
+          <div class="panel-art" data-anim>{{shared:t-art-retail}}</div>
+        </div>
+
+        <div class="panel" id="panel-logistics" role="tabpanel" aria-labelledby="tab-logistics" tabindex="0" hidden>
+          <div>
+            <p class="eyebrow eyebrow--brand">{{t:p3.tab}}</p>
+            <h2 class="headline-s">{{t:p3.title}}</h2>
+            <p class="muted">{{t:p3.text}}</p>
+            <ul class="ticks"><li>{{t:p3.1}}</li><li>{{t:p3.2}}</li><li>{{t:p3.3}}</li><li>{{t:p3.4}}</li></ul>
+            <a class="btn" href="{{url:contact}}?type=logistics">{{t:p3.cta}}</a>
+          </div>
+          <div class="panel-art" data-anim>{{shared:t-art-logistics}}</div>
+        </div>
+
+        <div class="panel" id="panel-campus" role="tabpanel" aria-labelledby="tab-campus" tabindex="0" hidden>
+          <div>
+            <p class="eyebrow eyebrow--brand">{{t:p4.tab}}</p>
+            <h2 class="headline-s">{{t:p4.title}}</h2>
+            <p class="muted">{{t:p4.text}}</p>
+            <ul class="ticks"><li>{{t:p4.1}}</li><li>{{t:p4.2}}</li><li>{{t:p4.3}}</li><li>{{t:p4.4}}</li></ul>
+            <a class="btn" href="{{url:contact}}?type=campus">{{t:p4.cta}}</a>
+          </div>
+          <div class="panel-art" data-anim>{{shared:t-art-campus}}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band theme-light" aria-labelledby="why-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:why.eyebrow}}</p>
+          <h2 class="headline-m" id="why-title" data-split>{{t:why.title}}</h2>
+        </div>
+        <div class="features" data-stagger>
+          <div class="feature"><div class="f-ic">{{icon:clock}}</div><h3>{{t:why.1.t}}</h3><p>{{t:why.1.p}}</p></div>
+          <div class="feature"><div class="f-ic">{{icon:route}}</div><h3>{{t:why.2.t}}</h3><p>{{t:why.2.p}}</p></div>
+          <div class="feature"><div class="f-ic">{{icon:leaf}}</div><h3>{{t:why.3.t}}</h3><p>{{t:why.3.p}}</p></div>
+        </div>
+      </div>
+    </section>
+
+{{partial:cta}}

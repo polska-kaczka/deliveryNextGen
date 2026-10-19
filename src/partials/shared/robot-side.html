@@ -1,0 +1,139 @@
+<svg class="robot-svg" viewBox="0 0 520 330" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- pearl shell -->
+    <linearGradient id="rbShell" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f3f4f6"/><stop offset=".78" stop-color="#e2e5ea"/><stop offset="1" stop-color="#cfd4db"/>
+    </linearGradient>
+    <linearGradient id="rbShellSide" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#000" stop-opacity=".09"/><stop offset=".1" stop-color="#000" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".06"/>
+    </linearGradient>
+    <!-- graphite chassis -->
+    <linearGradient id="rbChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".35" stop-color="#2e3238"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+    <!-- smoked visor -->
+    <linearGradient id="rbVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a414b"/><stop offset=".55" stop-color="#14181d"/><stop offset="1" stop-color="#050608"/></linearGradient>
+    <linearGradient id="rbVisorRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <!-- wheels -->
+    <radialGradient id="rbTyre" cx=".5" cy=".42" r=".6"><stop offset=".6" stop-color="#30343a"/><stop offset="1" stop-color="#121417"/></radialGradient>
+    <radialGradient id="rbRim" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dde2"/><stop offset="1" stop-color="#8d96a1"/></radialGradient>
+    <!-- light -->
+    <linearGradient id="rbSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="rbBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity=".2"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+    <radialGradient id="rbShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <radialGradient id="rbAO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+    <clipPath id="rbStatusClip"><rect x="98" y="201.5" width="340" height="5" rx="2.5"/></clipPath>
+    <clipPath id="rbGlassClip"><path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z"/></clipPath>
+    <filter id="rbGlow" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="rbSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+  </defs>
+
+  <!-- contact shadow -->
+  <g class="rb-shadow">
+    <ellipse cx="262" cy="308" rx="226" ry="14" fill="url(#rbShadow)"/>
+    <ellipse cx="262" cy="306" rx="170" ry="5" fill="url(#rbAO)" opacity=".55"/>
+  </g>
+
+  <g class="robot-drive">
+    <!-- running gear -->
+    <g class="rb-wheels">
+      <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="262" cy="258" r="9" fill="#33383f"/><circle cx="262" cy="258" r="3.5" fill="#8d96a1"/>
+      <g><g class="wheel">
+        <circle cx="146" cy="272" r="34" fill="url(#rbTyre)"/>
+        <circle cx="146" cy="272" r="31" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="3" stroke-dasharray="3.2 4.2"/>
+        <circle cx="146" cy="272" r="22.5" fill="url(#rbRim)"/>
+        <g stroke="#7d8691" stroke-width="4.2" stroke-linecap="round"><line x1="146" y1="264" x2="146" y2="252.5"/><line x1="153.6" y1="269.5" x2="164.5" y2="266"/><line x1="150.7" y1="278.5" x2="157.4" y2="287.8"/><line x1="141.3" y1="278.5" x2="134.6" y2="287.8"/><line x1="138.4" y1="269.5" x2="127.5" y2="266"/></g>
+        <circle cx="146" cy="272" r="22.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1"/>
+        <circle cx="146" cy="272" r="7.5" fill="#2b2f35"/><circle cx="146" cy="272" r="2.4" fill="#00d4f0"/>
+      </g></g>
+      <g transform="translate(116 0)"><g class="wheel">
+        <circle cx="146" cy="272" r="34" fill="url(#rbTyre)"/>
+        <circle cx="146" cy="272" r="31" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="3" stroke-dasharray="3.2 4.2"/>
+        <circle cx="146" cy="272" r="22.5" fill="url(#rbRim)"/>
+        <g stroke="#7d8691" stroke-width="4.2" stroke-linecap="round"><line x1="146" y1="264" x2="146" y2="252.5"/><line x1="153.6" y1="269.5" x2="164.5" y2="266"/><line x1="150.7" y1="278.5" x2="157.4" y2="287.8"/><line x1="141.3" y1="278.5" x2="134.6" y2="287.8"/><line x1="138.4" y1="269.5" x2="127.5" y2="266"/></g>
+        <circle cx="146" cy="272" r="22.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1"/>
+        <circle cx="146" cy="272" r="7.5" fill="#2b2f35"/><circle cx="146" cy="272" r="2.4" fill="#00d4f0"/>
+      </g></g>
+      <g transform="translate(232 0)"><g class="wheel">
+        <circle cx="146" cy="272" r="34" fill="url(#rbTyre)"/>
+        <circle cx="146" cy="272" r="31" fill="none" stroke="#000" stroke-opacity=".45" stroke-width="3" stroke-dasharray="3.2 4.2"/>
+        <circle cx="146" cy="272" r="22.5" fill="url(#rbRim)"/>
+        <g stroke="#7d8691" stroke-width="4.2" stroke-linecap="round"><line x1="146" y1="264" x2="146" y2="252.5"/><line x1="153.6" y1="269.5" x2="164.5" y2="266"/><line x1="150.7" y1="278.5" x2="157.4" y2="287.8"/><line x1="141.3" y1="278.5" x2="134.6" y2="287.8"/><line x1="138.4" y1="269.5" x2="127.5" y2="266"/></g>
+        <circle cx="146" cy="272" r="22.5" fill="none" stroke="#fff" stroke-opacity=".7" stroke-width="1"/>
+        <circle cx="146" cy="272" r="7.5" fill="#2b2f35"/><circle cx="146" cy="272" r="2.4" fill="#00d4f0"/>
+      </g></g>
+    </g>
+
+    <!-- sprung body -->
+    <g class="rb-body">
+      <!-- antenna + pennant -->
+      <line x1="118" y1="104" x2="118" y2="10" stroke="#c6ccd3" stroke-width="2.6" stroke-linecap="round"/>
+      <line x1="117.2" y1="104" x2="117.2" y2="12" stroke="#fff" stroke-opacity=".7" stroke-width=".8"/>
+      <circle cx="118" cy="9" r="3.2" fill="#00d4f0"/>
+      <path class="rb-flag" fill="#00a9c7" d="M120 14 C138 16 152 22 170 28 C152 32 138 38 120 42 Z">
+        <animate attributeName="d" dur="1.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"
+          values="M120 14 C138 16 152 22 170 28 C152 32 138 38 120 42 Z;M120 14 C140 23 154 16 173 26 C154 35 140 43 120 42 Z;M120 14 C138 11 153 27 168 30 C152 28 138 45 120 42 Z;M120 14 C138 16 152 22 170 28 C152 32 138 38 120 42 Z"/>
+      </path>
+
+      <!-- graphite chassis -->
+      <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#rbChassis)"/>
+      <path d="M86 200 H440" stroke="#fff" stroke-opacity=".12" stroke-width="1.5" stroke-linecap="round"/>
+      <rect x="104" y="232" width="316" height="3" rx="1.5" fill="#000" fill-opacity=".35"/>
+
+      <!-- pearl shell -->
+      <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#rbShell)"/>
+      <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#rbShellSide)"/>
+      <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="none" stroke="#000" stroke-opacity=".08"/>
+      <!-- specular highlight -->
+      <path d="M118 104 C 160 100 300 100 386 103" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" filter="url(#rbSoft)"/>
+      <!-- lid seam + bevel -->
+      <path d="M80 141 H398" stroke="#000" stroke-opacity=".09" stroke-width="1.6"/>
+      <path d="M80 143.5 H398" stroke="#fff" stroke-opacity=".9" stroke-width="1.2"/>
+      <rect x="214" y="114" width="80" height="8" rx="4" fill="#000" fill-opacity=".06"/>
+      <rect x="214" y="121" width="80" height="1.4" rx=".7" fill="#fff"/>
+      <!-- rear panel line + tail light -->
+      <path d="M362 146 V200" stroke="#000" stroke-opacity=".06" stroke-width="1.4"/>
+      <rect x="74" y="164" width="5" height="22" rx="2.5" fill="#ff5a4e"/>
+      <rect x="74" y="164" width="5" height="22" rx="2.5" fill="#ff5a4e" filter="url(#rbGlow)" opacity=".7"/>
+      <!-- side camera -->
+      <circle cx="104" cy="166" r="8" fill="#e6e9ed"/>
+      <circle cx="104" cy="166" r="5.5" fill="#15181c"/>
+      <circle cx="102.4" cy="164.4" r="1.6" fill="#8fa3b6"/>
+      <!-- embossed brand -->
+      <g transform="translate(132 160)">
+        <rect x="0" y="1" width="15" height="15" rx="4.5" fill="#fff"/>
+        <rect x="0" y="0" width="15" height="15" rx="4.5" fill="#b8bec6"/>
+        <rect x="3.6" y="5.6" width="2.8" height="4" rx="1.4" fill="#f3f4f6"/><rect x="8.6" y="5.6" width="2.8" height="4" rx="1.4" fill="#f3f4f6"/>
+        <text x="22" y="13" font-family="Inter, Arial, sans-serif" font-size="13.5" font-weight="600" letter-spacing="-0.3" fill="#fff">DeliveryNextGen</text>
+        <text x="22" y="12" font-family="Inter, Arial, sans-serif" font-size="13.5" font-weight="600" letter-spacing="-0.3" fill="#b8bec6">DeliveryNextGen</text>
+      </g>
+
+      <!-- wrap-around light strip -->
+      <rect class="status" x="98" y="202.2" width="340" height="3.6" rx="1.8" fill="#00d4f0" filter="url(#rbGlow)"/>
+      <g clip-path="url(#rbStatusClip)"><rect class="rb-scan" x="38" y="200" width="60" height="9" fill="url(#rbSheen)"/></g>
+
+      <!-- lidar beam -->
+      <g class="rb-beam">
+        <path d="M456 160 L566 126 L566 236 L458 192 Z" fill="url(#rbBeam)"/>
+        <path class="rb-arc" d="M468 160 Q476 176 468 192" fill="none" stroke="#5ce6f7" stroke-width="2" stroke-linecap="round"/>
+        <path class="rb-arc" d="M468 160 Q476 176 468 192" fill="none" stroke="#5ce6f7" stroke-width="2" stroke-linecap="round"/>
+        <path class="rb-arc" d="M468 160 Q476 176 468 192" fill="none" stroke="#5ce6f7" stroke-width="2" stroke-linecap="round"/>
+      </g>
+
+      <!-- smoked visor -->
+      <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#rbVisor)"/>
+      <g clip-path="url(#rbGlassClip)">
+        <path d="M392 128 C 420 124 446 136 458 150" fill="none" stroke="url(#rbVisorRefl)" stroke-width="7" stroke-linecap="round"/>
+        <rect class="rb-glint" x="360" y="100" width="12" height="120" fill="#fff" fill-opacity=".14" transform="rotate(18 366 160)"/>
+      </g>
+      <path d="M396 114 C 428 116, 452 136, 457 160" fill="none" stroke="#fff" stroke-opacity=".25" stroke-width="1"/>
+      <g class="rb-eyes">
+        <g filter="url(#rbGlow)" opacity=".85">
+          <rect class="eye" x="414" y="146" width="10" height="22" rx="5" fill="#00d4f0"/>
+          <rect class="eye" x="432" y="148" width="10" height="21" rx="5" fill="#00d4f0"/>
+        </g>
+        <rect class="eye" x="416" y="149" width="6" height="16" rx="3" fill="#d6fbff"/>
+        <rect class="eye" x="434" y="151" width="6" height="15" rx="3" fill="#d6fbff"/>
+      </g>
+    </g>
+  </g>
+</svg>

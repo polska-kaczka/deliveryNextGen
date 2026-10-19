@@ -1,0 +1,102 @@
+    <section class="page-hero theme-dark center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="{{t:bc.label}}" data-reveal><li><a href="{{url:home}}">{{t:bc.home}}</a></li><li aria-current="page">{{t:bc.here}}</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>{{t:hero.eyebrow}}</p>
+        <h1 class="headline-xl" id="page-title" data-split>{{t:hero.title}}</h1>
+        <p class="intro" data-reveal data-delay="0.3">{{t:hero.intro}}</p>
+      </div>
+      {{shared:hero-scene}}
+    </section>
+
+    <section class="band theme-light" aria-labelledby="steps-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:steps.eyebrow}}</p>
+          <h2 class="headline-m" id="steps-title" data-split>{{t:steps.title}}</h2>
+          <p class="intro" data-reveal data-delay="0.2">{{t:steps.intro}}</p>
+        </div>
+        <ol class="steps-row" role="list" data-stagger>
+          <li class="step-card"><h3>{{t:steps.1.t}}</h3><p>{{t:steps.1.p}}</p></li>
+          <li class="step-card"><h3>{{t:steps.2.t}}</h3><p>{{t:steps.2.p}}</p></li>
+          <li class="step-card"><h3>{{t:steps.3.t}}</h3><p>{{t:steps.3.p}}</p></li>
+          <li class="step-card"><h3>{{t:steps.4.t}}</h3><p>{{t:steps.4.p}}</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band theme-grey" aria-labelledby="inside-title">
+      <div class="container">
+        <div class="band-head center">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:inside.eyebrow}}</p>
+          <h2 class="headline-m" id="inside-title" data-split>{{t:inside.title}}</h2>
+        </div>
+        <div class="anatomy" data-reveal="fade">
+          <div class="anatomy-art" data-anim>
+            {{shared:robot-front}}
+            <p class="callout callout--l callout--antenna"><b>{{t:inside.1.t}}</b><span>{{t:inside.1.p}}</span></p>
+            <p class="callout callout--l callout--wheels"><b>{{t:inside.2.t}}</b><span>{{t:inside.2.p}}</span></p>
+            <p class="callout callout--cargo"><b>{{t:inside.3.t}}</b><span>{{t:inside.3.p}}</span></p>
+            <p class="callout callout--sensors"><b>{{t:inside.4.t}}</b><span>{{t:inside.4.p}}</span></p>
+            <p class="callout callout--power"><b>{{t:inside.5.t}}</b><span>{{t:inside.5.p}}</span></p>
+          </div>
+          <ul class="anatomy-list" aria-hidden="true">
+            <li><b>{{t:inside.3.t}}</b><span>{{t:inside.3.p}}</span></li>
+            <li><b>{{t:inside.4.t}}</b><span>{{t:inside.4.p}}</span></li>
+            <li><b>{{t:inside.1.t}}</b><span>{{t:inside.1.p}}</span></li>
+            <li><b>{{t:inside.5.t}}</b><span>{{t:inside.5.p}}</span></li>
+            <li><b>{{t:inside.2.t}}</b><span>{{t:inside.2.p}}</span></li>
+          </ul>
+        </div>
+        <p class="footnote center" data-reveal>{{t:inside.note}}</p>
+      </div>
+    </section>
+
+    <section class="band theme-light" aria-labelledby="safety-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:safety.eyebrow}}</p>
+          <h2 class="headline-m" id="safety-title" data-split>{{t:safety.title}}</h2>
+        </div>
+        <div class="features" data-stagger>
+          <div class="feature"><div class="f-ic">{{icon:headset}}</div><h3>{{t:safety.1.t}}</h3><p>{{t:safety.1.p}}</p></div>
+          <div class="feature"><div class="f-ic">{{icon:shield}}</div><h3>{{t:safety.2.t}}</h3><p>{{t:safety.2.p}}</p></div>
+          <div class="feature"><div class="f-ic">{{icon:eye}}</div><h3>{{t:safety.3.t}}</h3><p>{{t:safety.3.p}}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band theme-dark" aria-labelledby="api-title">
+      <div class="container split-row">
+        <div>
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:api.eyebrow}}</p>
+          <h2 class="headline-m" id="api-title" data-split>{{t:api.title}}</h2>
+          <p class="intro" data-reveal data-delay="0.2">{{t:api.intro}}</p>
+          <ul class="ticks" data-stagger>
+            <li>{{t:api.1}}</li>
+            <li>{{t:api.2}}</li>
+            <li>{{t:api.3}}</li>
+            <li>{{t:api.4}}</li>
+          </ul>
+          <a class="more" href="{{url:contact}}">{{t:api.link}}</a>
+        </div>
+        <div data-reveal="scale">
+<pre class="code-card" aria-label="{{t:api.code_label}}"><span class="m">POST</span> /v1/deliveries
+{
+  <span class="k">"pickup"</span>:  <span class="s">"store_12"</span>,
+  <span class="k">"dropoff"</span>: <span class="s">"Calle Mayor 14, 2"</span>,
+  <span class="k">"mode"</span>:    <span class="s">"restaurant"</span>,
+  <span class="k">"notify"</span>:  <span class="s">"sms"</span>
+}
+
+<span class="c">// 201 Created</span>
+{
+  <span class="k">"id"</span>:     <span class="s">"dlv_4821"</span>,
+  <span class="k">"robot"</span>:  <span class="s">"DNG-07"</span>,
+  <span class="k">"eta"</span>:    <span class="s">"16 min"</span>,
+  <span class="k">"status"</span>: <span class="s">"dispatched"</span>
+}</pre>
+        </div>
+      </div>
+    </section>
+
+{{partial:cta}}

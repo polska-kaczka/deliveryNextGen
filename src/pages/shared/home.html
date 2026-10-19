@@ -1,0 +1,153 @@
+    <!-- ============================ HERO ============================ -->
+    <section class="hero theme-light" aria-labelledby="hero-title">
+      <div class="container">
+        <p class="eyebrow eyebrow--brand" data-reveal>{{t:hero.eyebrow}}</p>
+        <h1 class="headline-xl" id="hero-title" data-split>{{t:hero.title}}</h1>
+        <p class="intro" data-reveal data-delay="0.35">{{t:hero.intro}}</p>
+        <div class="ctas" data-reveal data-delay="0.5">
+          <a class="btn btn--lg" href="{{url:contact}}">{{t:cta.demo}}</a>
+          <a class="more" href="#story">{{t:hero.link}}</a>
+        </div>
+      </div>
+      {{shared:hero-scene}}
+      <p class="stage-caption center" data-reveal data-delay="1.4">{{t:hero.caption}}</p>
+    </section>
+
+    <!-- ========================= STATEMENT ========================= -->
+    <section class="band theme-light" aria-labelledby="statement-title">
+      <div class="container container--narrow">
+        <h2 class="sr-only" id="statement-title">{{t:statement.label}}</h2>
+        <p class="scrub">{{t:statement.text}}</p>
+      </div>
+    </section>
+
+    <!-- ========================= HIGHLIGHTS ========================= -->
+    <section class="band theme-grey" aria-labelledby="hl-title">
+      <div class="container">
+        <div class="gallery-head">
+          <h2 class="headline-m" id="hl-title" data-reveal>{{t:hl.title}}</h2>
+          <div class="gallery-ctrl">
+            <button class="paddle" type="button" data-gallery-prev="hl-gallery" aria-label="{{t:hl.prev}}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 3 5 8l5 5"/></svg></button>
+            <button class="paddle" type="button" data-gallery-next="hl-gallery" aria-label="{{t:hl.next}}"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 3 5 5-5 5"/></svg></button>
+          </div>
+        </div>
+        <div class="gallery" id="hl-gallery" data-gallery tabindex="0" role="region" aria-label="{{t:hl.title}}" data-stagger>
+          <article class="g-card"><p class="eyebrow">{{t:hl.1.k}}</p><h3>{{t:hl.1.t}}</h3><div class="g-art" data-anim>{{shared:g-art-reach}}</div></article>
+          <article class="g-card"><p class="eyebrow">{{t:hl.2.k}}</p><h3>{{t:hl.2.t}}</h3><div class="g-art" data-anim>{{shared:g-art-pin}}</div></article>
+          <article class="g-card g-card--dark"><p class="eyebrow">{{t:hl.3.k}}</p><h3>{{t:hl.3.t}}</h3><div class="g-art" data-anim>{{shared:g-art-night}}</div></article>
+          <article class="g-card"><p class="eyebrow">{{t:hl.4.k}}</p><h3>{{t:hl.4.t}}</h3><div class="g-art" data-anim>{{shared:g-art-battery}}</div></article>
+          <article class="g-card"><p class="eyebrow">{{t:hl.5.k}}</p><h3>{{t:hl.5.t}}</h3><div class="g-art" data-anim>{{shared:g-art-track}}</div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== STORY =========================== -->
+    <section class="story theme-dark" id="story" data-journey aria-labelledby="story-title">
+      <div class="story-pin">
+        <div class="container story-grid">
+          <div class="story-copy">
+            <p class="eyebrow">{{t:story.eyebrow}}</p>
+            <h2 class="headline-m" id="story-title">{{t:story.title}}</h2>
+            <ol class="story-steps">
+              <li class="is-active"><time>21:47</time><div><h3>{{t:story.1.t}}</h3><p>{{t:story.1.p}}</p></div></li>
+              <li><time>21:50</time><div><h3>{{t:story.2.t}}</h3><p>{{t:story.2.p}}</p></div></li>
+              <li><time>21:56</time><div><h3>{{t:story.3.t}}</h3><p>{{t:story.3.p}}</p></div></li>
+              <li><time>22:03</time><div><h3>{{t:story.4.t}}</h3><p>{{t:story.4.p}}</p></div></li>
+            </ol>
+            <div class="story-progress" aria-hidden="true"><i></i></div>
+          </div>
+          <div class="story-device">
+            <div class="phone" data-pin="4827" role="img" aria-label="{{t:story.phone_label}}">
+              <div class="phone-screen" aria-hidden="true">
+                <span class="phone-island"></span>
+                <div class="phone-status"><span data-clock>21:47</span><span class="bars"><i></i><i></i><i></i><i></i></span></div>
+                <div class="phone-map">
+              {{shared:phone-map}}
+                </div>
+                <div class="phone-sheet">
+                  <div class="grab"></div>
+                  <div class="eta" data-eta data-template="{{t:story.eta}}" data-arrived="{{t:story.arrived}}">{{t:story.eta_start}}</div>
+                  <div class="sub" data-status data-statuses="{{t:story.statuses}}">{{t:story.status_start}}</div>
+                  <div class="unit">
+                    <span class="unit-ic"><svg viewBox="0 0 130 100">{{shared:robot-mini}}</svg></span>
+                    <div><b>DNG-07</b><span>{{t:story.unit}}</span></div>
+                    <span class="pill">{{t:story.live}}</span>
+                  </div>
+                </div>
+                <div class="phone-pin">
+                  <span class="lock">{{icon:lock}}</span>
+                  <h4>{{t:story.pin_title}}</h4>
+                  <p>{{t:story.pin_text}}</p>
+                  <div class="pin-digits"><i></i><i></i><i></i><i></i></div>
+                  <span class="done">{{t:story.pin_done}}</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= PLATFORM ========================= -->
+    <section class="band theme-light" aria-labelledby="platform-title">
+      <div class="container">
+        <div class="band-head center">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:platform.eyebrow}}</p>
+          <h2 class="headline-m" id="platform-title" data-split>{{t:platform.title}}</h2>
+          <p class="intro" data-reveal data-delay="0.2">{{t:platform.intro}}</p>
+        </div>
+        <div data-reveal="scale" data-anim data-live-dash>
+          {{shared:dashboard}}
+        </div>
+        <p class="caption ui-caption">{{t:platform.caption}}</p>
+        <div class="features" data-stagger>
+          <div class="feature"><div class="f-ic">{{icon:map}}</div><h3>{{t:platform.f1.t}}</h3><p>{{t:platform.f1.p}}</p></div>
+          <div class="feature"><div class="f-ic">{{icon:plug}}</div><h3>{{t:platform.f2.t}}</h3><p>{{t:platform.f2.p}}</p></div>
+          <div class="feature"><div class="f-ic">{{icon:headset}}</div><h3>{{t:platform.f3.t}}</h3><p>{{t:platform.f3.p}}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== NUMBERS ========================== -->
+    <section class="band theme-dark" aria-labelledby="numbers-title">
+      <div class="container">
+        <h2 class="headline-m band-head" id="numbers-title" data-reveal>{{t:numbers.title}}</h2>
+        <div class="numbers-row" data-stagger>
+          <div class="stat-big"><div class="v"><span data-count="24">24</span><small>/7</small></div><p>{{t:numbers.1}}</p></div>
+          <div class="stat-big"><div class="v"><span data-count="60" data-prefix="−">−60</span><small>%</small><sup><a href="#fn-1">1</a></sup></div><p>{{t:numbers.2}}</p></div>
+          <div class="stat-big"><div class="v"><span data-count="48">48</span><small>h</small></div><p>{{t:numbers.3}}</p></div>
+          <div class="stat-big"><div class="v"><span data-count="0">0</span><small>g</small><sup><a href="#fn-2">2</a></sup></div><p>{{t:numbers.4}}</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= INDUSTRIES ========================= -->
+    <section class="band theme-grey" aria-labelledby="ind-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:ind.eyebrow}}</p>
+          <h2 class="headline-m" id="ind-title" data-split>{{t:ind.title}}</h2>
+        </div>
+        <div class="tiles">
+          <article class="tile" data-reveal><p class="eyebrow">{{t:ind.1.k}}</p><h3>{{t:ind.1.t}}</h3><p>{{t:ind.1.p}}</p><a class="more" href="{{url:solutions}}#restaurants">{{t:more}}</a><div class="t-art" data-anim>{{shared:t-art-restaurant}}</div></article>
+          <article class="tile" data-reveal data-delay="0.1"><p class="eyebrow">{{t:ind.2.k}}</p><h3>{{t:ind.2.t}}</h3><p>{{t:ind.2.p}}</p><a class="more" href="{{url:solutions}}#retail">{{t:more}}</a><div class="t-art" data-anim>{{shared:t-art-retail}}</div></article>
+          <article class="tile" data-reveal><p class="eyebrow">{{t:ind.3.k}}</p><h3>{{t:ind.3.t}}</h3><p>{{t:ind.3.p}}</p><a class="more" href="{{url:solutions}}#logistics">{{t:more}}</a><div class="t-art" data-anim>{{shared:t-art-logistics}}</div></article>
+          <article class="tile" data-reveal data-delay="0.1"><p class="eyebrow">{{t:ind.4.k}}</p><h3>{{t:ind.4.t}}</h3><p>{{t:ind.4.p}}</p><a class="more" href="{{url:solutions}}#campus">{{t:more}}</a><div class="t-art" data-anim>{{shared:t-art-campus}}</div></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================== PRICING ========================== -->
+    <section class="band theme-light" aria-labelledby="price-title">
+      <div class="container">
+        <div class="band-head center">
+          <p class="eyebrow eyebrow--brand" data-reveal>{{t:price.eyebrow}}</p>
+          <h2 class="headline-m" id="price-title" data-split>{{t:price.title}}</h2>
+          <p class="intro" data-reveal data-delay="0.2">{{t:price.intro}}</p>
+        </div>
+        {{partial:plans}}
+        <p class="center" data-reveal><a class="more" href="{{url:pricing}}">{{t:price.link}}</a></p>
+      </div>
+    </section>
+
+{{partial:cta}}

@@ -1,0 +1,40 @@
+<svg class="art-night" viewBox="0 0 400 260" preserveAspectRatio="xMidYMax slice" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="gaSky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#080c10"/><stop offset="1" stop-color="#121a24"/></linearGradient>
+                <radialGradient id="gaMoonHalo" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#cfe9ff" stop-opacity=".28"/><stop offset="1" stop-color="#cfe9ff" stop-opacity="0"/></radialGradient>
+                <radialGradient id="gaLampCone" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffd58a" stop-opacity=".32"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+                <linearGradient id="gaHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#9befff" stop-opacity=".5"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
+                <linearGradient id="gaRoadShine" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity="0"/><stop offset=".5" stop-color="#5ce6f7" stop-opacity=".35"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+              </defs>
+              <rect width="400" height="260" fill="url(#gaSky)"/>
+              <circle class="night-halo" cx="306" cy="52" r="58" fill="url(#gaMoonHalo)"/>
+              <circle cx="306" cy="52" r="20" fill="#eef4fb"/>
+              <circle cx="316" cy="45" r="18" fill="#0a0f15"/>
+              <g fill="#f5f5f7">
+                <circle class="twinkle" cx="62" cy="34" r="1.5"/><circle class="twinkle tw2" cx="128" cy="62" r="1.1"/><circle class="twinkle tw3" cx="196" cy="26" r="1.3"/>
+                <circle class="twinkle tw2" cx="248" cy="80" r="1"/><circle class="twinkle" cx="366" cy="104" r="1.2"/><circle class="twinkle tw3" cx="30" cy="86" r="1"/>
+              </g>
+              <!-- skyline -->
+              <g fill="#141a21"><rect x="0" y="118" width="58" height="142"/><rect x="60" y="92" width="50" height="168"/><rect x="112" y="132" width="72" height="128"/><rect x="186" y="104" width="40" height="156"/><rect x="250" y="112" width="58" height="148"/><rect x="310" y="138" width="90" height="122"/></g>
+              <g fill="#ffcf7a">
+                <rect class="win w1" x="72" y="108" width="7" height="9" rx="1"/><rect class="win w2" x="90" y="128" width="7" height="9" rx="1"/><rect class="win w3" x="72" y="148" width="7" height="9" rx="1"/>
+                <rect class="win w4" x="126" y="146" width="7" height="9" rx="1"/><rect class="win w5" x="150" y="166" width="7" height="9" rx="1"/><rect class="win w2" x="196" y="122" width="7" height="9" rx="1"/>
+                <rect class="win w3" x="264" y="128" width="7" height="9" rx="1"/><rect class="win w1" x="284" y="150" width="7" height="9" rx="1"/><rect class="win w5" x="326" y="154" width="7" height="9" rx="1"/><rect class="win w4" x="352" y="172" width="7" height="9" rx="1"/>
+              </g>
+              <!-- street lamps -->
+              <g>
+                <path class="lamp-cone" d="M88 172 L58 232 H118 Z" fill="url(#gaLampCone)"/>
+                <path class="lamp-cone lc2" d="M318 172 L288 232 H348 Z" fill="url(#gaLampCone)"/>
+                <g fill="#232a32"><rect x="84" y="170" width="3" height="62"/><rect x="314" y="170" width="3" height="62"/></g>
+                <g fill="#ffe1a6"><rect x="82" y="168" width="12" height="4" rx="2"/><rect x="312" y="168" width="12" height="4" rx="2"/></g>
+              </g>
+              <!-- road -->
+              <rect x="0" y="232" width="400" height="28" fill="#0d1217"/>
+              <g class="night-dashes" fill="#1f262e"><rect x="0" y="245" width="26" height="3" rx="1.5"/><rect x="60" y="245" width="26" height="3" rx="1.5"/><rect x="120" y="245" width="26" height="3" rx="1.5"/><rect x="180" y="245" width="26" height="3" rx="1.5"/><rect x="240" y="245" width="26" height="3" rx="1.5"/><rect x="300" y="245" width="26" height="3" rx="1.5"/><rect x="360" y="245" width="26" height="3" rx="1.5"/><rect x="420" y="245" width="26" height="3" rx="1.5"/></g>
+              <!-- robot cruising through the night -->
+              <g class="night-bot">
+                <path d="M120 206 L230 186 V236 L120 222 Z" fill="url(#gaHeadBeam)"/>
+                <rect x="40" y="234" width="80" height="4" rx="2" fill="url(#gaRoadShine)"/>
+                <g transform="translate(0 154) scale(.62)">{{shared:robot-mini}}</g>
+              </g>
+            </svg>

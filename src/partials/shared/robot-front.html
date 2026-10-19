@@ -1,0 +1,60 @@
+<svg class="robot-svg robot-front" viewBox="0 0 1000 560" aria-hidden="true" focusable="false" data-draw>
+              <defs>
+                <linearGradient id="rfShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".45" stop-color="#f2f3f5"/><stop offset="1" stop-color="#d3d8de"/></linearGradient>
+                <linearGradient id="rfSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+                <linearGradient id="rfChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".4" stop-color="#2c3036"/><stop offset="1" stop-color="#15171a"/></linearGradient>
+                <linearGradient id="rfVisor" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39404a"/><stop offset=".6" stop-color="#12161b"/><stop offset="1" stop-color="#050608"/></linearGradient>
+                <linearGradient id="rfTyre" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121417"/><stop offset=".5" stop-color="#34383e"/><stop offset="1" stop-color="#121417"/></linearGradient>
+                <radialGradient id="rfShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".32"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+                <clipPath id="rfVisorClip"><rect x="380" y="252" width="240" height="112" rx="52"/></clipPath>
+                <filter id="rfGlow" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+                <filter id="rfSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+              </defs>
+              <ellipse cx="500" cy="524" rx="210" ry="16" fill="url(#rfShadow)"/>
+              <!-- antenna -->
+              <line x1="392" y1="196" x2="392" y2="40" stroke="#c6ccd3" stroke-width="4" stroke-linecap="round"/>
+              <circle cx="392" cy="38" r="6" fill="#00d4f0"/>
+              <path class="rb-flag" d="M394 44 C412 46 428 52 446 58 C428 62 412 68 394 72 Z" fill="#00a9c7">
+                <animate attributeName="d" dur="1.8s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1"
+                  values="M394 44 C412 46 428 52 446 58 C428 62 412 68 394 72 Z;M394 44 C414 53 430 46 449 56 C430 65 414 73 394 72 Z;M394 44 C412 41 429 57 444 60 C428 58 412 75 394 72 Z;M394 44 C412 46 428 52 446 58 C428 62 412 68 394 72 Z"/>
+              </path>
+              <!-- tyres -->
+              <rect x="336" y="404" width="66" height="114" rx="28" fill="url(#rfTyre)"/>
+              <rect x="598" y="404" width="66" height="114" rx="28" fill="url(#rfTyre)"/>
+              <g stroke="#000" stroke-opacity=".45" stroke-width="3"><path d="M346 420 H392 M346 436 H392 M346 452 H392 M346 468 H392 M346 484 H392 M346 500 H392"/><path d="M608 420 H654 M608 436 H654 M608 452 H654 M608 468 H654 M608 484 H654 M608 500 H654"/></g>
+              <!-- chassis -->
+              <path d="M352 380 H648 V430 C648 446 636 458 620 458 H380 C364 458 352 446 352 430 Z" fill="url(#rfChassis)"/>
+              <path d="M366 386 H634" stroke="#fff" stroke-opacity=".12" stroke-width="2" stroke-linecap="round"/>
+              <!-- shell -->
+              <rect x="326" y="168" width="348" height="240" rx="72" fill="url(#rfShell)"/>
+              <rect x="326" y="168" width="348" height="240" rx="72" fill="url(#rfSide)"/>
+              <rect x="326" y="168" width="348" height="240" rx="72" fill="none" stroke="#000" stroke-opacity=".08"/>
+              <path d="M400 182 C 460 176 540 176 600 182" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round" filter="url(#rfSoft)"/>
+              <path d="M338 232 H662" stroke="#000" stroke-opacity=".08" stroke-width="2"/>
+              <path d="M338 235 H662" stroke="#fff" stroke-width="1.6"/>
+              <rect x="460" y="198" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".06"/>
+              <!-- visor -->
+              <rect x="380" y="252" width="240" height="112" rx="52" fill="url(#rfVisor)"/>
+              <g clip-path="url(#rfVisorClip)">
+                <path d="M392 280 C 450 262 540 262 610 282" fill="none" stroke="#fff" stroke-opacity=".16" stroke-width="10" stroke-linecap="round"/>
+                <rect class="rf-scan" x="380" y="252" width="6" height="112" fill="#5ce6f7" fill-opacity=".55"/>
+              </g>
+              <g class="rb-eyes">
+                <g filter="url(#rfGlow)" opacity=".9">
+                  <rect class="eye" x="446" y="284" width="26" height="48" rx="13" fill="#00d4f0"/>
+                  <rect class="eye" x="528" y="284" width="26" height="48" rx="13" fill="#00d4f0"/>
+                </g>
+                <rect class="eye" x="452" y="292" width="14" height="32" rx="7" fill="#d6fbff"/>
+                <rect class="eye" x="534" y="292" width="14" height="32" rx="7" fill="#d6fbff"/>
+              </g>
+              <!-- light strip -->
+              <rect class="status" x="420" y="398" width="160" height="6" rx="3" fill="#00d4f0" filter="url(#rfGlow)"/>
+              <!-- leader lines -->
+              <g class="anatomy-lines">
+                <line class="draw" x1="394" y1="52" x2="290" y2="52"/><circle class="hot" cx="394" cy="52" r="5"/>
+                <line class="draw" x1="368" y1="472" x2="290" y2="472"/><circle class="hot" cx="368" cy="472" r="5"/>
+                <line class="draw" x1="606" y1="186" x2="720" y2="186"/><circle class="hot" cx="606" cy="186" r="5"/>
+                <line class="draw" x1="554" y1="306" x2="720" y2="306"/><circle class="hot" cx="554" cy="306" r="5"/>
+                <line class="draw" x1="580" y1="401" x2="720" y2="401"/><circle class="hot" cx="580" cy="401" r="5"/>
+              </g>
+            </svg>

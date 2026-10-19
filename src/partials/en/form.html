@@ -1,0 +1,90 @@
+        <div class="form-card" data-lead data-reveal="right">
+          <form action="{{root}}send_lead.php" method="post" data-token="{{root}}csrf.php" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-firstname">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-firstname" name="firstname" autocomplete="given-name" maxlength="50" required aria-describedby="err-firstname">
+                <p class="field-error" id="err-firstname" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-lastname">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-lastname" name="lastname" autocomplete="family-name" maxlength="50" required aria-describedby="err-lastname">
+                <p class="field-error" id="err-lastname" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-email">Business email <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="f-email" name="email" autocomplete="email" maxlength="254" required aria-describedby="err-email" placeholder="name@company.com">
+                <p class="field-error" id="err-email" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Phone <span class="opt">(optional)</span></label>
+                <input type="tel" id="f-phone" name="phone" autocomplete="tel" maxlength="25" aria-describedby="err-phone">
+                <p class="field-error" id="err-phone" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-company">Company <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="f-company" name="company" autocomplete="organization" maxlength="120" required aria-describedby="err-company">
+              <p class="field-error" id="err-company" aria-live="polite"></p>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-type">Type of business <span class="req" aria-hidden="true">*</span></label>
+                <select id="f-type" name="user_type" required aria-describedby="err-user_type">
+                  <option value="">Select…</option>
+                  <option value="restaurant">Restaurant / food business</option>
+                  <option value="ecommerce">E-commerce / retail</option>
+                  <option value="logistics">Logistics company</option>
+                  <option value="campus">Campus / estate / site operator</option>
+                  <option value="other">Other business</option>
+                </select>
+                <p class="field-error" id="err-user_type" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-plan">Plan of interest <span class="opt">(optional)</span></label>
+                <select id="f-plan" name="plan" aria-describedby="err-plan">
+                  <option value="unsure">Not sure yet</option>
+                  <option value="starter">Starter</option>
+                  <option value="growth">Growth</option>
+                  <option value="enterprise">Enterprise</option>
+                </select>
+                <p class="field-error" id="err-plan" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-message">Tell us about your delivery challenge <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="message" maxlength="3000" required aria-describedby="err-message hint-message" placeholder="e.g. We serve a neighbourhood with many narrow streets and struggle with missed deliveries…"></textarea>
+              <p class="field-hint" id="hint-message"><span>Please don't include sensitive personal data.</span><span data-counter aria-hidden="true"></span></p>
+              <p class="field-error" id="err-message" aria-live="polite"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Leave this field empty</label>
+              <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="csrf" value="">
+
+            <label class="check" for="f-b2b">
+              <input type="checkbox" id="f-b2b" name="b2b" value="1" required aria-describedby="err-b2b">
+              <span>I am contacting you on behalf of a business (B2B). <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <p class="field-error" id="err-b2b" aria-live="polite"></p>
+            <label class="check" for="f-privacy">
+              <input type="checkbox" id="f-privacy" name="privacy" value="1" required aria-describedby="err-privacy">
+              <span>I have read the information on how my personal data is processed in the <a href="{{url:privacy}}">Privacy policy</a>. <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <p class="field-error" id="err-privacy" aria-live="polite"></p>
+
+            <button class="btn btn--primary btn--block" type="submit" data-magnetic><span class="spinner" aria-hidden="true"></span><span class="label">Book my free demo</span> <span class="arrow" aria-hidden="true">→</span></button>
+            <div class="form-status" aria-live="assertive"></div>
+
+            <p class="info-clause">The controller of your personal data is {{c.name}}, {{c.address}}. We process the data provided in this form to answer your enquiry and prepare an offer (Art. 6(1)(b) and (f) GDPR) and keep it for up to 12 months after our last contact, unless we sign a contract. You have the right to access, rectify and erase your data, restrict or object to processing, data portability and to lodge a complaint with a supervisory authority. Details: <a href="{{url:privacy}}">Privacy policy</a>. Fields marked * are required to answer your enquiry.</p>
+          </form>
+          <div class="form-success" role="status">
+            <svg viewBox="0 0 72 72" fill="none" aria-hidden="true" data-draw><circle cx="36" cy="36" r="33" stroke="currentColor" stroke-width="2"/><path d="M22 37l9 9 19-20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Thank you — your request is in.</h3>
+            <p>We'll reply within one business day to arrange your demo. A copy of what you sent stays only in our inbox; no newsletter, no spam.</p>
+          </div>
+        </div>

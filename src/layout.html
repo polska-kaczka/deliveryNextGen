@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="robots" content="{{robots}}">
+  <link rel="canonical" href="{{canonical}}">
+  {{alternates}}
+  <meta name="theme-color" content="#fbfbfd">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DeliveryNextGen">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{og_image}}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="{{s.og_locale}}">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{root}}assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
+  <link rel="stylesheet" href="{{root}}assets/css/main.css?v={{ver}}">
+  <script src="{{root}}assets/js/boot.js?v={{ver}}"></script>
+  <script src="{{root}}assets/js/main.js?v={{ver}}" defer></script>
+  <script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body class="{{bodyclass}}">
+  <a class="skip-link" href="#main">{{s.skip}}</a>
+
+  <header class="gnav" id="gnav">
+    <div class="container gnav-inner">
+      <a class="brand" href="{{home_href}}" aria-label="{{s.home_label}}">{{logo:nav}}<span>DeliveryNextGen</span></a>
+      <nav class="gnav-links" aria-label="{{s.main_nav}}">
+        {{main_links}}
+      </nav>
+      <div class="gnav-actions">
+        <a class="lang-toggle" href="{{switch_href}}" hreflang="{{s.switch_lang}}" data-current="{{lang}}" aria-label="{{s.switch_label}}"><span class="lt-thumb" aria-hidden="true"></span><span class="lt-opt lt-en" aria-hidden="true">EN</span><span class="lt-opt lt-pl" aria-hidden="true">PL</span></a>
+        <a class="btn btn--sm" href="{{contact_href}}">{{s.cta}}</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="{{s.menu}}"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="{{s.mobile_nav}}">
+      {{mobile_links}}
+    </nav>
+    <a class="btn" href="{{contact_href}}">{{s.cta}}</a>
+  </div>
+
+  <main id="main" tabindex="-1">
+{{content}}
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      {{footnotes}}
+      <div class="footer-nav">
+        <div class="footer-col">
+          <a class="brand" href="{{home_href}}" aria-label="{{s.home_label}}">{{logo:footer}}<span>DeliveryNextGen</span></a>
+          <p>{{s.footer_desc}}</p>
+        </div>
+        <div class="footer-col">
+          <h2>{{s.f_product}}</h2>
+          <ul>
+            <li><a href="{{url:how}}">{{nav.how}}</a></li>
+            <li><a href="{{url:solutions}}">{{nav.solutions}}</a></li>
+            <li><a href="{{url:pricing}}">{{nav.pricing}}</a></li>
+            <li><a href="{{url:faq}}">FAQ</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>{{s.f_company}}</h2>
+          <ul>
+            <li><a href="{{url:about}}">{{nav.about}}</a></li>
+            <li><a href="{{url:contact}}">{{nav.contact}}</a></li>
+            <li><a href="mailto:{{raw.email}}">{{raw.email}}</a></li>
+            <li><a href="tel:{{raw.phone_href}}">{{raw.phone}}</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>{{s.f_legal}}</h2>
+          <ul>
+            <li><a href="{{url:legal}}">{{nav.legal}}</a></li>
+            <li><a href="{{url:terms}}">{{nav.terms}}</a></li>
+            <li><a href="{{url:privacy}}">{{nav.privacy}}</a></li>
+            <li><a href="{{url:cookies}}">{{nav.cookies}}</a></li>
+            <li><a href="{{url:accessibility}}">{{nav.accessibility}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © <span data-year>{{year}}</span> {{c.name}}. {{s.f_rights}} {{s.f_b2b}}</p>
+        <div class="footer-legal">
+          <a href="{{url:privacy}}">{{nav.privacy}}</a>
+          <a href="{{url:terms}}">{{nav.terms}}</a>
+          <a href="{{url:legal}}">{{nav.legal}}</a>
+          <button type="button" data-cookie-settings>{{s.f_cookie_settings}}</button>
+        </div>
+        <p class="footer-lang"><a href="{{switch_href}}" hreflang="{{s.switch_lang}}" lang="{{s.switch_lang}}">{{s.lang_name}}</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="to-top" type="button" aria-label="{{s.f_top}}">{{icon:up}}</button>
+
+  <section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-banner-title" hidden>
+    <h2 id="cookie-banner-title">{{s.c_title}}</h2>
+    <p>{{s.c_text}} <a href="{{url:cookies}}">{{s.c_more}}</a></p>
+    <div class="cookie-actions">
+      <button class="btn btn--secondary" type="button" data-consent-reject>{{s.c_reject}}</button>
+      <button class="btn btn--secondary" type="button" data-cookie-settings>{{s.c_settings}}</button>
+      <button class="btn btn--secondary" type="button" data-consent-accept>{{s.c_accept}}</button>
+    </div>
+  </section>
+
+  <dialog class="cookie-dialog" id="cookie-dialog" aria-labelledby="cookie-dialog-title" data-in-use="{{consent_in_use}}">
+    <div class="dlg-inner">
+      <h2 id="cookie-dialog-title">{{s.c_title}}</h2>
+      <p>{{s.c_dialog_text}} <a href="{{url:cookies}}">{{s.c_more}}</a></p>
+      <div class="cat">
+        <div class="cat-head"><b>{{s.c_nec}}</b><span class="always">{{s.c_always}}</span></div>
+        <p>{{s.c_nec_text}}</p>
+      </div>
+      <div class="cat">
+        <div class="cat-head">
+          <label for="consent-analytics"><b>{{s.c_an}}</b></label>
+          <span class="switch"><input type="checkbox" id="consent-analytics" name="consent-analytics" role="switch"><span></span></span>
+        </div>
+        <p>{{s.c_an_text}}{{unused:analytics}}</p>
+      </div>
+      <div class="cat">
+        <div class="cat-head">
+          <label for="consent-marketing"><b>{{s.c_mk}}</b></label>
+          <span class="switch"><input type="checkbox" id="consent-marketing" name="consent-marketing" role="switch"><span></span></span>
+        </div>
+        <p>{{s.c_mk_text}}{{unused:marketing}}</p>
+      </div>
+      <div class="dlg-actions">
+        <button class="btn btn--secondary" type="button" data-consent-reject>{{s.c_reject}}</button>
+        <button class="btn btn--secondary" type="button" data-consent-save>{{s.c_save}}</button>
+        <button class="btn btn--secondary" type="button" data-consent-accept>{{s.c_accept}}</button>
+      </div>
+      <div class="dlg-actions"><button class="btn btn--block" type="button" data-consent-close>{{s.c_close}}</button></div>
+    </div>
+  </dialog>
+</body>
+</html>

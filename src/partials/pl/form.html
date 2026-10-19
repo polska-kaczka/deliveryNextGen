@@ -1,0 +1,90 @@
+        <div class="form-card" data-lead data-reveal="right">
+          <form action="{{root}}send_lead.php" method="post" data-token="{{root}}csrf.php" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-firstname">Imię <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-firstname" name="firstname" autocomplete="given-name" maxlength="50" required aria-describedby="err-firstname">
+                <p class="field-error" id="err-firstname" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-lastname">Nazwisko <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="f-lastname" name="lastname" autocomplete="family-name" maxlength="50" required aria-describedby="err-lastname">
+                <p class="field-error" id="err-lastname" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-email">Służbowy e-mail <span class="req" aria-hidden="true">*</span></label>
+                <input type="email" id="f-email" name="email" autocomplete="email" maxlength="254" required aria-describedby="err-email" placeholder="imie@firma.pl">
+                <p class="field-error" id="err-email" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-phone">Telefon <span class="opt">(opcjonalnie)</span></label>
+                <input type="tel" id="f-phone" name="phone" autocomplete="tel" maxlength="25" aria-describedby="err-phone">
+                <p class="field-error" id="err-phone" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-company">Firma <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="f-company" name="company" autocomplete="organization" maxlength="120" required aria-describedby="err-company">
+              <p class="field-error" id="err-company" aria-live="polite"></p>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label for="f-type">Rodzaj działalności <span class="req" aria-hidden="true">*</span></label>
+                <select id="f-type" name="user_type" required aria-describedby="err-user_type">
+                  <option value="">Wybierz…</option>
+                  <option value="restaurant">Restauracja / gastronomia</option>
+                  <option value="ecommerce">E-commerce / handel</option>
+                  <option value="logistics">Firma logistyczna</option>
+                  <option value="campus">Kampus / osiedle / zarządca terenu</option>
+                  <option value="other">Inna działalność</option>
+                </select>
+                <p class="field-error" id="err-user_type" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="f-plan">Interesujący plan <span class="opt">(opcjonalnie)</span></label>
+                <select id="f-plan" name="plan" aria-describedby="err-plan">
+                  <option value="unsure">Jeszcze nie wiem</option>
+                  <option value="starter">Starter</option>
+                  <option value="growth">Growth</option>
+                  <option value="enterprise">Enterprise</option>
+                </select>
+                <p class="field-error" id="err-plan" aria-live="polite"></p>
+              </div>
+            </div>
+            <div class="field">
+              <label for="f-message">Opisz swoje wyzwanie z dostawami <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="f-message" name="message" maxlength="3000" required aria-describedby="err-message hint-message" placeholder="np. Obsługujemy dzielnicę z wieloma wąskimi uliczkami i mamy dużo nieudanych doręczeń…"></textarea>
+              <p class="field-hint" id="hint-message"><span>Prosimy nie podawać danych szczególnie chronionych.</span><span data-counter aria-hidden="true"></span></p>
+              <p class="field-error" id="err-message" aria-live="polite"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="f-website">Pozostaw to pole puste</label>
+              <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+            </div>
+            <input type="hidden" name="csrf" value="">
+
+            <label class="check" for="f-b2b">
+              <input type="checkbox" id="f-b2b" name="b2b" value="1" required aria-describedby="err-b2b">
+              <span>Kontaktuję się w imieniu przedsiębiorcy (B2B). <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <p class="field-error" id="err-b2b" aria-live="polite"></p>
+            <label class="check" for="f-privacy">
+              <input type="checkbox" id="f-privacy" name="privacy" value="1" required aria-describedby="err-privacy">
+              <span>Zapoznałem(-am) się z informacją o przetwarzaniu moich danych osobowych w <a href="{{url:privacy}}">Polityce prywatności</a>. <span class="req" aria-hidden="true">*</span></span>
+            </label>
+            <p class="field-error" id="err-privacy" aria-live="polite"></p>
+
+            <button class="btn btn--primary btn--block" type="submit" data-magnetic><span class="spinner" aria-hidden="true"></span><span class="label">Umów bezpłatne demo</span> <span class="arrow" aria-hidden="true">→</span></button>
+            <div class="form-status" aria-live="assertive"></div>
+
+            <p class="info-clause">Administratorem Twoich danych osobowych jest {{c.name}}, {{c.address}}. Dane z formularza przetwarzamy w celu odpowiedzi na zapytanie i przygotowania oferty (art. 6 ust. 1 lit. b i f RODO) i przechowujemy do 12 miesięcy od ostatniego kontaktu, chyba że zawrzemy umowę. Przysługuje Ci prawo dostępu do danych, ich sprostowania, usunięcia, ograniczenia przetwarzania, przenoszenia, wniesienia sprzeciwu oraz skargi do Prezesa UODO. Szczegóły: <a href="{{url:privacy}}">Polityka prywatności</a>. Pola oznaczone * są niezbędne do udzielenia odpowiedzi.</p>
+          </form>
+          <div class="form-success" role="status">
+            <svg viewBox="0 0 72 72" fill="none" aria-hidden="true" data-draw><circle cx="36" cy="36" r="33" stroke="currentColor" stroke-width="2"/><path d="M22 37l9 9 19-20" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <h3>Dziękujemy — zgłoszenie dotarło.</h3>
+            <p>Odezwiemy się w ciągu jednego dnia roboczego, aby umówić demo. Twoja wiadomość trafia tylko do naszej skrzynki — bez newslettera i bez spamu.</p>
+          </div>
+        </div>

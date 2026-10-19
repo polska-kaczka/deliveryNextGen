@@ -1,0 +1,93 @@
+---
+title: Pricing — DeliveryNextGen
+description: Transparent monthly plans for autonomous delivery robots: Starter €299, Growth €799, Enterprise custom. Net prices for business customers.
+---
+    <section class="page-hero center" aria-labelledby="page-title">
+            <div class="container">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="{{url:home}}">Home</a></li><li aria-current="page">Pricing</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Pricing</p>
+        <h1 class="headline-xl" id="page-title" data-split>Pay for robots, not for overtime.</h1>
+        <p class="lead" data-reveal data-delay="0.3">Three plans based on monthly delivery volume. Scale up or down as your volume changes. All prices are net and apply to business customers.</p>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="plans-title">
+      <div class="container">
+        <h2 class="sr-only" id="plans-title">Plans</h2>
+        {{partial:plans}}
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="compare-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Compare</p>
+          <h2 class="h2" id="compare-title" data-split>What's included in each plan</h2>
+        </div>
+        <div class="compare-wrap" data-reveal>
+          <table class="compare">
+            <caption class="sr-only">Feature comparison of the Starter, Growth and Enterprise plans</caption>
+            <thead><tr><th scope="col">Feature</th><th scope="col">Starter</th><th scope="col">Growth</th><th scope="col">Enterprise</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Deliveries per month</th><td>up to 300</td><td>up to 1,000</td><td>unlimited</td></tr>
+              <tr><th scope="row">Autonomous robots</th><td>1</td><td>3</td><td>full fleet</td></tr>
+              <tr><th scope="row">Real-time GPS tracking</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">PIN-secured cargo</th><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">API access</th><td class="yes">✓</td><td>full API + webhooks</td><td>custom integrations</td></tr>
+              <tr><th scope="row">Priority AI dispatching</th><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Restaurant mode</th><td class="no">—</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">Analytics dashboard</th><td class="no">—</td><td class="yes">✓</td><td>white-label</td></tr>
+              <tr><th scope="row">Support</th><td>email</td><td>dedicated account manager</td><td>24/7 priority</td></tr>
+              <tr><th scope="row">SLA guarantees</th><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+              <tr><th scope="row">On-site deployment team</th><td class="no">—</td><td class="no">—</td><td class="yes">✓</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="calc-title">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Estimate</p>
+          <h2 class="h2" id="calc-title" data-split>What would a plan cost per delivery?</h2>
+          <p class="lead" data-reveal data-delay="0.2">Move the sliders to compare your current delivery cost with the plan that fits your volume.</p>
+        </div>
+        <div class="calc" data-calc data-reveal>
+          <div>
+            <div class="field-range">
+              <label for="calc-volume">Deliveries per month <output>300</output></label>
+              <input type="range" id="calc-volume" min="50" max="1500" step="10" value="300">
+            </div>
+            <div class="field-range">
+              <label for="calc-cost">Your current cost per delivery <output>€4.50</output></label>
+              <input type="range" id="calc-cost" min="1" max="12" step="0.1" value="4.5">
+            </div>
+            <p class="footnote">Indicative calculation based only on the list prices above (net). It is not an offer and does not include VAT, setup or local permit costs, which are confirmed during the demo.</p>
+          </div>
+          <div class="calc-out" aria-live="polite">
+            <div class="calc-row"><span>Your current monthly cost</span><b data-out="current">—</b></div>
+            <div class="calc-row"><span>Plan that fits your volume</span><b data-out="plan">—</b></div>
+            <div class="calc-row"><span>Plan cost per delivery</span><b data-out="per">—</b></div>
+            <div class="calc-big"><div class="v" data-out="diff">—</div><p>Monthly difference vs. your current cost (net)</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="pfaq-title">
+      <div class="container container--narrow">
+        <div class="section-head section-head--center">
+          <p class="eyebrow eyebrow--brand" data-reveal>Billing questions</p>
+          <h2 class="h2" id="pfaq-title" data-split>Good to know</h2>
+        </div>
+        <div class="faq" data-stagger>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="pf1">Are the prices net or gross?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="pf1" role="region"><div><p>All prices are net in EUR. VAT is added according to applicable law, including the reverse-charge mechanism for EU business customers where it applies.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="pf2">Can private individuals order?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="pf2" role="region"><div><p>No. Our services are offered to businesses only (B2B): restaurants, retailers, logistics companies and site operators. Sole traders are welcome; see the Terms of service for the rights that apply to them.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="pf3">What if I exceed my monthly volume?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="pf3" role="region"><div><p>We'll suggest moving to the next plan. Rules for additional deliveries are set out in your service agreement — nothing is charged that you haven't agreed in writing.</p></div></div></div>
+          <div class="faq-item"><button class="faq-q" type="button" aria-expanded="false" aria-controls="pf4">Is the price on this page binding?<span class="pm" aria-hidden="true"></span></button><div class="faq-a" id="pf4" role="region"><div><p>The prices are our current list prices and an invitation to negotiate. The binding price and terms are those in the service agreement you sign with us.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+{{partial:cta}}

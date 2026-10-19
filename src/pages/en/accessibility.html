@@ -1,0 +1,55 @@
+---
+title: Accessibility statement — DeliveryNextGen
+description: Our commitment to an accessible website, the measures we take, known limitations and how to report accessibility problems.
+---
+    <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="{{url:home}}">Home</a></li><li aria-current="page">Accessibility</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Legal</p>
+        <h1 class="display" id="page-title" data-split>Accessibility statement</h1>
+        <p class="lead" data-reveal data-delay="0.2">We want everyone to be able to use this website, regardless of device, ability or assistive technology.</p>
+        <div class="legal-meta" data-reveal data-delay="0.3"><span><b>{{s.legal_updated}}:</b> {{updated}}</span><span><b>Target:</b> WCAG 2.2 level AA</span></div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-label="Accessibility statement">
+      <div class="container legal-wrap">
+        <aside class="toc">
+          <b>{{s.legal_toc}}</b>
+          <ol>
+            <li><a href="#a1">1. Commitment</a></li>
+            <li><a href="#a2">2. Measures</a></li>
+            <li><a href="#a3">3. Motion &amp; animation</a></li>
+            <li><a href="#a4">4. Known limitations</a></li>
+            <li><a href="#a5">5. Feedback</a></li>
+          </ol>
+          <button class="btn btn--ghost btn--sm" type="button" data-print>{{icon:print}} {{s.legal_print}}</button>
+        </aside>
+        <article class="prose">
+          <h2 id="a1">1. Commitment</h2>
+          <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.2 at level AA, the reference standard of EN 301 549. This statement is published voluntarily: our services are offered to business customers only.</p>
+
+          <h2 id="a2">2. Measures</h2>
+          <ul>
+            <li>Semantic HTML with landmarks, headings in logical order and a “Skip to content” link;</li>
+            <li>full keyboard operation with visible focus indicators, including the menu, FAQ, cookie settings and form;</li>
+            <li>form fields with labels, required fields marked, and error messages announced to screen readers;</li>
+            <li>text alternatives for meaningful graphics; decorative graphics are hidden from assistive technology;</li>
+            <li>colour contrast checked for text and controls on the dark theme;</li>
+            <li>content that reflows on small screens and when zoomed to 200%.</li>
+          </ul>
+
+          <h2 id="a3">3. Motion &amp; animation</h2>
+          <p>The website uses scroll-based animations to tell the story of a delivery. If your device is set to <strong>reduce motion</strong> (“Reduce motion” on macOS/iOS, “Show animations” off on Windows, “Remove animations” on Android), all animations are disabled and the content is shown immediately. No content flashes more than three times per second.</p>
+
+          <h2 id="a4">4. Known limitations</h2>
+          <ul>
+            <li>The interactive route map on the home page is illustrative; the same information is provided as text in the list of steps next to it.</li>
+            <li>External fonts may not load in some corporate networks; the website then uses system fonts with no loss of content.</li>
+          </ul>
+
+          <h2 id="a5">5. Feedback</h2>
+          <p>If you find a barrier or need information in another format, write to <a href="mailto:{{raw.email}}">{{raw.email}}</a>. We reply within 14 days.</p>
+        </article>
+      </div>
+    </section>

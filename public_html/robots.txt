@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /send_lead.php
+Disallow: /csrf.php
+Disallow: /includes/
+
+Sitemap: https://deliverynextgen.threecode.eu/sitemap.xml

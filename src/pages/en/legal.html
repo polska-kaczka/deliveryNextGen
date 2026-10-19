@@ -1,0 +1,85 @@
+---
+title: Legal notice — DeliveryNextGen
+description: Information about the operator of the DeliveryNextGen website as required by EU, Polish and Spanish e-commerce law.
+---
+    <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="{{url:home}}">Home</a></li><li aria-current="page">Legal notice</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Legal</p>
+        <h1 class="display" id="page-title" data-split>Legal notice</h1>
+        <p class="lead" data-reveal data-delay="0.2">Who runs this website and how to reach us.</p>
+        <div class="legal-meta" data-reveal data-delay="0.3"><span><b>{{s.legal_updated}}:</b> {{updated}}</span></div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-label="Legal notice">
+      <div class="container legal-wrap">
+        <aside class="toc">
+          <b>{{s.legal_toc}}</b>
+          <ol>
+            <li><a href="#operator">Website operator</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#registration">Registration &amp; tax data</a></li>
+            <li><a href="#authorisations">Authorisations</a></li>
+            <li><a href="#hosting">Hosting</a></li>
+            <li><a href="#content">Content &amp; liability</a></li>
+            <li><a href="#ip">Intellectual property</a></li>
+            <li><a href="#documents">Other documents</a></li>
+          </ol>
+          <button class="btn btn--ghost btn--sm" type="button" data-print>{{icon:print}} {{s.legal_print}}</button>
+        </aside>
+        <article class="prose">
+          <p class="note">This notice fulfils the information obligations of Article 5 of the Polish Act on Providing Services by Electronic Means (<em>ustawa o świadczeniu usług drogą elektroniczną</em>) and Article 10 of Spanish Law 34/2002 on Information Society Services and E-commerce (LSSI-CE).</p>
+
+          <h2 id="operator">1. Website operator</h2>
+          <p>The website <strong>{{raw.brand}}</strong> available at this domain is operated by:</p>
+          <table>
+            <tbody>
+              <tr><th scope="row">Name</th><td>{{c.name}}</td></tr>
+              <tr><th scope="row">Legal form</th><td>{{c.form}}</td></tr>
+              <tr><th scope="row">Registered office</th><td>{{c.address}}, {{c.country}}</td></tr>
+            </tbody>
+          </table>
+          <p>Hereinafter: the “Service Provider”, “we” or “us”.</p>
+
+          <h2 id="contact">2. Contact</h2>
+          <ul>
+            <li>Email: <a href="mailto:{{raw.email}}">{{raw.email}}</a></li>
+            <li>Phone: <a href="tel:{{raw.phone_href}}">{{raw.phone}}</a></li>
+            <li>Contact form: <a href="{{url:contact}}">Contact page</a></li>
+          </ul>
+          <p>We aim to reply within one business day.</p>
+
+          <h2 id="registration">3. Registration &amp; tax data</h2>
+          <table>
+            <tbody>
+              <tr><th scope="row">Register</th><td>{{c.registry}}</td></tr>
+              <tr><th scope="row">Tax ID</th><td>{{c.tax_id}}</td></tr>
+              <tr><th scope="row">EU VAT number</th><td>{{c.vat_id}}</td></tr>
+              <tr><th scope="row">Share capital</th><td>{{c.capital}}</td></tr>
+            </tbody>
+          </table>
+
+          <h2 id="authorisations">4. Authorisations</h2>
+          <p>{{c.permits}}</p>
+
+          <h2 id="hosting">5. Hosting</h2>
+          <p>The website is hosted by {{c.hosting}}, which processes data on our behalf under a data processing agreement.</p>
+
+          <h2 id="content">6. Content &amp; liability</h2>
+          <p>The content of this website is for general information about our services addressed to business customers. Prices, figures and the cost calculator are indicative and do not constitute an offer within the meaning of the civil law of Poland (Art. 66 of the Civil Code) or Spain; binding terms are set out exclusively in the service agreement.</p>
+          <p>We take care that the information is accurate and up to date but cannot guarantee that it is complete at all times. Links to external websites are provided for convenience; we have no influence on their content and are not responsible for it.</p>
+
+          <h2 id="ip">7. Intellectual property</h2>
+          <p>The DeliveryNextGen name and logo, texts, graphics, illustrations and the layout of this website are protected by copyright and other intellectual property rights. Copying or using them beyond the scope permitted by law requires our prior written consent.</p>
+
+          <h2 id="documents">8. Other documents</h2>
+          <ul>
+            <li><a href="{{url:terms}}">Terms of service</a> — rules for using the website and its electronic services</li>
+            <li><a href="{{url:privacy}}">Privacy policy</a> — how we process personal data</li>
+            <li><a href="{{url:cookies}}">Cookie policy</a> — cookies and similar technologies</li>
+            <li><a href="{{url:accessibility}}">Accessibility statement</a></li>
+          </ul>
+        </article>
+      </div>
+    </section>

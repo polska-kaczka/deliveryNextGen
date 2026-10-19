@@ -1,0 +1,98 @@
+@@ meta.title
+Jak to działa — DeliveryNextGen
+@@ meta.description
+Od zamówienia do drzwi klienta w czterech zautomatyzowanych krokach: przyjęcie zlecenia, dispatch, autonomiczna jazda i odbiór na PIN. Zobacz, co jest w środku robota.
+@@ bc.label
+Ścieżka nawigacji
+@@ bc.home
+Start
+@@ bc.here
+Jak to działa
+@@ hero.eyebrow
+Jak to działa
+@@ hero.title
+Od zamówienia do drzwi. Automatycznie.
+@@ hero.intro
+Nasza platforma obsługuje wszystko między „zamówienie złożone” a „dostarczone”. Twój zespół dalej gotuje, pakuje i sprzedaje.
+@@ steps.eyebrow
+Cztery kroki
+@@ steps.title
+Co dzieje się podczas dostawy.
+@@ steps.intro
+Każdy kurs przebiega w tych samych czterech krokach — niezależnie od tego, czy wieziemy kolację, paczkę czy próbki z laboratorium.
+@@ steps.1.t
+Zamówienie złożone
+@@ steps.1.p
+Zlecenie przychodzi z Twojej aplikacji, sklepu, POS lub naszego API — z punktem odbioru, adresem i oknem czasowym.
+@@ steps.2.t
+Robot wysłany
+@@ steps.2.p
+Przydzielamy najbliższego robota z wystarczającym poziomem baterii i planujemy trasę pod bieżące warunki.
+@@ steps.3.t
+W drodze
+@@ steps.3.p
+Robot jedzie chodnikami i strefami pieszymi, omija przeszkody. Każdy może śledzić go na żywo.
+@@ steps.4.t
+Przekazane
+@@ steps.4.p
+Jednorazowy PIN otwiera schowek. Potwierdzenie doręczenia jest zapisywane, a robot jedzie do kolejnego zlecenia.
+@@ inside.eyebrow
+Wnętrze robota
+@@ inside.title
+Mały na chodnik. Wystarczająco mądry na miasto.
+@@ inside.1.t
+Łączność
+@@ inside.1.p
+Transmisja danych komórkowych i pozycjonowanie satelitarne do śledzenia na żywo i zdalnego nadzoru.
+@@ inside.2.t
+Wielokołowe podwozie
+@@ inside.2.p
+Stabilne na kostce, podjazdach i nierównych nawierzchniach starówek.
+@@ inside.3.t
+Izolowany schowek
+@@ inside.3.p
+Utrzymuje ciepło jedzenia i chroni paczki. Otwiera się tylko PIN-em odbiorcy.
+@@ inside.4.t
+Czujniki percepcji
+@@ inside.4.p
+Kamery i czujniki odległości wykrywają pieszych, krawężniki i przeszkody.
+@@ inside.5.t
+Napęd elektryczny
+@@ inside.5.p
+W pełni elektryczny, ładowany w stacjach między zleceniami.
+@@ inside.note
+Specyfikacja techniczna (wymiary, ładowność, zasięg, prędkość) jest podawana dla każdego wdrożenia. <mark class="todo">[dodaj oficjalną kartę techniczną, gdy będzie dostępna]</mark>
+@@ safety.eyebrow
+Bezpieczeństwo i zgodność
+@@ safety.title
+Zaprojektowany, by odpowiedzialnie dzielić ulicę.
+@@ safety.1.t
+Człowiek w pętli
+@@ safety.1.p
+Jeśli robot nie poradzi sobie sam, operator dostaje alert i w kilka sekund może przejąć zdalne sterowanie.
+@@ safety.2.t
+Zezwolenia po naszej stronie
+@@ safety.2.p
+Zasady dla robotów dostawczych różnią się między miastami. Załatwiamy zezwolenia i potwierdzamy zasięg przed podpisaniem umowy.
+@@ safety.3.t
+Prywatność w projekcie
+@@ safety.3.p
+Dane nawigacyjne służą do bezpiecznej jazdy, a nie do profilowania ludzi. Szczegóły ustalamy w umowie powierzenia danych dla każdego wdrożenia.
+@@ api.eyebrow
+Integracja
+@@ api.title
+Uruchomienie w około 48 godzin.
+@@ api.intro
+Skorzystaj z REST API i webhooków, gotowej wtyczki albo dysponuj robotami z panelu na czas testów.
+@@ api.1
+Webhooki dla każdej zmiany statusu
+@@ api.2
+Wtyczki do popularnych systemów e-commerce i POS
+@@ api.3
+Panel no-code do ręcznego dispatchu
+@@ api.4
+Wdrożenie z opieką naszego zespołu
+@@ api.link
+Porozmawiaj z naszym zespołem
+@@ api.code_label
+Przykładowe zapytanie API tworzące dostawę oraz odpowiedź

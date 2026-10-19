@@ -1,0 +1,98 @@
+@@ meta.title
+Rozwiązania — restauracje, handel, logistyka, kampusy | DeliveryNextGen
+@@ meta.description
+Autonomiczne dostawy dla restauracji i dark kitchens, e-commerce i handlu, partnerów logistycznych, kampusów i osiedli grodzonych.
+@@ bc.label
+Ścieżka nawigacji
+@@ bc.home
+Start
+@@ bc.here
+Rozwiązania
+@@ hero.eyebrow
+Rozwiązania
+@@ hero.title
+Stworzone dla miejsc, do których bus nie dojedzie.
+@@ hero.intro
+Każda firma ma swoją ostatnią milę. Wybierz swoją i zobacz, jak flota robotów wpisuje się w Twój dzień.
+@@ tabs.label
+Branże
+@@ p1.tab
+Restauracje
+@@ p1.title
+Ciepłe jedzenie, na czas, za każdym razem.
+@@ p1.text
+Godziny szczytu nie powinny zależeć od tego, ilu kurierów akurat jest online. Tryb restauracyjny daje Twoim zamówieniom priorytetową kolejkę i izolowane schowki na krótkie okna dostaw.
+@@ p1.1
+Izolowany schowek utrzymujący temperaturę podczas kursu
+@@ p1.2
+Priorytetowy dispatch zamówień restauracyjnych w szczycie
+@@ p1.3
+Współpraca z Twoją aplikacją zamówień lub POS
+@@ p1.4
+Klienci śledzą robota na żywo i otwierają go PIN-em
+@@ p1.cta
+Demo dla restauracji
+@@ p2.tab
+Handel
+@@ p2.title
+Dostawa tego samego dnia z Twojej półki.
+@@ p2.text
+Zamień sklep lub mikromagazyn w lokalny hub realizacji zamówień. Zamówienia z internetu wyjeżdżają w kilka minut, a nie jutro.
+@@ p2.1
+Wtyczki do popularnych platform sklepowych oraz REST API
+@@ p2.2
+Okna dostaw wybierane przez klientów przy zamówieniu
+@@ p2.3
+Odbiór na PIN — koniec z paczkami pod drzwiami
+@@ p2.4
+Statusy dostaw w Twoich narzędziach obsługi klienta
+@@ p2.cta
+Demo dla handlu
+@@ p3.tab
+Logistyka
+@@ p3.title
+Oddaj nam najtrudniejsze ostatnie odcinki.
+@@ p3.text
+Busy zatrzymują się na granicy starówki — dalej jadą roboty. Połącz swoją sieć z naszą flotą dla adresów, do których Twoi kierowcy nie docierają efektywnie.
+@@ p3.1
+Punkty przeładunku w Twoich hubach lub na granicy strefy
+@@ p3.2
+Webhooki statusów do Twojego TMS lub WMS
+@@ p3.3
+Potwierdzenie doręczenia dla każdej przesyłki
+@@ p3.4
+Indywidualne SLA w planie Enterprise
+@@ p3.cta
+Porozmawiajmy o współpracy
+@@ p4.tab
+Kampusy
+@@ p4.title
+Sieć dostaw za Twoją bramą.
+@@ p4.text
+Uczelnie, parki biurowe, szpitale i osiedla — zamknięte tereny z wieloma adresami i kontrolą dostępu są idealne dla stałej floty.
+@@ p4.1
+Stałe stacje i trasy uzgodnione z zarządcą terenu
+@@ p4.2
+Dostawy wewnętrzne: poczta, próbki, catering, handel
+@@ p4.3
+Kontrola dostępu respektowana — żadnych otwartych bram
+@@ p4.4
+Panel white-label dla zarządcy terenu
+@@ p4.cta
+Zaplanuj pilotaż na kampusie
+@@ why.eyebrow
+Dlaczego roboty
+@@ why.title
+Co się zmienia, gdy ostatnia mila jeździ sama.
+@@ why.1.t
+Koniec z dziurami w grafiku
+@@ why.1.p
+Roboty nie biorą L4, nie potrzebują stawek nocnych i są gotowe o 7 rano w niedzielę.
+@@ why.2.t
+Mniej nieudanych doręczeń
+@@ why.2.p
+Śledzenie na żywo i odbiór na PIN sprawiają, że zamówienie trafia do właściwej osoby za pierwszym razem.
+@@ why.3.t
+Spokojniejsze ulice
+@@ why.3.p
+Kompaktowy i w pełni elektryczny — bez kolejnego busa na ulicach, które go nie pomieszczą.

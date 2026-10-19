@@ -1,0 +1,108 @@
+@@ meta.title
+About us — DeliveryNextGen
+@@ meta.description
+DeliveryNextGen was founded to fix the deliveries that fail every day because they can't reach their destination. Meet the team and see how we launch in a new city.
+@@ bc.label
+Breadcrumb
+@@ bc.home
+Home
+@@ bc.here
+About
+@@ hero.eyebrow
+About us
+@@ hero.title
+We build for the last hundred metres.
+@@ hero.intro
+Millions of deliveries fail every day because they can't reach the door. We started DeliveryNextGen to change that — one neighbourhood at a time.
+@@ mission.eyebrow
+Our mission
+@@ mission.text
+Make every address reachable — the alley, the pedestrian zone, the gated estate — <span class="hl">without adding another van</span> to streets that were never built for one.
+@@ launch.eyebrow
+How we launch in a new city
+@@ launch.title
+From first call to a running fleet.
+@@ launch.intro
+Every deployment follows the same five steps, so you know what happens and when before anything goes on the street.
+@@ launch.1.k
+Step 1
+@@ launch.1.t
+Coverage check
+@@ launch.1.p
+We map your delivery area, pavements and access points and confirm that robots can operate there.
+@@ launch.2.k
+Step 2
+@@ launch.2.t
+Local compliance
+@@ launch.2.p
+We obtain the permits and agreements the city or site owner requires.
+@@ launch.3.k
+Step 3
+@@ launch.3.t
+Pilot
+@@ launch.3.p
+A small fleet starts on selected routes. We measure delivery times and reliability together with you.
+@@ launch.4.k
+Step 4
+@@ launch.4.t
+Integration
+@@ launch.4.p
+Orders flow automatically from your app, shop or POS into our platform.
+@@ launch.5.k
+Step 5
+@@ launch.5.t
+Scale
+@@ launch.5.p
+Based on the pilot data, the fleet grows to match your volume and opening hours.
+@@ values.eyebrow
+What we stand for
+@@ values.title
+Three principles behind every robot.
+@@ values.1.t
+Safety first
+@@ values.1.p
+Robots share the pavement with people. Supervision, conservative speeds and remote operators come before efficiency.
+@@ values.2.t
+Lighter cities
+@@ values.2.p
+Electric, compact and quiet — less traffic and no tailpipe emissions where people live.
+@@ values.3.t
+Honest partnership
+@@ values.3.p
+Clear prices, clear contracts and coverage confirmed before you sign.
+@@ team.eyebrow
+Team
+@@ team.title
+The people behind the fleet.
+@@ team.1.r
+Founder and CEO
+@@ team.1.p
+Logistics entrepreneur with a passion for robotics and urban mobility.
+@@ team.2.n
+Robotics Lead
+@@ team.2.r
+Head of Engineering
+@@ team.2.p
+Former autonomous-vehicle engineer with more than eight years in embedded AI systems.
+@@ team.3.n
+Operations Director
+@@ team.3.r
+Operations
+@@ team.3.p
+Supply-chain specialist who has scaled last-mile logistics on three continents.
+@@ team.4.n
+Growth Lead
+@@ team.4.r
+Partnerships
+@@ team.4.p
+B2B strategist with roots in food-tech and retail.
+@@ team.note
+<mark class="todo">[Add names and photos of the team members before publishing]</mark>
+@@ careers.title
+Want to build this with us?
+@@ careers.text
+We're always glad to hear from engineers, operators and city partners.
+@@ careers.subject
+Careers
+@@ careers.link
+Write to us

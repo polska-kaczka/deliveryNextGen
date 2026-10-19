@@ -1,0 +1,51 @@
+<svg class="art-pin" viewBox="0 0 400 260" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
+              <defs>
+                <radialGradient id="gaPinGlow" cx=".5" cy=".75" r=".6"><stop offset="0" stop-color="#00d4f0" stop-opacity=".22"/><stop offset="1" stop-color="#00d4f0" stop-opacity="0"/></radialGradient>
+                <linearGradient id="gaPinFrame" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2b2e33"/><stop offset="1" stop-color="#0f1013"/></linearGradient>
+                <filter id="gaPinShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#000" flood-opacity=".16"/></filter>
+              </defs>
+              <rect width="400" height="260" fill="url(#gaPinGlow)"/>
+              <g filter="url(#gaPinShadow)">
+                <rect x="118" y="26" width="164" height="300" rx="34" fill="url(#gaPinFrame)"/>
+                <rect x="125" y="33" width="150" height="286" rx="28" class="pin-screen" fill="#f5f5f7"/>
+              </g>
+              <rect x="176" y="40" width="48" height="13" rx="6.5" fill="#0f1013"/>
+              <!-- lock -->
+              <g transform="translate(200 82)">
+                <path class="pin-shackle" d="M-7 -6 V-11 A7 7 0 0 1 7 -11 V-6" fill="none" stroke="#1d1d1f" stroke-width="3.2" stroke-linecap="round"/>
+                <rect class="pin-lockbody" x="-11" y="-6" width="22" height="17" rx="5" fill="#1d1d1f"/>
+                <circle cx="0" cy="2" r="2.2" fill="#fff"/>
+              </g>
+              <!-- PIN dots -->
+              <g fill="#1d1d1f" stroke="#1d1d1f" stroke-width="1.6">
+                <circle class="pin-dot pd1" cx="173" cy="114" r="5.5" fill-opacity="0"/>
+                <circle class="pin-dot pd2" cx="191" cy="114" r="5.5" fill-opacity="0"/>
+                <circle class="pin-dot pd3" cx="209" cy="114" r="5.5" fill-opacity="0"/>
+                <circle class="pin-dot pd4" cx="227" cy="114" r="5.5" fill-opacity="0"/>
+              </g>
+              <!-- keypad -->
+              <g fill="#e6e7eb">
+                <circle cx="160" cy="148" r="14"/><circle cx="200" cy="148" r="14"/><circle cx="240" cy="148" r="14"/>
+                <circle cx="160" cy="184" r="14"/><circle cx="200" cy="184" r="14"/><circle cx="240" cy="184" r="14"/>
+                <circle cx="160" cy="220" r="14"/><circle cx="200" cy="220" r="14"/><circle cx="240" cy="220" r="14"/>
+                <circle cx="200" cy="256" r="14"/>
+              </g>
+              <g fill="#007c99">
+                <circle class="pin-key pk1" cx="160" cy="184" r="14"/>
+                <circle class="pin-key pk2" cx="200" cy="220" r="14"/>
+                <circle class="pin-key pk3" cx="200" cy="148" r="14"/>
+                <circle class="pin-key pk4" cx="160" cy="220" r="14"/>
+              </g>
+              <g font-family="Inter, Arial, sans-serif" font-size="13" font-weight="500" fill="#1d1d1f" text-anchor="middle">
+                <text x="160" y="153">1</text><text x="200" y="153">2</text><text x="240" y="153">3</text>
+                <text x="160" y="189">4</text><text x="200" y="189">5</text><text x="240" y="189">6</text>
+                <text x="160" y="225">7</text><text x="200" y="225">8</text><text x="240" y="225">9</text>
+                <text x="200" y="261">0</text>
+              </g>
+              <!-- success -->
+              <g class="pin-ok">
+                <rect x="125" y="33" width="150" height="286" rx="28" fill="#1e8e3e" fill-opacity=".9"/>
+                <circle cx="200" cy="150" r="30" fill="#fff" fill-opacity=".18"/>
+                <path class="pin-tick" d="M186 150 L196 160 L216 139" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/>
+              </g>
+            </svg>

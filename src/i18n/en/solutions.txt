@@ -1,0 +1,98 @@
+@@ meta.title
+Solutions — restaurants, retail, logistics, campuses | DeliveryNextGen
+@@ meta.description
+Autonomous delivery for restaurants and dark kitchens, e-commerce and retail, logistics partners, campuses and gated estates.
+@@ bc.label
+Breadcrumb
+@@ bc.home
+Home
+@@ bc.here
+Solutions
+@@ hero.eyebrow
+Solutions
+@@ hero.title
+Built for the places vans can't reach.
+@@ hero.intro
+Every business has its own last mile. Pick yours to see how a robot fleet fits into your day.
+@@ tabs.label
+Industries
+@@ p1.tab
+Restaurants
+@@ p1.title
+Hot food, on time, every time.
+@@ p1.text
+Peak hours shouldn't depend on how many couriers happen to be online. Restaurant mode gives your orders a priority queue and insulated compartments for short delivery windows.
+@@ p1.1
+Insulated compartment that keeps temperature during the trip
+@@ p1.2
+Priority dispatch for restaurant orders at peak times
+@@ p1.3
+Works with your ordering app or POS
+@@ p1.4
+Customers track the robot live and open it with a PIN
+@@ p1.cta
+Demo for restaurants
+@@ p2.tab
+Retail
+@@ p2.title
+Same-day delivery from your own shelf.
+@@ p2.text
+Turn your shop or micro-warehouse into a local fulfilment hub. Orders placed online leave in minutes, not tomorrow.
+@@ p2.1
+Plugins for popular shop platforms, plus a REST API
+@@ p2.2
+Delivery slots your customers choose at checkout
+@@ p2.3
+PIN hand-over — no more parcels left on the doorstep
+@@ p2.4
+Delivery status pushed to your customer service tools
+@@ p2.cta
+Demo for retail
+@@ p3.tab
+Logistics
+@@ p3.title
+Hand over the hardest final drops.
+@@ p3.text
+Vans stop at the edge of the old town; robots take it from there. Combine your network with our fleet for the addresses your drivers can't reach efficiently.
+@@ p3.1
+Transfer points at your hubs or at the zone boundary
+@@ p3.2
+Status webhooks into your TMS or WMS
+@@ p3.3
+Proof of delivery logged for every parcel
+@@ p3.4
+Custom SLAs on the Enterprise plan
+@@ p3.cta
+Talk partnerships
+@@ p4.tab
+Campuses
+@@ p4.title
+A delivery network inside your gates.
+@@ p4.text
+Universities, business parks, hospitals and residential estates — closed areas with many addresses and controlled access are ideal for a permanent fleet.
+@@ p4.1
+Fixed stations and routes agreed with site management
+@@ p4.2
+Internal deliveries: mail, lab samples, catering, retail
+@@ p4.3
+Access control respected — no gates left open
+@@ p4.4
+White-label dashboard for the site operator
+@@ p4.cta
+Plan a campus pilot
+@@ why.eyebrow
+Why robots
+@@ why.title
+What changes when the last mile drives itself.
+@@ why.1.t
+No more shift gaps
+@@ why.1.p
+Robots don't call in sick, don't need night rates and are ready at 7 a.m. on a Sunday.
+@@ why.2.t
+Fewer failed attempts
+@@ why.2.p
+Live tracking and PIN hand-over mean the order reaches the right person the first time.
+@@ why.3.t
+Quieter streets
+@@ why.3.p
+Compact and fully electric, without adding another van to streets that can't take one.

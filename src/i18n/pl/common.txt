@@ -1,0 +1,58 @@
+@@ cta.demo
+Umów demo
+@@ more
+Dowiedz się więcej
+@@ ui.overview
+Przegląd
+@@ ui.deliveries
+Dostawy
+@@ ui.fleet
+Flota
+@@ ui.integrations
+Integracje
+@@ ui.team
+Zespół
+@@ ui.today
+Dziś
+@@ ui.date
+Piątek, 21:47
+@@ ui.new
+Nowa dostawa
+@@ ui.k1
+Dostawy
+@@ ui.k2
+Na czas
+@@ ui.k2v
+97,6%
+@@ ui.k2d
++1,4 pp
+@@ ui.k3
+Śr. kurs
+@@ ui.k4
+Roboty online
+@@ ui.k4s
+2 ładują się
+@@ ui.live
+Flota na żywo
+@@ ui.live_s
+Stare miasto
+@@ ui.recent
+Ostatnie
+@@ ui.all
+Wszystkie
+@@ ui.r1
+ul. Długa 14/2
+@@ ui.r2
+Rynek 3
+@@ ui.r3
+Zaułek św. Rocha 7
+@@ ui.r4
+ul. Księżycowa 22
+@@ ui.r5
+ul. Słoneczna 5, lok. B
+@@ ui.s_route
+W trasie
+@@ ui.s_done
+Dostarczone
+@@ ui.s_assigned
+Przydzielone

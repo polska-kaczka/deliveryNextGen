@@ -1,0 +1,19 @@
+# Secrets / server configuration (copy includes/config.example.php -> config.php)
+public_html/includes/config.php
+.env
+.env.*
+*.pem
+*.key
+
+# Runtime data
+dng-data/
+*.log
+
+# Local tooling
+__pycache__/
+*.pyc
+.claude/
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db

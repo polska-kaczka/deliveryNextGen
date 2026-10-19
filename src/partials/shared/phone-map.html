@@ -1,0 +1,39 @@
+<svg viewBox="0 0 300 440" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+                <g class="map-cam">
+                <rect class="map-bg" x="-200" y="-200" width="700" height="840"/>
+                <!-- building footprints (core + overscan for the following camera) -->
+                <g fill="#e2e6ea">
+                  <rect x="8" y="8" width="40" height="52" rx="3"/><rect x="74" y="10" width="72" height="48" rx="3"/><rect x="178" y="12" width="56" height="46" rx="3"/><rect x="258" y="10" width="36" height="50" rx="3"/>
+                  <rect x="8" y="82" width="40" height="64" rx="3"/><rect x="74" y="84" width="76" height="62" rx="3"/><rect x="258" y="84" width="36" height="62" rx="3"/>
+                  <rect x="8" y="168" width="40" height="106" rx="3"/><rect x="74" y="170" width="78" height="104" rx="3"/><rect x="258" y="170" width="36" height="104" rx="3"/>
+                  <rect x="8" y="298" width="40" height="62" rx="3"/><rect x="74" y="298" width="140" height="62" rx="3"/><rect x="258" y="298" width="36" height="62" rx="3"/>
+                  <rect x="122" y="384" width="90" height="50" rx="3"/>
+                  <rect x="-90" y="10" width="70" height="50" rx="3"/><rect x="-90" y="84" width="70" height="62" rx="3"/><rect x="-90" y="170" width="70" height="104" rx="3"/><rect x="-90" y="298" width="70" height="62" rx="3"/><rect x="-90" y="384" width="70" height="80" rx="3"/>
+                  <rect x="318" y="10" width="70" height="50" rx="3"/><rect x="318" y="84" width="70" height="62" rx="3"/><rect x="318" y="170" width="70" height="104" rx="3"/><rect x="318" y="298" width="70" height="62" rx="3"/>
+                  <rect x="8" y="-60" width="40" height="44" rx="3"/><rect x="74" y="-60" width="72" height="44" rx="3"/><rect x="178" y="-60" width="56" height="44" rx="3"/><rect x="258" y="-60" width="36" height="44" rx="3"/>
+                  <rect x="8" y="384" width="40" height="80" rx="3"/><rect x="8" y="476" width="100" height="50" rx="3"/><rect x="122" y="452" width="90" height="70" rx="3"/>
+                </g>
+                <rect class="map-park" x="178" y="168" width="58" height="106" rx="6"/>
+                <path class="map-water" d="M228 384 C 250 372, 280 380, 330 362 V560 H210 Z"/>
+                <!-- roads -->
+                <path d="M-200 -2 H500 M-200 70 H500 M-200 156 H500 M-200 286 H500 M-200 372 H500 M60 -200 V640 M246 -200 V640 M110 372 V640 M-60 -200 V640 M346 -200 V372" stroke="#fff" stroke-width="12" fill="none"/>
+                <path d="M164 156 V286" stroke="#fff" stroke-width="6" fill="none"/>
+                <text class="map-label" x="170" y="222" transform="rotate(90 170 222)" text-anchor="middle">{{s.map_alley}}</text>
+                <text class="map-label" x="120" y="283">AVENIDA</text>
+                <!-- route -->
+                <path class="route-base" d="M60 390 L60 300 Q60 286 74 286 L150 286 Q164 286 164 272 L164 170 Q164 156 178 156 L232 156 Q246 156 246 142 L246 70"/>
+                <path class="route" d="M60 390 L60 300 Q60 286 74 286 L150 286 Q164 286 164 272 L164 170 Q164 156 178 156 L232 156 Q246 156 246 142 L246 70"/>
+                <!-- obstacle -->
+                <g class="map-obstacle" transform="translate(150 214)"><circle r="8" fill="#ffb020" stroke="#fff" stroke-width="2"/><path d="M0 -3.5 V1 M0 3.6 V3.8" stroke="#fff" stroke-width="2" stroke-linecap="round"/></g>
+                <!-- restaurant -->
+                <g transform="translate(60 390)"><circle r="11" fill="#1d1d1f" stroke="#fff" stroke-width="3"/><path d="M-3 -5 V5 M3 -5 V-1 Q3 1 1 1 H-1 M3 1 V5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" fill="none"/></g>
+                <!-- customer -->
+                <g transform="translate(246 70)"><circle r="12" fill="#1e8e3e" stroke="#fff" stroke-width="3"/><path d="M-5 1 L0 -4 L5 1 M-3.5 0 V5 H3.5 V0" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/></g>
+                <!-- robot (moved by JS) -->
+                <g class="robot-marker" transform="translate(60 390)">
+                  <circle class="map-pin-ring" r="9" fill="#00a3c4" fill-opacity=".35"/>
+                  <path class="heading" d="M0 -20 L7 -9 H-7 Z" fill="#00a3c4" fill-opacity=".55"/>
+                  <circle r="8" fill="#00a3c4" stroke="#fff" stroke-width="3"/>
+                </g>
+                </g>
+              </svg>

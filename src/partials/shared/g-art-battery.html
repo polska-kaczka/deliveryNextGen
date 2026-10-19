@@ -1,0 +1,33 @@
+<svg class="art-battery" viewBox="0 0 400 260" preserveAspectRatio="xMidYMax meet" aria-hidden="true" focusable="false">
+              <defs>
+                <clipPath id="gaCell"><rect x="112" y="80" width="186" height="110" rx="20"/></clipPath>
+                <linearGradient id="gaCharge" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#34c759"/><stop offset="1" stop-color="#1e8e3e"/></linearGradient>
+                <radialGradient id="gaCellGlow" cx=".5" cy=".5" r=".6"><stop offset="0" stop-color="#34c759" stop-opacity=".22"/><stop offset="1" stop-color="#34c759" stop-opacity="0"/></radialGradient>
+                <filter id="gaCellShadow" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".12"/></filter>
+              </defs>
+              <circle class="cell-glow" cx="205" cy="135" r="140" fill="url(#gaCellGlow)"/>
+              <!-- cable with energy pulses -->
+              <path d="M-10 214 C 40 214, 60 160, 100 150 C 106 148, 106 140, 104 136" fill="none" stroke="#d4d7dc" stroke-width="8" stroke-linecap="round"/>
+              <path class="energy" d="M-10 214 C 40 214, 60 160, 100 150 C 106 148, 106 140, 104 136" fill="none" stroke="#34c759" stroke-width="3.5" stroke-linecap="round" stroke-dasharray="4 18"/>
+              <!-- cell -->
+              <g filter="url(#gaCellShadow)">
+                <rect x="104" y="72" width="202" height="126" rx="28" fill="#ffffff"/>
+              </g>
+              <rect x="104" y="72" width="202" height="126" rx="28" fill="none" stroke="#000" stroke-opacity=".08" stroke-width="1.5"/>
+              <rect x="310" y="114" width="14" height="42" rx="6" fill="#d4d7dc"/>
+              <rect x="112" y="80" width="186" height="110" rx="20" fill="#f2f3f5"/>
+              <g clip-path="url(#gaCell)">
+                <g class="charge-level">
+                  <g class="charge-wave">
+                    <path d="M0 0 Q 24 -8 48 0 T 96 0 T 144 0 T 192 0 T 240 0 T 288 0 T 336 0 T 384 0 T 432 0 T 480 0 V 140 H0 Z" fill="url(#gaCharge)" transform="translate(64 80)"/>
+                  </g>
+                </g>
+              </g>
+              <path class="charge-bolt" d="M213 98 L190 138 H206 L198 172 L224 128 H208 L218 98 Z" fill="#fff" stroke="#1d1d1f" stroke-opacity=".08"/>
+              <g font-family="Inter, Arial, sans-serif" font-size="15" font-weight="600" fill="#1d1d1f" text-anchor="middle" class="charge-pct">
+                <text class="cp cp1" x="205" y="230">25%</text>
+                <text class="cp cp2" x="205" y="230">50%</text>
+                <text class="cp cp3" x="205" y="230">75%</text>
+                <text class="cp cp4" x="205" y="230" fill="#1e8e3e">100%</text>
+              </g>
+            </svg>

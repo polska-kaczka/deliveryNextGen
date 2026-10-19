@@ -1,0 +1,127 @@
+---
+title: Privacy policy — DeliveryNextGen
+description: How DeliveryNextGen processes personal data on this website: controller, purposes, legal bases, retention, recipients and your rights under the GDPR.
+---
+    <section class="page-hero" aria-labelledby="page-title">
+            <div class="container">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="{{url:home}}">Home</a></li><li aria-current="page">Privacy policy</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Legal</p>
+        <h1 class="display" id="page-title" data-split>Privacy policy</h1>
+        <p class="lead" data-reveal data-delay="0.2">What personal data we collect on this website, why, for how long, and how you can control it.</p>
+        <div class="legal-meta" data-reveal data-delay="0.3"><span><b>{{s.legal_updated}}:</b> {{updated}}</span><span><b>Basis:</b> Regulation (EU) 2016/679 (GDPR)</span></div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-label="Privacy policy">
+      <div class="container legal-wrap">
+        <aside class="toc">
+          <b>{{s.legal_toc}}</b>
+          <ol>
+            <li><a href="#controller">1. Controller</a></li>
+            <li><a href="#data">2. Data we process</a></li>
+            <li><a href="#purposes">3. Purposes &amp; legal bases</a></li>
+            <li><a href="#retention">4. Retention</a></li>
+            <li><a href="#recipients">5. Recipients</a></li>
+            <li><a href="#transfers">6. Transfers outside the EEA</a></li>
+            <li><a href="#rights">7. Your rights</a></li>
+            <li><a href="#complaint">8. Supervisory authorities</a></li>
+            <li><a href="#voluntary">9. Voluntary provision</a></li>
+            <li><a href="#automated">10. Automated decisions</a></li>
+            <li><a href="#cookies">11. Cookies</a></li>
+            <li><a href="#security">12. Security</a></li>
+            <li><a href="#changes">13. Changes</a></li>
+          </ol>
+          <button class="btn btn--ghost btn--sm" type="button" data-print>{{icon:print}} {{s.legal_print}}</button>
+        </aside>
+        <article class="prose">
+          <h2 id="controller">1. Controller</h2>
+          <p>The controller of personal data processed through this website is <strong>{{c.name}}</strong>, {{c.address}}, {{c.country}}, {{c.tax_id}} (“we”).</p>
+          <p>For any privacy matter contact us at <a href="mailto:{{raw.privacy_email}}">{{raw.privacy_email}}</a> or by post at the address above. We have not appointed a Data Protection Officer because we are not required to do so under Article 37 GDPR; if this changes, the DPO's contact details will be published here.</p>
+
+          <h2 id="data">2. Data we process</h2>
+          <h3>2.1 Contact and demo request form</h3>
+          <p>First and last name, business email address, company name, optional phone number, type of business, plan of interest, the content of your message, and the confirmations you tick in the form. Please do not send special categories of data (e.g. health data) in the message.</p>
+          <h3>2.2 Correspondence</h3>
+          <p>If you write to us by email or call us, we process your contact details and the content of the correspondence.</p>
+          <h3>2.3 Technical data</h3>
+          <ul>
+            <li><strong>Server logs</strong> kept by our hosting provider: IP address, date and time, requested URL, browser type (user agent), HTTP status.</li>
+            <li><strong>Anti-abuse data</strong>: when you submit the form, a one-way hashed (salted) form of your IP address is stored for up to 1 hour to limit repeated submissions.</li>
+            <li><strong>Session cookie</strong> set only when you start using the form, to protect it against forged requests (CSRF) — see the <a href="{{url:cookies}}">Cookie policy</a>.</li>
+          </ul>
+          <p>We do not use analytics, advertising or social-media tracking on this website.</p>
+
+          <h2 id="purposes">3. Purposes &amp; legal bases</h2>
+          <table>
+            <thead><tr><th scope="col">Purpose</th><th scope="col">Legal basis</th></tr></thead>
+            <tbody>
+              <tr><td>Answering your enquiry, arranging a demo and preparing an offer</td><td>Art. 6(1)(b) GDPR — steps taken at your request before entering into a contract, where you act for yourself as a sole trader; Art. 6(1)(f) GDPR — our legitimate interest in communicating with representatives of business customers and prospects, where you act on behalf of a company</td></tr>
+              <tr><td>Business correspondence and keeping in touch about the requested demo</td><td>Art. 6(1)(f) GDPR — legitimate interest in handling business communication</td></tr>
+              <tr><td>Securing the website and the form, preventing spam and abuse (logs, rate limiting, CSRF token)</td><td>Art. 6(1)(f) GDPR — legitimate interest in the security of our services; for the session cookie also Art. 5(3) of Directive 2002/58/EC (strictly necessary storage)</td></tr>
+              <tr><td>Establishing, pursuing or defending legal claims</td><td>Art. 6(1)(f) GDPR — legitimate interest in protecting our rights</td></tr>
+              <tr><td>Compliance with legal obligations (e.g. accounting and tax records, if a contract is concluded)</td><td>Art. 6(1)(c) GDPR</td></tr>
+            </tbody>
+          </table>
+          <p>Where we rely on legitimate interest, you may object at any time (see section 7).</p>
+
+          <h2 id="retention">4. Retention</h2>
+          <ul>
+            <li>Form enquiries and correspondence: up to <strong>12 months</strong> after our last contact, unless a contract is concluded — then for the term of the contract and the limitation period for claims.</li>
+            <li>Anti-abuse IP hash: <strong>up to 1 hour</strong>.</li>
+            <li>Session cookie: until you close your browser (or after 30 minutes of inactivity on the server).</li>
+            <li>Server logs: according to the hosting provider's retention period, <mark class="todo">[confirm with the hosting provider, typically 30–90 days]</mark>.</li>
+            <li>Data needed for legal claims: until the claims become time-barred.</li>
+          </ul>
+
+          <h2 id="recipients">5. Recipients</h2>
+          <p>We share personal data only where necessary, with:</p>
+          <ul>
+            <li><strong>Hosting provider</strong> — {{c.hosting}} (processor, data processing agreement under Art. 28 GDPR);</li>
+            <li><strong>Email provider</strong> — {{raw.mail_provider}}, Gordon House, Barrow Street, Dublin 4, Ireland (processor), which delivers and stores form messages;</li>
+            <li><strong>Font delivery</strong> — BunnyWay d.o.o., Cesta komandanta Staneta 4A, 1215 Medvode, Slovenia (“Bunny Fonts”), which receives your IP address when your browser loads the fonts used on this site; Bunny Fonts does not set cookies or log IP addresses according to its privacy statement;</li>
+            <li>IT, legal and accounting advisers bound by confidentiality, where needed;</li>
+            <li>public authorities, where required by law.</li>
+          </ul>
+          <p>We do not sell personal data and do not share it for advertising.</p>
+
+          <h2 id="transfers">6. Transfers outside the EEA</h2>
+          <p>Our email provider may process data through Google LLC in the United States. Such transfers rely on the European Commission's adequacy decision for the EU-U.S. Data Privacy Framework (Art. 45 GDPR), under which Google LLC is certified, and additionally on Standard Contractual Clauses (Art. 46(2)(c) GDPR). You can request a copy of the relevant safeguards by contacting us.</p>
+
+          <h2 id="rights">7. Your rights</h2>
+          <p>Under the GDPR you have the right to:</p>
+          <ul>
+            <li>access your data and receive a copy (Art. 15);</li>
+            <li>rectify inaccurate data (Art. 16);</li>
+            <li>erasure (“right to be forgotten”) (Art. 17);</li>
+            <li>restriction of processing (Art. 18);</li>
+            <li>data portability, where processing is based on a contract and automated (Art. 20);</li>
+            <li><strong>object</strong> at any time to processing based on our legitimate interest, on grounds relating to your particular situation (Art. 21);</li>
+            <li>withdraw consent at any time, where processing is based on consent, without affecting the lawfulness of processing before withdrawal (Art. 7(3)) — currently we do not rely on consent on this website.</li>
+          </ul>
+          <p>To exercise your rights, email <a href="mailto:{{raw.privacy_email}}">{{raw.privacy_email}}</a>. We respond without undue delay, at the latest within one month (extendable by two months in complex cases, of which we will inform you). We may ask for information needed to confirm your identity.</p>
+
+          <h2 id="complaint">8. Supervisory authorities</h2>
+          <p>You have the right to lodge a complaint with a data protection supervisory authority, in particular in the EU Member State of your habitual residence, place of work or the place of the alleged infringement, for example:</p>
+          <ul>
+            <li><span class="jur">PL</span>President of the Personal Data Protection Office (<em>Prezes Urzędu Ochrony Danych Osobowych</em>), ul. Stawki 2, 00-193 Warszawa, <a href="https://uodo.gov.pl" rel="noopener" target="_blank">uodo.gov.pl</a>;</li>
+            <li><span class="jur">ES</span>Spanish Data Protection Agency (<em>Agencia Española de Protección de Datos</em>), C/ Jorge Juan 6, 28001 Madrid, <a href="https://www.aepd.es" rel="noopener" target="_blank">aepd.es</a>.</li>
+          </ul>
+
+          <h2 id="voluntary">9. Voluntary provision</h2>
+          <p>Providing data is voluntary. Without the fields marked as required we cannot answer your enquiry. Optional fields (phone number, plan of interest) help us prepare but are not needed.</p>
+
+          <h2 id="automated">10. Automated decisions</h2>
+          <p>We do not make decisions based solely on automated processing, including profiling, that produce legal effects concerning you or similarly significantly affect you (Art. 22 GDPR). The anti-spam checks only block repeated or automated submissions.</p>
+
+          <h2 id="cookies">11. Cookies and local storage</h2>
+          <p>This website uses only strictly necessary cookies and local storage. Details, including how to manage them, are in the <a href="{{url:cookies}}">Cookie policy</a>.</p>
+
+          <h2 id="security">12. Security</h2>
+          <p>We protect data with appropriate technical and organisational measures (Art. 32 GDPR), including encrypted HTTPS connections, a strict Content Security Policy, protection of the form against forged requests and automated abuse, limited access to mailboxes, and data minimisation — we collect only what we need to answer you.</p>
+
+          <h2 id="changes">13. Changes</h2>
+          <p>We may update this policy when our processing or the law changes. The current version is always available on this page with the date of the last update.</p>
+          <p class="note">Jurisdiction notes: <span class="jur">PL</span> the GDPR is supplemented by the Polish Act of 10 May 2018 on the Protection of Personal Data. <span class="jur">ES</span> the GDPR is supplemented by Organic Law 3/2018 on the Protection of Personal Data and Guarantee of Digital Rights (LOPDGDD).</p>
+        </article>
+      </div>
+    </section>
