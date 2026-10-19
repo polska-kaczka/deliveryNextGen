@@ -35,8 +35,8 @@ description: How DeliveryNextGen processes personal data on this website: contro
         </aside>
         <article class="prose">
           <h2 id="controller">1. Controller</h2>
-          <p>The controller of personal data processed through this website is <strong>{{c.name}}</strong>, {{c.address}}, {{c.country}}, {{c.tax_id}} (“we”).</p>
-          <p>For any privacy matter contact us at <a href="mailto:{{raw.privacy_email}}">{{raw.privacy_email}}</a> or by post at the address above. We have not appointed a Data Protection Officer because we are not required to do so under Article 37 GDPR; if this changes, the DPO's contact details will be published here.</p>
+          <p>The controller of personal data processed through this website is <strong>{{c.who}}</strong>[[if address]], {{c.idplace}}[[/if]] (“we”).</p>
+          <p>For any privacy matter contact us at <a href="mailto:{{raw.privacy_email}}">{{raw.privacy_email}}</a>. We have not appointed a Data Protection Officer because we are not required to do so under Article 37 GDPR; if this changes, the DPO's contact details will be published here.</p>
 
           <h2 id="data">2. Data we process</h2>
           <h3>2.1 Contact and demo request form</h3>

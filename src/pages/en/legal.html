@@ -33,13 +33,13 @@ description: Information about the operator of the DeliveryNextGen website as re
 
           <h2 id="operator">1. Website operator</h2>
           <p>The website <strong>{{raw.brand}}</strong> available at this domain is operated by:</p>
-          <table>
+          [[if address]]<table>
             <tbody>
-              <tr><th scope="row">Name</th><td>{{c.name}}</td></tr>
-              <tr><th scope="row">Legal form</th><td>{{c.form}}</td></tr>
-              <tr><th scope="row">Registered office</th><td>{{c.address}}, {{c.country}}</td></tr>
+              [[if name]]<tr><th scope="row">Name</th><td>{{c.name}}</td></tr>[[/if]]
+              [[if form]]<tr><th scope="row">Legal form</th><td>{{c.form}}</td></tr>[[/if]]
+              <tr><th scope="row">Registered office</th><td>{{c.place}}</td></tr>
             </tbody>
-          </table>
+          </table>[[/if]]
           <p>Hereinafter: the “Service Provider”, “we” or “us”.</p>
 
           <h2 id="contact">2. Contact</h2>
@@ -51,17 +51,18 @@ description: Information about the operator of the DeliveryNextGen website as re
           <p>We aim to reply within one business day.</p>
 
           <h2 id="registration">3. Registration &amp; tax data</h2>
-          <table>
+[[if tax_id]]          <table>
             <tbody>
-              <tr><th scope="row">Register</th><td>{{c.registry}}</td></tr>
-              <tr><th scope="row">Tax ID</th><td>{{c.tax_id}}</td></tr>
-              <tr><th scope="row">EU VAT number</th><td>{{c.vat_id}}</td></tr>
-              <tr><th scope="row">Share capital</th><td>{{c.capital}}</td></tr>
+              [[if registry]]<tr><th scope="row">Register</th><td>{{c.registry}}</td></tr>[[/if]]
+              [[if tax_id]]<tr><th scope="row">Tax ID</th><td>{{c.tax_id}}</td></tr>[[/if]]
+              [[if vat_id]]<tr><th scope="row">EU VAT number</th><td>{{c.vat_id}}</td></tr>[[/if]]
+              [[if capital]]<tr><th scope="row">Share capital</th><td>{{c.capital}}</td></tr>[[/if]]
             </tbody>
-          </table>
+          </table>[[/if]]
+          [[ifnot tax_id]]<p>Registration and tax details are available on request at the email address given in section 2.</p>[[/ifnot]]
 
           <h2 id="authorisations">4. Authorisations</h2>
-          <p>{{c.permits}}</p>
+          [[if permits]]<p>{{c.permits}}</p>[[/if]][[ifnot permits]]<p>We provide the services in line with the rules in force in each city; where local rules require an authorisation to operate robots in public space, we obtain it before the service goes live.</p>[[/ifnot]]
 
           <h2 id="hosting">5. Hosting</h2>
           <p>The website is hosted by {{c.hosting}}, which processes data on our behalf under a data processing agreement.</p>
