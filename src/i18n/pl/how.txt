@@ -61,7 +61,7 @@ Napęd elektryczny
 @@ inside.5.p
 W pełni elektryczny, ładowany w stacjach między zleceniami.
 @@ inside.note
-Specyfikacja techniczna (wymiary, ładowność, zasięg, prędkość) jest podawana dla każdego wdrożenia. <mark class="todo">[dodaj oficjalną kartę techniczną, gdy będzie dostępna]</mark>
+Specyfikacja techniczna (wymiary, ładowność, zasięg, prędkość) jest podawana dla każdego wdrożenia. Kartę techniczną przekazujemy na życzenie podczas demo.
 @@ safety.eyebrow
 Bezpieczeństwo i zgodność
 @@ safety.title
