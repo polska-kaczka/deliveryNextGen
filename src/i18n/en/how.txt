@@ -61,7 +61,7 @@ Electric drive
 @@ inside.5.p
 Fully electric, recharged at stations between jobs.
 @@ inside.note
-Technical specifications (dimensions, payload, range, speed) are provided for each deployment. <mark class="todo">[add the official specification sheet when available]</mark>
+Technical specifications (dimensions, payload, range, speed) are provided for each deployment. We share the specification sheet on request during the demo.
 @@ safety.eyebrow
 Safety and compliance
 @@ safety.title

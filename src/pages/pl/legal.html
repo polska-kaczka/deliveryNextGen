@@ -32,14 +32,14 @@ description: Informacje o operatorze serwisu DeliveryNextGen wymagane przez prze
           <p class="note">Niniejsza nota realizuje obowiązki informacyjne z art. 5 ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną oraz art. 10 hiszpańskiej ustawy 34/2002 o usługach społeczeństwa informacyjnego i handlu elektronicznym (LSSI-CE).</p>
 
           <h2 id="operator">1. Operator serwisu</h2>
-          <p>Serwis <strong>{{raw.brand}}</strong> dostępny pod tą domeną prowadzi:</p>
-          <table>
+          <p>Serwis <strong>{{raw.brand}}</strong> dostępny pod tą domeną prowadzi[[if address]]:[[/if]][[ifnot address]] Usługodawca.[[/ifnot]]</p>
+          [[if address]]<table>
             <tbody>
-              <tr><th scope="row">Nazwa</th><td>{{c.name}}</td></tr>
-              <tr><th scope="row">Forma prawna</th><td>{{c.form}}</td></tr>
-              <tr><th scope="row">Siedziba</th><td>{{c.address}}, {{c.country}}</td></tr>
+              [[if name]]<tr><th scope="row">Nazwa</th><td>{{c.name}}</td></tr>[[/if]]
+              [[if form]]<tr><th scope="row">Forma prawna</th><td>{{c.form}}</td></tr>[[/if]]
+              <tr><th scope="row">Siedziba</th><td>{{c.place}}</td></tr>
             </tbody>
-          </table>
+          </table>[[/if]]
           <p>Dalej: „Usługodawca”, „my”.</p>
 
           <h2 id="contact">2. Kontakt</h2>
@@ -51,17 +51,18 @@ description: Informacje o operatorze serwisu DeliveryNextGen wymagane przez prze
           <p>Staramy się odpowiadać w ciągu jednego dnia roboczego.</p>
 
           <h2 id="registration">3. Dane rejestrowe i podatkowe</h2>
-          <table>
+[[if tax_id]]          <table>
             <tbody>
-              <tr><th scope="row">Rejestr</th><td>{{c.registry}}</td></tr>
-              <tr><th scope="row">Numer identyfikacji podatkowej</th><td>{{c.tax_id}}</td></tr>
-              <tr><th scope="row">Numer VAT UE</th><td>{{c.vat_id}}</td></tr>
-              <tr><th scope="row">Kapitał zakładowy</th><td>{{c.capital}}</td></tr>
+              [[if registry]]<tr><th scope="row">Rejestr</th><td>{{c.registry}}</td></tr>[[/if]]
+              [[if tax_id]]<tr><th scope="row">Numer identyfikacji podatkowej</th><td>{{c.tax_id}}</td></tr>[[/if]]
+              [[if vat_id]]<tr><th scope="row">Numer VAT UE</th><td>{{c.vat_id}}</td></tr>[[/if]]
+              [[if capital]]<tr><th scope="row">Kapitał zakładowy</th><td>{{c.capital}}</td></tr>[[/if]]
             </tbody>
-          </table>
+          </table>[[/if]]
+          [[ifnot tax_id]]<p>Dane rejestrowe i podatkowe udostępniamy na żądanie pod adresem e-mail wskazanym w punkcie 2.</p>[[/ifnot]]
 
           <h2 id="authorisations">4. Zezwolenia</h2>
-          <p>{{c.permits}}</p>
+          [[if permits]]<p>{{c.permits}}</p>[[/if]][[ifnot permits]]<p>Usługi świadczymy zgodnie z przepisami obowiązującymi w danym mieście; jeśli lokalne przepisy wymagają zezwolenia na ruch robotów w przestrzeni publicznej, uzyskujemy je przed uruchomieniem usługi.</p>[[/ifnot]]
 
           <h2 id="hosting">5. Hosting</h2>
           <p>Serwis jest hostowany przez {{c.hosting}}, który przetwarza dane w naszym imieniu na podstawie umowy powierzenia przetwarzania danych.</p>
