@@ -32,7 +32,7 @@ description: Informacje o operatorze serwisu DeliveryNextGen wymagane przez prze
           <p class="note">Niniejsza nota realizuje obowiązki informacyjne z art. 5 ustawy z dnia 18 lipca 2002 r. o świadczeniu usług drogą elektroniczną oraz art. 10 hiszpańskiej ustawy 34/2002 o usługach społeczeństwa informacyjnego i handlu elektronicznym (LSSI-CE).</p>
 
           <h2 id="operator">1. Operator serwisu</h2>
-          <p>Serwis <strong>{{raw.brand}}</strong> dostępny pod tą domeną prowadzi:</p>
+          <p>Serwis <strong>{{raw.brand}}</strong> dostępny pod tą domeną prowadzi[[if address]]:[[/if]][[ifnot address]] Usługodawca.[[/ifnot]]</p>
           [[if address]]<table>
             <tbody>
               [[if name]]<tr><th scope="row">Nazwa</th><td>{{c.name}}</td></tr>[[/if]]
