@@ -8,9 +8,9 @@ Reads   src/layout.html, src/partials/<lang>/*.html, src/pages/<lang>/*.html
 Writes  public_html/*.html (EN) and public_html/pl/*.html (PL),
         public_html/sitemap.xml
 
-Fill in COMPANY below before publishing. Every value that still starts with "["
-is rendered as a highlighted <mark class="todo"> on the site and is listed at
-the end of the build so nothing is missed.
+Fill in COMPANY below. Empty values are hidden on the site and listed at the end
+of the build so nothing is missed; a value starting with "[" would be rendered
+as a highlighted <mark class="todo">.
 """
 import html
 import json
@@ -36,25 +36,28 @@ DOCS_UPDATED = "18.10.2026"                          # date of the legal documen
 # the banner appears automatically and scripts wait for consent.
 CONSENT_IN_USE = []
 
+# Empty ("") = not provided yet: the field and its table row/section are hidden
+# on the site, and the build lists it at the end so it can be filled in later.
 COMPANY = {
     "brand": "DeliveryNextGen",
-    "name": "[Full legal name of the company]",
-    "form": "[Legal form, e.g. sp. z o.o. / S.L. / sole trader]",
-    "address": "[Registered address: street, number, postcode, city]",
-    "country": "[Country of registered office]",
-    "tax_id": "[Tax ID: NIP (PL) / NIF or CIF (ES)]",
-    "vat_id": "[EU VAT number, e.g. PL0000000000 / ESX0000000X]",
-    "registry": "[Register entry: KRS no. and court (PL) / Registro Mercantil, tomo, folio, hoja (ES) / CEIDG (PL sole trader)]",
-    "capital": "[Share capital, if a company — otherwise remove]",
+    "name": "",
+    "form": "",
+    "address": "",
+    "country": {"en": "Spain", "pl": "Hiszpania"},
+    "tax_id": "",
+    "vat_id": "",
+    "registry": "",
+    "capital": "",
     "email": "danielmedinabello5@gmail.com",
     "privacy_email": "danielmedinabello5@gmail.com",
     "phone": "+34 683 405 430",
     "phone_href": "+34683405430",
-    "hosting": "[Hosting provider: name and address, e.g. SEOHost.pl / Seohost sp. z o.o.]",
+    # TODO: update when hosting moves away from GitHub Pages (also revisit DOCS_UPDATED)
+    "hosting": "GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA",
     "mail_provider": "Google Ireland Ltd (Gmail / Google Workspace)",
-    "law": "[Governing law, e.g. Polish law / Spanish law]",
-    "court": "[Competent court, e.g. the common court competent for the registered office of the Service Provider]",
-    "permits": "[Authorisations for operating delivery robots in public space, if required in a given city — or remove]",
+    "law": {"en": "Spanish law", "pl": "prawo hiszpańskie"},
+    "court": {"en": "the Spanish courts competent for the registered office of the Service Provider", "pl": "sąd hiszpański właściwy dla siedziby Usługodawcy"},
+    "permits": "",
 }
 
 LANGS = ("en", "pl")
@@ -270,12 +273,44 @@ def load_strings(lang, page):
     return out
 
 
-def company_value(k):
+def company_get(k, lang="en"):
     v = COMPANY[k]
+    if isinstance(v, dict):          # per-language value: {"en": ..., "pl": ...}
+        v = v.get(lang, v["en"])
+    return v
+
+
+def company_value(k, lang="en"):
+    # Derived values join only the parts that are filled in.
+    joins = {"place": ["address", "country"],
+             "idplace": ["address", "country", "tax_id"],
+             "idfull": ["address", "country", "registry", "tax_id"]}
+    if k == "who":
+        return html.escape(company_get("name", lang) or COMPANY["brand"])
+    if k in joins:
+        return html.escape(", ".join(x for x in (company_get(j, lang) for j in joins[k]) if x))
+    v = company_get(k, lang)
+    if not v:
+        return ""
     if v.startswith("["):
         TODO_FOUND.add(f"COMPANY['{k}']")
         return f'<mark class="todo">{html.escape(v)}</mark>'
     return html.escape(v)
+
+
+def company_blocks(text, lang):
+    """[[if key]]..[[/if]] keeps a block only when COMPANY[key] is filled in;
+    [[ifnot key]]..[[/ifnot]] keeps it only when it is empty."""
+    def rep(m):
+        filled = bool(company_get(m.group(2), lang))
+        return m.group(3) if filled == (m.group(1) == "if") else ""
+    # innermost blocks first, so blocks may be nested
+    pat = r"\[\[(if|ifnot) (\w+)\]\]((?:(?!\[\[(?:if|ifnot) ).)*?)\[\[/\1\]\]"
+    prev = None
+    while prev != text:
+        prev = text
+        text = re.sub(pat, rep, text, flags=re.S)
+    return text
 
 
 def render_tokens(text, lang, root, ctx):
@@ -302,7 +337,7 @@ def render_tokens(text, lang, root, ctx):
                 raise KeyError(f"Missing string '{k}' for {lang}/{ctx.get('page')}")
             return ctx["strings"][k]
         if tok.startswith("c."):
-            return company_value(tok[2:])
+            return company_value(tok[2:], lang)
         if tok.startswith("raw."):
             return html.escape(COMPANY[tok[4:]])
         if tok.startswith("icon:"):
@@ -333,6 +368,7 @@ def render_tokens(text, lang, root, ctx):
     prev = None
     while prev != text:
         prev = text
+        text = company_blocks(text, lang)
         text = re.sub(r"\{\{\s*([^{}]+?)\s*\}\}", rep, text)
     return text
 
@@ -380,7 +416,7 @@ def json_ld(lang):
         "email": COMPANY["email"],
         "telephone": COMPANY["phone"],
     }
-    if not COMPANY["name"].startswith("["):
+    if COMPANY["name"] and not COMPANY["name"].startswith("["):
         data["legalName"] = COMPANY["name"]
     return json.dumps(data, ensure_ascii=False)
 
@@ -494,10 +530,13 @@ def main():
         f"Canonical: {SITE_URL}/.well-known/security.txt\n", encoding="utf-8")
 
     print(f"Built {len(written)} pages + sitemap.xml, robots.txt, security.txt into {OUT.relative_to(BASE)}/")
-    if TODO_FOUND:
-        print("\nStill to fill in before publishing (shown highlighted on the site):")
+    missing = sorted(k for k, v in COMPANY.items() if not company_get(k))
+    if missing or TODO_FOUND:
+        print("\nStill to fill in (hidden on the site until provided):")
+        for k in missing:
+            print(f"  - COMPANY['{k}']")
         for t in sorted(TODO_FOUND):
-            print("  -", t, "=", COMPANY[t.split("'")[1]])
+            print("  -", t, "(highlighted on the site)")
     return 0
 
 

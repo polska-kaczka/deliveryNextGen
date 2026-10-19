@@ -151,5 +151,5 @@ From a single robot to a full fleet. All prices are net, for business customers.
 @@ price.link
 Compare plans and estimate your cost
 @@ footnotes
-<li id="fn-1">Indicative estimate compared with courier-based last-mile delivery; actual results depend on volume, route and local conditions. Basis of the estimate: <mark class="todo">[add the source / methodology before publishing]</mark></li>
+<li id="fn-1">Indicative estimate compared with courier-based last-mile delivery; actual results depend on volume, route and local conditions. The estimate compares a courier's cost per delivery with the cost per delivery on a plan at typical volumes; we prepare a tailored calculation during the demo.</li>
 <li id="fn-2">Refers to direct (tailpipe) emissions of the robots during delivery. It does not include emissions from electricity generation or manufacturing.</li>

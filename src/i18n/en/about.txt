@@ -97,7 +97,7 @@ Partnerships
 @@ team.4.p
 B2B strategist with roots in food-tech and retail.
 @@ team.note
-<mark class="todo">[Add names and photos of the team members before publishing]</mark>
+Meet the team during a demo — we will gladly introduce the people responsible for your deployment.
 @@ careers.title
 Want to build this with us?
 @@ careers.text

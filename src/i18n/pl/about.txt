@@ -97,7 +97,7 @@ Partnerstwa
 @@ team.4.p
 Strateg B2B z doświadczeniem w food-tech i handlu.
 @@ team.note
-<mark class="todo">[Uzupełnij imiona, nazwiska i zdjęcia członków zespołu przed publikacją]</mark>
+Poznaj nasz zespół podczas demo — chętnie przedstawimy osoby odpowiedzialne za Twoje wdrożenie.
 @@ careers.title
 Chcesz budować to z nami?
 @@ careers.text

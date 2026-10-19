@@ -681,6 +681,8 @@
     };
     var recalc = function () {
       var v = parseInt(vol.value, 10);
+      var floor = Math.min(parseFloat(cost.max), Math.ceil(plans[0].price / v * 10) / 10);
+      if (parseFloat(cost.value) < floor) cost.value = floor;
       var c = parseFloat(cost.value);
       fill(vol); fill(cost);
       $('[for="calc-volume"] output', calc).textContent = v.toLocaleString(LANG === 'pl' ? 'pl-PL' : 'en-IE');
@@ -691,7 +693,7 @@
       if (plan) {
         out('plan').textContent = plan.name + ' · ' + money.format(plan.price);
         out('per').textContent = money2.format(plan.price / v);
-        var diff = current - plan.price;
+        var diff = Math.max(0, current - plan.price);
         out('diff').textContent = (diff >= 0 ? '' : '−') + money.format(Math.abs(diff));
         out('diff').closest('.calc-big').dataset.sign = diff >= 0 ? 'pos' : 'neg';
       } else {

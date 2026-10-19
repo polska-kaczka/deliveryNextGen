@@ -151,5 +151,5 @@ Od jednego robota do pełnej floty. Wszystkie ceny netto, dla przedsiębiorców.
 @@ price.link
 Porównaj plany i oszacuj koszt
 @@ footnotes
-<li id="fn-1">Szacunek orientacyjny w porównaniu z dostawą ostatniej mili realizowaną przez kurierów; rzeczywiste wyniki zależą od wolumenu, trasy i warunków lokalnych. Podstawa szacunku: <mark class="todo">[uzupełnij źródło / metodologię przed publikacją]</mark></li>
+<li id="fn-1">Szacunek orientacyjny w porównaniu z dostawą ostatniej mili realizowaną przez kurierów; rzeczywiste wyniki zależą od wolumenu, trasy i warunków lokalnych. Szacunek porównuje koszt kuriera za jedną dostawę z kosztem jednej dostawy w planie przy typowym wolumenie; indywidualną kalkulację przygotowujemy podczas demo.</li>
 <li id="fn-2">Dotyczy bezpośrednich emisji (z rury wydechowej) robotów podczas dostawy. Nie obejmuje emisji związanych z wytwarzaniem energii elektrycznej ani produkcją.</li>
