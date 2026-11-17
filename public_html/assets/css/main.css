@@ -410,6 +410,7 @@ body.menu-open .gnav { color: var(--ink); background: rgba(251, 251, 253, 0.98);
 .badge--go { background: var(--brand-tint); color: var(--brand-ink); }
 .badge--wait { background: #f1f1f4; color: var(--ink-2); }
 .ui-caption { margin-top: 20px; text-align: center; }
+.ui-demo { margin-top: 20px; text-align: center; }
 
 /* Feature columns */
 .features { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(32px, 4vw, 64px); margin-top: clamp(56px, 7vw, 96px); }

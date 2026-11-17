@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#fbfbfd">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{{root}}assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
+  <link rel="stylesheet" href="{{root}}assets/css/main.css?v={{ver}}">
+  <link rel="stylesheet" href="{{root}}assets/css/app.css?v={{ver}}">
+  <script src="{{root}}assets/js/app.js?v={{ver}}" defer></script>
+  <script type="application/json" id="app-i18n">{{app_json}}</script>
+</head>
+<body class="app is-loading">
+  <a class="skip-link" href="#view">{{s.skip}}</a>
+  {{shared:dng-defs}}
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="app-bot">{{shared:bot-marker}}</g>
+      <g id="app-hub">{{shared:pin-origin}}</g>
+      <g id="app-dest">{{shared:pin-dest}}</g>
+      <g id="app-mini">{{shared:robot-mini}}</g>
+    </defs>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="app-side" id="app-side">
+      <div class="app-brand">{{logo:app}}<span>DeliveryNextGen</span><span class="app-demo-tag">{{t:demo}}</span></div>
+      <nav class="app-nav" aria-label="{{t:nav.main}}">
+        <span class="app-nav-ind" aria-hidden="true"></span>
+        <a href="#overview" data-nav="overview">{{icon:chart}}<span>{{t:nav.overview}}</span></a>
+        <a href="#deliveries" data-nav="deliveries">{{icon:package}}<span>{{t:nav.deliveries}}</span><em class="app-count" data-count="active"></em></a>
+        <a href="#fleet" data-nav="fleet">{{icon:map}}<span>{{t:nav.fleet}}</span></a>
+        <a href="#integrations" data-nav="integrations">{{icon:plug}}<span>{{t:nav.integrations}}</span></a>
+        <a href="#team" data-nav="team">{{icon:users}}<span>{{t:nav.team}}</span></a>
+      </nav>
+
+      <div class="app-sim" role="group" aria-label="{{t:sim.title}}">
+        <div class="app-sim-h"><span class="app-sim-dot" aria-hidden="true"></span>{{t:sim.title}}</div>
+        <div class="app-sim-row">
+          <button class="app-chip" type="button" data-act="sim-toggle" aria-pressed="false"><span class="app-sim-label">{{t:sim.pause}}</span></button>
+          <div class="app-seg app-seg--sm" role="radiogroup" aria-label="{{t:sim.speed}}">
+            <button type="button" role="radio" data-speed="1">1×</button>
+            <button type="button" role="radio" data-speed="2">2×</button>
+            <button type="button" role="radio" data-speed="4">4×</button>
+          </div>
+        </div>
+        <p class="app-sim-note">{{t:demo.note}}</p>
+        <button class="app-link-btn" type="button" data-act="reset">{{t:sim.reset}}</button>
+      </div>
+
+      <div class="app-side-foot">
+        <a class="app-side-link" href="{{site_href}}">{{icon:left}}<span>{{t:back}}</span></a>
+        <a class="app-side-link" href="{{switch_href}}" data-keep-hash hreflang="{{switch_lang}}" aria-label="{{t:lang.label}}"><span class="app-lang">{{switch_code}}</span><span>{{t:lang.switch}}</span></a>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="app-top">
+        <div class="app-top-row">
+          <a class="app-top-brand" href="#overview" aria-label="DeliveryNextGen">{{logo:top}}</a>
+          <div class="app-search">
+            <label class="sr-only" for="app-q">{{t:search.ph}}</label>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input id="app-q" type="search" autocomplete="off" placeholder="{{t:search.ph}}" role="combobox" aria-expanded="false" aria-controls="app-q-list" aria-autocomplete="list">
+            <kbd>/</kbd>
+            <div class="app-pop app-q-list" id="app-q-list" role="listbox" hidden></div>
+          </div>
+          <div class="app-top-actions">
+            <span class="app-live" aria-hidden="true"><span class="app-live-dot"></span><span data-clock></span></span>
+            <div class="app-notif">
+              <button class="app-icon-btn" type="button" data-act="notif" aria-expanded="false" aria-controls="app-notif-pop" aria-label="{{t:notif.open}}">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z M10 20.5a2.2 2.2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+                <span class="app-badge-dot" data-unread hidden></span>
+              </button>
+              <div class="app-pop app-notif-pop" id="app-notif-pop" hidden>
+                <div class="app-pop-h"><b>{{t:notif.title}}</b><button class="app-link-btn" type="button" data-act="notif-read">{{t:notif.read}}</button></div>
+                <ul class="app-notif-list" data-notif-list></ul>
+              </div>
+            </div>
+            <div class="app-user" title="{{t:user.name}} · {{t:user.role}}"><span class="app-avatar app-avatar--you">DU</span></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-view" id="view" tabindex="-1" aria-live="off"></main>
+    </div>
+
+    <nav class="app-tabbar" aria-label="{{t:nav.main}}">
+      <a href="#overview" data-nav="overview">{{icon:chart}}<span>{{t:nav.overview}}</span></a>
+      <a href="#deliveries" data-nav="deliveries">{{icon:package}}<span>{{t:nav.deliveries}}</span></a>
+      <a href="#fleet" data-nav="fleet">{{icon:map}}<span>{{t:nav.fleet}}</span></a>
+      <a href="#integrations" data-nav="integrations">{{icon:plug}}<span>{{t:nav.integrations}}</span></a>
+      <a href="#team" data-nav="team">{{icon:users}}<span>{{t:nav.team}}</span></a>
+    </nav>
+  </div>
+
+  <!-- New delivery -->
+  <dialog class="app-modal" id="dlg-new" aria-labelledby="dlg-new-t">
+    <form class="app-form" method="dialog" novalidate data-form="new">
+      <div class="app-modal-h"><h2 id="dlg-new-t">{{t:n.title}}</h2><button class="app-icon-btn" type="button" data-close aria-label="{{t:close}}">{{icon:x}}</button></div>
+      <div class="app-modal-b">
+        <div class="app-field">
+          <span class="app-label">{{t:n.hub}}</span>
+          <div class="app-seg app-seg--full" role="radiogroup" aria-label="{{t:n.hub}}">
+            <label><input type="radio" name="hub" value="0" checked><span>{{t:hub.0}}</span></label>
+            <label><input type="radio" name="hub" value="1"><span>{{t:hub.1}}</span></label>
+          </div>
+        </div>
+        <div class="app-grid-2">
+          <div class="app-field app-field--grow">
+            <label class="app-label" for="n-addr">{{t:n.addr}}</label>
+            <input id="n-addr" name="addr" type="text" autocomplete="off" placeholder="{{t:n.addr_ph}}" list="n-streets" aria-describedby="n-addr-h" required>
+            <datalist id="n-streets"></datalist>
+            <small class="app-hint" id="n-addr-h">{{t:n.addr_hint}}</small>
+          </div>
+          <div class="app-field">
+            <label class="app-label" for="n-floor">{{t:n.floor}} <i>{{t:n.optional}}</i></label>
+            <input id="n-floor" name="floor" type="text" maxlength="24" autocomplete="off">
+          </div>
+        </div>
+        <div class="app-grid-2">
+          <div class="app-field">
+            <label class="app-label" for="n-name">{{t:n.name}}</label>
+            <input id="n-name" name="name" type="text" maxlength="60" placeholder="{{t:n.name_ph}}" autocomplete="off" required>
+          </div>
+          <div class="app-field">
+            <label class="app-label" for="n-phone">{{t:n.phone}}</label>
+            <input id="n-phone" name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="+34 600 000 000" autocomplete="off" required>
+          </div>
+        </div>
+        <div class="app-field">
+          <span class="app-label">{{t:n.size}}</span>
+          <div class="app-cards3" role="radiogroup" aria-label="{{t:n.size}}">
+            <label class="app-opt"><input type="radio" name="size" value="s"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="10" width="8" height="8" rx="1.5"/></svg><b>{{t:size.s}}</b><small>{{t:size.s_d}}</small></span></label>
+            <label class="app-opt"><input type="radio" name="size" value="m" checked><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="10" rx="1.5"/></svg><b>{{t:size.m}}</b><small>{{t:size.m_d}}</small></span></label>
+            <label class="app-opt"><input type="radio" name="size" value="l"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5"/></svg><b>{{t:size.l}}</b><small>{{t:size.l_d}}</small></span></label>
+          </div>
+        </div>
+        <div class="app-grid-2">
+          <div class="app-field">
+            <span class="app-label">{{t:n.prio}}</span>
+            <div class="app-seg app-seg--full" role="radiogroup" aria-label="{{t:n.prio}}">
+              <label><input type="radio" name="prio" value="std" checked><span>{{t:prio.std}}</span></label>
+              <label><input type="radio" name="prio" value="exp"><span>{{icon:bolt}}{{t:prio.exp}}</span></label>
+            </div>
+          </div>
+          <div class="app-field">
+            <label class="app-label" for="n-note">{{t:n.note}} <i>{{t:n.optional}}</i></label>
+            <input id="n-note" name="note" type="text" maxlength="80" autocomplete="off">
+          </div>
+        </div>
+        <p class="app-estimate" data-estimate aria-live="polite"></p>
+      </div>
+      <div class="app-modal-f">
+        <button class="app-btn app-btn--ghost" type="button" data-close>{{t:cancel}}</button>
+        <button class="app-btn" type="submit">{{t:n.submit}}</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Invite -->
+  <dialog class="app-modal app-modal--sm" id="dlg-invite" aria-labelledby="dlg-inv-t">
+    <form class="app-form" method="dialog" novalidate data-form="invite">
+      <div class="app-modal-h"><h2 id="dlg-inv-t">{{t:inv.title}}</h2><button class="app-icon-btn" type="button" data-close aria-label="{{t:close}}">{{icon:x}}</button></div>
+      <div class="app-modal-b">
+        <div class="app-field">
+          <label class="app-label" for="i-name">{{t:inv.name}}</label>
+          <input id="i-name" name="name" type="text" maxlength="60" autocomplete="off" required>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="i-email">{{t:inv.email}}</label>
+          <input id="i-email" name="email" type="email" maxlength="80" autocomplete="off" required>
+        </div>
+        <div class="app-field">
+          <span class="app-label">{{t:inv.role}}</span>
+          <div class="app-roles" role="radiogroup" aria-label="{{t:inv.role}}">
+            <label class="app-opt app-opt--row"><input type="radio" name="role" value="admin"><span><b>{{t:role.admin}}</b><small>{{t:role.admin_d}}</small></span></label>
+            <label class="app-opt app-opt--row"><input type="radio" name="role" value="dispatcher" checked><span><b>{{t:role.dispatcher}}</b><small>{{t:role.dispatcher_d}}</small></span></label>
+            <label class="app-opt app-opt--row"><input type="radio" name="role" value="viewer"><span><b>{{t:role.viewer}}</b><small>{{t:role.viewer_d}}</small></span></label>
+          </div>
+        </div>
+      </div>
+      <div class="app-modal-f">
+        <button class="app-btn app-btn--ghost" type="button" data-close>{{t:cancel}}</button>
+        <button class="app-btn" type="submit">{{t:inv.send}}</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Confirm -->
+  <dialog class="app-modal app-modal--xs" id="dlg-confirm" aria-labelledby="dlg-c-t">
+    <form class="app-form" method="dialog">
+      <div class="app-modal-b"><p id="dlg-c-t" data-confirm-text></p></div>
+      <div class="app-modal-f">
+        <button class="app-btn app-btn--ghost" type="submit" value="no">{{t:cancel}}</button>
+        <button class="app-btn app-btn--danger" type="submit" value="yes" data-confirm-ok>OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Delivery details -->
+  <dialog class="app-drawer" id="dlg-detail" aria-labelledby="dlg-d-t">
+    <div class="app-drawer-in" data-detail></div>
+  </dialog>
+
+  <div class="app-toasts" role="status" aria-live="polite"></div>
+  <noscript><p class="app-noscript">JavaScript is required for the live demo.</p></noscript>
+</body>
+</html>

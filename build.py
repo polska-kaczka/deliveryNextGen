@@ -98,6 +98,8 @@ STR = {
         "f_rights": "All rights reserved.",
         "f_b2b": "Offer for business customers. Prices exclude VAT.",
         "f_top": "Back to top",
+        "f_demo": "Live demo",
+        "app_path": "app/",
         "c_title": "Your privacy choices",
         "c_text": "We use only the storage that is strictly necessary for this website to work. Optional categories stay off unless you switch them on.",
         "c_accept": "Accept all",
@@ -145,6 +147,8 @@ STR = {
         "f_rights": "Wszelkie prawa zastrzeżone.",
         "f_b2b": "Oferta dla przedsiębiorców. Ceny netto (bez VAT).",
         "f_top": "Wróć na górę",
+        "f_demo": "Demo na żywo",
+        "app_path": "pl/app/",
         "c_title": "Twoje ustawienia prywatności",
         "c_text": "Używamy wyłącznie technologii niezbędnych do działania strony. Kategorie opcjonalne są wyłączone, dopóki ich nie włączysz.",
         "c_accept": "Akceptuj wszystkie",
@@ -202,6 +206,7 @@ ICONS = {
     "check": '<path d="m5 12 5 5 9-10"/>',
     "x": '<path d="m6 6 12 12M18 6 6 18"/>',
     "up": '<path d="M12 19V5M6 11l6-6 6 6"/>',
+    "left": '<path d="M19 12H5M11 6l-6 6 6 6"/>',
     "print": '<path d="M7 9V3h10v6M7 17H4v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6h-3"/><rect x="7" y="14" width="10" height="7" rx="1"/>',
     "package": '<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/>',
     "brain": '<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h0a3 3 0 0 1-3-3"/>',
@@ -480,6 +485,47 @@ def build_page(lang, key, src_path, is404=False):
     return out
 
 
+def load_file_strings(lang, name):
+    """Strings from one i18n file only (no common.txt)."""
+    out, key, buf = {}, None, []
+    for line in (SRC / "i18n" / lang / f"{name}.txt").read_text(encoding="utf-8").splitlines():
+        if line.startswith("@@ "):
+            if key:
+                out[key] = "\n".join(buf).strip()
+            key, buf = line[3:].strip(), []
+        elif key:
+            buf.append(line)
+    if key:
+        out[key] = "\n".join(buf).strip()
+    return out
+
+
+def build_app(lang):
+    """Live demo dashboard: /app/ (EN) and /pl/app/ (PL). Single page, hash routing,
+    all UI strings also shipped to app.js as a JSON data block."""
+    strings = load_file_strings(lang, "app")
+    root = "../../" if lang == "pl" else "../"
+    other = "pl" if lang == "en" else "en"
+    blob = json.dumps(strings, ensure_ascii=False).replace("</", "<\\/")
+    ctx = {
+        "strings": strings, "page": "app",
+        "title": html.escape(strings["meta.title"]),
+        "description": html.escape(strings["meta.description"]),
+        "ver": ASSET_VERSION,
+        "app_json": blob,
+        "site_href": "../",
+        "switch_href": "../pl/app/" if lang == "en" else "../../app/",
+        "switch_lang": other,
+        "switch_code": other.upper(),
+    }
+    tpl = (SRC / "app" / "app.html").read_text(encoding="utf-8")
+    out_dir = OUT / ("pl/app" if lang == "pl" else "app")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    target = out_dir / "index.html"
+    target.write_text(render_tokens(tpl, lang, root, ctx), encoding="utf-8")
+    return target
+
+
 def main():
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -499,6 +545,8 @@ def main():
             target = out_dir / slug(key, lang)
             target.write_text(build_page(lang, key, src), encoding="utf-8")
             written.append(target)
+    for lang in LANGS:
+        written.append(build_app(lang))
     # bilingual 404 (served by Apache at any path, so root-absolute assets)
     src404 = SRC / "pages" / "en" / "404.html"
     if src404.exists():

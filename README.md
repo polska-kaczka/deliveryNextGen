@@ -28,6 +28,16 @@ Po każdej zmianie w `src/` lub `build.py`:
 python build.py
 ```
 
+## Demo panelu (`/app/`)
+
+Działający panel floty na symulowanych danych: `public_html/app/` (EN) i `public_html/pl/app/` (PL), podlinkowany pod makietą na stronie głównej i w stopce („Demo na żywo”).
+
+- Szablon: `src/app/app.html`; teksty: `src/i18n/<język>/app.txt` (trafiają też do skryptu jako JSON).
+- Logika: `public_html/assets/js/app.js` — siatka ulic z wyznaczaniem najkrótszej trasy, 14 robotów z baterią i ładowaniem, cykl dostawy (w kolejce → przydzielone → w trasie → dostarczone), integracje (API, webhooki, import CSV), zespół.
+- Style: `public_html/assets/css/app.css` (korzysta z tokenów z `main.css`).
+- Widoki (routing po `#`): Przegląd, Dostawy, Flota, Integracje, Zespół. Skróty: `N` nowa dostawa, `/` szukaj, `Esc` zamknij.
+- Dane zapisują się tylko w `localStorage` przeglądarki (klucz `dng-demo-v1`); „Resetuj demo” w panelu bocznym przywraca stan początkowy. Brak zapytań sieciowych, zgodne z CSP (bez stylów i skryptów inline).
+
 ## Scena miasta (hero)
 
 Warstwy paralaksy generuje skrypt (zmiana zabudowy, kolorów, ziarna losowości):

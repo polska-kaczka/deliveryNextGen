@@ -90,6 +90,8 @@ The platform
 Your whole fleet. One screen.
 @@ platform.intro
 Dispatch, live tracking, proof of delivery and costs — in a dashboard your team learns in an afternoon.
+@@ platform.demo
+Try the live demo
 @@ platform.caption
 Illustrative interface. Figures shown are examples.
 @@ platform.f1.t
