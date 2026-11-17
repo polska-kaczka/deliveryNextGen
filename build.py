@@ -477,6 +477,12 @@ def build_page(lang, key, src_path, is404=False):
         "og_image": SITE_URL + "/assets/img/og-image.png",
         "footnotes": "",
     })
+    # Support chat demo (chat.js): page links it can offer, resolved per language / depth
+    chat_links = {k: render_tokens("{{url:%s}}" % k, lang, root, ctx)
+                  for k in ("pricing", "how", "solutions", "contact", "legal", "terms", "privacy", "cookies")}
+    chat_links["app"] = root + S["app_path"]
+    chat_links["app_integrations"] = root + S["app_path"] + "#integrations"
+    ctx["chat_links"] = html.escape(json.dumps(chat_links, ensure_ascii=False), quote=True)
     if strings.get("footnotes"):
         ctx["footnotes"] = (f'<div class="footnotes"><ol>'
                             f'{render_tokens(strings["footnotes"], lang, root, ctx)}</ol></div>')

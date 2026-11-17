@@ -38,6 +38,15 @@ Działający panel floty na symulowanych danych: `public_html/app/` (EN) i `publ
 - Widoki (routing po `#`): Przegląd, Dostawy, Flota, Integracje, Zespół. Skróty: `N` nowa dostawa, `/` szukaj, `Esc` zamknij.
 - Dane zapisują się tylko w `localStorage` przeglądarki (klucz `dng-demo-v1`); „Resetuj demo” w panelu bocznym przywraca stan początkowy. Brak zapytań sieciowych, zgodne z CSP (bez stylów i skryptów inline).
 
+## Czat pomocy (demo)
+
+Dymek czatu w prawym dolnym rogu na wszystkich stronach (EN + PL). Działa bez API i bez zapytań sieciowych: gotowe odpowiedzi dobierane po słowach kluczowych.
+
+- Logika i baza odpowiedzi: `public_html/assets/js/chat.js` (obiekt `KB`, osobno `en` i `pl`). Każdy temat ma listę początków słów (`k`, bez polskich znaków), odpowiedź (`a`), przyciski z linkami do podstron (`l`) i podpowiedzi kolejnych tematów (`c`).
+- Style: `public_html/assets/css/chat.css`. Punkt montowania i linki do podstron: `src/layout.html` + `chat_links` w `build.py`.
+- Funkcje: powitanie z podpowiedziami, „pisze…”, symulowane śledzenie dostawy (dowolny numer), przekazanie do człowieka (e-mail, telefon, formularz), jednorazowa zachęta po 9 s, rozmowa zachowana przy przechodzeniu między stronami (`sessionStorage`, klucz `dng-chat`, opisany w polityce cookies).
+- Bezpieczeństwo: tekst wstawiany wyłącznie przez `textContent`, zgodne z CSP, nic nie opuszcza przeglądarki.
+
 ## Scena miasta (hero)
 
 Warstwy paralaksy generuje skrypt (zmiana zabudowy, kolorów, ziarna losowości):

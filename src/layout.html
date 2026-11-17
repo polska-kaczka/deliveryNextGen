@@ -25,8 +25,10 @@
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
   <link rel="stylesheet" href="{{root}}assets/css/main.css?v={{ver}}">
+  <link rel="stylesheet" href="{{root}}assets/css/chat.css?v={{ver}}">
   <script src="{{root}}assets/js/boot.js?v={{ver}}"></script>
   <script src="{{root}}assets/js/main.js?v={{ver}}" defer></script>
+  <script src="{{root}}assets/js/chat.js?v={{ver}}" defer></script>
   <script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body class="{{bodyclass}}">
@@ -108,6 +110,8 @@
       </div>
     </div>
   </footer>
+
+  <div class="chat" id="dng-chat" data-links="{{chat_links}}" data-email="{{raw.email}}" data-phone="{{raw.phone}}" hidden></div>
 
   <button class="to-top" type="button" aria-label="{{s.f_top}}">{{icon:up}}</button>
 
