@@ -484,3 +484,7 @@ CSV import
 Progress
 @@ fl.selected
 Selected on map
+@@ i.docs
+API docs (preview)
+@@ i.docs_href
+../developers.html

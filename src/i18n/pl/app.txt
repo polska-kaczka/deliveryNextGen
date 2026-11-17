@@ -484,3 +484,7 @@ Import CSV
 Postęp
 @@ fl.selected
 Zaznaczony na mapie
+@@ i.docs
+Dokumentacja API (podgląd)
+@@ i.docs_href
+../deweloperzy.html

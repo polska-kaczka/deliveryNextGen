@@ -27,7 +27,7 @@ OUT = BASE / "public_html"
 # Configuration
 # --------------------------------------------------------------------------
 SITE_URL = "https://deliverynextgen.threecode.eu"   # no trailing slash
-ASSET_VERSION = "2.1.0"                              # bump to bust caches
+ASSET_VERSION = "2.2.0"                              # bump to bust caches
 DOCS_UPDATED = "18.10.2026"                          # date of the legal documents
 
 # Non-essential cookie categories actually in use. Leave empty while the site
@@ -72,6 +72,7 @@ PAGES = {
     "faq":           ("faq.html",              "faq.html",                   "FAQ",           "FAQ",            True),
     "coverage":      ("coverage.html",         "zasieg.html",                "Coverage",      "Zasięg",         False),
     "blog":          ("blog.html",             "blog.html",                  "Blog",          "Blog",           False),
+    "developers":    ("developers.html",       "deweloperzy.html",           "Developers",    "Deweloperzy",    False),
     "contact":       ("contact.html",          "kontakt.html",               "Contact",       "Kontakt",        False),
     "legal":         ("legal-notice.html",     "nota-prawna.html",           "Legal notice",  "Nota prawna",    False),
     "privacy":       ("privacy-policy.html",   "polityka-prywatnosci.html",  "Privacy policy", "Polityka prywatności", False),
@@ -563,7 +564,7 @@ def json_ld(lang):
     return json.dumps(data, ensure_ascii=False)
 
 
-PAGE_JS = {"contact": ["booking.js"], "coverage": ["coverage.js"]}
+PAGE_JS = {"contact": ["booking.js"], "coverage": ["coverage.js"], "developers": ["developers.js"]}
 
 
 def post_body(m, lang):
@@ -682,7 +683,7 @@ def build_page(lang, key, src_path, is404=False, post=None):
     })
     # Support chat demo (chat.js): page links it can offer, resolved per language / depth
     chat_links = {k: render_tokens("{{url:%s}}" % k, lang, root, ctx)
-                  for k in ("pricing", "how", "solutions", "contact", "legal", "terms", "privacy", "cookies", "coverage", "blog")}
+                  for k in ("pricing", "how", "solutions", "contact", "legal", "terms", "privacy", "cookies", "coverage", "blog", "developers")}
     chat_links["booking"] = chat_links["contact"] + "#booking"
     chat_links["app"] = root + S["app_path"]
     chat_links["app_integrations"] = root + S["app_path"] + "#integrations"
