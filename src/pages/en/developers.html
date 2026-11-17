@@ -1,0 +1,138 @@
+---
+title: For developers — API and webhooks (preview) — DeliveryNextGen
+description: DeliveryNextGen API preview: quick-start guide, interactive playground, live webhooks and code samples in curl, JavaScript, PHP and Python.
+---
+    <section class="page-hero center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="{{url:home}}">Home</a></li><li aria-current="page">Developers</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>For developers</p>
+        <h1 class="headline-xl" id="page-title" data-split>A robot delivery in one request.</h1>
+        <p class="lead" data-reveal data-delay="0.3">A REST API to create and track deliveries, and webhooks for every status change. Try it all below — in your browser, no account needed.</p>
+        <p class="dev-preview" data-reveal data-delay="0.35"><b>Preview</b> The public API is in preparation. Examples show the planned shape and may still change. Pilot customers get access to the beta.</p>
+        <div class="ctas" data-reveal data-delay="0.4">
+          <a class="btn btn--lg" href="{{url:contact}}?topic=api#demo-form">Request beta access</a>
+          <a class="more" href="#playground">Try the playground</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="qs-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Quick start</p>
+          <h2 class="headline-m" id="qs-title" data-split>Three steps to your first delivery.</h2>
+        </div>
+        <ol class="dev-steps" role="list" data-stagger>
+          <li><span class="k">1</span><h3>API key</h3><p>Generate it in the dashboard under Integrations. Test keys start with <code>dng_test_</code>, live keys with <code>dng_live_</code>.</p><pre class="dev-mini"><code>Authorization: Bearer dng_test_…</code></pre></li>
+          <li><span class="k">2</span><h3>First delivery</h3><p>Send the pick-up and drop-off address. The response contains the delivery ID and the estimated arrival time.</p><pre class="dev-mini"><code>POST /v1/deliveries</code></pre></li>
+          <li><span class="k">3</span><h3>Webhook</h3><p>Give us a URL and we’ll send a signed event on every status change — from accepted to delivered.</p><pre class="dev-mini"><code>delivery.delivered</code></pre></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band theme-dark dev-band" id="playground" aria-labelledby="pg-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Playground</p>
+          <h2 class="headline-m" id="pg-title" data-split>Send a request. See the response.</h2>
+          <p class="intro" data-reveal data-delay="0.2">Everything runs in your browser on simulated data — nothing is sent to a server.</p>
+        </div>
+        <div class="dev-pg" data-playground data-reveal>
+          <div class="dev-req">
+            <div class="dev-eps" role="tablist" aria-label="Endpoint" data-eps></div>
+            <label class="dev-label" for="pg-key">API key</label>
+            <input class="dev-input" id="pg-key" value="dng_test_4f1c9a2b7e" spellcheck="false" autocomplete="off" data-key>
+            <div data-id-wrap hidden>
+              <label class="dev-label" for="pg-id">Delivery ID</label>
+              <input class="dev-input" id="pg-id" value="dlv_4821" spellcheck="false" autocomplete="off" data-id>
+            </div>
+            <div data-body-wrap>
+              <label class="dev-label" for="pg-body">Request body (JSON)</label>
+              <textarea class="dev-input dev-body" id="pg-body" rows="9" spellcheck="false" data-body></textarea>
+            </div>
+            <button class="btn dev-send" type="button" data-send><span class="dev-spin" aria-hidden="true"></span><span data-send-label>Send request</span></button>
+          </div>
+          <div class="dev-res">
+            <div class="dev-res-h"><span class="dev-line" data-line>POST /v1/deliveries</span><span class="dev-status" data-status hidden></span><span class="dev-ms" data-ms></span></div>
+            <pre class="dev-json" aria-live="polite" data-res><span class="dev-hint">Click “Send request” to see the response.</span></pre>
+            <div class="dev-code">
+              <div class="dev-tabs" role="tablist" aria-label="Language" data-tabs>
+                <button type="button" role="tab" aria-selected="true" data-lang="curl">curl</button>
+                <button type="button" role="tab" aria-selected="false" data-lang="js">JavaScript</button>
+                <button type="button" role="tab" aria-selected="false" data-lang="php">PHP</button>
+                <button type="button" role="tab" aria-selected="false" data-lang="py">Python</button>
+                <button type="button" class="dev-copy" data-copy="code">Copy</button>
+              </div>
+              <pre class="dev-snippet" data-code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="wh-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Webhooks</p>
+          <h2 class="headline-m" id="wh-title" data-split>Every status change, straight to you.</h2>
+          <p class="intro" data-reveal data-delay="0.2">Start a test delivery and watch the events reach your endpoint. Click an event to see its payload.</p>
+        </div>
+        <div class="dev-wh" data-webhooks>
+          <div class="dev-wh-live">
+            <div class="dev-wh-bar">
+              <span class="dev-wh-url">POST https://your-company.com/webhooks/dng</span>
+              <button class="btn btn--sm" type="button" data-wh-run>Start a test delivery</button>
+            </div>
+            <ol class="dev-wh-log" role="list" aria-live="polite" data-wh-log><li class="dev-wh-empty">No events yet. Start a test delivery.</li></ol>
+          </div>
+          <div class="dev-wh-sig">
+            <h3>Verifying the signature</h3>
+            <p>Every event carries a <code>DNG-Signature</code> header with a timestamp and an HMAC-SHA256 signature of the body. Check it before processing the event, and reject events older than 5 minutes.</p>
+            <div class="dev-copywrap"><button type="button" class="dev-copy" data-copy="sig">Copy</button><pre class="dev-snippet" data-sig></pre></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="ref-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Reference at a glance</p>
+          <h2 class="headline-m" id="ref-title" data-split>Endpoints, statuses, errors.</h2>
+        </div>
+        <div class="dev-ref" data-stagger>
+          <div class="dev-ref-card">
+            <h3>Endpoints</h3>
+            <table><tbody>
+              <tr><th scope="row"><span class="m m--post">POST</span> /v1/deliveries</th><td>Create a delivery</td></tr>
+              <tr><th scope="row"><span class="m m--get">GET</span> /v1/deliveries/{id}</th><td>Delivery status</td></tr>
+              <tr><th scope="row"><span class="m m--post">POST</span> /v1/deliveries/{id}/cancel</th><td>Cancel a delivery</td></tr>
+              <tr><th scope="row"><span class="m m--get">GET</span> /v1/robots</th><td>Robots and their state</td></tr>
+            </tbody></table>
+          </div>
+          <div class="dev-ref-card">
+            <h3>Statuses and events</h3>
+            <table><tbody>
+              <tr><th scope="row"><code>queued</code></th><td><code>delivery.created</code> — accepted</td></tr>
+              <tr><th scope="row"><code>assigned</code></th><td><code>delivery.assigned</code> — robot assigned</td></tr>
+              <tr><th scope="row"><code>en_route</code></th><td><code>delivery.en_route</code> — on its way</td></tr>
+              <tr><th scope="row"><code>delivered</code></th><td><code>delivery.delivered</code> — collected with PIN</td></tr>
+              <tr><th scope="row"><code>cancelled</code></th><td><code>delivery.cancelled</code> — cancelled</td></tr>
+            </tbody></table>
+          </div>
+          <div class="dev-ref-card">
+            <h3>Error codes</h3>
+            <table><tbody>
+              <tr><th scope="row">400</th><td>Invalid JSON</td></tr>
+              <tr><th scope="row">401</th><td>Missing or wrong API key</td></tr>
+              <tr><th scope="row">404</th><td>No such delivery</td></tr>
+              <tr><th scope="row">409</th><td>Delivery can no longer be cancelled</td></tr>
+              <tr><th scope="row">422</th><td>Missing or invalid fields</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+        <p class="dev-fine">Documentation preview. The server address, rate limits and full specification are shared with customers in the beta.</p>
+      </div>
+    </section>
+
+{{partial:cta}}

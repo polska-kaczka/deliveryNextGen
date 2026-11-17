@@ -968,7 +968,8 @@
     render: function (el) {
       var I = state.integ;
       el.innerHTML =
-        '<div class="app-head"><div><h1>' + esc(t('i.title')) + '</h1><p class="sub">' + esc(t('i.sub')) + '</p></div></div>' +
+        '<div class="app-head"><div><h1>' + esc(t('i.title')) + '</h1><p class="sub">' + esc(t('i.sub')) + '</p></div>' +
+        '<a class="app-btn app-btn--ghost app-btn--sm" href="' + esc(t('i.docs_href')) + '">' + esc(t('i.docs')) + ' →</a></div>' +
         '<div class="app-ints">' +
         intCard('api', 'code', t('i.api'), t('i.api_d'),
           '<div class="app-field"><span class="app-label">' + esc(t('i.key')) + '</span><div class="app-key"><code data-key>' + esc(ui.apiShow ? I.api.key : maskKey(I.api.key)) + '</code>' +

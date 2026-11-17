@@ -97,7 +97,7 @@
         integration: {
           k: ['api', 'integrat', 'webhook', 'plugin', 'shopify', 'woocommerce', 'magento', 'csv', 'connect', 'setup', 'install', 'developer', 'docs', 'sdk', 'rest'],
           a: ['Most integrations are live in about 48 hours. You can use our REST API with webhooks, plugins for popular e-commerce platforms, CSV import, or a no-code dashboard for manual dispatch.', 'Our team guides you through the setup. You can explore the integrations view in the live demo panel.'],
-          l: [['app_integrations', 'Open integrations demo']], c: ['live', 'demo']
+          l: [['developers', 'Developer docs (preview)'], ['app_integrations', 'Open integrations demo']], c: ['live', 'demo']
         },
         trackinfo: {
           k: ['tracking', 'follow', 'eta', 'pin', 'notification', 'sms'],
@@ -197,7 +197,7 @@
         integration: {
           k: ['api', 'integrac', 'zintegr', 'webhook', 'wtyczk', 'plugin', 'shopify', 'woocommerce', 'magento', 'csv', 'polacz', 'podlacz', 'wdroz', 'programist', 'dokumentac', 'sdk', 'rest'],
           a: ['Większość integracji działa po około 48 godzinach. Możesz użyć REST API z webhookami, wtyczek do popularnych platform e-commerce, importu CSV albo panelu bez kodowania do ręcznego zlecania.', 'Nasz zespół przeprowadzi Cię przez konfigurację. Widok integracji możesz obejrzeć w panelu demo.'],
-          l: [['app_integrations', 'Otwórz demo integracji']], c: ['live', 'demo']
+          l: [['developers', 'Dla deweloperów (podgląd)'], ['app_integrations', 'Otwórz demo integracji']], c: ['live', 'demo']
         },
         trackinfo: {
           k: ['sledz', 'sledzenie', 'link', 'pin', 'powiadom', 'sms', 'eta'],

@@ -15,12 +15,14 @@
     en: {
       chosen: 'Selected: ', spain: ' Spanish time', yours: ' · your time ',
       waitlist: 'Please let us know when DeliveryNextGen is available in: {city}.',
-      demo: 'We would like a demo for our business in {city}. '
+      demo: 'We would like a demo for our business in {city}. ',
+      api: 'We would like access to the DeliveryNextGen API beta. Our current system: '
     },
     pl: {
       chosen: 'Wybrano: ', spain: ' czasu hiszpańskiego', yours: ' · u Ciebie ',
       waitlist: 'Prosimy o informację, gdy DeliveryNextGen będzie dostępny w mieście: {city}.',
-      demo: 'Chcielibyśmy umówić demo dla naszej firmy w mieście: {city}. '
+      demo: 'Chcielibyśmy umówić demo dla naszej firmy w mieście: {city}. ',
+      api: 'Chcielibyśmy dostać dostęp do wersji beta API DeliveryNextGen. Nasz obecny system: '
     }
   }[LANG];
 
@@ -29,7 +31,7 @@
   var city = (params.get('city') || '').replace(/[^\p{L}\p{M} .'\-]/gu, '').trim().slice(0, 60);
   var topic = params.get('topic');
   var msg = document.getElementById('f-message');
-  if (city && msg && !msg.value.trim() && (topic === 'waitlist' || topic === 'demo')) {
+  if (msg && !msg.value.trim() && ((city && (topic === 'waitlist' || topic === 'demo')) || topic === 'api')) {
     msg.value = T[topic].replace('{city}', city);
     msg.dispatchEvent(new Event('input'));
   }
