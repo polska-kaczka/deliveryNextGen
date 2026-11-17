@@ -532,6 +532,36 @@ def build_app(lang):
     return target
 
 
+def build_present(lang):
+    """Demo-day presentation: /present/ (EN) and /pl/present/ (PL). Reuses copy from
+    home.txt and how.txt (the latter prefixed with "how.") plus present.txt."""
+    strings = load_file_strings(lang, "home")
+    strings.update({"how." + k: v for k, v in load_file_strings(lang, "how").items()})
+    strings.update(load_file_strings(lang, "present"))
+    root = "../../" if lang == "pl" else "../"
+    other = "pl" if lang == "en" else "en"
+    blob = json.dumps(strings, ensure_ascii=False).replace("</", "<\\/")
+    ctx = {
+        "strings": strings, "page": "present",
+        "title": html.escape(strings["meta.title"]),
+        "description": html.escape(strings["meta.description"]),
+        "ver": ASSET_VERSION,
+        "present_json": blob,
+        "site_href": root + ("pl/" if lang == "pl" else ""),
+        "app_href": root + STR[lang]["app_path"],
+        "site_host": SITE_URL.split("//", 1)[-1],
+        "switch_href": "../pl/present/" if lang == "en" else "../../present/",
+        "switch_lang": other,
+        "switch_code": other.upper(),
+    }
+    tpl = (SRC / "present" / "present.html").read_text(encoding="utf-8")
+    out_dir = OUT / ("pl/present" if lang == "pl" else "present")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    target = out_dir / "index.html"
+    target.write_text(render_tokens(tpl, lang, root, ctx), encoding="utf-8")
+    return target
+
+
 def main():
     try:
         sys.stdout.reconfigure(encoding="utf-8")
@@ -553,6 +583,7 @@ def main():
             written.append(target)
     for lang in LANGS:
         written.append(build_app(lang))
+        written.append(build_present(lang))
     # bilingual 404 (served by Apache at any path, so root-absolute assets)
     src404 = SRC / "pages" / "en" / "404.html"
     if src404.exists():

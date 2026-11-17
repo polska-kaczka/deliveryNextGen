@@ -1,0 +1,193 @@
+@@ meta.title
+DeliveryNextGen — presentation
+@@ meta.description
+Animated DeliveryNextGen demo-day presentation: the robot, one delivery end to end, the platform, integrations and the numbers.
+@@ ui.start
+Start presentation
+@@ ui.cover_kicker
+Demo Day
+@@ ui.cover_title
+Deliveries that never get stuck.
+@@ ui.cover_hint
+Space or → — next · ← — back · P — pause · F — full screen · N — notes · L — loop · ? — help
+@@ ui.loop
+Loop (booth)
+@@ ui.prev
+Previous scene
+@@ ui.next
+Next scene
+@@ ui.play
+Play
+@@ ui.pause
+Pause
+@@ ui.fullscreen
+Full screen
+@@ ui.notes
+Speaker notes
+@@ ui.help
+Keyboard shortcuts
+@@ ui.restart
+Restart
+@@ ui.progress
+Presentation progress
+@@ ui.help_title
+Controls
+@@ ui.help_list
+Space / → / click right half|Next scene
+← / click left half|Previous scene
+P / K|Pause and resume
+1–9, 0|Jump to scene
+Home / R|Restart
+F|Full screen
+N|Speaker notes window
+L|Loop — the presentation repeats forever
+H|Hide or show the control bar
+Esc|Close help
+@@ ui.notes_now
+Now
+@@ ui.notes_next
+Next
+@@ ui.notes_end
+End of presentation
+@@ ui.notes_wait
+Open the presentation in another window — notes sync automatically.
+@@ ui.notes_elapsed
+Time
+@@ ui.sim
+Simulated data
+@@ ch.1
+Start
+@@ ch.2
+Problem
+@@ ch.3
+Robot
+@@ ch.4
+Anatomy
+@@ ch.5
+One delivery
+@@ ch.6
+Platform
+@@ ch.7
+Integrations
+@@ ch.8
+Safety
+@@ ch.9
+Numbers
+@@ ch.10
+Industries
+@@ ch.11
+Live
+@@ problem.l1
+Most deliveries don’t fail on the motorway.
+@@ problem.l2
+They fail in the last hundred metres.
+@@ problem.tag1
+Too narrow for a van
+@@ problem.tag2
+Pedestrian zone
+@@ problem.tag3
+No gate code
+@@ robot.eyebrow
+Meet the robot
+@@ robot.title
+Built for the pavement.
+@@ robot.c1
+100% electric
+@@ robot.c2
+Works 24/7
+@@ robot.c3
+PIN-locked cargo
+@@ robot.c4
+Supervised live
+@@ anatomy.title
+Everything the last metres need.
+@@ story.s.eta
+Arriving in
+@@ story.s.min
+min
+@@ story.s.obstacle
+Obstacle — route recalculated
+@@ story.s.robot
+Robot R-07
+@@ story.s.restaurant
+Trattoria Sole
+@@ platform.k1
+Active deliveries
+@@ platform.k2
+Robots on route
+@@ platform.k3
+Avg. delivery time
+@@ platform.k4
+Delivered today
+@@ platform.map
+Fleet · Old Town
+@@ platform.feed
+Activity
+@@ platform.nav
+Overview|Deliveries|Fleet|Integrations|Team
+@@ platform.ev
+#{id} delivered · {m} min|#{id} assigned to R-{r}|R-{r} heading to charging|#{id} on its way · {m} min left|R-{r} avoided an obstacle|New order #{id} via API
+@@ int.eyebrow
+Integrations
+@@ int.title
+Connects to what you already use.
+@@ int.sub
+Most businesses are live in about 48 hours.
+@@ int.n1
+REST API
+@@ int.n2
+Webhooks
+@@ int.n3
+E-commerce store
+@@ int.n4
+POS system
+@@ int.n5
+CSV import
+@@ int.n6
+No-code dashboard
+@@ int.created
+created
+@@ int.webhook
+webhook
+@@ safe.eyebrow
+Safety
+@@ safe.e1
+Obstacle detected
+@@ safe.e2
+Operator connected · 2.8 s
+@@ safe.e3
+Route resumed
+@@ safe.op
+Operations centre
+@@ num.title
+Built for the hours that matter.
+@@ num.fn
+¹ Indicative estimate vs couriers; depends on volume and route. ² Direct emissions during delivery.
+@@ end.title
+Let’s see it live.
+@@ end.site
+Go to the website
+@@ end.app
+Open the live panel
+@@ notes.1
+Welcome. One sentence about who you are. Wait for the logo to settle.
+@@ notes.2
+The problem: the last hundred metres. The van stops at the old town, a pedestrian zone or a gate — that’s where deliveries break.
+@@ notes.3
+Our answer: a compact electric robot built for the pavement. Name the four labels.
+@@ notes.4
+Anatomy: connectivity, multi-wheel chassis, insulated compartment, perception sensors, electric drive.
+@@ notes.5
+One order from 21:47 to 22:03. Point at the obstacle — the robot re-routes by itself. The PIN opens the compartment at the end.
+@@ notes.6
+Platform: the whole fleet on one screen. Teams learn it in an afternoon. Data is simulated.
+@@ notes.7
+Integrations: REST API, webhooks, plugins, CSV or manual dispatch. About 48 hours to go live.
+@@ notes.8
+People behind the robots: if a robot can’t solve a situation, an operator takes over within seconds.
+@@ notes.9
+The numbers. At −60% say it’s an estimate that depends on volume — see the footnote.
+@@ notes.10
+Four kinds of last mile: restaurants, e-commerce, logistics, campuses.
+@@ notes.11
+Hand over to the website and the live demo panel. Click “Open the live panel”.
