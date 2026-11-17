@@ -13,14 +13,14 @@ return [
 
     // Sender mailbox. MUST be an address on your own domain (configured with SPF/DKIM
     // at the hosting provider), otherwise messages land in spam or are rejected.
-    'from_address'    => 'noreply@deliverynextgen.threecode.eu',
+    'from_address'    => 'noreply@deliverynextgen.ssujkowski.ucz.edu.pl',
     'from_name'       => 'DeliveryNextGen website',
     'envelope_sender' => true,   // pass -f<from_address> to sendmail (improves SPF alignment)
 
     // Hosts allowed to submit the form (Origin / Referer check).
     'allowed_hosts'   => [
-        'deliverynextgen.threecode.eu',
-        'www.deliverynextgen.threecode.eu',
+        'deliverynextgen.ssujkowski.ucz.edu.pl',
+        'www.deliverynextgen.ssujkowski.ucz.edu.pl',
     ],
 
     // Abuse protection

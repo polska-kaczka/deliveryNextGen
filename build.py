@@ -26,9 +26,9 @@ OUT = BASE / "public_html"
 # --------------------------------------------------------------------------
 # Configuration
 # --------------------------------------------------------------------------
-SITE_URL = "https://deliverynextgen.threecode.eu"   # no trailing slash
+SITE_URL = "https://deliverynextgen.ssujkowski.ucz.edu.pl"   # no trailing slash
 ASSET_VERSION = "2.0.0"                              # bump to bust caches
-DOCS_UPDATED = "18.10.2026"                          # date of the legal documents
+DOCS_UPDATED = "17.11.2026"                          # date of the legal documents
 
 # Non-essential cookie categories actually in use. Leave empty while the site
 # uses only strictly necessary storage — the consent banner then stays hidden
@@ -48,13 +48,13 @@ COMPANY = {
     "vat_id": "",
     "registry": "",
     "capital": "",
-    "email": "danielmedinabello5@gmail.com",
-    "privacy_email": "danielmedinabello5@gmail.com",
+    "email": "deliverynextgen@ssujkowski.ucz.edu.pl",
+    "privacy_email": "deliverynextgen@ssujkowski.ucz.edu.pl",
     "phone": "+34 683 405 430",
     "phone_href": "+34683405430",
-    # TODO: update when hosting moves away from GitHub Pages (also revisit DOCS_UPDATED)
-    "hosting": "GitHub, Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, USA",
-    "mail_provider": "Google Ireland Ltd (Gmail / Google Workspace)",
+    # Hosting: SEOhost (docelowy). Uzupelnij pelna nazwe i adres spolki hostingowej.
+    "hosting": "SEOhost (seohost.pl), Polska",
+    "mail_provider": "SEOhost (seohost.pl), Polska",
     "law": {"en": "Spanish law", "pl": "prawo hiszpańskie"},
     "court": {"en": "the Spanish courts competent for the registered office of the Service Provider", "pl": "sąd hiszpański właściwy dla siedziby Usługodawcy"},
     "permits": "",

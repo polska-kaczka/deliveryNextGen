@@ -4,4 +4,4 @@ Disallow: /send_lead.php
 Disallow: /csrf.php
 Disallow: /includes/
 
-Sitemap: https://deliverynextgen.threecode.eu/sitemap.xml
+Sitemap: https://deliverynextgen.ssujkowski.ucz.edu.pl/sitemap.xml
