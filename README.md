@@ -38,6 +38,12 @@ Działający panel floty na symulowanych danych: `public_html/app/` (EN) i `publ
 - Widoki (routing po `#`): Przegląd, Dostawy, Flota, Integracje, Zespół. Skróty: `N` nowa dostawa, `/` szukaj, `Esc` zamknij.
 - Dane zapisują się tylko w `localStorage` przeglądarki (klucz `dng-demo-v1`); „Resetuj demo” w panelu bocznym przywraca stan początkowy. Brak zapytań sieciowych, zgodne z CSP (bez stylów i skryptów inline).
 
+## Rezerwacja terminu, zasięg, blog
+
+- **Termin demo** (formularz kontaktowy): kolejne 10 dni roboczych, 9:00–12:30 i 14:00–17:30 czasu hiszpańskiego, co 30 min. Wybór trafia do pola `slot` i do maila (`send_lead.php` sprawdza te same zasady). Logika: `public_html/assets/js/booking.js`; link bezpośredni: `kontakt.html#booking`. To preferencja, nie rezerwacja — termin potwierdzacie mailem.
+- **Zasięg** (`coverage.html` / `pl/zasieg.html`): lista miast i ich położenie w `COVERAGE` w `build.py` (tam też dopisujesz nowe miasta). Wyszukiwarka działa tylko w przeglądarce (`coverage.js`); brak miasta → link do formularza z wypełnioną prośbą o zapis na listę oczekujących (`?city=…&topic=waitlist`).
+- **Blog** (`blog.html`): wpisy w `src/posts/<język>/<slug>.html` z nagłówkiem `title`, `description`, `date`, `kind` (`article` albo `scenario`), `excerpt`, `read`, `pair` (slug tego samego wpisu w drugim języku) i `art` (grafika branży) lub `icon`. Wpisy `scenario` dostają automatycznie ramkę „Przykładowy scenariusz — nie jest to opis rzeczywistego klienta”. Gdy pojawią się prawdziwe wdrożenia, dodaj je jako `article` (lub nowy rodzaj).
+
 ## Prezentacja na demo day (`/present/`)
 
 Animowany „film” o produkcie przed przeklikaniem strony: `/present/` (EN) i `/pl/present/` (PL), ok. 2 min 10 s, 11 scen (start, problem, robot, budowa, jedna dostawa, platforma, integracje, bezpieczeństwo, liczby, branże, finał z przejściem do strony i panelu demo). Strona ma `noindex` i nie jest podlinkowana w menu.

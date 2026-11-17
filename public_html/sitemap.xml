@@ -73,6 +73,30 @@
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
+    <loc>https://deliverynextgen.threecode.eu/coverage.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/coverage.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/zasieg.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/zasieg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/coverage.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/zasieg.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/blog.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/blog.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
     <loc>https://deliverynextgen.threecode.eu/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/contact.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/kontakt.html"/>
@@ -143,5 +167,45 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/accessibility.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/dostepnosc.html"/>
     <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/blog-scenario-restaurant.html</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/blog-scenario-store.html</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/blog-scenario-campus.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/blog-pilot-step-by-step.html</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/blog-last-100-metres.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/blog-scenariusz-restauracja.html</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/blog-scenariusz-sklep.html</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/blog-scenariusz-kampus.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/blog-pilotaz-krok-po-kroku.html</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/blog-ostatnie-100-metrow.html</loc>
+    <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,54 @@
+---
+title: Coverage — check your city — DeliveryNextGen
+description: Check whether DeliveryNextGen robots deliver in your city in Spain. We confirm the exact area during a free demo.
+---
+    <section class="page-hero center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="{{url:home}}">Home</a></li><li aria-current="page">Coverage</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Coverage</p>
+        <h1 class="headline-xl" id="page-title" data-split>Check if we can reach you.</h1>
+        <p class="lead" data-reveal data-delay="0.3">We serve major cities across Spain. Type yours — and if we’re not there yet, join the waiting list.</p>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="cv-check-title">
+      <div class="container">
+        <div class="cv" data-coverage data-cities="{{coverage_data}}">
+          <div class="cv-panel" data-reveal>
+            <h2 class="headline-s" id="cv-check-title">Your city</h2>
+            <form class="cv-form" data-cv-form novalidate>
+              <label class="sr-only" for="cv-input">City name</label>
+              <input id="cv-input" type="search" list="cv-list" autocomplete="off" placeholder="e.g. Valencia, Bilbao, Lisbon…" maxlength="60" data-cv-input>
+              <datalist id="cv-list" data-cv-list></datalist>
+              <button class="btn" type="submit">Check</button>
+            </form>
+            <div class="cv-result" data-cv-result aria-live="polite" hidden>
+              <p class="cv-result-k" data-cv-k></p>
+              <p class="cv-result-t" data-cv-t></p>
+              <p class="cv-result-p" data-cv-p></p>
+              <a class="btn btn--sm" data-cv-cta href="{{url:contact}}"></a>
+            </div>
+            <p class="cv-sub">Or pick from the list:</p>
+            <ul class="cv-chips" role="list">{{coverage_list}}</ul>
+            <p class="cv-fine">The search runs only in your browser — nothing is sent to us. We confirm the exact boundaries (districts, pedestrian zones, estates) during the demo.</p>
+          </div>
+          <div class="cv-map-wrap" data-reveal="fade">{{coverage_map}}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band theme-light" aria-labelledby="cv-steps-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>New city</p>
+          <h2 class="headline-m" id="cv-steps-title" data-split>Your city isn’t listed? Here’s how it works.</h2>
+        </div>
+        <ol class="cv-steps" role="list" data-stagger>
+          <li><span class="k">1</span><h3>Sign-up</h3><p>You join the waiting list. We collect requests from businesses in each city — the more there are, the sooner we launch.</p></li>
+          <li><span class="k">2</span><h3>Mapping &amp; rules</h3><p>We survey pavements, access points and local rules, and obtain the approvals required.</p></li>
+          <li><span class="k">3</span><h3>Pilot</h3><p>A small fleet starts on selected routes. Together we measure delivery times and reliability.</p></li>
+        </ol>
+      </div>
+    </section>
+
+{{partial:cta}}

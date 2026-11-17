@@ -92,7 +92,7 @@
         coverage: {
           k: ['city', 'cities', 'area', 'where', 'available', 'spain', 'country', 'location', 'region', 'madrid', 'barcelona', 'valencia', 'seville', 'operate', 'coverage'],
           a: ['We’re based in Spain and serve all major cities there. Robots are built for narrow streets, pedestrian zones, gated estates and hilly terrain.', 'Coverage depends on local rules, so we confirm your exact area during the demo — before you sign anything.'],
-          l: [['contact', 'Check my area']], c: ['permits', 'demo']
+          l: [['coverage', 'Check my city'], ['contact', 'Ask about my area']], c: ['permits', 'demo']
         },
         integration: {
           k: ['api', 'integrat', 'webhook', 'plugin', 'shopify', 'woocommerce', 'magento', 'csv', 'connect', 'setup', 'install', 'developer', 'docs', 'sdk', 'rest'],
@@ -136,8 +136,8 @@
         },
         demo: {
           k: ['demo', 'meeting', 'book', 'present', 'trial', 'pilot', 'test', 'start', 'sign'],
-          a: ['Happy to set that up. The demo is a 30-minute video call with a coverage check for your area, followed by a pilot plan with clear net prices — no obligation.', 'Fill in the short form and we’ll reply within one business day.'],
-          l: [['contact', 'Book a demo']], c: ['pricing', 'live']
+          a: ['Happy to set that up. The demo is a 30-minute video call with a coverage check for your area, followed by a pilot plan with clear net prices — no obligation.', 'Pick a preferred time in the form and we’ll confirm within one business day.'],
+          l: [['booking', 'Pick a time for the demo']], c: ['pricing', 'live']
         },
         live: {
           k: ['panel', 'dashboard', 'interface', 'screen', 'app', 'fleet', 'try'],
@@ -192,7 +192,7 @@
         coverage: {
           k: ['miast', 'gdzie', 'obszar', 'region', 'okolic', 'dostepn', 'hiszpan', 'polsk', 'kraj', 'madryt', 'barcelon', 'walencj', 'warszaw', 'krakow', 'zasieg', 'dzialac'],
           a: ['Działamy w Hiszpanii i obsługujemy wszystkie duże miasta. Roboty są projektowane na wąskie uliczki, strefy piesze, osiedla zamknięte i pagórkowaty teren.', 'Zasięg zależy od lokalnych przepisów, dlatego dokładny obszar potwierdzamy podczas demo — zanim cokolwiek podpiszesz.'],
-          l: [['contact', 'Sprawdź mój obszar']], c: ['permits', 'demo']
+          l: [['coverage', 'Sprawdź swoje miasto'], ['contact', 'Zapytaj o mój obszar']], c: ['permits', 'demo']
         },
         integration: {
           k: ['api', 'integrac', 'zintegr', 'webhook', 'wtyczk', 'plugin', 'shopify', 'woocommerce', 'magento', 'csv', 'polacz', 'podlacz', 'wdroz', 'programist', 'dokumentac', 'sdk', 'rest'],
@@ -236,8 +236,8 @@
         },
         demo: {
           k: ['demo', 'spotkan', 'rozmow', 'umow', 'prezentac', 'pokaz', 'pilotaz', 'test', 'zacz', 'start'],
-          a: ['Chętnie. Demo to 30-minutowa rozmowa wideo ze sprawdzeniem zasięgu w Twojej okolicy, a potem plan pilotażu z jasnymi cenami netto — bez zobowiązań.', 'Wypełnij krótki formularz, a odpowiemy w ciągu jednego dnia roboczego.'],
-          l: [['contact', 'Umów demo']], c: ['pricing', 'live']
+          a: ['Chętnie. Demo to 30-minutowa rozmowa wideo ze sprawdzeniem zasięgu w Twojej okolicy, a potem plan pilotażu z jasnymi cenami netto — bez zobowiązań.', 'Wybierz preferowany termin w formularzu, a potwierdzimy go w ciągu jednego dnia roboczego.'],
+          l: [['booking', 'Wybierz termin demo']], c: ['pricing', 'live']
         },
         live: {
           k: ['panel', 'dashboard', 'interfejs', 'ekran', 'aplikac', 'flot', 'wyprobuj', 'sprobowac'],

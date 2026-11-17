@@ -1,0 +1,54 @@
+---
+title: Zasięg — sprawdź swoje miasto — DeliveryNextGen
+description: Sprawdź, czy roboty DeliveryNextGen dojeżdżają do Twojego miasta w Hiszpanii. Dokładny obszar potwierdzamy podczas bezpłatnego demo.
+---
+    <section class="page-hero center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Ścieżka nawigacji" data-reveal><li><a href="{{url:home}}">Start</a></li><li aria-current="page">Zasięg</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Zasięg</p>
+        <h1 class="headline-xl" id="page-title" data-split>Sprawdź, czy dojedziemy do Ciebie.</h1>
+        <p class="lead" data-reveal data-delay="0.3">Obsługujemy duże miasta w Hiszpanii. Wpisz swoje — a jeśli jeszcze nas tam nie ma, zapisz się na listę oczekujących.</p>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="cv-check-title">
+      <div class="container">
+        <div class="cv" data-coverage data-cities="{{coverage_data}}">
+          <div class="cv-panel" data-reveal>
+            <h2 class="headline-s" id="cv-check-title">Twoje miasto</h2>
+            <form class="cv-form" data-cv-form novalidate>
+              <label class="sr-only" for="cv-input">Nazwa miasta</label>
+              <input id="cv-input" type="search" list="cv-list" autocomplete="off" placeholder="np. Walencja, Bilbao, Gdańsk…" maxlength="60" data-cv-input>
+              <datalist id="cv-list" data-cv-list></datalist>
+              <button class="btn" type="submit">Sprawdź</button>
+            </form>
+            <div class="cv-result" data-cv-result aria-live="polite" hidden>
+              <p class="cv-result-k" data-cv-k></p>
+              <p class="cv-result-t" data-cv-t></p>
+              <p class="cv-result-p" data-cv-p></p>
+              <a class="btn btn--sm" data-cv-cta href="{{url:contact}}"></a>
+            </div>
+            <p class="cv-sub">Albo wybierz z listy:</p>
+            <ul class="cv-chips" role="list">{{coverage_list}}</ul>
+            <p class="cv-fine">Wyszukiwanie działa wyłącznie w Twojej przeglądarce — nic nie wysyłamy. Dokładne granice obszaru (dzielnice, strefy piesze, osiedla) potwierdzamy podczas demo.</p>
+          </div>
+          <div class="cv-map-wrap" data-reveal="fade">{{coverage_map}}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="band theme-light" aria-labelledby="cv-steps-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Nowe miasto</p>
+          <h2 class="headline-m" id="cv-steps-title" data-split>Twojego miasta nie ma na liście? Tak to wygląda.</h2>
+        </div>
+        <ol class="cv-steps" role="list" data-stagger>
+          <li><span class="k">1</span><h3>Zgłoszenie</h3><p>Zapisujesz się na listę oczekujących. Zbieramy zgłoszenia firm z danego miasta — im więcej, tym szybciej startujemy.</p></li>
+          <li><span class="k">2</span><h3>Mapowanie i przepisy</h3><p>Sprawdzamy chodniki, punkty dostępu i lokalne zasady oraz uzyskujemy wymagane uzgodnienia.</p></li>
+          <li><span class="k">3</span><h3>Pilotaż</h3><p>Mała flota startuje na wybranych trasach. Razem mierzymy czasy dostaw i niezawodność.</p></li>
+        </ol>
+      </div>
+    </section>
+
+{{partial:cta}}

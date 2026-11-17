@@ -36,6 +36,7 @@ $M = [
         'mail'     => 'We could not send your message right now. Please email us directly.',
         'ok'       => 'Thank you. We will reply within one business day.',
         'too_big'  => 'The request is too large.',
+        'slot'     => 'Please choose a time from the calendar again.',
     ],
     'pl' => [
         'method'   => 'Niedozwolona metoda.',
@@ -56,6 +57,7 @@ $M = [
         'mail'     => 'Nie udało się teraz wysłać wiadomości. Napisz do nas bezpośrednio e-mail.',
         'ok'       => 'Dziękujemy. Odpowiemy w ciągu jednego dnia roboczego.',
         'too_big'  => 'Żądanie jest zbyt duże.',
+        'slot'     => 'Wybierz termin z kalendarza ponownie.',
     ],
 ][$lang];
 
@@ -150,6 +152,27 @@ $len = mb_strlen($in['message']);
 if ($len < 20 || $len > 3000) {
     $errors['message'] = $len === 0 ? $M['required'] : $M['message'];
 }
+// Optional preferred demo slot: Spanish time, weekdays, 09:00–17:30 in 30-minute steps,
+// from tomorrow up to 45 days ahead (mirrors assets/js/booking.js).
+$slotText = '';
+$slotRaw  = (string) ($_POST['slot'] ?? '');
+if ($slotRaw !== '') {
+    $tz   = new DateTimeZone('Europe/Madrid');
+    $slot = preg_match('/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}$/', $slotRaw)
+        ? DateTimeImmutable::createFromFormat('!Y-m-d\TH:i', $slotRaw, $tz) : false;
+    $today = new DateTimeImmutable('today', $tz);
+    $ok = $slot !== false && $slot->format('Y-m-d\TH:i') === $slotRaw
+        && $slot >= $today->modify('+1 day') && $slot <= $today->modify('+45 days')
+        && (int) $slot->format('N') <= 5
+        && in_array($slot->format('i'), ['00', '30'], true)
+        && (int) $slot->format('G') >= 9 && $slot->format('H:i') <= '17:30'
+        && !in_array((int) $slot->format('G'), [13], true);
+    if ($ok) {
+        $slotText = $slot->format('l, j F Y, H:i') . ' (Europe/Madrid)';
+    } else {
+        $errors['slot'] = $M['slot'];
+    }
+}
 if (($_POST['b2b'] ?? '') !== '1') {
     $errors['b2b'] = $M['b2b'];
 }
@@ -174,6 +197,7 @@ $body .= 'Phone:        ' . ($in['phone'] !== '' ? $in['phone'] : '-') . "\n";
 $body .= "Business:     {$types[$in['user_type']]}\n";
 $body .= "Plan:         {$plans[$in['plan']]}\n";
 $body .= 'Language:     ' . strtoupper($lang) . "\n";
+$body .= 'Demo slot:    ' . ($slotText !== '' ? $slotText . ' - to be confirmed' : '-') . "\n";
 $body .= str_repeat('-', 50) . "\n\n";
 $body .= "Message:\n{$in['message']}\n\n";
 $body .= str_repeat('-', 50) . "\n";

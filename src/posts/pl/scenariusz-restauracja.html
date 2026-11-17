@@ -1,0 +1,34 @@
+---
+title: Restauracja na starówce — wieczorny szczyt bez kurierów
+description: Przykładowy scenariusz wdrożenia robotów DeliveryNextGen w restauracji z dostawami w wąskich uliczkach starego miasta.
+date: 2026-11-17
+kind: scenario
+excerpt: Około 800 dostaw miesięcznie, większość między 19:00 a 22:00, adresy w strefie pieszej. Jak mógłby wyglądać plan Growth w takiej restauracji.
+read: 4
+pair: scenario-restaurant
+art: t-art-restaurant
+---
+<h2>Punkt wyjścia</h2>
+<p>Restauracja w centrum historycznym. Około 800 zamówień z dostawą miesięcznie, z wyraźnym szczytem wieczorem. Duża część adresów leży w strefie pieszej, do której samochody nie wjeżdżają, więc kurierzy zostawiają skutery na granicy i kończą trasę pieszo.</p>
+
+<h2>Dobór planu</h2>
+<p>Przy takim wolumenie pasuje plan <strong>Growth</strong>: do 1000 dostaw miesięcznie, 3 roboty, tryb restauracyjny i priorytetowa kolejka. Przy 799 € netto miesięcznie i 800 dostawach daje to <strong>około 1,00 € netto za dostawę</strong>. Dokładną kalkulację dla swojego wolumenu zrobisz w <a href="{{url:pricing}}">kalkulatorze w cenniku</a>.</p>
+
+<h2>Jak wygląda wieczór</h2>
+<ol>
+  <li>Zamówienie z systemu POS trafia przez API do platformy w mniej niż sekundę.</li>
+  <li>Dyspozytor przydziela najbliższego wolnego robota. Kuchnia widzi w panelu, który robot podjedzie i kiedy.</li>
+  <li>Danie trafia do izolowanego schowka, który utrzymuje temperaturę.</li>
+  <li>Klient dostaje link do śledzenia i PIN. Robot jedzie uliczkami, do których skuter nie wjedzie.</li>
+  <li>Po odbiorze robot wraca do restauracji albo — gdy kolejka jest pusta — do ładowania.</li>
+</ol>
+
+<h2>Co warto mierzyć</h2>
+<ul>
+  <li>czas od wydania z kuchni do odbioru przez klienta w godzinach szczytu,</li>
+  <li>temperaturę i jakość dań w opiniach klientów,</li>
+  <li>koszt dostawy w porównaniu z obecnym modelem.</li>
+</ul>
+
+<h2>Na co uważać</h2>
+<p>Zamówienia z dalszych dzielnic lepiej na początku zostawić dotychczasowemu kanałowi. Roboty najlepiej sprawdzają się na krótkich, gęstych trasach — tam też najszybciej widać efekt.</p>
