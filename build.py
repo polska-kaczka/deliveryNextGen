@@ -27,7 +27,7 @@ OUT = BASE / "public_html"
 # Configuration
 # --------------------------------------------------------------------------
 SITE_URL = "https://deliverynextgen.ssujkowski.ucz.edu.pl"   # no trailing slash
-ASSET_VERSION = "2.2.0"                              # bump to bust caches
+ASSET_VERSION = "2.2.1"                              # bump to bust caches
 DOCS_UPDATED = "17.11.2026"                          # date of the legal documents
 
 # Non-essential cookie categories actually in use. Leave empty while the site
