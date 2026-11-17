@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Live demo — DeliveryNextGen dashboard</title>
+  <meta name="description" content="Try the DeliveryNextGen fleet dashboard: create deliveries, watch robots on the live map, manage integrations and your team. Simulated data that runs in your browser.">
+  <meta name="robots" content="noindex, follow">
+  <meta name="theme-color" content="#fbfbfd">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/main.css?v=2.0.0">
+  <link rel="stylesheet" href="../assets/css/app.css?v=2.0.0">
+  <script src="../assets/js/app.js?v=2.0.0" defer></script>
+  <script type="application/json" id="app-i18n">{"meta.title": "Live demo — DeliveryNextGen dashboard", "meta.description": "Try the DeliveryNextGen fleet dashboard: create deliveries, watch robots on the live map, manage integrations and your team. Simulated data that runs in your browser.", "streets": "Calle Mayor\nCalle Sol\nCalle Luna\nCalle Real\nCalle del Carmen\nPasaje San Roque\nCalle Ancha", "fmt.addr": "{street} {no}", "hub.0": "Kitchen · Calle Mayor 2", "hub.1": "Depot · Calle Ancha 41", "nav.overview": "Overview", "nav.deliveries": "Deliveries", "nav.fleet": "Fleet", "nav.integrations": "Integrations", "nav.team": "Team", "nav.main": "App navigation", "demo": "Demo", "demo.note": "Simulated data. Everything runs in your browser and is saved only on this device.", "back": "Back to website", "lang.switch": "Polski", "lang.label": "Polski — zmień język panelu na polski", "sim.title": "Simulation", "sim.play": "Resume", "sim.pause": "Pause", "sim.speed": "Speed", "sim.reset": "Reset demo", "sim.reset_confirm": "Reset all demo data? Deliveries, robots, team and integrations go back to the start.", "sim.paused": "Simulation paused", "search.ph": "Search deliveries and robots", "search.empty": "Nothing found", "search.deliveries": "Deliveries", "search.robots": "Robots", "notif.title": "Notifications", "notif.empty": "No notifications yet", "notif.read": "Mark all as read", "notif.open": "Open notifications", "user.name": "Demo user", "user.role": "Admin", "menu": "Menu", "today": "Today", "new": "New delivery", "k1": "Deliveries", "k2": "On time", "k3": "Avg. trip", "k4": "Robots online", "k4s": "{n} charging", "k1d": "vs. yesterday", "live": "Live fleet", "live_s": "Old town", "recent": "Recent", "all": "View all", "chart": "Deliveries by hour", "chart_s": "Today", "chart_label": "{n} deliveries between {h}:00 and {h}:59", "activity": "Activity", "activity_empty": "Activity from the fleet will appear here.", "map.label": "Live map of the delivery area with robot positions", "map.hub": "Pick-up point", "map.legend_active": "Delivering", "map.legend_idle": "Idle", "map.legend_charge": "Charging", "s.queued": "Queued", "s.assigned": "Assigned", "s.route": "En route", "s.done": "Delivered", "s.cancelled": "Cancelled", "r.idle": "Idle", "r.pickup": "To pick-up", "r.route": "Delivering", "r.return": "Returning", "r.charging": "Charging", "r.paused": "Paused", "r.offline": "Maintenance", "d.title": "Deliveries", "d.sub": "{n} today · {a} active", "f.all": "All", "f.active": "Active", "f.done": "Delivered", "f.cancelled": "Cancelled", "d.search": "Search by number, address or recipient", "d.export": "Export CSV", "col.id": "No.", "col.addr": "Address", "col.recipient": "Recipient", "col.robot": "Robot", "col.status": "Status", "col.created": "Created", "col.eta": "ETA / delivered", "d.empty": "No deliveries match your filters.", "d.more": "Show more", "dt.title": "Delivery #{id}", "dt.timeline": "Timeline", "t.created": "Order created", "t.assigned": "Assigned to {r}", "t.queued": "Waiting for a free robot", "t.picked": "Picked up · {hub}", "t.done": "Delivered · PIN confirmed", "t.cancelled": "Cancelled", "dt.pin": "Recipient PIN", "dt.size": "Size", "dt.prio": "Priority", "dt.hub": "Pick-up", "dt.note": "Note", "dt.robot": "Robot", "dt.recipient": "Recipient", "dt.cancel": "Cancel delivery", "dt.copy": "Copy tracking link", "dt.copied": "Tracking link copied", "dt.eta": "ETA", "dt.trip": "Trip time", "dt.ontime": "On time", "dt.late": "Late", "dt.locate": "Show on map", "close": "Close", "n.title": "New delivery", "n.hub": "Pick-up point", "n.addr": "Delivery address", "n.addr_ph": "e.g. Calle Sol 12", "n.addr_hint": "Streets in the service area are suggested as you type.", "n.floor": "Floor / door", "n.optional": "optional", "n.name": "Recipient", "n.name_ph": "Full name", "n.phone": "Phone", "n.size": "Parcel size", "size.s": "Small", "size.s_d": "up to 5 kg", "size.m": "Medium", "size.m_d": "up to 12 kg", "size.l": "Large", "size.l_d": "up to 25 kg", "n.prio": "Priority", "prio.std": "Standard", "prio.exp": "Express", "n.note": "Note for the recipient", "n.submit": "Create delivery", "n.estimate": "Estimated arrival in about {m} min", "cancel": "Cancel", "e.req": "This field is required.", "e.phone": "Enter a valid phone number.", "e.addr": "Enter a street and a house number, e.g. Calle Sol 12.", "e.email": "Enter a valid email address.", "e.dup": "This person is already on the team.", "toast.created": "Delivery #{id} created", "toast.cancelled": "Delivery #{id} cancelled", "toast.reset": "Demo data reset", "fl.title": "Fleet", "fl.sub": "{n} robots · {m} online", "fl.battery": "Battery", "fl.trips": "Trips today", "fl.odo": "Distance today", "fl.task": "Current task", "fl.none": "No task", "a.pause": "Pause", "a.resume": "Resume", "a.charge": "Send to charge", "a.online": "Bring online", "a.locate": "Show on map", "i.title": "Integrations", "i.sub": "Connect your shop, point of sale or your own software.", "i.api": "REST API", "i.api_d": "Create and track deliveries from your own software.", "i.key": "API key", "i.reveal": "Show", "i.hide": "Hide", "i.copy": "Copy", "i.copied": "Copied to clipboard", "i.regen": "Regenerate", "i.regen_done": "New API key generated. The old key no longer works.", "i.hooks": "Webhooks", "i.hooks_d": "Receive a POST request whenever a delivery changes status.", "i.url": "Endpoint URL", "i.url_ph": "https://example.com/webhooks/delivery", "i.url_err": "Enter a valid https:// address.", "i.save": "Save", "i.saved": "Saved", "i.test": "Send test event", "i.log": "Recent events", "i.log_empty": "No events sent yet.", "i.shop": "E-commerce plugin", "i.shop_d": "Orders from your online shop become deliveries automatically.", "i.pos": "Restaurant POS", "i.pos_d": "Send kitchen orders straight to the fleet when they are ready.", "i.sms": "Recipient SMS", "i.sms_d": "Text the tracking link and PIN to every recipient.", "i.csv": "CSV import", "i.csv_d": "Create many deliveries at once. One row per delivery: address, recipient, phone.", "i.csv_btn": "Choose CSV file", "i.csv_done": "{n} deliveries imported", "i.csv_none": "No valid rows found in the file.", "i.csv_sample": "Download sample", "i.connect": "Connect", "i.connected": "Connected", "i.connecting": "Connecting…", "i.disconnect": "Disconnect", "i.off": "Not connected", "tm.title": "Team", "tm.sub": "{n} members · {i} invited", "tm.invite": "Invite member", "col.name": "Name", "col.email": "Email", "col.role": "Role", "col.state": "Status", "col.last": "Last active", "role.admin": "Admin", "role.dispatcher": "Dispatcher", "role.viewer": "Viewer", "role.admin_d": "Full access, billing and team.", "role.dispatcher_d": "Creates and manages deliveries.", "role.viewer_d": "Read-only access to tracking.", "st.active": "Active", "st.invited": "Invited", "tm.remove": "Remove", "tm.remove_confirm": "Remove {n} from the team?", "tm.you": "You", "inv.title": "Invite a team member", "inv.name": "Name", "inv.email": "Work email", "inv.role": "Role", "inv.send": "Send invite", "toast.invited": "Invitation sent to {e}", "toast.removed": "{n} removed from the team", "toast.role": "{n} is now {r}", "ev.created": "#{id} created · {a}", "ev.picked": "{r} picked up #{id}", "ev.done": "#{id} delivered to {a}", "ev.low": "{r} battery low — returning to charge", "ev.charged": "{r} fully charged", "ev.cancel": "#{id} cancelled", "ev.queued": "#{id} is waiting for a free robot", "ago.now": "just now", "ago.min": "{n} min ago", "ago.h": "{n} h ago", "min": "min", "km": "km", "kbd": "Shortcuts: N new delivery · / search · Esc close", "dt.source": "Source", "src.manual": "Dashboard", "src.api": "REST API", "src.shop": "E-commerce plugin", "src.pos": "Restaurant POS", "src.csv": "CSV import", "dt.progress": "Progress", "fl.selected": "Selected on map"}</script>
+</head>
+<body class="app is-loading">
+  <a class="skip-link" href="#view">Skip to content</a>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <!-- Shared materials for every robot view, map pin and parcel (one source of truth). -->
+    <defs>
+      <!-- pearl shell -->
+      <linearGradient id="dngShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f3f4f6"/><stop offset=".78" stop-color="#e2e5ea"/><stop offset="1" stop-color="#cfd4db"/></linearGradient>
+      <linearGradient id="dngShellSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".09"/><stop offset=".1" stop-color="#000" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+      <linearGradient id="dngShellEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+      <radialGradient id="dngShellTop" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f1f2f5"/><stop offset="1" stop-color="#d6dbe1"/></radialGradient>
+      <!-- graphite chassis -->
+      <linearGradient id="dngChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".35" stop-color="#2e3238"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+      <!-- cargo bay (insulated liner) -->
+      <linearGradient id="dngBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1e22"/><stop offset="1" stop-color="#3b4149"/></linearGradient>
+      <!-- smoked visor -->
+      <linearGradient id="dngVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a414b"/><stop offset=".55" stop-color="#14181d"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39404a"/><stop offset=".6" stop-color="#12161b"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <!-- lidar puck -->
+      <linearGradient id="dngPuck" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d0f12"/><stop offset=".45" stop-color="#3a4048"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+      <!-- wheels -->
+      <radialGradient id="dngTyre" cx=".5" cy=".42" r=".6"><stop offset=".6" stop-color="#30343a"/><stop offset="1" stop-color="#121417"/></radialGradient>
+      <linearGradient id="dngTyreFront" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121417"/><stop offset=".5" stop-color="#34383e"/><stop offset="1" stop-color="#121417"/></linearGradient>
+      <radialGradient id="dngRim" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dde2"/><stop offset="1" stop-color="#8d96a1"/></radialGradient>
+      <!-- light -->
+      <linearGradient id="dngSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity=".2"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e6fbff" stop-opacity=".55"/><stop offset=".35" stop-color="#9befff" stop-opacity=".22"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="dngPool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd58a" stop-opacity=".4"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngAO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <!-- parcels -->
+      <linearGradient id="dngBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6cba1"/><stop offset="1" stop-color="#cba873"/></linearGradient>
+      <linearGradient id="dngBag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfae7d"/><stop offset=".4" stop-color="#e0c494"/><stop offset="1" stop-color="#c9a671"/></linearGradient>
+      <!-- clips (user space of the side-view robot, so the miniature reuses them) -->
+      <clipPath id="dngStatusClip"><rect x="98" y="201.5" width="340" height="5" rx="2.5"/></clipPath>
+      <clipPath id="dngGlassClip"><path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z"/></clipPath>
+      <clipPath id="dngPuckClip"><rect x="400" y="88" width="26" height="9" rx="3"/></clipPath>
+      <clipPath id="dngFrontVisorClip"><rect x="380" y="252" width="240" height="112" rx="52"/></clipPath>
+      <clipPath id="dngFrontPuckClip"><rect x="452" y="146" width="96" height="22" rx="8"/></clipPath>
+      <!-- glow & softness -->
+      <filter id="dngGlow" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngGlowL" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+      <filter id="dngSoftL" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+      <!-- drop shadows: S = objects on maps, M = props, L = devices -->
+      <filter id="dngDropS" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+      <filter id="dngDropM" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".14"/></filter>
+      <filter id="dngDropL" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".13"/></filter>
+    </defs>
+  </svg>
+
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="app-bot"><g class="bot-marker">
+                    <!-- Live robot position as shown in the apps (centred on 0 0). -->
+                    <circle class="map-pin-ring" r="9" fill="#00a3c4" fill-opacity=".35"/>
+                    <circle r="8" fill="#00a3c4" stroke="#fff" stroke-width="3"/>
+                    <circle r="2.6" fill="#fff"/>
+                  </g>
+</g>
+      <g id="app-hub"><g class="pin-origin">
+                  <!-- Pick-up point (restaurant / shop / depot), centred on 0 0. -->
+                  <circle r="11" fill="#1d1d1f" stroke="#fff" stroke-width="3"/>
+                  <path d="M-3 -5 V5 M3 -5 V-1 Q3 1 1 1 H-1 M3 1 V5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" fill="none"/>
+                </g>
+</g>
+      <g id="app-dest"><g class="pin-dest">
+                  <!-- Drop-off point, centred on 0 0. The tick replaces the house when the robot arrives. -->
+                  <circle class="pin-wave" r="12" fill="#1e8e3e" fill-opacity="0"/>
+                  <circle r="12" fill="#1e8e3e" stroke="#fff" stroke-width="3"/>
+                  <path class="pin-house" d="M-5 1 L0 -4 L5 1 M-3.5 0 V5 H3.5 V0" stroke="#fff" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+                  <path class="pin-check" d="M-4.6 0.4 L-1.4 3.6 L4.8 -3" stroke="#fff" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round" fill="none" opacity="0"/>
+                </g>
+</g>
+      <g id="app-mini"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
+            <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
+          </g>
+</g>
+    </defs>
+  </svg>
+
+  <div class="app-shell">
+    <aside class="app-side" id="app-side">
+      <div class="app-brand"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><mask id="lm-app"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs><rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-app)"/></svg><span>DeliveryNextGen</span><span class="app-demo-tag">Demo</span></div>
+      <nav class="app-nav" aria-label="App navigation">
+        <span class="app-nav-ind" aria-hidden="true"></span>
+        <a href="#overview" data-nav="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Overview</span></a>
+        <a href="#deliveries" data-nav="deliveries"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg><span>Deliveries</span><em class="app-count" data-count="active"></em></a>
+        <a href="#fleet" data-nav="fleet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4Z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span>Fleet</span></a>
+        <a href="#integrations" data-nav="integrations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8ZM12 17v4"/></svg><span>Integrations</span></a>
+        <a href="#team" data-nav="team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><span>Team</span></a>
+      </nav>
+
+      <div class="app-sim" role="group" aria-label="Simulation">
+        <div class="app-sim-h"><span class="app-sim-dot" aria-hidden="true"></span>Simulation</div>
+        <div class="app-sim-row">
+          <button class="app-chip" type="button" data-act="sim-toggle" aria-pressed="false"><span class="app-sim-label">Pause</span></button>
+          <div class="app-seg app-seg--sm" role="radiogroup" aria-label="Speed">
+            <button type="button" role="radio" data-speed="1">1×</button>
+            <button type="button" role="radio" data-speed="2">2×</button>
+            <button type="button" role="radio" data-speed="4">4×</button>
+          </div>
+        </div>
+        <p class="app-sim-note">Simulated data. Everything runs in your browser and is saved only on this device.</p>
+        <button class="app-link-btn" type="button" data-act="reset">Reset demo</button>
+      </div>
+
+      <div class="app-side-foot">
+        <a class="app-side-link" href="../"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M19 12H5M11 6l-6 6 6 6"/></svg><span>Back to website</span></a>
+        <a class="app-side-link" href="../pl/app/" data-keep-hash hreflang="pl" aria-label="Polski — zmień język panelu na polski"><span class="app-lang">PL</span><span>Polski</span></a>
+      </div>
+    </aside>
+
+    <div class="app-main">
+      <header class="app-top">
+        <div class="app-top-row">
+          <a class="app-top-brand" href="#overview" aria-label="DeliveryNextGen"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><mask id="lm-top"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs><rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-top)"/></svg></a>
+          <div class="app-search">
+            <label class="sr-only" for="app-q">Search deliveries and robots</label>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="6.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m16 16 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            <input id="app-q" type="search" autocomplete="off" placeholder="Search deliveries and robots" role="combobox" aria-expanded="false" aria-controls="app-q-list" aria-autocomplete="list">
+            <kbd>/</kbd>
+            <div class="app-pop app-q-list" id="app-q-list" role="listbox" hidden></div>
+          </div>
+          <div class="app-top-actions">
+            <span class="app-live" aria-hidden="true"><span class="app-live-dot"></span><span data-clock></span></span>
+            <div class="app-notif">
+              <button class="app-icon-btn" type="button" data-act="notif" aria-expanded="false" aria-controls="app-notif-pop" aria-label="Open notifications">
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 16V11a6 6 0 0 1 12 0v5l1.5 2h-15L6 16Z M10 20.5a2.2 2.2 0 0 0 4 0" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+                <span class="app-badge-dot" data-unread hidden></span>
+              </button>
+              <div class="app-pop app-notif-pop" id="app-notif-pop" hidden>
+                <div class="app-pop-h"><b>Notifications</b><button class="app-link-btn" type="button" data-act="notif-read">Mark all as read</button></div>
+                <ul class="app-notif-list" data-notif-list></ul>
+              </div>
+            </div>
+            <div class="app-user" title="Demo user · Admin"><span class="app-avatar app-avatar--you">DU</span></div>
+          </div>
+        </div>
+      </header>
+
+      <main class="app-view" id="view" tabindex="-1" aria-live="off"></main>
+    </div>
+
+    <nav class="app-tabbar" aria-label="App navigation">
+      <a href="#overview" data-nav="overview"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg><span>Overview</span></a>
+      <a href="#deliveries" data-nav="deliveries"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/></svg><span>Deliveries</span></a>
+      <a href="#fleet" data-nav="fleet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 4 3 6.5v13.5l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4Z"/><path d="M9 4v13.5M15 6.5V20"/></svg><span>Fleet</span></a>
+      <a href="#integrations" data-nav="integrations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M9 3v5M15 3v5M6 8h12v3a6 6 0 0 1-12 0V8ZM12 17v4"/></svg><span>Integrations</span></a>
+      <a href="#team" data-nav="team"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M18 14a6 6 0 0 1 3.5 6"/></svg><span>Team</span></a>
+    </nav>
+  </div>
+
+  <!-- New delivery -->
+  <dialog class="app-modal" id="dlg-new" aria-labelledby="dlg-new-t">
+    <form class="app-form" method="dialog" novalidate data-form="new">
+      <div class="app-modal-h"><h2 id="dlg-new-t">New delivery</h2><button class="app-icon-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <div class="app-modal-b">
+        <div class="app-field">
+          <span class="app-label">Pick-up point</span>
+          <div class="app-seg app-seg--full" role="radiogroup" aria-label="Pick-up point">
+            <label><input type="radio" name="hub" value="0" checked><span>Kitchen · Calle Mayor 2</span></label>
+            <label><input type="radio" name="hub" value="1"><span>Depot · Calle Ancha 41</span></label>
+          </div>
+        </div>
+        <div class="app-grid-2">
+          <div class="app-field app-field--grow">
+            <label class="app-label" for="n-addr">Delivery address</label>
+            <input id="n-addr" name="addr" type="text" autocomplete="off" placeholder="e.g. Calle Sol 12" list="n-streets" aria-describedby="n-addr-h" required>
+            <datalist id="n-streets"></datalist>
+            <small class="app-hint" id="n-addr-h">Streets in the service area are suggested as you type.</small>
+          </div>
+          <div class="app-field">
+            <label class="app-label" for="n-floor">Floor / door <i>optional</i></label>
+            <input id="n-floor" name="floor" type="text" maxlength="24" autocomplete="off">
+          </div>
+        </div>
+        <div class="app-grid-2">
+          <div class="app-field">
+            <label class="app-label" for="n-name">Recipient</label>
+            <input id="n-name" name="name" type="text" maxlength="60" placeholder="Full name" autocomplete="off" required>
+          </div>
+          <div class="app-field">
+            <label class="app-label" for="n-phone">Phone</label>
+            <input id="n-phone" name="phone" type="tel" inputmode="tel" maxlength="20" placeholder="+34 600 000 000" autocomplete="off" required>
+          </div>
+        </div>
+        <div class="app-field">
+          <span class="app-label">Parcel size</span>
+          <div class="app-cards3" role="radiogroup" aria-label="Parcel size">
+            <label class="app-opt"><input type="radio" name="size" value="s"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="10" width="8" height="8" rx="1.5"/></svg><b>Small</b><small>up to 5 kg</small></span></label>
+            <label class="app-opt"><input type="radio" name="size" value="m" checked><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="6" y="8" width="12" height="10" rx="1.5"/></svg><b>Medium</b><small>up to 12 kg</small></span></label>
+            <label class="app-opt"><input type="radio" name="size" value="l"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="6" width="16" height="12" rx="1.5"/></svg><b>Large</b><small>up to 25 kg</small></span></label>
+          </div>
+        </div>
+        <div class="app-grid-2">
+          <div class="app-field">
+            <span class="app-label">Priority</span>
+            <div class="app-seg app-seg--full" role="radiogroup" aria-label="Priority">
+              <label><input type="radio" name="prio" value="std" checked><span>Standard</span></label>
+              <label><input type="radio" name="prio" value="exp"><span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg>Express</span></label>
+            </div>
+          </div>
+          <div class="app-field">
+            <label class="app-label" for="n-note">Note for the recipient <i>optional</i></label>
+            <input id="n-note" name="note" type="text" maxlength="80" autocomplete="off">
+          </div>
+        </div>
+        <p class="app-estimate" data-estimate aria-live="polite"></p>
+      </div>
+      <div class="app-modal-f">
+        <button class="app-btn app-btn--ghost" type="button" data-close>Cancel</button>
+        <button class="app-btn" type="submit">Create delivery</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Invite -->
+  <dialog class="app-modal app-modal--sm" id="dlg-invite" aria-labelledby="dlg-inv-t">
+    <form class="app-form" method="dialog" novalidate data-form="invite">
+      <div class="app-modal-h"><h2 id="dlg-inv-t">Invite a team member</h2><button class="app-icon-btn" type="button" data-close aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="m6 6 12 12M18 6 6 18"/></svg></button></div>
+      <div class="app-modal-b">
+        <div class="app-field">
+          <label class="app-label" for="i-name">Name</label>
+          <input id="i-name" name="name" type="text" maxlength="60" autocomplete="off" required>
+        </div>
+        <div class="app-field">
+          <label class="app-label" for="i-email">Work email</label>
+          <input id="i-email" name="email" type="email" maxlength="80" autocomplete="off" required>
+        </div>
+        <div class="app-field">
+          <span class="app-label">Role</span>
+          <div class="app-roles" role="radiogroup" aria-label="Role">
+            <label class="app-opt app-opt--row"><input type="radio" name="role" value="admin"><span><b>Admin</b><small>Full access, billing and team.</small></span></label>
+            <label class="app-opt app-opt--row"><input type="radio" name="role" value="dispatcher" checked><span><b>Dispatcher</b><small>Creates and manages deliveries.</small></span></label>
+            <label class="app-opt app-opt--row"><input type="radio" name="role" value="viewer"><span><b>Viewer</b><small>Read-only access to tracking.</small></span></label>
+          </div>
+        </div>
+      </div>
+      <div class="app-modal-f">
+        <button class="app-btn app-btn--ghost" type="button" data-close>Cancel</button>
+        <button class="app-btn" type="submit">Send invite</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Confirm -->
+  <dialog class="app-modal app-modal--xs" id="dlg-confirm" aria-labelledby="dlg-c-t">
+    <form class="app-form" method="dialog">
+      <div class="app-modal-b"><p id="dlg-c-t" data-confirm-text></p></div>
+      <div class="app-modal-f">
+        <button class="app-btn app-btn--ghost" type="submit" value="no">Cancel</button>
+        <button class="app-btn app-btn--danger" type="submit" value="yes" data-confirm-ok>OK</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Delivery details -->
+  <dialog class="app-drawer" id="dlg-detail" aria-labelledby="dlg-d-t">
+    <div class="app-drawer-in" data-detail></div>
+  </dialog>
+
+  <div class="app-toasts" role="status" aria-live="polite"></div>
+  <noscript><p class="app-noscript">JavaScript is required for the live demo.</p></noscript>
+</body>
+</html>

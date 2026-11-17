@@ -1,4 +1,4 @@
 Contact: mailto:danielmedinabello5@gmail.com
-Expires: 2027-10-19T00:00:00.000Z
+Expires: 2027-11-17T00:00:00.000Z
 Preferred-Languages: en, pl, es
 Canonical: https://deliverynextgen.threecode.eu/.well-known/security.txt

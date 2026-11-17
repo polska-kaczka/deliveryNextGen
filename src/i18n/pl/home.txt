@@ -90,6 +90,8 @@ Platforma
 Cała flota. Jeden ekran.
 @@ platform.intro
 Dispatch, śledzenie na żywo, potwierdzenia doręczeń i koszty — w panelu, który zespół opanuje w jedno popołudnie.
+@@ platform.demo
+Wypróbuj demo na żywo
 @@ platform.caption
 Interfejs poglądowy. Pokazane dane są przykładowe.
 @@ platform.f1.t
