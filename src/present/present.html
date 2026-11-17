@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="{{lang}}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#080c10">
+  <link rel="icon" href="{{root}}favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
+  <link rel="stylesheet" href="{{root}}assets/css/main.css?v={{ver}}">
+  <link rel="stylesheet" href="{{root}}assets/css/present.css?v={{ver}}">
+  <script src="{{root}}assets/js/present.js?v={{ver}}" defer></script>
+  <script type="application/json" id="present-i18n">{{present_json}}</script>
+</head>
+<body class="present">
+  {{shared:dng-defs}}
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <defs>
+      <g id="p-bot">{{shared:bot-marker}}</g>
+      <g id="p-origin">{{shared:pin-origin}}</g>
+      <g id="p-dest">{{shared:pin-dest}}</g>
+      <g id="p-mini">{{shared:robot-mini}}</g>
+    </defs>
+  </svg>
+
+  <div class="viewport" id="viewport">
+  <div class="pstage" id="stage" aria-live="off">
+
+    <!-- ambient background shared by every scene -->
+    <div class="amb" aria-hidden="true">
+      <div class="amb-grid"></div>
+      <div class="amb-orb amb-orb--a"></div>
+      <div class="amb-orb amb-orb--b"></div>
+    </div>
+
+    <!-- ===================================================== 1 · INTRO -->
+    <section class="ps s-intro" data-key="intro" data-dur="7500" aria-label="{{t:ch.1}}">
+      <div class="intro-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+      <svg class="intro-mark" viewBox="0 0 32 32" aria-hidden="true">
+        <rect class="im-body" width="32" height="32" rx="9" fill="#fff"/>
+        <g class="im-eyes"><rect class="im-eye" x="8" y="13" width="5.5" height="7" rx="2.75" fill="#080c10"/><rect class="im-eye" x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#080c10"/></g>
+      </svg>
+      <h1 class="intro-word" data-chars data-d="900">DeliveryNextGen</h1>
+      <p class="intro-tag" data-split data-d="2300">{{t:hero.title}}</p>
+      <div class="intro-road" aria-hidden="true"><i></i></div>
+      <p class="intro-cap a-fade" data-d="3800">{{t:hero.caption}}</p>
+    </section>
+
+    <!-- ===================================================== 2 · PROBLEM -->
+    <section class="ps s-problem" data-key="problem" data-dur="11000" aria-label="{{t:ch.2}}">
+      <div class="copy copy--tl">
+        <p class="eyebrow-x a-up" data-d="200">{{t:statement.label}}</p>
+        <h2 class="h-xl" data-split data-d="400">{{t:problem.l1}}</h2>
+        <h2 class="h-xl h-accent" data-split data-d="2600">{{t:problem.l2}}</h2>
+      </div>
+      <svg class="street" viewBox="0 0 1920 1080" aria-hidden="true">
+        <defs>
+          <linearGradient id="pAlley" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#05080b"/><stop offset="1" stop-color="#0b1116"/></linearGradient>
+          <linearGradient id="pVan" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f4f6f8"/><stop offset="1" stop-color="#c9d0d7"/></linearGradient>
+          <radialGradient id="pLamp" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffd59a" stop-opacity=".35"/><stop offset="1" stop-color="#ffd59a" stop-opacity="0"/></radialGradient>
+        </defs>
+        <!-- far skyline -->
+        <g class="st-far" fill="#0f151b">
+          <rect x="0" y="560" width="160" height="300"/><rect x="150" y="500" width="120" height="360"/><rect x="260" y="590" width="200" height="270"/>
+          <rect x="450" y="520" width="140" height="340"/><rect x="580" y="610" width="180" height="250"/><rect x="1820" y="540" width="100" height="320"/>
+        </g>
+        <!-- near buildings left & right of the alley -->
+        <g class="st-near">
+          <rect x="760" y="380" width="480" height="480" fill="#161d24"/>
+          <rect x="1380" y="340" width="540" height="520" fill="#161d24"/>
+          <rect x="760" y="372" width="480" height="12" fill="#1d262f"/>
+          <rect x="1380" y="332" width="540" height="12" fill="#1d262f"/>
+          <g class="st-win" fill="#e7c17d">
+            <rect x="810" y="430" width="44" height="64" rx="3"/><rect x="900" y="430" width="44" height="64" rx="3" class="off"/><rect x="990" y="430" width="44" height="64" rx="3"/><rect x="1080" y="430" width="44" height="64" rx="3" class="off"/><rect x="1170" y="430" width="44" height="64" rx="3"/>
+            <rect x="810" y="560" width="44" height="64" rx="3" class="off"/><rect x="900" y="560" width="44" height="64" rx="3"/><rect x="990" y="560" width="44" height="64" rx="3" class="off"/><rect x="1080" y="560" width="44" height="64" rx="3"/><rect x="1170" y="560" width="44" height="64" rx="3" class="off"/>
+            <rect x="1440" y="400" width="48" height="70" rx="3"/><rect x="1540" y="400" width="48" height="70" rx="3" class="off"/><rect x="1640" y="400" width="48" height="70" rx="3"/><rect x="1740" y="400" width="48" height="70" rx="3"/><rect x="1840" y="400" width="48" height="70" rx="3" class="off"/>
+            <rect x="1440" y="540" width="48" height="70" rx="3" class="off"/><rect x="1540" y="540" width="48" height="70" rx="3"/><rect x="1640" y="540" width="48" height="70" rx="3" class="off"/><rect x="1740" y="540" width="48" height="70" rx="3"/><rect x="1840" y="540" width="48" height="70" rx="3"/>
+          </g>
+        </g>
+        <!-- the alley: too narrow for a van -->
+        <rect x="1240" y="420" width="140" height="440" fill="url(#pAlley)"/>
+        <path d="M1240 420 Q1310 360 1380 420" fill="none" stroke="#1d262f" stroke-width="16"/>
+        <path d="M1262 860 L1300 520 M1358 860 L1320 520" stroke="#141b22" stroke-width="3"/>
+        <rect x="1296" y="640" width="28" height="44" rx="3" fill="#2a3540"/>
+        <use href="#p-dest" class="st-door" transform="translate(1310 600) scale(1.6)"/>
+        <!-- street lamp -->
+        <path d="M690 860 V560 Q690 530 720 530 H760" fill="none" stroke="#2a323b" stroke-width="7"/>
+        <rect x="744" y="526" width="34" height="10" rx="5" fill="#ffe2ad"/>
+        <path class="st-lamp" d="M761 536 L640 860 H880 Z" fill="url(#pLamp)"/>
+        <!-- ground -->
+        <rect x="0" y="860" width="1920" height="220" fill="#0b0f13"/>
+        <rect x="0" y="856" width="1920" height="8" fill="#1a2128"/>
+        <g class="st-dash" fill="#252d36"><rect x="0" y="968" width="90" height="8" rx="4"/><rect x="200" y="968" width="90" height="8" rx="4"/><rect x="400" y="968" width="90" height="8" rx="4"/><rect x="600" y="968" width="90" height="8" rx="4"/><rect x="800" y="968" width="90" height="8" rx="4"/><rect x="1000" y="968" width="90" height="8" rx="4"/><rect x="1200" y="968" width="90" height="8" rx="4"/><rect x="1400" y="968" width="90" height="8" rx="4"/><rect x="1600" y="968" width="90" height="8" rx="4"/><rect x="1800" y="968" width="90" height="8" rx="4"/><rect x="2000" y="968" width="90" height="8" rx="4"/></g>
+        <!-- bollards -->
+        <g class="st-bollards">
+          <rect x="1252" y="790" width="18" height="70" rx="6" fill="#c9d0d7"/><rect x="1252" y="804" width="18" height="8" fill="#ff453a"/>
+          <rect x="1301" y="790" width="18" height="70" rx="6" fill="#c9d0d7"/><rect x="1301" y="804" width="18" height="8" fill="#ff453a"/>
+          <rect x="1350" y="790" width="18" height="70" rx="6" fill="#c9d0d7"/><rect x="1350" y="804" width="18" height="8" fill="#ff453a"/>
+        </g>
+        <!-- the last 100 m, drawn after the van stops -->
+        <path class="st-route" d="M1180 900 C1300 900 1310 860 1310 760 L1310 640" fill="none" stroke="#00d4f0" stroke-width="6" stroke-linecap="round" stroke-dasharray="4 16"/>
+        <g class="st-100"><rect x="1400" y="700" width="150" height="56" rx="28" fill="#00d4f0"/><text x="1475" y="737" text-anchor="middle" fill="#080c10">100 m</text></g>
+        <!-- van -->
+        <g class="st-van">
+          <g class="st-van-body">
+            <rect x="0" y="690" width="290" height="150" rx="16" fill="url(#pVan)"/>
+            <path d="M290 726 H352 Q378 726 392 756 L410 796 V840 H290 Z" fill="url(#pVan)"/>
+            <path d="M300 738 H348 Q366 738 376 760 L388 790 H300 Z" fill="#1b232b"/>
+            <rect x="20" y="770" width="250" height="6" rx="3" fill="#00a3c4" fill-opacity=".55"/>
+            <rect x="398" y="806" width="14" height="10" rx="4" fill="#fff6dc"/>
+            <path class="st-beam" d="M410 810 L620 790 L620 860 L410 830 Z" fill="#fff3cf" fill-opacity=".12"/>
+          </g>
+          <g class="van-wheel st-vw"><circle cx="80" cy="842" r="30" fill="#1b1f24"/><circle cx="80" cy="842" r="13" fill="#8d96a1"/><path d="M80 829 V855 M67 842 H93" stroke="#1b1f24" stroke-width="4"/></g>
+          <g class="van-wheel st-vw"><circle cx="340" cy="842" r="30" fill="#1b1f24"/><circle cx="340" cy="842" r="13" fill="#8d96a1"/><path d="M340 829 V855 M327 842 H353" stroke="#1b1f24" stroke-width="4"/></g>
+        </g>
+        <!-- stop marker -->
+        <g class="st-x" transform="translate(1310 700)">
+          <circle class="st-x-ring" r="46" fill="#ff453a" fill-opacity=".25"/>
+          <circle r="34" fill="#ff453a"/>
+          <path d="M-12 -12 L12 12 M12 -12 L-12 12" stroke="#fff" stroke-width="6" stroke-linecap="round"/>
+        </g>
+      </svg>
+      <ul class="tags" aria-hidden="false">
+        <li class="tag tag--1">{{t:problem.tag1}}</li>
+        <li class="tag tag--2">{{t:problem.tag2}}</li>
+        <li class="tag tag--3">{{t:problem.tag3}}</li>
+      </ul>
+    </section>
+
+    <!-- ===================================================== 3 · ROBOT -->
+    <section class="ps s-robot theme-dark" data-key="robot" data-dur="10000" aria-label="{{t:ch.3}}">
+      <div class="copy copy--tc">
+        <p class="eyebrow-x a-up" data-d="2400">{{t:robot.eyebrow}}</p>
+        <h2 class="h-xxl" data-split data-d="2600">{{t:robot.title}}</h2>
+      </div>
+      <div class="rb-floor" aria-hidden="true"><i></i></div>
+      <div class="rb-speed" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+      <div class="rb-stage" aria-hidden="true">
+        <div class="rb-move">{{shared:robot-side}}</div>
+      </div>
+      <ul class="chips">
+        <li class="chip chip--1">{{icon:bolt}}<span>{{t:robot.c1}}</span></li>
+        <li class="chip chip--2">{{icon:clock}}<span>{{t:robot.c2}}</span></li>
+        <li class="chip chip--3">{{icon:lock}}<span>{{t:robot.c3}}</span></li>
+        <li class="chip chip--4">{{icon:eye}}<span>{{t:robot.c4}}</span></li>
+      </ul>
+    </section>
+
+    <!-- ===================================================== 4 · ANATOMY -->
+    <section class="ps s-anatomy theme-dark" data-key="anatomy" data-dur="11500" aria-label="{{t:ch.4}}">
+      <div class="copy copy--tc">
+        <p class="eyebrow-x a-up" data-d="100">{{t:how.inside.eyebrow}}</p>
+        <h2 class="h-xl" data-split data-d="300">{{t:anatomy.title}}</h2>
+      </div>
+      <div class="anatomy-art an-wrap">
+        {{shared:robot-front}}
+        <p class="callout callout--l callout--antenna"><b>{{t:how.inside.1.t}}</b><span>{{t:how.inside.1.p}}</span></p>
+        <p class="callout callout--l callout--wheels"><b>{{t:how.inside.2.t}}</b><span>{{t:how.inside.2.p}}</span></p>
+        <p class="callout callout--cargo"><b>{{t:how.inside.3.t}}</b><span>{{t:how.inside.3.p}}</span></p>
+        <p class="callout callout--sensors"><b>{{t:how.inside.4.t}}</b><span>{{t:how.inside.4.p}}</span></p>
+        <p class="callout callout--power"><b>{{t:how.inside.5.t}}</b><span>{{t:how.inside.5.p}}</span></p>
+      </div>
+    </section>
+
+    <!-- ===================================================== 5 · ONE DELIVERY -->
+    <section class="ps s-story" data-key="story" data-dur="19000" aria-label="{{t:ch.5}}">
+      <div class="copy copy--l">
+        <p class="eyebrow-x a-up" data-d="100">{{t:story.eyebrow}}</p>
+        <h2 class="h-xl" data-split data-d="300">{{t:story.title}}</h2>
+        <p class="clock a-up" data-d="900" data-clock>21:47</p>
+        <ol class="steps">
+          <li class="step a-up" data-d="1100"><b>{{t:story.1.t}}</b><span>{{t:story.1.p}}</span><i></i></li>
+          <li class="step a-up" data-d="1250"><b>{{t:story.2.t}}</b><span>{{t:story.2.p}}</span><i></i></li>
+          <li class="step a-up" data-d="1400"><b>{{t:story.3.t}}</b><span>{{t:story.3.p}}</span><i></i></li>
+          <li class="step a-up" data-d="1550"><b>{{t:story.4.t}}</b><span>{{t:story.4.p}}</span><i></i></li>
+        </ol>
+      </div>
+      <div class="pphone" aria-hidden="true">
+        <div class="phone-screen">
+          <svg class="pmap" viewBox="0 0 400 820">
+            <rect width="400" height="820" fill="#eef0f2"/>
+            <g fill="#e0e4e8">
+              <rect x="0" y="0" width="57" height="127" rx="6"/><rect x="83" y="0" width="114" height="127" rx="6"/><rect x="223" y="0" width="94" height="127" rx="6"/><rect x="343" y="0" width="57" height="127" rx="6"/>
+              <rect x="0" y="153" width="57" height="164" rx="6"/><rect x="83" y="153" width="114" height="164" rx="6"/><rect x="223" y="153" width="94" height="164" rx="6"/><rect x="343" y="153" width="57" height="164" rx="6"/>
+              <rect x="0" y="343" width="57" height="164" rx="6"/><rect x="223" y="343" width="94" height="164" rx="6"/><rect x="343" y="343" width="57" height="164" rx="6"/>
+              <rect x="0" y="533" width="57" height="154" rx="6"/><rect x="83" y="533" width="114" height="154" rx="6"/><rect x="223" y="533" width="94" height="154" rx="6"/><rect x="343" y="533" width="57" height="154" rx="6"/>
+              <rect x="0" y="713" width="57" height="107" rx="6"/><rect x="83" y="713" width="114" height="107" rx="6"/><rect x="223" y="713" width="94" height="107" rx="6"/><rect x="343" y="713" width="57" height="107" rx="6"/>
+            </g>
+            <rect x="83" y="343" width="114" height="164" rx="10" fill="#d5ecd9"/>
+            <g fill="#bfe0c6"><circle cx="112" cy="380" r="12"/><circle cx="160" cy="400" r="15"/><circle cx="120" cy="460" r="14"/><circle cx="170" cy="470" r="10"/></g>
+            <path class="pm-plan" d="M210 520 V330 H330" fill="none" stroke="#00a3c4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="pm-p1" d="M70 700 V520 H210" fill="none" stroke="#00a3c4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <path class="pm-p2" d="M210 520 H330 V330" fill="none" stroke="#00a3c4" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+            <g class="pm-obst" transform="translate(210 430)">
+              <circle class="pm-obst-ring" r="20" fill="#ff9f0a" fill-opacity=".25"/>
+              <circle r="15" fill="#ff9f0a" stroke="#fff" stroke-width="3"/>
+              <path d="M-6 4 H6 M-3 4 L1 -6 H4" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </g>
+            <use href="#p-origin" class="pm-origin" transform="translate(70 700) scale(1.3)"/>
+            <use href="#p-dest" class="pm-dest" transform="translate(330 330) scale(1.5)"/>
+            <g class="pm-bot"><use href="#p-bot" transform="scale(1.6)"/></g>
+          </svg>
+          <div class="ph-card">
+            <p class="ph-from"><span>{{t:story.s.restaurant}}</span><em>{{t:story.live}}</em></p>
+            <p class="ph-status" data-status>{{t:story.status_start}}</p>
+            <p class="ph-eta"><span>{{t:story.s.eta}}</span> <b data-eta>16</b> <span>{{t:story.s.min}}</span></p>
+            <p class="ph-unit">{{t:story.s.robot}} · {{t:story.unit}}</p>
+          </div>
+          <div class="ph-toast" data-toast>{{t:story.s.obstacle}}</div>
+          <div class="ph-pin">
+            <p class="ph-pin-t">{{t:story.pin_title}}</p>
+            <p class="ph-pin-s">{{t:story.pin_text}}</p>
+            <div class="ph-dots"><i></i><i></i><i></i><i></i></div>
+            <div class="ph-keys"><b>1</b><b>2</b><b>3</b><b>4</b><b>5</b><b>6</b><b>7</b><b>8</b><b>9</b><b class="nil"></b><b>0</b><b class="nil"></b></div>
+            <div class="ph-ok"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="22"/><path d="M14 25 L21 32 L35 17"/></svg><span>{{t:story.pin_done}}</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== 6 · PLATFORM -->
+    <section class="ps s-platform" data-key="platform" data-dur="14000" aria-label="{{t:ch.6}}">
+      <div class="copy copy--tc copy--tight">
+        <p class="eyebrow-x a-up" data-d="100">{{t:platform.eyebrow}}</p>
+        <h2 class="h-xl" data-split data-d="250">{{t:platform.title}}</h2>
+      </div>
+      <div class="win" aria-hidden="true">
+        <div class="win-bar"><i></i><i></i><i></i><span>app.deliverynextgen.eu</span><em>{{t:ui.sim}}</em></div>
+        <div class="win-body">
+          <aside class="win-side">
+            <p class="win-brand">{{logo:pr}}<span>DeliveryNextGen</span></p>
+            <ul class="win-nav" data-nav></ul>
+          </aside>
+          <div class="win-main">
+            <div class="kpis">
+              <div class="kpi"><span>{{t:platform.k1}}</span><b data-kpi="active">0</b></div>
+              <div class="kpi"><span>{{t:platform.k2}}</span><b data-kpi="bots">0</b><small>/ 14</small></div>
+              <div class="kpi"><span>{{t:platform.k3}}</span><b data-kpi="avg">0</b><small>min</small></div>
+              <div class="kpi"><span>{{t:platform.k4}}</span><b data-kpi="done">0</b><svg class="spark" viewBox="0 0 120 36"><path data-spark d="M0 30 L120 30"/></svg></div>
+            </div>
+            <div class="win-grid">
+              <div class="fleet">
+                <p class="panel-h">{{t:platform.map}}<em>● LIVE</em></p>
+                <svg class="fleet-map" viewBox="0 0 760 470" data-fleet>
+                  <rect width="760" height="470" rx="14" fill="#0f151b"/>
+                  <g class="fm-streets" stroke="#1d262f" stroke-width="16" stroke-linecap="round">
+                    <path d="M40 60 H720 M40 175 H720 M40 295 H720 M40 410 H720 M60 40 V430 M220 40 V430 M380 40 V430 M540 40 V430 M700 40 V430"/>
+                  </g>
+                  <g class="fm-hubs"><use href="#p-origin" transform="translate(220 175) scale(1.2)"/><use href="#p-origin" transform="translate(540 295) scale(1.2)"/></g>
+                  <g data-bots></g>
+                </svg>
+              </div>
+              <div class="feed">
+                <p class="panel-h">{{t:platform.feed}}</p>
+                <ul data-feed></ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================== 7 · INTEGRATIONS -->
+    <section class="ps s-int" data-key="int" data-dur="12500" aria-label="{{t:ch.7}}">
+      <div class="copy copy--tl">
+        <p class="eyebrow-x a-up" data-d="100">{{t:int.eyebrow}}</p>
+        <h2 class="h-xl" data-split data-d="250">{{t:int.title}}</h2>
+        <p class="lead-x a-up" data-d="900">{{t:int.sub}}</p>
+      </div>
+      <div class="code a-up" data-d="700" aria-hidden="true">
+        <div class="code-bar"><i></i><i></i><i></i><span>terminal</span></div>
+        <pre data-code></pre>
+        <div class="code-res" data-res><b>201</b> <span>{{t:int.created}}</span> · dlv_4821 · eta 16 min</div>
+        <div class="code-hook" data-hook><b>{{t:int.webhook}}</b> delivery.completed <i>✓</i></div>
+      </div>
+      <svg class="hub" viewBox="0 0 900 760" aria-hidden="true" data-hub>
+        <g class="hub-lines" data-lines></g>
+        <g data-packets></g>
+        <g class="hub-core" transform="translate(450 380)">
+          <circle class="hub-pulse" r="92" fill="#00d4f0" fill-opacity=".12"/>
+          <circle r="78" fill="#0f151b" stroke="#00d4f0" stroke-width="2"/>
+          <g transform="translate(-30 -30) scale(1.875)"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#080c10"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#080c10"/></g>
+        </g>
+        <g class="hub-nodes" data-nodes>
+          <g class="hub-node"><rect x="-120" y="-34" width="240" height="68" rx="34"/><text y="9" text-anchor="middle">{{t:int.n1}}</text></g>
+          <g class="hub-node"><rect x="-120" y="-34" width="240" height="68" rx="34"/><text y="9" text-anchor="middle">{{t:int.n2}}</text></g>
+          <g class="hub-node"><rect x="-120" y="-34" width="240" height="68" rx="34"/><text y="9" text-anchor="middle">{{t:int.n3}}</text></g>
+          <g class="hub-node"><rect x="-120" y="-34" width="240" height="68" rx="34"/><text y="9" text-anchor="middle">{{t:int.n4}}</text></g>
+          <g class="hub-node"><rect x="-120" y="-34" width="240" height="68" rx="34"/><text y="9" text-anchor="middle">{{t:int.n5}}</text></g>
+          <g class="hub-node"><rect x="-120" y="-34" width="240" height="68" rx="34"/><text y="9" text-anchor="middle">{{t:int.n6}}</text></g>
+        </g>
+      </svg>
+    </section>
+
+    <!-- ===================================================== 8 · SAFETY -->
+    <section class="ps s-safe" data-key="safe" data-dur="12000" aria-label="{{t:ch.8}}">
+      <svg class="top" viewBox="0 0 1920 1080" aria-hidden="true">
+        <rect width="1920" height="1080" fill="#0a0e12"/>
+        <rect x="0" y="560" width="1920" height="180" fill="#121820"/>
+        <rect x="0" y="480" width="1920" height="80" fill="#171f28"/>
+        <rect x="0" y="740" width="1920" height="80" fill="#171f28"/>
+        <g fill="#0e141a"><rect x="0" y="0" width="1920" height="476"/><rect x="0" y="824" width="1920" height="256"/></g>
+        <g fill="#141b23"><rect x="60" y="120" width="300" height="300" rx="14"/><rect x="420" y="160" width="380" height="260" rx="14"/><rect x="860" y="100" width="260" height="320" rx="14"/><rect x="1180" y="150" width="420" height="270" rx="14"/><rect x="1660" y="110" width="260" height="310" rx="14"/>
+          <rect x="60" y="880" width="420" height="200" rx="14"/><rect x="540" y="880" width="300" height="200" rx="14"/><rect x="900" y="880" width="460" height="200" rx="14"/><rect x="1420" y="880" width="500" height="200" rx="14"/></g>
+        <g class="top-dash" fill="#273039"><rect x="0" y="646" width="70" height="8" rx="4"/><rect x="160" y="646" width="70" height="8" rx="4"/><rect x="320" y="646" width="70" height="8" rx="4"/><rect x="480" y="646" width="70" height="8" rx="4"/><rect x="640" y="646" width="70" height="8" rx="4"/><rect x="800" y="646" width="70" height="8" rx="4"/><rect x="960" y="646" width="70" height="8" rx="4"/><rect x="1120" y="646" width="70" height="8" rx="4"/><rect x="1280" y="646" width="70" height="8" rx="4"/><rect x="1440" y="646" width="70" height="8" rx="4"/><rect x="1600" y="646" width="70" height="8" rx="4"/><rect x="1760" y="646" width="70" height="8" rx="4"/></g>
+        <g class="peds" data-peds fill="#9aa4ae"></g>
+        <path class="top-trail" data-trail d="" fill="none" stroke="#00d4f0" stroke-opacity=".35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <g class="top-obst" transform="translate(1210 690)">
+          <circle class="top-obst-ring" r="54" fill="#ff9f0a" fill-opacity=".18"/>
+          <rect x="-34" y="-22" width="68" height="44" rx="10" fill="#ff9f0a"/>
+          <path d="M-20 0 H20 M-10 -10 V10 M10 -10 V10" stroke="#5a3a00" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <g class="top-bot" data-bot>
+          <circle class="radar" r="60" fill="none" stroke="#00d4f0" stroke-width="2"/>
+          <circle class="radar radar--2" r="60" fill="none" stroke="#00d4f0" stroke-width="2"/>
+          <circle class="radar radar--3" r="60" fill="none" stroke="#00d4f0" stroke-width="2"/>
+          <path class="top-cone" d="M60 0 L300 -110 A 300 300 0 0 1 300 110 Z" fill="#00d4f0" fill-opacity=".07"/>
+          <g transform="scale(1.6)">{{shared:robot-top}}</g>
+        </g>
+      </svg>
+      <div class="copy copy--tl copy--shade">
+        <p class="eyebrow-x a-up" data-d="100">{{t:safe.eyebrow}}</p>
+        <h2 class="h-xl" data-split data-d="250">{{t:platform.f3.t}}</h2>
+        <p class="lead-x a-up" data-d="800">{{t:platform.f3.p}}</p>
+      </div>
+      <ul class="events">
+        <li class="ev ev--warn" data-ev="1"><i></i><span>{{t:safe.e1}}</span><em>R-07</em></li>
+        <li class="ev ev--op" data-ev="2"><span class="ev-av">{{icon:headset}}</span><span><b>{{t:safe.op}}</b>{{t:safe.e2}}</span></li>
+        <li class="ev ev--ok" data-ev="3"><i></i><span>{{t:safe.e3}}</span><em>R-07</em></li>
+      </ul>
+    </section>
+
+    <!-- ===================================================== 9 · NUMBERS -->
+    <section class="ps s-num" data-key="num" data-dur="11000" aria-label="{{t:ch.9}}">
+      <div class="sky" aria-hidden="true"><i class="sky-dusk"></i><i class="sky-night"></i><i class="sky-stars"></i></div>
+      <svg class="skyline" viewBox="0 0 1920 360" preserveAspectRatio="none" aria-hidden="true" data-skyline>
+        <g fill="#0d1318" data-blocks></g>
+        <g data-wins></g>
+      </svg>
+      <div class="copy copy--tc">
+        <h2 class="h-xl" data-split data-d="200">{{t:num.title}}</h2>
+      </div>
+      <div class="stats">
+        <div class="stat a-up" data-d="700"><p class="v"><span data-n="24" data-from="0">0</span><small>/7</small></p><p class="l">{{t:numbers.1}}</p></div>
+        <div class="stat a-up" data-d="900"><p class="v"><span data-n="60" data-from="0" data-prefix="−">0</span><small>%</small><sup>1</sup></p><p class="l">{{t:numbers.2}}</p></div>
+        <div class="stat a-up" data-d="1100"><p class="v"><span data-n="48" data-from="0">0</span><small>h</small></p><p class="l">{{t:numbers.3}}</p></div>
+        <div class="stat a-up" data-d="1300"><p class="v"><span data-n="0" data-from="140">140</span><small>g</small><sup>2</sup></p><p class="l">{{t:numbers.4}}</p></div>
+      </div>
+      <p class="fn a-fade" data-d="2500">{{t:num.fn}}</p>
+    </section>
+
+    <!-- ===================================================== 10 · INDUSTRIES -->
+    <section class="ps s-ind" data-key="ind" data-dur="11000" aria-label="{{t:ch.10}}">
+      <div class="copy copy--tc copy--tight">
+        <p class="eyebrow-x a-up" data-d="100">{{t:ind.eyebrow}}</p>
+        <h2 class="h-xl" data-split data-d="250">{{t:ind.title}}</h2>
+      </div>
+      <div class="cards">
+        <article class="card a-rise" data-d="800"><div class="card-art">{{shared:t-art-restaurant}}</div><p class="card-k">{{t:ind.1.k}}</p><h3>{{t:ind.1.t}}</h3><p>{{t:ind.1.p}}</p></article>
+        <article class="card a-rise" data-d="950"><div class="card-art">{{shared:t-art-retail}}</div><p class="card-k">{{t:ind.2.k}}</p><h3>{{t:ind.2.t}}</h3><p>{{t:ind.2.p}}</p></article>
+        <article class="card a-rise" data-d="1100"><div class="card-art">{{shared:t-art-logistics}}</div><p class="card-k">{{t:ind.3.k}}</p><h3>{{t:ind.3.t}}</h3><p>{{t:ind.3.p}}</p></article>
+        <article class="card a-rise" data-d="1250"><div class="card-art">{{shared:t-art-campus}}</div><p class="card-k">{{t:ind.4.k}}</p><h3>{{t:ind.4.t}}</h3><p>{{t:ind.4.p}}</p></article>
+      </div>
+    </section>
+
+    <!-- ===================================================== 11 · FINALE -->
+    <section class="ps s-end theme-dark" data-key="end" data-dur="12000" aria-label="{{t:ch.11}}">
+      <div class="end-burst" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="end-robot" aria-hidden="true"><div class="end-move">{{shared:robot-side}}</div></div>
+      <div class="end-copy">
+        <p class="end-brand a-up" data-d="2200">{{logo:end}}<span>DeliveryNextGen</span></p>
+        <h2 class="h-xxl" data-split data-d="2500">{{t:end.title}}</h2>
+        <p class="end-cta a-up" data-d="3600">
+          <a class="pbtn" href="{{site_href}}">{{t:end.site}}</a>
+          <a class="pbtn pbtn--ghost" href="{{app_href}}">{{t:end.app}}</a>
+        </p>
+        <p class="end-url a-fade" data-d="4200">{{site_host}}</p>
+      </div>
+    </section>
+
+    <!-- HUD (inside the stage so it scales with it) -->
+    <div class="hud" aria-hidden="true">
+      <p class="hud-brand">{{logo:hud}}<span>DeliveryNextGen</span></p>
+      <p class="hud-ch"><b data-hud-num>01</b><span>/ <i data-hud-total>11</i></span><em data-hud-ch></em></p>
+      <div class="hud-bar" data-bar></div>
+    </div>
+  </div>
+  </div>
+
+  <!-- presenter controls (outside the stage; auto-hide) -->
+  <nav class="ctrl" id="ctrl" aria-label="{{t:ui.help_title}}">
+    <button type="button" data-cmd="prev" aria-label="{{t:ui.prev}}" title="{{t:ui.prev}}"><svg viewBox="0 0 24 24"><path d="M15 6 9 12l6 6"/></svg></button>
+    <button type="button" data-cmd="toggle" aria-label="{{t:ui.pause}}" title="{{t:ui.pause}}" class="c-play"><svg class="i-pause" viewBox="0 0 24 24"><path d="M9 6v12M15 6v12"/></svg><svg class="i-play" viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z"/></svg></button>
+    <button type="button" data-cmd="next" aria-label="{{t:ui.next}}" title="{{t:ui.next}}"><svg viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></svg></button>
+    <span class="c-sep"></span>
+    <button type="button" data-cmd="restart" aria-label="{{t:ui.restart}}" title="{{t:ui.restart}}"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.4-5.7L4 8.5M4 4v4.5h4.5"/></svg></button>
+    <button type="button" data-cmd="loop" aria-label="{{t:ui.loop}}" title="{{t:ui.loop}}" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="M17 3l3 3-3 3M4 11V9a3 3 0 0 1 3-3h13M7 21l-3-3 3-3M20 13v2a3 3 0 0 1-3 3H4"/></svg></button>
+    <button type="button" data-cmd="notes" aria-label="{{t:ui.notes}}" title="{{t:ui.notes}}"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 11h7M9 15h7M9 7h3"/></svg></button>
+    <button type="button" data-cmd="help" aria-label="{{t:ui.help}}" title="{{t:ui.help}}"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.6 9.3a2.5 2.5 0 1 1 3.4 2.3c-.6.3-1 .8-1 1.5v.4M12 17h.01"/></svg></button>
+    <button type="button" data-cmd="fullscreen" aria-label="{{t:ui.fullscreen}}" title="{{t:ui.fullscreen}}"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+    <a class="c-lang" href="{{switch_href}}" hreflang="{{switch_lang}}">{{switch_code}}</a>
+  </nav>
+
+  <!-- start cover -->
+  <div class="cover" id="cover">
+    <div class="cover-in">
+      <p class="cover-mark">{{logo:cover}}<span>DeliveryNextGen</span><em>{{t:ui.cover_kicker}}</em></p>
+      <h1>{{t:ui.cover_title}}</h1>
+      <button class="pbtn pbtn--lg" type="button" data-cmd="start"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10-6.5z"/></svg>{{t:ui.start}}</button>
+      <label class="cover-loop"><input type="checkbox" data-loop> <span>{{t:ui.loop}}</span></label>
+      <p class="cover-hint">{{t:ui.cover_hint}}</p>
+    </div>
+  </div>
+
+  <!-- help -->
+  <dialog class="help" id="help" aria-labelledby="help-title">
+    <h2 id="help-title">{{t:ui.help_title}}</h2>
+    <dl data-help></dl>
+    <button class="pbtn" type="button" data-cmd="help-close">OK</button>
+  </dialog>
+
+  <!-- speaker notes (rendered only with ?notes) -->
+  <main class="notes" id="notes" hidden>
+    <header class="notes-head"><p><b data-n-num>–</b> <span data-n-ch></span></p><p class="notes-time"><span>{{t:ui.notes_elapsed}}</span> <b data-n-time>0:00</b></p></header>
+    <div class="notes-bar"><i data-n-bar></i></div>
+    <p class="notes-now" data-n-text>{{t:ui.notes_wait}}</p>
+    <section class="notes-next"><h2>{{t:ui.notes_next}}: <span data-n-next-ch></span></h2><p data-n-next></p></section>
+    <footer class="notes-ctrl">
+      <button class="pbtn pbtn--ghost" type="button" data-ncmd="prev">← {{t:ui.prev}}</button>
+      <button class="pbtn pbtn--ghost" type="button" data-ncmd="toggle">{{t:ui.pause}} / {{t:ui.play}}</button>
+      <button class="pbtn" type="button" data-ncmd="next">{{t:ui.next}} →</button>
+    </footer>
+  </main>
+</body>
+</html>

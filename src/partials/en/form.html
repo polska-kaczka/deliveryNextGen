@@ -1,4 +1,4 @@
-        <div class="form-card" data-lead data-reveal="right">
+        <div class="form-card" id="demo-form" data-lead data-reveal="right">
           <form action="{{root}}send_lead.php" method="post" data-token="{{root}}csrf.php" novalidate>
             <div class="form-row">
               <div class="field">
@@ -53,6 +53,15 @@
                 <p class="field-error" id="err-plan" aria-live="polite"></p>
               </div>
             </div>
+            <fieldset class="field slot-picker" id="booking" data-slots>
+              <legend>Preferred demo time <span class="opt">(optional)</span></legend>
+              <p class="slot-sub">30-minute video call. Times are Spanish time — we’ll confirm by email.</p>
+              <div class="slot-days" role="radiogroup" aria-label="Day" data-days></div>
+              <div class="slot-times" role="radiogroup" aria-label="Time" data-times></div>
+              <div class="slot-pick" data-pick hidden><span data-pick-text></span><button type="button" class="slot-clear" data-clear>Clear</button></div>
+              <input type="hidden" name="slot" value="" data-slot aria-describedby="err-slot">
+              <p class="field-error" id="err-slot" aria-live="polite"></p>
+            </fieldset>
             <div class="field">
               <label for="f-message">Tell us about your delivery challenge <span class="req" aria-hidden="true">*</span></label>
               <textarea id="f-message" name="message" maxlength="3000" required aria-describedby="err-message hint-message" placeholder="e.g. We serve a neighbourhood with many narrow streets and struggle with missed deliveries…"></textarea>

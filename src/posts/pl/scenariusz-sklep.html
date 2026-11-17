@@ -1,0 +1,31 @@
+---
+title: Sklep z mikromagazynem — dostawa tego samego dnia
+description: Przykładowy scenariusz wdrożenia robotów DeliveryNextGen w sklepie internetowym z mikromagazynem w mieście.
+date: 2026-11-14
+kind: scenario
+excerpt: 250 zamówień miesięcznie, mikromagazyn w dzielnicy i klienci, którzy chcą dostać zakupy jeszcze tego samego dnia. Plan Starter na początek.
+read: 4
+pair: scenario-store
+art: t-art-retail
+---
+<h2>Punkt wyjścia</h2>
+<p>Sklep internetowy z mikromagazynem w mieście. Około 250 zamówień miesięcznie w promieniu kilku kilometrów, głównie drobne paczki. Klienci pytają o dostawę tego samego dnia, ale kurierzy odbierają paczki raz dziennie.</p>
+
+<h2>Dobór planu</h2>
+<p>Na start wystarcza plan <strong>Starter</strong>: 1 robot, do 300 dostaw miesięcznie, śledzenie GPS, schowek na PIN i dostęp do API. Przy 299 € netto i 250 dostawach to <strong>około 1,20 € netto za dostawę</strong>. Gdy wolumen przekroczy limit, zaproponujemy przejście na wyższy plan — nic nie jest naliczane bez pisemnej zgody.</p>
+
+<h2>Integracja w dwóch krokach</h2>
+<ol>
+  <li><strong>Tydzień 1:</strong> import CSV z eksportu zamówień. Zero programowania, pierwsze dostawy od razu.</li>
+  <li><strong>Później:</strong> REST API i webhooki. Sklep tworzy zlecenie automatycznie przy opłaceniu zamówienia, a status „doręczono” wraca do systemu.</li>
+</ol>
+
+<h2>Jak wygląda dzień</h2>
+<p>Zamówienia złożone do wczesnego popołudnia wyjeżdżają z mikromagazynu w ciągu kilku minut od spakowania. Klient wybiera, czy odbierze paczkę od razu, a robot czeka pod wskazanym adresem, aż ktoś wpisze PIN.</p>
+
+<h2>Co warto mierzyć</h2>
+<ul>
+  <li>odsetek zamówień doręczonych tego samego dnia,</li>
+  <li>liczbę nieudanych doręczeń w porównaniu z kurierem,</li>
+  <li>wpływ dostawy tego samego dnia na konwersję w koszyku.</li>
+</ul>
