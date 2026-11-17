@@ -27,7 +27,7 @@ OUT = BASE / "public_html"
 # Configuration
 # --------------------------------------------------------------------------
 SITE_URL = "https://deliverynextgen.ssujkowski.ucz.edu.pl"   # no trailing slash
-ASSET_VERSION = "2.0.0"                              # bump to bust caches
+ASSET_VERSION = "2.2.0"                              # bump to bust caches
 DOCS_UPDATED = "17.11.2026"                          # date of the legal documents
 
 # Non-essential cookie categories actually in use. Leave empty while the site
@@ -70,6 +70,9 @@ PAGES = {
     "pricing":       ("pricing.html",          "cennik.html",                "Pricing",       "Cennik",         True),
     "about":         ("about.html",            "o-nas.html",                 "About",         "O nas",          True),
     "faq":           ("faq.html",              "faq.html",                   "FAQ",           "FAQ",            True),
+    "coverage":      ("coverage.html",         "zasieg.html",                "Coverage",      "Zasięg",         False),
+    "blog":          ("blog.html",             "blog.html",                  "Blog",          "Blog",           False),
+    "developers":    ("developers.html",       "deweloperzy.html",           "Developers",    "Deweloperzy",    False),
     "contact":       ("contact.html",          "kontakt.html",               "Contact",       "Kontakt",        False),
     "legal":         ("legal-notice.html",     "nota-prawna.html",           "Legal notice",  "Nota prawna",    False),
     "privacy":       ("privacy-policy.html",   "polityka-prywatnosci.html",  "Privacy policy", "Polityka prywatności", False),
@@ -98,6 +101,8 @@ STR = {
         "f_rights": "All rights reserved.",
         "f_b2b": "Offer for business customers. Prices exclude VAT.",
         "f_top": "Back to top",
+        "f_demo": "Live demo",
+        "app_path": "app/",
         "c_title": "Your privacy choices",
         "c_text": "We use only the storage that is strictly necessary for this website to work. Optional categories stay off unless you switch them on.",
         "c_accept": "Accept all",
@@ -145,6 +150,8 @@ STR = {
         "f_rights": "Wszelkie prawa zastrzeżone.",
         "f_b2b": "Oferta dla przedsiębiorców. Ceny netto (bez VAT).",
         "f_top": "Wróć na górę",
+        "f_demo": "Demo na żywo",
+        "app_path": "pl/app/",
         "c_title": "Twoje ustawienia prywatności",
         "c_text": "Używamy wyłącznie technologii niezbędnych do działania strony. Kategorie opcjonalne są wyłączone, dopóki ich nie włączysz.",
         "c_accept": "Akceptuj wszystkie",
@@ -202,6 +209,7 @@ ICONS = {
     "check": '<path d="m5 12 5 5 9-10"/>',
     "x": '<path d="m6 6 12 12M18 6 6 18"/>',
     "up": '<path d="M12 19V5M6 11l6-6 6 6"/>',
+    "left": '<path d="M19 12H5M11 6l-6 6 6 6"/>',
     "print": '<path d="M7 9V3h10v6M7 17H4v-6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6h-3"/><rect x="7" y="14" width="10" height="7" rx="1"/>',
     "package": '<path d="m12 3 8 4.5v9L12 21l-8-4.5v-9L12 3Z"/><path d="m4 7.5 8 4.5 8-4.5M12 12v9"/>',
     "brain": '<path d="M9 4a3 3 0 0 0-3 3 3 3 0 0 0-2 5 3 3 0 0 0 2 5 3 3 0 0 0 3 3h0a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3Z"/><path d="M15 4a3 3 0 0 1 3 3 3 3 0 0 1 2 5 3 3 0 0 1-2 5 3 3 0 0 1-3 3h0a3 3 0 0 1-3-3"/>',
@@ -223,6 +231,141 @@ def logo_svg(uid, cls="logo-mark"):
             f'<rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/>'
             f'<rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs>'
             f'<rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-{uid})"/></svg>')
+
+
+# Cities shown on the coverage page (/coverage.html, /pl/zasieg.html).
+# The site says we serve all major cities in Spain; the exact area is confirmed
+# during the demo. TODO: keep this list in sync with real operations.
+# (key, EN name, PL name, latitude, longitude, extra search aliases)
+COVERAGE = [
+    ("madrid",     "Madrid",     "Madryt",    40.42, -3.70, ["madryt"]),
+    ("barcelona",  "Barcelona",  "Barcelona", 41.39,  2.17, ["barcelone"]),
+    ("valencia",   "Valencia",   "Walencja",  39.47, -0.38, ["walencja", "valència"]),
+    ("seville",    "Seville",    "Sewilla",   37.39, -5.98, ["sevilla", "sewilla"]),
+    ("zaragoza",   "Zaragoza",   "Saragossa", 41.65, -0.88, ["saragossa", "saragosa"]),
+    ("malaga",     "Málaga",     "Malaga",    36.72, -4.42, []),
+    ("bilbao",     "Bilbao",     "Bilbao",    43.26, -2.93, ["bilbo"]),
+    ("alicante",   "Alicante",   "Alicante",  38.35, -0.48, ["alacant"]),
+    ("murcia",     "Murcia",     "Murcja",    37.98, -1.13, ["murcja"]),
+    ("palma",      "Palma",      "Palma",     39.57,  2.65, ["palma de mallorca", "mallorca", "majorka"]),
+    ("valladolid", "Valladolid", "Valladolid", 41.65, -4.72, []),
+    ("granada",    "Granada",    "Grenada",   37.18, -3.60, ["grenada"]),
+]
+
+# Rough outline of mainland Spain and the Balearics as (lon, lat) — stylised map.
+SPAIN = [(-8.4, 43.4), (-7.7, 43.75), (-7.0, 43.55), (-5.85, 43.65), (-4.5, 43.4), (-3.8, 43.47),
+         (-3.0, 43.35), (-1.8, 43.38), (-1.4, 43.05), (-0.7, 42.85), (0.0, 42.7), (0.7, 42.85),
+         (1.45, 42.6), (2.1, 42.45), (3.17, 42.43), (3.2, 41.9), (2.2, 41.4), (1.0, 41.05),
+         (0.6, 40.6), (-0.3, 39.45), (0.2, 38.75), (-0.5, 38.35), (-0.75, 37.6), (-1.6, 37.3),
+         (-2.1, 36.73), (-3.4, 36.72), (-4.42, 36.72), (-5.35, 36.15), (-5.6, 36.0), (-6.3, 36.5),
+         (-6.4, 36.8), (-7.4, 37.2), (-7.5, 37.55), (-7.0, 38.0), (-7.3, 38.5), (-7.0, 39.0),
+         (-7.5, 39.6), (-6.9, 40.25), (-6.85, 41.0), (-6.2, 41.6), (-6.6, 41.95), (-7.2, 41.9),
+         (-8.1, 41.85), (-8.9, 41.9), (-8.9, 42.2), (-9.0, 42.6), (-9.3, 42.9), (-9.2, 43.2)]
+ISLANDS = [(2.95, 39.6, 0.55, 0.32), (4.1, 39.97, 0.28, 0.12), (1.4, 38.98, 0.22, 0.16)]
+
+
+# Label placement on the map (dx, dy, text-anchor) where the default (right) would collide.
+LABEL_POS = {"barcelona": (0, -18, "middle"), "palma": (0, -18, "middle"), "murcia": (-14, 5, "end")}
+
+
+def geo(lon, lat):
+    return round((lon + 9.8) * 60, 1), round((44.2 - lat) * 60 * 1.31, 1)
+
+
+def coverage_svg(lang):
+    pts = " ".join(f"{x},{y}" for x, y in (geo(lo, la) for lo, la in SPAIN))
+    isl = "".join(f'<ellipse cx="{geo(lo, la)[0]}" cy="{geo(lo, la)[1]}" rx="{rx * 60:.0f}" ry="{ry * 60 * 1.31:.0f}"/>'
+                  for lo, la, rx, ry in ISLANDS)
+    dots = []
+    for i, (key, en, pl, la, lo, _) in enumerate(COVERAGE):
+        x, y = geo(lo, la)
+        name = html.escape(en if lang == "en" else pl)
+        dx, dy, anchor = LABEL_POS.get(key, (14, 5, "start"))
+        dots.append(f'<g class="cv-city" data-city="{key}" transform="translate({x} {y})">'
+                    f'<circle class="cv-wave" r="10"/><circle class="cv-dot" r="7"/>'
+                    f'<text x="{dx}" y="{dy}" text-anchor="{anchor}">{name}</text></g>')
+    return (f'<svg class="cv-map" viewBox="0 0 900 690" role="img" aria-labelledby="cv-map-title">'
+            f'<title id="cv-map-title">{"Map of Spain with the cities we serve" if lang == "en" else "Mapa Hiszpanii z obsługiwanymi miastami"}</title>'
+            f'<polygon class="cv-land" points="{pts}"/><g class="cv-land">{isl}</g>'
+            f'<g class="cv-cities">{"".join(dots)}</g></svg>')
+
+
+def coverage_data(lang):
+    data = [{"k": k, "n": (en if lang == "en" else pl),
+             "a": sorted({en.lower(), pl.lower(), *[a.lower() for a in al]})}
+            for k, en, pl, _, _, al in COVERAGE]
+    return html.escape(json.dumps(data, ensure_ascii=False), quote=True)
+
+
+def coverage_list(lang):
+    return "".join(f'<li><button type="button" class="cv-chip" data-pick="{k}">{html.escape(en if lang == "en" else pl)}</button></li>'
+                   for k, en, pl, *_ in COVERAGE)
+
+
+# --------------------------------------------------------------------------
+# Blog: src/posts/<lang>/<slug>.html with front matter. Published at
+# /blog-<slug>.html (EN) and /pl/blog-<slug>.html (PL). "pair" = slug of the
+# same post in the other language; "kind" = article | scenario.
+# --------------------------------------------------------------------------
+BLOG_STR = {
+    "en": {"article": "Article", "scenario": "Example scenario", "articles": "Articles",
+           "scenarios": "Implementation scenarios", "read": "min read", "back": "All posts",
+           "more": "Keep reading", "open": "Read",
+           "disclaimer": "<strong>Example scenario.</strong> This page describes a typical implementation based on our published prices and process. It is not a description of a real customer, and the figures are illustrative.",
+           "scen_intro": "How a rollout typically looks for different kinds of businesses. Illustrative examples based on our published plans — not customer stories.",
+           "art_intro": "Notes on last-mile delivery, pilots and working with robots on the pavement."},
+    "pl": {"article": "Artykuł", "scenario": "Przykładowy scenariusz", "articles": "Artykuły",
+           "scenarios": "Scenariusze wdrożeń", "read": "min czytania", "back": "Wszystkie wpisy",
+           "more": "Czytaj dalej", "open": "Czytaj",
+           "disclaimer": "<strong>Przykładowy scenariusz.</strong> Ta strona opisuje typowe wdrożenie na podstawie naszego cennika i procesu. Nie jest to opis rzeczywistego klienta, a liczby mają charakter poglądowy.",
+           "scen_intro": "Jak zwykle wygląda wdrożenie w różnych rodzajach firm. Poglądowe przykłady oparte na naszych planach — nie historie klientów.",
+           "art_intro": "O dostawach ostatniej mili, pilotażach i pracy z robotami na chodniku."},
+}
+MONTHS = {"en": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+          "pl": ["stycznia", "lutego", "marca", "kwietnia", "maja", "czerwca", "lipca", "sierpnia", "września", "października", "listopada", "grudnia"]}
+
+
+def fmt_date(iso, lang):
+    y, m, d = (int(x) for x in iso.split("-"))
+    return f"{d} {MONTHS[lang][m - 1]} {y}"
+
+
+def load_posts(lang):
+    posts = []
+    folder = SRC / "posts" / lang
+    for f in sorted(folder.glob("*.html")) if folder.exists() else []:
+        meta, body = parse_page(f)
+        meta["slug"] = f.stem
+        meta["file"] = "blog-" + f.stem + ".html"
+        meta["body"] = body
+        posts.append(meta)
+    posts.sort(key=lambda m: m["date"], reverse=True)
+    return posts
+
+
+def post_card(m, lang, root=""):
+    B = BLOG_STR[lang]
+    art = m.get("art", "")
+    art_html = f'<div class="post-art">{{{{shared:{art}}}}}</div>' if art else '<div class="post-art post-art--plain">{{icon:' + m.get("icon", "spark") + '}}</div>'
+    return (f'<article class="post-card" data-kind="{m["kind"]}">{art_html}'
+            f'<div class="post-body"><p class="post-kind post-kind--{m["kind"]}">{B[m["kind"]]}</p>'
+            f'<h3><a href="{root}{m["file"]}">{html.escape(m["title"])}</a></h3>'
+            f'<p>{html.escape(m["excerpt"])}</p>'
+            f'<p class="post-meta"><time datetime="{m["date"]}">{fmt_date(m["date"], lang)}</time> · {m["read"]} {B["read"]}</p></div></article>')
+
+
+def blog_list(lang):
+    B = BLOG_STR[lang]
+    posts = load_posts(lang)
+    out = []
+    for kind, title, intro in (("article", B["articles"], B["art_intro"]), ("scenario", B["scenarios"], B["scen_intro"])):
+        items = [post_card(m, lang) for m in posts if m["kind"] == kind]
+        if not items:
+            continue
+        out.append(f'<section class="blog-group" aria-labelledby="bg-{kind}"><div class="blog-group-head">'
+                   f'<h2 class="headline-s" id="bg-{kind}">{title}</h2><p>{intro}</p></div>'
+                   f'<div class="post-grid" data-stagger>{"".join(items)}</div></section>')
+    return "\n".join(out)
 
 
 # --------------------------------------------------------------------------
@@ -421,9 +564,57 @@ def json_ld(lang):
     return json.dumps(data, ensure_ascii=False)
 
 
-def build_page(lang, key, src_path, is404=False):
+PAGE_JS = {"contact": ["booking.js"], "coverage": ["coverage.js"], "developers": ["developers.js"]}
+
+
+def post_body(m, lang):
+    """Article page around a post body (tokens are rendered later with the page)."""
+    B = BLOG_STR[lang]
+    others = [o for o in load_posts(lang) if o["slug"] != m["slug"]][:3]
+    note = f'<p class="note scenario-note">{B["disclaimer"]}</p>' if m["kind"] == "scenario" else ""
+    home = "Home" if lang == "en" else "Start"
+    return f"""
+    <section class="page-hero post-hero" aria-labelledby="page-title">
+      <div class="container container--narrow">
+        <ol class="breadcrumbs" aria-label="{'Breadcrumb' if lang == 'en' else 'Ścieżka nawigacji'}" data-reveal><li><a href="{{{{url:home}}}}">{home}</a></li><li><a href="{{{{url:blog}}}}">Blog</a></li><li aria-current="page">{html.escape(m["title"])}</li></ol>
+        <p class="post-kind post-kind--{m["kind"]}" data-reveal>{B[m["kind"]]}</p>
+        <h1 class="display" id="page-title" data-split>{html.escape(m["title"])}</h1>
+        <p class="lead" data-reveal data-delay="0.2">{html.escape(m["excerpt"])}</p>
+        <p class="post-meta" data-reveal data-delay="0.3"><time datetime="{m["date"]}">{fmt_date(m["date"], lang)}</time> · {m["read"]} {B["read"]}</p>
+      </div>
+    </section>
+    <section class="section section--surface post-section">
+      <div class="container container--narrow">
+        <div class="prose post-prose">{note}{m["body"]}</div>
+        <p class="post-back"><a class="more" href="{{{{url:blog}}}}">{B["back"]}</a></p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="more-title">
+      <div class="container">
+        <h2 class="headline-s" id="more-title">{B["more"]}</h2>
+        <div class="post-grid post-grid--more">{"".join(post_card(o, lang) for o in others)}</div>
+      </div>
+    </section>
+{{{{partial:cta}}}}
+"""
+
+
+def post_json_ld(m, lang, url):
+    return json.dumps({
+        "@context": "https://schema.org", "@type": "BlogPosting",
+        "headline": m["title"], "description": m["description"], "datePublished": m["date"],
+        "inLanguage": lang, "url": url, "mainEntityOfPage": url,
+        "image": SITE_URL + "/assets/img/og-image.png",
+        "author": {"@type": "Organization", "name": COMPANY["brand"]},
+        "publisher": {"@type": "Organization", "name": COMPANY["brand"], "logo": {"@type": "ImageObject", "url": SITE_URL + "/assets/img/logo.png"}},
+    }, ensure_ascii=False)
+
+
+def build_page(lang, key, src_path, is404=False, post=None):
     strings = load_strings(lang, key)
-    if src_path.parent.name == "shared":
+    if post:
+        meta, body = post, post_body(post, lang)
+    elif src_path.parent.name == "shared":
         raw = src_path.read_text(encoding="utf-8")
         meta, body = {}, raw
         if raw.startswith("---\n"):
@@ -447,6 +638,18 @@ def build_page(lang, key, src_path, is404=False):
         alternates = ""
         switch_href = "/pl/" if lang == "en" else "/"
         home = "/" if lang == "en" else "/pl/"
+    elif post:
+        other = "pl" if lang == "en" else "en"
+        own = SITE_URL + ("/pl/" if lang == "pl" else "/") + post["file"]
+        pair = post.get("pair", "")
+        pair_url = SITE_URL + ("/pl/" if other == "pl" else "/") + "blog-" + pair + ".html" if pair else ""
+        canonical = own
+        en_url, pl_url = (own, pair_url) if lang == "en" else (pair_url, own)
+        alternates = (f'<link rel="alternate" hreflang="en" href="{en_url}">\n  '
+                      f'<link rel="alternate" hreflang="pl" href="{pl_url}">\n  '
+                      f'<link rel="alternate" hreflang="x-default" href="{en_url}">') if pair else ""
+        switch_href = (("pl/" if other == "pl" else "../") + "blog-" + pair + ".html") if pair else alt_href("blog", lang)
+        home = href("home", lang)
     else:
         canonical = abs_url(key, lang)
         alternates = (f'<link rel="alternate" hreflang="en" href="{abs_url(key, "en")}">\n  '
@@ -468,16 +671,100 @@ def build_page(lang, key, src_path, is404=False):
         "home_href": home,
         "contact_href": (root + ("pl/" if lang == "pl" else "") + slug("contact", lang)) if is404 else href("contact", lang),
         "ver": ASSET_VERSION,
-        "jsonld": json_ld(lang),
+        "jsonld": post_json_ld(post, lang, canonical) if post else json_ld(lang),
+        "page_js": "".join(f'<script src="{root}assets/js/{js}?v={ASSET_VERSION}" defer></script>'
+                           for js in PAGE_JS.get(key, [])),
+        "coverage_map": coverage_svg(lang),
+        "coverage_data": coverage_data(lang),
+        "coverage_list": coverage_list(lang),
+        "blog_list": blog_list(lang) if key == "blog" else "",
         "og_image": SITE_URL + "/assets/img/og-image.png",
         "footnotes": "",
     })
+    # Support chat demo (chat.js): page links it can offer, resolved per language / depth
+    chat_links = {k: render_tokens("{{url:%s}}" % k, lang, root, ctx)
+                  for k in ("pricing", "how", "solutions", "contact", "legal", "terms", "privacy", "cookies", "coverage", "blog", "developers")}
+    chat_links["booking"] = chat_links["contact"] + "#booking"
+    chat_links["app"] = root + S["app_path"]
+    chat_links["app_integrations"] = root + S["app_path"] + "#integrations"
+    ctx["chat_links"] = html.escape(json.dumps(chat_links, ensure_ascii=False), quote=True)
     if strings.get("footnotes"):
         ctx["footnotes"] = (f'<div class="footnotes"><ol>'
                             f'{render_tokens(strings["footnotes"], lang, root, ctx)}</ol></div>')
     ctx["content"] = render_tokens(body, lang, root, ctx)
     out = render_tokens(layout, lang, root, ctx)
     return out
+
+
+def load_file_strings(lang, name):
+    """Strings from one i18n file only (no common.txt)."""
+    out, key, buf = {}, None, []
+    for line in (SRC / "i18n" / lang / f"{name}.txt").read_text(encoding="utf-8").splitlines():
+        if line.startswith("@@ "):
+            if key:
+                out[key] = "\n".join(buf).strip()
+            key, buf = line[3:].strip(), []
+        elif key:
+            buf.append(line)
+    if key:
+        out[key] = "\n".join(buf).strip()
+    return out
+
+
+def build_app(lang):
+    """Live demo dashboard: /app/ (EN) and /pl/app/ (PL). Single page, hash routing,
+    all UI strings also shipped to app.js as a JSON data block."""
+    strings = load_file_strings(lang, "app")
+    root = "../../" if lang == "pl" else "../"
+    other = "pl" if lang == "en" else "en"
+    blob = json.dumps(strings, ensure_ascii=False).replace("</", "<\\/")
+    ctx = {
+        "strings": strings, "page": "app",
+        "title": html.escape(strings["meta.title"]),
+        "description": html.escape(strings["meta.description"]),
+        "ver": ASSET_VERSION,
+        "app_json": blob,
+        "site_href": "../",
+        "switch_href": "../pl/app/" if lang == "en" else "../../app/",
+        "switch_lang": other,
+        "switch_code": other.upper(),
+    }
+    tpl = (SRC / "app" / "app.html").read_text(encoding="utf-8")
+    out_dir = OUT / ("pl/app" if lang == "pl" else "app")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    target = out_dir / "index.html"
+    target.write_text(render_tokens(tpl, lang, root, ctx), encoding="utf-8")
+    return target
+
+
+def build_present(lang):
+    """Demo-day presentation: /present/ (EN) and /pl/present/ (PL). Reuses copy from
+    home.txt and how.txt (the latter prefixed with "how.") plus present.txt."""
+    strings = load_file_strings(lang, "home")
+    strings.update({"how." + k: v for k, v in load_file_strings(lang, "how").items()})
+    strings.update(load_file_strings(lang, "present"))
+    root = "../../" if lang == "pl" else "../"
+    other = "pl" if lang == "en" else "en"
+    blob = json.dumps(strings, ensure_ascii=False).replace("</", "<\\/")
+    ctx = {
+        "strings": strings, "page": "present",
+        "title": html.escape(strings["meta.title"]),
+        "description": html.escape(strings["meta.description"]),
+        "ver": ASSET_VERSION,
+        "present_json": blob,
+        "site_href": root + ("pl/" if lang == "pl" else ""),
+        "app_href": root + STR[lang]["app_path"],
+        "site_host": SITE_URL.split("//", 1)[-1],
+        "switch_href": "../pl/present/" if lang == "en" else "../../present/",
+        "switch_lang": other,
+        "switch_code": other.upper(),
+    }
+    tpl = (SRC / "present" / "present.html").read_text(encoding="utf-8")
+    out_dir = OUT / ("pl/present" if lang == "pl" else "present")
+    out_dir.mkdir(parents=True, exist_ok=True)
+    target = out_dir / "index.html"
+    target.write_text(render_tokens(tpl, lang, root, ctx), encoding="utf-8")
+    return target
 
 
 def main():
@@ -499,6 +786,15 @@ def main():
             target = out_dir / slug(key, lang)
             target.write_text(build_page(lang, key, src), encoding="utf-8")
             written.append(target)
+    for lang in LANGS:
+        out_dir = OUT / ("pl" if lang == "pl" else "")
+        for m in load_posts(lang):
+            target = out_dir / m["file"]
+            target.write_text(build_page(lang, "blog", None, post=m), encoding="utf-8")
+            written.append(target)
+    for lang in LANGS:
+        written.append(build_app(lang))
+        written.append(build_present(lang))
     # bilingual 404 (served by Apache at any path, so root-absolute assets)
     src404 = SRC / "pages" / "en" / "404.html"
     if src404.exists():
@@ -512,6 +808,10 @@ def main():
             alts = "".join(
                 f'\n    <xhtml:link rel="alternate" hreflang="{l}" href="{abs_url(key, l)}"/>' for l in LANGS)
             urls.append(f"  <url>\n    <loc>{abs_url(key, lang)}</loc>{alts}\n    <lastmod>{date.today().isoformat()}</lastmod>\n  </url>")
+    for lang in LANGS:
+        for m in load_posts(lang):
+            loc = SITE_URL + ("/pl/" if lang == "pl" else "/") + m["file"]
+            urls.append(f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{m['date']}</lastmod>\n  </url>")
     (OUT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>\n'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n'

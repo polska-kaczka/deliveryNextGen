@@ -1,0 +1,193 @@
+@@ meta.title
+DeliveryNextGen — prezentacja
+@@ meta.description
+Animowana prezentacja DeliveryNextGen na demo day: robot, jedna dostawa od początku do końca, platforma, integracje i liczby.
+@@ ui.start
+Rozpocznij prezentację
+@@ ui.cover_kicker
+Demo Day
+@@ ui.cover_title
+Dostawy, które nigdy nie utkną.
+@@ ui.cover_hint
+Spacja lub → — dalej · ← — wstecz · P — pauza · F — pełny ekran · N — notatki · L — pętla · ? — pomoc
+@@ ui.loop
+Pętla (stoisko)
+@@ ui.prev
+Poprzednia scena
+@@ ui.next
+Następna scena
+@@ ui.play
+Odtwórz
+@@ ui.pause
+Pauza
+@@ ui.fullscreen
+Pełny ekran
+@@ ui.notes
+Notatki prelegenta
+@@ ui.help
+Skróty klawiszowe
+@@ ui.restart
+Od początku
+@@ ui.progress
+Postęp prezentacji
+@@ ui.help_title
+Sterowanie
+@@ ui.help_list
+Spacja / → / klik w prawą połowę|Następna scena
+← / klik w lewą połowę|Poprzednia scena
+P / K|Pauza i wznowienie
+1–9, 0|Skok do sceny
+Home / R|Od początku
+F|Pełny ekran
+N|Okno notatek dla prelegenta
+L|Pętla — prezentacja zapętla się bez końca
+H|Ukryj lub pokaż pasek sterowania
+Esc|Zamknij pomoc
+@@ ui.notes_now
+Teraz
+@@ ui.notes_next
+Następnie
+@@ ui.notes_end
+Koniec prezentacji
+@@ ui.notes_wait
+Otwórz prezentację w drugim oknie — notatki zsynchronizują się same.
+@@ ui.notes_elapsed
+Czas
+@@ ui.sim
+Dane symulowane
+@@ ch.1
+Start
+@@ ch.2
+Problem
+@@ ch.3
+Robot
+@@ ch.4
+Budowa
+@@ ch.5
+Jedna dostawa
+@@ ch.6
+Platforma
+@@ ch.7
+Integracje
+@@ ch.8
+Bezpieczeństwo
+@@ ch.9
+Liczby
+@@ ch.10
+Branże
+@@ ch.11
+Na żywo
+@@ problem.l1
+Większość dostaw nie zawodzi na autostradzie.
+@@ problem.l2
+Zawodzi na ostatnich stu metrach.
+@@ problem.tag1
+Za wąsko dla busa
+@@ problem.tag2
+Strefa piesza
+@@ problem.tag3
+Brak kodu do bramy
+@@ robot.eyebrow
+Poznaj robota
+@@ robot.title
+Stworzony na chodnik.
+@@ robot.c1
+W 100% elektryczny
+@@ robot.c2
+Praca 24/7
+@@ robot.c3
+Schowek na PIN
+@@ robot.c4
+Nadzór na żywo
+@@ anatomy.title
+Wszystko, czego potrzeba na ostatnie metry.
+@@ story.s.eta
+Będzie za
+@@ story.s.min
+min
+@@ story.s.obstacle
+Przeszkoda — trasa przeliczona
+@@ story.s.robot
+Robot R-07
+@@ story.s.restaurant
+Trattoria Sole
+@@ platform.k1
+Aktywne dostawy
+@@ platform.k2
+Roboty w trasie
+@@ platform.k3
+Śr. czas dostawy
+@@ platform.k4
+Dostarczone dziś
+@@ platform.map
+Flota · Stare Miasto
+@@ platform.feed
+Aktywność
+@@ platform.nav
+Przegląd|Dostawy|Flota|Integracje|Zespół
+@@ platform.ev
+#{id} doręczona · {m} min|#{id} przydzielona do R-{r}|R-{r} jedzie do stacji ładowania|#{id} w drodze · {m} min do celu|R-{r} ominął przeszkodę|Nowe zlecenie #{id} z API
+@@ int.eyebrow
+Integracje
+@@ int.title
+Łączy się z tym, czego używasz.
+@@ int.sub
+Większość firm startuje w około 48 godzin.
+@@ int.n1
+REST API
+@@ int.n2
+Webhooki
+@@ int.n3
+Sklep e-commerce
+@@ int.n4
+System POS
+@@ int.n5
+Import CSV
+@@ int.n6
+Panel bez kodu
+@@ int.created
+utworzono
+@@ int.webhook
+webhook
+@@ safe.eyebrow
+Bezpieczeństwo
+@@ safe.e1
+Przeszkoda wykryta
+@@ safe.e2
+Operator połączony · 2,8 s
+@@ safe.e3
+Trasa wznowiona
+@@ safe.op
+Centrum operacyjne
+@@ num.title
+Stworzony na godziny, które się liczą.
+@@ num.fn
+¹ Szacunek orientacyjny względem kurierów; zależy od wolumenu i trasy. ² Emisje bezpośrednie podczas dostawy.
+@@ end.title
+Zobaczmy to na żywo.
+@@ end.site
+Przejdź do strony
+@@ end.app
+Otwórz panel demo
+@@ notes.1
+Przywitanie. Jedno zdanie o tym, kim jesteście. Pauza, aż logo się ułoży.
+@@ notes.2
+Problem: ostatnie sto metrów. Bus staje przed starówką, strefą pieszą albo bramą — i tu dostawa się psuje.
+@@ notes.3
+Nasza odpowiedź: kompaktowy, elektryczny robot na chodnik. Wymień cztery cechy z etykiet.
+@@ notes.4
+Budowa: łączność, podwozie na kostkę, izolowany schowek, czujniki, napęd elektryczny.
+@@ notes.5
+Jedno zamówienie od 21:47 do 22:03. Zwróć uwagę na przeszkodę — robot sam przelicza trasę. Na końcu PIN otwiera schowek.
+@@ notes.6
+Platforma: cała flota na jednym ekranie. Zespół opanuje panel w jedno popołudnie. Dane są symulowane.
+@@ notes.7
+Integracje: REST API, webhooki, wtyczki, CSV albo ręczne zlecanie. Około 48 godzin do startu.
+@@ notes.8
+Ludzie za robotami: gdy robot nie rozwiąże sytuacji, operator przejmuje sterowanie w kilka sekund.
+@@ notes.9
+Liczby. Przy −60% powiedz, że to szacunek zależny od wolumenu — szczegóły w przypisie.
+@@ notes.10
+Cztery rodzaje ostatniej mili: restauracje, e-commerce, logistyka, kampusy.
+@@ notes.11
+Przejście do strony i panelu demo na żywo. Kliknij „Otwórz panel demo”.

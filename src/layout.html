@@ -25,8 +25,12 @@
   <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
   <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
   <link rel="stylesheet" href="{{root}}assets/css/main.css?v={{ver}}">
+  <link rel="stylesheet" href="{{root}}assets/css/chat.css?v={{ver}}">
+  <link rel="stylesheet" href="{{root}}assets/css/extras.css?v={{ver}}">
   <script src="{{root}}assets/js/boot.js?v={{ver}}"></script>
   <script src="{{root}}assets/js/main.js?v={{ver}}" defer></script>
+  <script src="{{root}}assets/js/chat.js?v={{ver}}" defer></script>
+  {{page_js}}
   <script type="application/ld+json">{{jsonld}}</script>
 </head>
 <body class="{{bodyclass}}">
@@ -73,6 +77,9 @@
             <li><a href="{{url:solutions}}">{{nav.solutions}}</a></li>
             <li><a href="{{url:pricing}}">{{nav.pricing}}</a></li>
             <li><a href="{{url:faq}}">FAQ</a></li>
+            <li><a href="{{url:coverage}}">{{nav.coverage}}</a></li>
+            <li><a href="{{url:developers}}">{{nav.developers}}</a></li>
+            <li><a href="{{root}}{{s.app_path}}">{{s.f_demo}}</a></li>
           </ul>
         </div>
         <div class="footer-col">
@@ -80,6 +87,7 @@
           <ul>
             <li><a href="{{url:about}}">{{nav.about}}</a></li>
             <li><a href="{{url:contact}}">{{nav.contact}}</a></li>
+            <li><a href="{{url:blog}}">Blog</a></li>
             <li><a href="mailto:{{raw.email}}">{{raw.email}}</a></li>
             <li><a href="tel:{{raw.phone_href}}">{{raw.phone}}</a></li>
           </ul>
@@ -107,6 +115,8 @@
       </div>
     </div>
   </footer>
+
+  <div class="chat" id="dng-chat" data-links="{{chat_links}}" data-email="{{raw.email}}" data-phone="{{raw.phone}}" hidden></div>
 
   <button class="to-top" type="button" aria-label="{{s.f_top}}">{{icon:up}}</button>
 

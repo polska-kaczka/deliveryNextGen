@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A delivery-robot pilot, step by step</title>
+  <meta name="description" content="A checklist for preparing your business for a delivery-robot pilot — from choosing the area to the metrics worth tracking.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html">
+  <link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html">
+  <link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog-pilotaz-krok-po-kroku.html">
+  <link rel="alternate" hreflang="x-default" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html">
+  <meta name="theme-color" content="#fbfbfd">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DeliveryNextGen">
+  <meta property="og:title" content="A delivery-robot pilot, step by step">
+  <meta property="og:description" content="A checklist for preparing your business for a delivery-robot pilot — from choosing the area to the metrics worth tracking.">
+  <meta property="og:url" content="https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html">
+  <meta property="og:image" content="https://deliverynextgen.ssujkowski.ucz.edu.pl/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="en_GB">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
+  <link rel="stylesheet" href="assets/css/main.css?v=2.2.0">
+  <link rel="stylesheet" href="assets/css/chat.css?v=2.2.0">
+  <link rel="stylesheet" href="assets/css/extras.css?v=2.2.0">
+  <script src="assets/js/boot.js?v=2.2.0"></script>
+  <script src="assets/js/main.js?v=2.2.0" defer></script>
+  <script src="assets/js/chat.js?v=2.2.0" defer></script>
+  
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BlogPosting", "headline": "A delivery-robot pilot, step by step", "description": "A checklist for preparing your business for a delivery-robot pilot — from choosing the area to the metrics worth tracking.", "datePublished": "2026-11-10", "inLanguage": "en", "url": "https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html", "mainEntityOfPage": "https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html", "image": "https://deliverynextgen.ssujkowski.ucz.edu.pl/assets/img/og-image.png", "author": {"@type": "Organization", "name": "DeliveryNextGen"}, "publisher": {"@type": "Organization", "name": "DeliveryNextGen", "logo": {"@type": "ImageObject", "url": "https://deliverynextgen.ssujkowski.ucz.edu.pl/assets/img/logo.png"}}}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <!-- Shared materials for every robot view, map pin and parcel (one source of truth). -->
+    <defs>
+      <!-- pearl shell -->
+      <linearGradient id="dngShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f3f4f6"/><stop offset=".78" stop-color="#e2e5ea"/><stop offset="1" stop-color="#cfd4db"/></linearGradient>
+      <linearGradient id="dngShellSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".09"/><stop offset=".1" stop-color="#000" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+      <linearGradient id="dngShellEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+      <radialGradient id="dngShellTop" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f1f2f5"/><stop offset="1" stop-color="#d6dbe1"/></radialGradient>
+      <!-- graphite chassis -->
+      <linearGradient id="dngChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".35" stop-color="#2e3238"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+      <!-- cargo bay (insulated liner) -->
+      <linearGradient id="dngBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1e22"/><stop offset="1" stop-color="#3b4149"/></linearGradient>
+      <!-- smoked visor -->
+      <linearGradient id="dngVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a414b"/><stop offset=".55" stop-color="#14181d"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39404a"/><stop offset=".6" stop-color="#12161b"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <!-- lidar puck -->
+      <linearGradient id="dngPuck" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d0f12"/><stop offset=".45" stop-color="#3a4048"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+      <!-- wheels -->
+      <radialGradient id="dngTyre" cx=".5" cy=".42" r=".6"><stop offset=".6" stop-color="#30343a"/><stop offset="1" stop-color="#121417"/></radialGradient>
+      <linearGradient id="dngTyreFront" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121417"/><stop offset=".5" stop-color="#34383e"/><stop offset="1" stop-color="#121417"/></linearGradient>
+      <radialGradient id="dngRim" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dde2"/><stop offset="1" stop-color="#8d96a1"/></radialGradient>
+      <!-- light -->
+      <linearGradient id="dngSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity=".2"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e6fbff" stop-opacity=".55"/><stop offset=".35" stop-color="#9befff" stop-opacity=".22"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="dngPool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd58a" stop-opacity=".4"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngAO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <!-- parcels -->
+      <linearGradient id="dngBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6cba1"/><stop offset="1" stop-color="#cba873"/></linearGradient>
+      <linearGradient id="dngBag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfae7d"/><stop offset=".4" stop-color="#e0c494"/><stop offset="1" stop-color="#c9a671"/></linearGradient>
+      <!-- clips (user space of the side-view robot, so the miniature reuses them) -->
+      <clipPath id="dngStatusClip"><rect x="98" y="201.5" width="340" height="5" rx="2.5"/></clipPath>
+      <clipPath id="dngGlassClip"><path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z"/></clipPath>
+      <clipPath id="dngPuckClip"><rect x="400" y="88" width="26" height="9" rx="3"/></clipPath>
+      <clipPath id="dngFrontVisorClip"><rect x="380" y="252" width="240" height="112" rx="52"/></clipPath>
+      <clipPath id="dngFrontPuckClip"><rect x="452" y="146" width="96" height="22" rx="8"/></clipPath>
+      <!-- glow & softness -->
+      <filter id="dngGlow" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngGlowL" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+      <filter id="dngSoftL" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+      <!-- drop shadows: S = objects on maps, M = props, L = devices -->
+      <filter id="dngDropS" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+      <filter id="dngDropM" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".14"/></filter>
+      <filter id="dngDropL" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".13"/></filter>
+    </defs>
+  </svg>
+
+
+  <header class="gnav" id="gnav">
+    <div class="container gnav-inner">
+      <a class="brand" href="./" aria-label="DeliveryNextGen — home"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><mask id="lm-nav"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs><rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-nav)"/></svg><span>DeliveryNextGen</span></a>
+      <nav class="gnav-links" aria-label="Main">
+        <a href="how-it-works.html">How it works</a>
+        <a href="solutions.html">Solutions</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="gnav-actions">
+        <a class="lang-toggle" href="pl/blog-pilotaz-krok-po-kroku.html" hreflang="pl" data-current="en" aria-label="Polski — zmień język na polski"><span class="lt-thumb" aria-hidden="true"></span><span class="lt-opt lt-en" aria-hidden="true">EN</span><span class="lt-opt lt-pl" aria-hidden="true">PL</span></a>
+        <a class="btn btn--sm" href="contact.html">Book a demo</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="./">Home</a>
+      <a href="how-it-works.html">How it works</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="faq.html">FAQ</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <a class="btn" href="contact.html">Book a demo</a>
+  </div>
+
+  <main id="main" tabindex="-1">
+
+    <section class="page-hero post-hero" aria-labelledby="page-title">
+      <div class="container container--narrow">
+        <ol class="breadcrumbs" aria-label="Breadcrumb" data-reveal><li><a href="./">Home</a></li><li><a href="blog.html">Blog</a></li><li aria-current="page">A delivery-robot pilot, step by step</li></ol>
+        <p class="post-kind post-kind--article" data-reveal>Article</p>
+        <h1 class="display" id="page-title" data-split>A delivery-robot pilot, step by step</h1>
+        <p class="lead" data-reveal data-delay="0.2">A good pilot isn’t a technology test, it’s a process test. Here’s the checklist we go through with every business before launch.</p>
+        <p class="post-meta" data-reveal data-delay="0.3"><time datetime="2026-11-10">10 November 2026</time> · 6 min read</p>
+      </div>
+    </section>
+    <section class="section section--surface post-section">
+      <div class="container container--narrow">
+        <div class="prose post-prose"><p>A pilot should answer one question: will robots work for <em>your</em> orders, on <em>your</em> streets? To get a reliable answer, prepare a few things.</p>
+
+<h2>1. Choose the area</h2>
+<p>Start with one location and the area where deliveries are hardest today: a pedestrian zone, an old town, a gated estate. A small, dense area produces plenty of data quickly.</p>
+
+<h2>2. Gather order data</h2>
+<ul>
+  <li>how many orders per day and at what times,</li>
+  <li>typical distance from the pick-up point,</li>
+  <li>type of cargo (hot food, parcels, groceries).</li>
+</ul>
+<p>This is what we use to choose the plan and the number of robots.</p>
+
+<h2>3. Decide how orders reach us</h2>
+<p>To start, the no-code dashboard or a CSV import is enough. Once the pilot proves itself, move to the REST API with webhooks — most integrations are live in about 48 hours.</p>
+
+<h2>4. Prepare the pick-up point</h2>
+<p>Who puts the order into the robot, and where? One fixed spot near the exit and a person who knows how to confirm loading is all it takes.</p>
+
+<h2>5. Tell your customers</h2>
+<p>Customers get a tracking link and a one-time PIN. Add one sentence to the order confirmation: “A robot will bring your order — you’ll get the PIN by text.”</p>
+
+<h2>6. Measure from day one</h2>
+<table>
+  <thead><tr><th scope="col">Metric</th><th scope="col">Why</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Order-to-delivery time</th><td>Is the customer served faster than today</td></tr>
+    <tr><th scope="row">First-attempt success rate</th><td>How many deliveries succeed first time</td></tr>
+    <tr><th scope="row">Cost per delivery</th><td>Comparison with your current model</td></tr>
+    <tr><th scope="row">Customer feedback</th><td>Is collecting from a robot convenient</td></tr>
+  </tbody>
+</table>
+
+<h2>7. Agree a checkpoint</h2>
+<p>After a few weeks we sit down with the data and decide: scale up, change the area or the hours. No commitment before that decision.</p>
+<p><a href="contact.html">Book a demo</a> and we’ll prepare a pilot plan for your business.</p>
+</div>
+        <p class="post-back"><a class="more" href="blog.html">All posts</a></p>
+      </div>
+    </section>
+    <section class="section" aria-labelledby="more-title">
+      <div class="container">
+        <h2 class="headline-s" id="more-title">Keep reading</h2>
+        <div class="post-grid post-grid--more"><article class="post-card" data-kind="scenario"><div class="post-art"><svg class="art-rest" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
+              <defs>
+                <linearGradient id="taWarm" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff4dc"/><stop offset="1" stop-color="#ffe2a8"/></linearGradient>
+                <radialGradient id="taSpill" cx=".5" cy="0" r="1"><stop offset="0" stop-color="#ffd27a" stop-opacity=".45"/><stop offset="1" stop-color="#ffd27a" stop-opacity="0"/></radialGradient>
+              </defs>
+              <rect y="268" width="600" height="52" fill="#e9ebee"/>
+              <rect y="268" width="600" height="2" fill="#dde0e4"/>
+              <!-- storefront -->
+              <g filter="url(#dngDropM)"><rect x="58" y="92" width="276" height="176" rx="4" fill="#ffffff"/></g>
+              <rect x="58" y="92" width="276" height="176" rx="4" fill="none" stroke="#000" stroke-opacity=".07"/>
+              <rect x="78" y="70" width="236" height="22" rx="4" fill="#1d1d1f"/>
+              <rect x="166" y="77" width="60" height="8" rx="4" fill="#fff" fill-opacity=".85"/>
+              <!-- awning -->
+              <path d="M58 92 H334 L322 126 H70 Z" fill="#1d1d1f"/>
+              <g fill="#fff" fill-opacity=".92"><path d="M86 92 L80 126 H104 L108 92 Z"/><path d="M130 92 L126 126 H150 L152 92 Z"/><path d="M174 92 L172 126 H196 L196 92 Z"/><path d="M218 92 L218 126 H242 L240 92 Z"/><path d="M262 92 L264 126 H288 L284 92 Z"/><path d="M306 92 L310 126 H322 L328 92 Z"/></g>
+              <!-- window with warm interior -->
+              <rect x="80" y="144" width="138" height="88" rx="4" fill="url(#taWarm)"/>
+              <rect x="80" y="144" width="138" height="88" rx="4" fill="none" stroke="#000" stroke-opacity=".08"/>
+              <g fill="#e2c38a"><rect x="94" y="198" width="44" height="6" rx="3"/><circle cx="164" cy="190" r="10"/><rect x="186" y="176" width="20" height="28" rx="4"/></g>
+              <g class="steam" fill="none" stroke="#c9a76a" stroke-width="2.4" stroke-linecap="round">
+                <path class="st1" d="M160 178 q5 -7 0 -14 q-5 -7 0 -14"/>
+                <path class="st2" d="M168 178 q5 -7 0 -14 q-5 -7 0 -14"/>
+              </g>
+              <!-- door -->
+              <rect x="248" y="140" width="66" height="128" rx="3" fill="#2a2f35"/>
+              <rect class="door-spill" x="248" y="140" width="66" height="128" fill="url(#taSpill)"/>
+              <g class="door-leaf"><rect x="250" y="142" width="62" height="126" rx="2" fill="#f5f5f7" stroke="#000" stroke-opacity=".1"/><rect x="258" y="152" width="46" height="60" rx="2" fill="#e8ebef"/><circle cx="302" cy="214" r="3.2" fill="#1d1d1f"/></g>
+              <path class="door-light" d="M248 268 L314 268 L372 304 H190 Z" fill="url(#taSpill)"/>
+              <g transform="translate(281 134)"><g class="door-bell"><path d="M0 -4 V-1" stroke="#1d1d1f" stroke-width="1.2"/><path d="M-3.5 3 Q-3.5 -1.5 0 -1.5 Q3.5 -1.5 3.5 3 Z" fill="#d9b25c"/><circle cy="3.6" r="1" fill="#b8913f"/></g></g>
+              <g fill="#dde0e4"><rect x="40" y="290" width="1.5" height="30"/><rect x="160" y="290" width="1.5" height="30"/><rect x="280" y="290" width="1.5" height="30"/><rect x="400" y="290" width="1.5" height="30"/><rect x="520" y="290" width="1.5" height="30"/></g>
+              <!-- plants -->
+              <g><rect x="62" y="248" width="16" height="20" rx="3" fill="#d6dadf"/><circle cx="70" cy="240" r="12" fill="#cfe2d4"/><rect x="226" y="248" width="16" height="20" rx="3" fill="#d6dadf"/><circle cx="234" cy="240" r="12" fill="#cfe2d4"/></g>
+              <!-- paper bag on its way to the robot -->
+              <g class="rest-bag">
+                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.2;.36;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M286 230 C 330 140, 410 140, 433 226"/>
+                <g transform="translate(-12 -16)">
+                  <path d="M2 8 H22 L24 32 H0 Z" fill="url(#dngBag)"/>
+                  <path d="M2 8 H22 L23 14 H1 Z" fill="#cdaa77"/>
+                  <path d="M8 8 V4 A4 4 0 0 1 16 4 V8" fill="none" stroke="#a98455" stroke-width="1.8"/>
+                  <rect x="7" y="18" width="10" height="7" rx="2" fill="#fff" fill-opacity=".7"/>
+                </g>
+              </g>
+              <!-- robot -->
+              <g class="rest-bot">
+                <g transform="translate(372 176) scale(1.05)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
+            <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
+          </g>
+</g>
+                <circle class="rest-ok" cx="444" cy="167" r="10" fill="#1e8e3e"/>
+                <path class="rest-ok" d="M439.5 167 L442.8 170.3 L448.8 164" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>
+</div><div class="post-body"><p class="post-kind post-kind--scenario">Example scenario</p><h3><a href="blog-scenario-restaurant.html">An old-town restaurant — evening rush without couriers</a></h3><p>Around 800 deliveries a month, most between 7 and 10 pm, addresses inside a pedestrian zone. What a Growth plan could look like for a restaurant like this.</p><p class="post-meta"><time datetime="2026-11-17">17 November 2026</time> · 4 min read</p></div></article><article class="post-card" data-kind="scenario"><div class="post-art"><svg class="art-retail" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
+              <defs>
+              </defs>
+              <rect y="268" width="600" height="52" fill="#e9ebee"/>
+              <rect y="268" width="600" height="2" fill="#dde0e4"/>
+              <!-- shelving -->
+              <g fill="#ffffff" stroke="#000" stroke-opacity=".07"><rect x="40" y="64" width="250" height="204" rx="6"/></g>
+              <g fill="#dde0e4"><rect x="40" y="290" width="1.5" height="30"/><rect x="160" y="290" width="1.5" height="30"/><rect x="280" y="290" width="1.5" height="30"/><rect x="400" y="290" width="1.5" height="30"/><rect x="520" y="290" width="1.5" height="30"/></g>
+              <g fill="#e6e9ed"><rect x="48" y="122" width="234" height="6" rx="3"/><rect x="48" y="186" width="234" height="6" rx="3"/><rect x="48" y="250" width="234" height="6" rx="3"/></g>
+              <g fill="#dfe3e8"><rect x="62" y="84" width="44" height="38" rx="4"/><rect x="114" y="94" width="36" height="28" rx="4"/><rect x="160" y="80" width="54" height="42" rx="4"/><rect x="222" y="92" width="46" height="30" rx="4"/>
+                <rect x="62" y="152" width="58" height="34" rx="4"/><rect x="128" y="158" width="40" height="28" rx="4"/><rect x="238" y="146" width="34" height="40" rx="4"/>
+                <rect x="62" y="216" width="48" height="34" rx="4"/><rect x="118" y="210" width="60" height="40" rx="4"/><rect x="188" y="220" width="40" height="30" rx="4"/><rect x="236" y="214" width="36" height="36" rx="4"/></g>
+              <!-- highlighted product slot -->
+              <rect class="slot-hl" x="176" y="150" width="54" height="36" rx="6" fill="none" stroke="#00a3c4" stroke-width="2.5"/>
+              <!-- phone -->
+              <g filter="url(#dngDropL)"><rect x="330" y="40" width="120" height="216" rx="22" fill="#1d1d1f"/></g>
+              <rect x="336" y="46" width="108" height="204" rx="17" fill="#ffffff"/>
+              <rect x="450" y="92" width="2.5" height="28" rx="1.2" fill="#1d1d1f"/>
+              <rect x="372" y="52" width="36" height="9" rx="4.5" fill="#1d1d1f"/>
+              <rect x="348" y="76" width="84" height="56" rx="10" fill="#f5f5f7"/>
+              <rect x="366" y="88" width="48" height="32" rx="4" fill="url(#dngBox)"/>
+              <rect x="348" y="142" width="60" height="7" rx="3.5" fill="#1d1d1f" fill-opacity=".85"/>
+              <rect x="348" y="156" width="80" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
+              <rect x="348" y="166" width="44" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
+              <g class="pay-btn"><rect x="348" y="206" width="84" height="30" rx="15" fill="#007c99"/><rect x="376" y="218" width="28" height="6" rx="3" fill="#fff"/></g>
+              <circle class="pay-ripple" cx="390" cy="221" r="12" fill="#fff" fill-opacity=".5"/>
+              <!-- confirmation sheet -->
+              <g class="pay-done">
+                <rect x="336" y="46" width="108" height="204" rx="17" fill="#ffffff"/>
+                <circle cx="390" cy="128" r="24" fill="#1e8e3e" fill-opacity=".12"/>
+                <path d="M379 128 L387 136 L402 120" fill="none" stroke="#1e8e3e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                <rect x="358" y="166" width="64" height="7" rx="3.5" fill="#1d1d1f" fill-opacity=".85"/>
+                <rect x="366" y="180" width="48" height="5" rx="2.5" fill="#1d1d1f" fill-opacity=".2"/>
+              </g>
+              <!-- parcel: from the shelf into the robot's cargo bay -->
+              <g class="retail-box">
+                <animateMotion dur="9s" repeatCount="indefinite" calcMode="spline" keyPoints="0;0;1;1" keyTimes="0;.3;.46;1" keySplines="0 0 1 1;.4 0 .2 1;0 0 1 1" path="M203 168 C 260 80, 470 100, 504 227"/>
+                <g transform="scale(1.8)"><g class="parcel">
+                  <!-- Parcel 20 × 16, centred on 0 0. -->
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="url(#dngBox)"/>
+                  <rect x="-10" y="-8" width="20" height="4.2" rx="2" fill="#fff" fill-opacity=".18"/>
+                  <rect x="-1.8" y="-8" width="3.6" height="16" fill="#fff" fill-opacity=".38"/>
+                  <rect x="3.6" y="1.6" width="4.4" height="3.2" rx=".8" fill="#fff" fill-opacity=".75"/>
+                  <rect x="-10" y="-8" width="20" height="16" rx="2.4" fill="none" stroke="#7a5a2c" stroke-opacity=".18" stroke-width=".8"/>
+                </g>
+</g>
+              </g>
+              <!-- robot -->
+              <g class="retail-bot"><g transform="translate(452 178) scale(.9)"><g class="robot-mini">
+            <!-- Same model as robot-side.html (same coordinates, scaled to 130×100), fewer details. -->
+            <ellipse cx="66" cy="93" rx="56" ry="4.5" fill="#000" fill-opacity=".14"/>
+            <g transform="translate(-7.5 4.8) scale(.285)">
+              <path class="rb-head" d="M450 220 L620 250 L620 306 L448 232 Z" fill="url(#dngHeadBeam)"/>
+              <path d="M146 272 L204 258 H320 L378 272" fill="none" stroke="#24282d" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+              <g class="wheel"><circle cx="146" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="146" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M146 263 V252 M154.6 269.2 L165 266 M151.3 279.3 L157.7 288 M140.7 279.3 L134.3 288 M137.4 269.2 L127 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="146" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="262" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="262" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M262 263 V252 M270.6 269.2 L281 266 M267.3 279.3 L273.7 288 M256.7 279.3 L250.3 288 M253.4 269.2 L243 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="262" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="wheel"><circle cx="378" cy="272" r="34" fill="url(#dngTyre)"/><circle cx="378" cy="272" r="22.5" fill="url(#dngRim)"/><path d="M378 263 V252 M386.6 269.2 L397 266 M383.3 279.3 L389.7 288 M372.7 279.3 L366.3 288 M369.4 269.2 L359 266" stroke="#7d8691" stroke-width="6" stroke-linecap="round"/><circle cx="378" cy="272" r="8" fill="#2b2f35"/></g>
+              <g class="rb-body">
+                <g class="rb-antenna">
+                  <line x1="118" y1="104" x2="118" y2="12" stroke="#c6ccd3" stroke-width="5" stroke-linecap="round"/>
+                  <circle cx="118" cy="10" r="5.5" fill="#00d4f0"/>
+                  <path class="rb-flag" d="M121 15 C139 17 153 23 171 29 C153 33 139 39 121 43 Z" fill="#00a9c7"/>
+                </g>
+                <path d="M74 196 H452 V226 C452 242 440 252 424 252 H102 C86 252 74 242 74 226 Z" fill="url(#dngChassis)"/>
+                <rect x="440" y="214" width="11" height="8" rx="4" fill="#eafcff"/>
+                <path d="M98 212 C 84 212 72 202 72 188 V 150 C 72 118 98 96 132 96 H 384 C 424 96 454 126 458 160 L 460 194 C 461 205 452 212 442 212 Z" fill="url(#dngShell)" stroke="#000" stroke-opacity=".12" stroke-width="2.4"/>
+                <path d="M80 142 H394" stroke="#000" stroke-opacity=".1" stroke-width="2.6"/>
+                <path d="M80 141 C 80 121 102 103 134 103 H 390 V 141 Z" fill="url(#dngBay)"/>
+                <path d="M92 137 H 380" stroke="#00d4f0" stroke-opacity=".45" stroke-width="3" stroke-linecap="round"/>
+                <g class="rb-lid">
+                  <path d="M72.8 141 C 72.8 116 98 96 132 96 H 384 C 388 96 391.5 96.3 394.5 96.9 V 141 Z" fill="url(#dngShell)"/>
+                  <path d="M120 106 C 160 102 300 102 384 105" fill="none" stroke="#fff" stroke-width="7" stroke-linecap="round"/>
+                  <rect x="214" y="114" width="80" height="9" rx="4.5" fill="#000" fill-opacity=".07"/>
+                </g>
+                <rect x="400" y="87" width="26" height="11" rx="4" fill="#1b1e22"/>
+                <rect x="73" y="162" width="7" height="26" rx="3.5" fill="#ff5a4e"/>
+                <rect class="rb-brake" x="68" y="158" width="16" height="34" rx="8" fill="#ff3b30" fill-opacity=".35" opacity="0"/>
+                <rect x="132" y="160" width="15" height="15" rx="4.5" fill="#c9ced5"/>
+                <rect class="status" x="98" y="201" width="340" height="6" rx="3" fill="#00d4f0" filter="url(#dngGlow)"/>
+                <path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z" fill="url(#dngVisor)"/>
+                <g class="rb-eyes" fill="#5ce6f7"><rect class="eye" x="413" y="146" width="12" height="23" rx="6"/><rect class="eye" x="431" y="148" width="12" height="22" rx="6"/></g>
+              </g>
+            </g>
+          </g>
+</g></g>
+            </svg>
+</div><div class="post-body"><p class="post-kind post-kind--scenario">Example scenario</p><h3><a href="blog-scenario-store.html">A store with a micro-warehouse — same-day delivery</a></h3><p>250 orders a month, a micro-warehouse in the neighbourhood and customers who want their shopping the same day. Starting on the Starter plan.</p><p class="post-meta"><time datetime="2026-11-14">14 November 2026</time> · 4 min read</p></div></article><article class="post-card" data-kind="scenario"><div class="post-art"><svg class="art-campus" viewBox="0 0 600 320" aria-hidden="true" focusable="false">
+              <rect width="600" height="320" fill="#e7f1ea"/>
+              <path d="M0 160 H600 M300 0 V320" stroke="#ffffff" stroke-width="22"/>
+              <path d="M90 40 C 170 120, 230 140, 300 160 M510 40 C 430 120, 370 140, 300 160 M90 290 C 170 210, 230 180, 300 160 M510 290 C 430 210, 370 180, 300 160" stroke="#ffffff" stroke-width="10" fill="none" stroke-linecap="round"/>
+              <g class="campus-flow" fill="none" stroke="#00a3c4" stroke-opacity=".35" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 10">
+                <path d="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><path d="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><path d="M0 160 H600"/>
+              </g>
+              <g filter="url(#dngDropS)" fill="#ffffff"><rect x="40" y="24" width="120" height="76" rx="10"/><rect x="440" y="24" width="120" height="76" rx="10"/><rect x="40" y="222" width="120" height="76" rx="10"/><rect x="440" y="222" width="120" height="76" rx="10"/></g>
+              <g fill="#e6e9ed"><rect x="56" y="40" width="40" height="10" rx="5"/><rect x="456" y="40" width="40" height="10" rx="5"/><rect x="56" y="238" width="40" height="10" rx="5"/><rect x="456" y="238" width="40" height="10" rx="5"/></g>
+              <g fill="#d3d8de"><rect x="140" y="96" width="14" height="4" rx="2"/><rect x="446" y="96" width="14" height="4" rx="2"/><rect x="140" y="222" width="14" height="4" rx="2"/><rect x="446" y="222" width="14" height="4" rx="2"/></g>
+              <g fill="#cfe4d5"><circle class="tree" cx="230" cy="70" r="16"/><circle class="tree" cx="260" cy="252" r="14"/><circle class="tree" cx="372" cy="80" r="12"/><circle class="tree" cx="390" cy="246" r="18"/></g>
+              <!-- plaza fountain -->
+              <circle cx="300" cy="160" r="34" fill="#ffffff" stroke="#1e8e3e" stroke-opacity=".3" stroke-width="2"/>
+              <circle cx="300" cy="160" r="20" fill="#d6ebf5"/>
+              <g fill="none" stroke="#fff" stroke-width="1.6"><circle class="ripple rp1" cx="300" cy="160" r="6"/><circle class="ripple rp2" cx="300" cy="160" r="6"/><circle class="ripple rp3" cx="300" cy="160" r="6"/></g>
+              <circle cx="300" cy="160" r="4" fill="#ffffff"/>
+              <!-- delivery confirmations at building entrances -->
+              <g fill="none" stroke="#1e8e3e" stroke-width="2.5">
+                <circle class="ping p1" cx="150" cy="100" r="6"/><circle class="ping p2" cx="450" cy="100" r="6"/><circle class="ping p3" cx="150" cy="222" r="6"/><circle class="ping p4" cx="450" cy="222" r="6"/>
+              </g>
+              <g filter="url(#dngDropS)">
+                <g><animateMotion dur="9s" repeatCount="indefinite" rotate="auto" path="M90 40 C 170 120, 230 140, 300 160 C 370 180, 430 210, 510 290"/><g transform="scale(.19)"><g class="robot-top">
+                <!-- Top-down view of the same robot, centred on 0 0 and facing +x (100 × 64 units; scale where used). -->
+                <g fill="#1d2025"><rect x="-40" y="-37" width="18" height="9" rx="4.5"/><rect x="-10" y="-37" width="18" height="9" rx="4.5"/><rect x="20" y="-37" width="18" height="9" rx="4.5"/><rect x="-40" y="28" width="18" height="9" rx="4.5"/><rect x="-10" y="28" width="18" height="9" rx="4.5"/><rect x="20" y="28" width="18" height="9" rx="4.5"/></g>
+                <rect x="-50" y="-32" width="100" height="64" rx="24" fill="url(#dngShellTop)"/>
+                <rect class="status" x="-49" y="-31" width="98" height="62" rx="23" fill="none" stroke="#00d4f0" stroke-width="1.8" stroke-opacity=".85"/>
+                <rect x="-44" y="-25" width="78" height="50" rx="17" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1.6"/>
+                <path d="M-36 -18 C -20 -22 10 -22 28 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <rect x="-14" y="-4" width="26" height="8" rx="4" fill="#000" fill-opacity=".07"/>
+                <path d="M34 -27 C 45 -25 50 -13 50 0 C 50 13 45 25 34 27 C 37 10 37 -10 34 -27 Z" fill="url(#dngVisor)"/>
+                <g fill="#5ce6f7"><rect class="eye" x="41" y="-11" width="4" height="7" rx="2"/><rect class="eye" x="41" y="4" width="4" height="7" rx="2"/></g>
+                <circle cx="24" cy="0" r="6" fill="url(#dngPuck)"/>
+                <g transform="translate(24 0)"><path class="rt-sweep" d="M0 0 L6.5 -2.5 A 7 7 0 0 1 6.5 2.5 Z" fill="#5ce6f7" fill-opacity=".8"/></g>
+                <rect x="-51" y="-10" width="3" height="20" rx="1.5" fill="#ff5a4e"/>
+                <circle cx="-34" cy="-18" r="3" fill="#00d4f0" stroke="#fff" stroke-width="1.2"/>
+              </g>
+</g></g>
+                <g><animateMotion dur="11s" repeatCount="indefinite" rotate="auto" path="M510 40 C 430 120, 370 140, 300 160 C 230 180, 170 210, 90 290"/><g transform="scale(.19)"><g class="robot-top">
+                <!-- Top-down view of the same robot, centred on 0 0 and facing +x (100 × 64 units; scale where used). -->
+                <g fill="#1d2025"><rect x="-40" y="-37" width="18" height="9" rx="4.5"/><rect x="-10" y="-37" width="18" height="9" rx="4.5"/><rect x="20" y="-37" width="18" height="9" rx="4.5"/><rect x="-40" y="28" width="18" height="9" rx="4.5"/><rect x="-10" y="28" width="18" height="9" rx="4.5"/><rect x="20" y="28" width="18" height="9" rx="4.5"/></g>
+                <rect x="-50" y="-32" width="100" height="64" rx="24" fill="url(#dngShellTop)"/>
+                <rect class="status" x="-49" y="-31" width="98" height="62" rx="23" fill="none" stroke="#00d4f0" stroke-width="1.8" stroke-opacity=".85"/>
+                <rect x="-44" y="-25" width="78" height="50" rx="17" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1.6"/>
+                <path d="M-36 -18 C -20 -22 10 -22 28 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <rect x="-14" y="-4" width="26" height="8" rx="4" fill="#000" fill-opacity=".07"/>
+                <path d="M34 -27 C 45 -25 50 -13 50 0 C 50 13 45 25 34 27 C 37 10 37 -10 34 -27 Z" fill="url(#dngVisor)"/>
+                <g fill="#5ce6f7"><rect class="eye" x="41" y="-11" width="4" height="7" rx="2"/><rect class="eye" x="41" y="4" width="4" height="7" rx="2"/></g>
+                <circle cx="24" cy="0" r="6" fill="url(#dngPuck)"/>
+                <g transform="translate(24 0)"><path class="rt-sweep" d="M0 0 L6.5 -2.5 A 7 7 0 0 1 6.5 2.5 Z" fill="#5ce6f7" fill-opacity=".8"/></g>
+                <rect x="-51" y="-10" width="3" height="20" rx="1.5" fill="#ff5a4e"/>
+                <circle cx="-34" cy="-18" r="3" fill="#00d4f0" stroke="#fff" stroke-width="1.2"/>
+              </g>
+</g></g>
+                <g><animateMotion dur="7s" repeatCount="indefinite" rotate="auto" path="M0 160 H600"/><g transform="scale(.19)"><g class="robot-top">
+                <!-- Top-down view of the same robot, centred on 0 0 and facing +x (100 × 64 units; scale where used). -->
+                <g fill="#1d2025"><rect x="-40" y="-37" width="18" height="9" rx="4.5"/><rect x="-10" y="-37" width="18" height="9" rx="4.5"/><rect x="20" y="-37" width="18" height="9" rx="4.5"/><rect x="-40" y="28" width="18" height="9" rx="4.5"/><rect x="-10" y="28" width="18" height="9" rx="4.5"/><rect x="20" y="28" width="18" height="9" rx="4.5"/></g>
+                <rect x="-50" y="-32" width="100" height="64" rx="24" fill="url(#dngShellTop)"/>
+                <rect class="status" x="-49" y="-31" width="98" height="62" rx="23" fill="none" stroke="#00d4f0" stroke-width="1.8" stroke-opacity=".85"/>
+                <rect x="-44" y="-25" width="78" height="50" rx="17" fill="none" stroke="#000" stroke-opacity=".1" stroke-width="1.6"/>
+                <path d="M-36 -18 C -20 -22 10 -22 28 -18" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+                <rect x="-14" y="-4" width="26" height="8" rx="4" fill="#000" fill-opacity=".07"/>
+                <path d="M34 -27 C 45 -25 50 -13 50 0 C 50 13 45 25 34 27 C 37 10 37 -10 34 -27 Z" fill="url(#dngVisor)"/>
+                <g fill="#5ce6f7"><rect class="eye" x="41" y="-11" width="4" height="7" rx="2"/><rect class="eye" x="41" y="4" width="4" height="7" rx="2"/></g>
+                <circle cx="24" cy="0" r="6" fill="url(#dngPuck)"/>
+                <g transform="translate(24 0)"><path class="rt-sweep" d="M0 0 L6.5 -2.5 A 7 7 0 0 1 6.5 2.5 Z" fill="#5ce6f7" fill-opacity=".8"/></g>
+                <rect x="-51" y="-10" width="3" height="20" rx="1.5" fill="#ff5a4e"/>
+                <circle cx="-34" cy="-18" r="3" fill="#00d4f0" stroke="#fff" stroke-width="1.2"/>
+              </g>
+</g></g>
+              </g>
+            </svg>
+</div><div class="post-body"><p class="post-kind post-kind--scenario">Example scenario</p><h3><a href="blog-scenario-campus.html">Campuses and estates — a delivery network behind your gate</a></h3><p>A closed site, fixed pick-up points and parcels that pile up at reception today. How a site operator can run its own delivery network.</p><p class="post-meta"><time datetime="2026-11-12">12 November 2026</time> · 4 min read</p></div></article></div>
+      </div>
+    </section>
+    <section class="band theme-dark cta" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 class="headline-l" id="cta-title" data-split>See a robot on your street.</h2>
+        <p class="intro" data-reveal data-delay="0.2">Book a free 30-minute demo. We check coverage in your area and walk you through the integration — before you sign anything.</p>
+        <div class="ctas" data-reveal data-delay="0.3">
+          <a class="btn btn--lg" href="contact.html">Book a demo</a>
+          <a class="more" href="pricing.html">See pricing</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-nav">
+        <div class="footer-col">
+          <a class="brand" href="./" aria-label="DeliveryNextGen — home"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><mask id="lm-footer"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs><rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-footer)"/></svg><span>DeliveryNextGen</span></a>
+          <p>Autonomous last-mile delivery robots for restaurants, retailers and logistics teams. Services for business customers only.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Product</h2>
+          <ul>
+            <li><a href="how-it-works.html">How it works</a></li>
+            <li><a href="solutions.html">Solutions</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="coverage.html">Coverage</a></li>
+            <li><a href="developers.html">Developers</a></li>
+            <li><a href="app/">Live demo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Company</h2>
+          <ul>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="mailto:deliverynextgen@ssujkowski.ucz.edu.pl">deliverynextgen@ssujkowski.ucz.edu.pl</a></li>
+            <li><a href="tel:+34683405430">+34 683 405 430</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Legal</h2>
+          <ul>
+            <li><a href="legal-notice.html">Legal notice</a></li>
+            <li><a href="terms.html">Terms of service</a></li>
+            <li><a href="privacy-policy.html">Privacy policy</a></li>
+            <li><a href="cookie-policy.html">Cookie policy</a></li>
+            <li><a href="accessibility.html">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © <span data-year>2026</span> . All rights reserved. Offer for business customers. Prices exclude VAT.</p>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy policy</a>
+          <a href="terms.html">Terms of service</a>
+          <a href="legal-notice.html">Legal notice</a>
+          <button type="button" data-cookie-settings>Cookie settings</button>
+        </div>
+        <p class="footer-lang"><a href="pl/blog-pilotaz-krok-po-kroku.html" hreflang="pl" lang="pl">Polski</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="chat" id="dng-chat" data-links="{&quot;pricing&quot;: &quot;pricing.html&quot;, &quot;how&quot;: &quot;how-it-works.html&quot;, &quot;solutions&quot;: &quot;solutions.html&quot;, &quot;contact&quot;: &quot;contact.html&quot;, &quot;legal&quot;: &quot;legal-notice.html&quot;, &quot;terms&quot;: &quot;terms.html&quot;, &quot;privacy&quot;: &quot;privacy-policy.html&quot;, &quot;cookies&quot;: &quot;cookie-policy.html&quot;, &quot;coverage&quot;: &quot;coverage.html&quot;, &quot;blog&quot;: &quot;blog.html&quot;, &quot;developers&quot;: &quot;developers.html&quot;, &quot;booking&quot;: &quot;contact.html#booking&quot;, &quot;app&quot;: &quot;app/&quot;, &quot;app_integrations&quot;: &quot;app/#integrations&quot;}" data-email="deliverynextgen@ssujkowski.ucz.edu.pl" data-phone="+34 683 405 430" hidden></div>
+
+  <button class="to-top" type="button" aria-label="Back to top"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+  <section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-banner-title" hidden>
+    <h2 id="cookie-banner-title">Your privacy choices</h2>
+    <p>We use only the storage that is strictly necessary for this website to work. Optional categories stay off unless you switch them on. <a href="cookie-policy.html">Cookie policy</a></p>
+    <div class="cookie-actions">
+      <button class="btn btn--secondary" type="button" data-consent-reject>Reject all</button>
+      <button class="btn btn--secondary" type="button" data-cookie-settings>Settings</button>
+      <button class="btn btn--secondary" type="button" data-consent-accept>Accept all</button>
+    </div>
+  </section>
+
+  <dialog class="cookie-dialog" id="cookie-dialog" aria-labelledby="cookie-dialog-title" data-in-use="">
+    <div class="dlg-inner">
+      <h2 id="cookie-dialog-title">Your privacy choices</h2>
+      <p>Choose which optional categories you allow. You can change your decision at any time from the footer link “Cookie settings”. <a href="cookie-policy.html">Cookie policy</a></p>
+      <div class="cat">
+        <div class="cat-head"><b>Strictly necessary</b><span class="always">Always on</span></div>
+        <p>Security of the contact form (session cookie set only when you use the form) and remembering your privacy choices. Cannot be switched off.</p>
+      </div>
+      <div class="cat">
+        <div class="cat-head">
+          <label for="consent-analytics"><b>Analytics</b></label>
+          <span class="switch"><input type="checkbox" id="consent-analytics" name="consent-analytics" role="switch"><span></span></span>
+        </div>
+        <p>Anonymous statistics that help us improve the website. <span class="unused">— Not used on this website</span></p>
+      </div>
+      <div class="cat">
+        <div class="cat-head">
+          <label for="consent-marketing"><b>Marketing</b></label>
+          <span class="switch"><input type="checkbox" id="consent-marketing" name="consent-marketing" role="switch"><span></span></span>
+        </div>
+        <p>Measuring the effectiveness of our campaigns. <span class="unused">— Not used on this website</span></p>
+      </div>
+      <div class="dlg-actions">
+        <button class="btn btn--secondary" type="button" data-consent-reject>Reject all</button>
+        <button class="btn btn--secondary" type="button" data-consent-save>Save choices</button>
+        <button class="btn btn--secondary" type="button" data-consent-accept>Accept all</button>
+      </div>
+      <div class="dlg-actions"><button class="btn btn--block" type="button" data-consent-close>Close</button></div>
+    </div>
+  </dialog>
+</body>
+</html>

@@ -73,6 +73,42 @@
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/coverage.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/coverage.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/zasieg.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/zasieg.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/coverage.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/zasieg.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/blog.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/developers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/developers.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/deweloperzy.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/deweloperzy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/developers.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/deweloperzy.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
     <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/contact.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/kontakt.html"/>
@@ -143,5 +179,45 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/accessibility.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/dostepnosc.html"/>
     <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-scenario-restaurant.html</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-scenario-store.html</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-scenario-campus.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-pilot-step-by-step.html</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/blog-last-100-metres.html</loc>
+    <lastmod>2026-11-03</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog-scenariusz-restauracja.html</loc>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog-scenariusz-sklep.html</loc>
+    <lastmod>2026-11-14</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog-scenariusz-kampus.html</loc>
+    <lastmod>2026-11-12</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog-pilotaz-krok-po-kroku.html</loc>
+    <lastmod>2026-11-10</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/blog-ostatnie-100-metrow.html</loc>
+    <lastmod>2026-11-03</lastmod>
   </url>
 </urlset>

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dla deweloperów — API i webhooki (podgląd) — DeliveryNextGen</title>
+  <meta name="description" content="Podgląd API DeliveryNextGen: przewodnik startowy, interaktywny plac zabaw, webhooki na żywo i przykłady kodu w curl, JavaScript, PHP i Pythonie.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/deweloperzy.html">
+  <link rel="alternate" hreflang="en" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/developers.html">
+  <link rel="alternate" hreflang="pl" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/deweloperzy.html">
+  <link rel="alternate" hreflang="x-default" href="https://deliverynextgen.ssujkowski.ucz.edu.pl/developers.html">
+  <meta name="theme-color" content="#fbfbfd">
+  <meta name="format-detection" content="telephone=no">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DeliveryNextGen">
+  <meta property="og:title" content="Dla deweloperów — API i webhooki (podgląd) — DeliveryNextGen">
+  <meta property="og:description" content="Podgląd API DeliveryNextGen: przewodnik startowy, interaktywny plac zabaw, webhooki na żywo i przykłady kodu w curl, JavaScript, PHP i Pythonie.">
+  <meta property="og:url" content="https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/deweloperzy.html">
+  <meta property="og:image" content="https://deliverynextgen.ssujkowski.ucz.edu.pl/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="pl_PL">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+  <link rel="stylesheet" href="https://fonts.bunny.net/css?family=inter:400,500,600,700&amp;display=swap">
+  <link rel="stylesheet" href="../assets/css/main.css?v=2.2.0">
+  <link rel="stylesheet" href="../assets/css/chat.css?v=2.2.0">
+  <link rel="stylesheet" href="../assets/css/extras.css?v=2.2.0">
+  <script src="../assets/js/boot.js?v=2.2.0"></script>
+  <script src="../assets/js/main.js?v=2.2.0" defer></script>
+  <script src="../assets/js/chat.js?v=2.2.0" defer></script>
+  <script src="../assets/js/developers.js?v=2.2.0" defer></script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Organization", "name": "DeliveryNextGen", "url": "https://deliverynextgen.ssujkowski.ucz.edu.pl/pl/", "logo": "https://deliverynextgen.ssujkowski.ucz.edu.pl/assets/img/logo.png", "email": "deliverynextgen@ssujkowski.ucz.edu.pl", "telephone": "+34 683 405 430"}</script>
+</head>
+<body class="">
+  <a class="skip-link" href="#main">Przejdź do treści</a>
+  <svg class="sprite" aria-hidden="true" focusable="false">
+    <!-- Shared materials for every robot view, map pin and parcel (one source of truth). -->
+    <defs>
+      <!-- pearl shell -->
+      <linearGradient id="dngShell" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset=".42" stop-color="#f3f4f6"/><stop offset=".78" stop-color="#e2e5ea"/><stop offset="1" stop-color="#cfd4db"/></linearGradient>
+      <linearGradient id="dngShellSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".09"/><stop offset=".1" stop-color="#000" stop-opacity="0"/><stop offset=".86" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".06"/></linearGradient>
+      <linearGradient id="dngShellEdge" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#000" stop-opacity=".12"/><stop offset=".16" stop-color="#000" stop-opacity="0"/><stop offset=".84" stop-color="#000" stop-opacity="0"/><stop offset="1" stop-color="#000" stop-opacity=".14"/></linearGradient>
+      <radialGradient id="dngShellTop" cx=".42" cy=".38" r=".7"><stop offset="0" stop-color="#ffffff"/><stop offset=".6" stop-color="#f1f2f5"/><stop offset="1" stop-color="#d6dbe1"/></radialGradient>
+      <!-- graphite chassis -->
+      <linearGradient id="dngChassis" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#4a5058"/><stop offset=".35" stop-color="#2e3238"/><stop offset="1" stop-color="#17191d"/></linearGradient>
+      <!-- cargo bay (insulated liner) -->
+      <linearGradient id="dngBay" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1b1e22"/><stop offset="1" stop-color="#3b4149"/></linearGradient>
+      <!-- smoked visor -->
+      <linearGradient id="dngVisor" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3a414b"/><stop offset=".55" stop-color="#14181d"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorV" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#39404a"/><stop offset=".6" stop-color="#12161b"/><stop offset="1" stop-color="#050608"/></linearGradient>
+      <linearGradient id="dngVisorRefl" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".28"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <!-- lidar puck -->
+      <linearGradient id="dngPuck" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d0f12"/><stop offset=".45" stop-color="#3a4048"/><stop offset="1" stop-color="#0d0f12"/></linearGradient>
+      <!-- wheels -->
+      <radialGradient id="dngTyre" cx=".5" cy=".42" r=".6"><stop offset=".6" stop-color="#30343a"/><stop offset="1" stop-color="#121417"/></radialGradient>
+      <linearGradient id="dngTyreFront" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#121417"/><stop offset=".5" stop-color="#34383e"/><stop offset="1" stop-color="#121417"/></linearGradient>
+      <radialGradient id="dngRim" cx=".4" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".5" stop-color="#d9dde2"/><stop offset="1" stop-color="#8d96a1"/></radialGradient>
+      <!-- light -->
+      <linearGradient id="dngSheen" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset=".5" stop-color="#fff" stop-opacity=".95"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#5ce6f7" stop-opacity=".2"/><stop offset="1" stop-color="#5ce6f7" stop-opacity="0"/></linearGradient>
+      <linearGradient id="dngHeadBeam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#e6fbff" stop-opacity=".55"/><stop offset=".35" stop-color="#9befff" stop-opacity=".22"/><stop offset="1" stop-color="#9befff" stop-opacity="0"/></linearGradient>
+      <radialGradient id="dngPool" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffd58a" stop-opacity=".4"/><stop offset="1" stop-color="#ffd58a" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngShadow" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".34"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <radialGradient id="dngAO" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".5"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+      <!-- parcels -->
+      <linearGradient id="dngBox" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e6cba1"/><stop offset="1" stop-color="#cba873"/></linearGradient>
+      <linearGradient id="dngBag" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#cfae7d"/><stop offset=".4" stop-color="#e0c494"/><stop offset="1" stop-color="#c9a671"/></linearGradient>
+      <!-- clips (user space of the side-view robot, so the miniature reuses them) -->
+      <clipPath id="dngStatusClip"><rect x="98" y="201.5" width="340" height="5" rx="2.5"/></clipPath>
+      <clipPath id="dngGlassClip"><path d="M396 114 C 428 116, 452 136, 457 160 L 459 186 C 446 195, 420 199, 396 197 C 389 170, 389 140, 396 114 Z"/></clipPath>
+      <clipPath id="dngPuckClip"><rect x="400" y="88" width="26" height="9" rx="3"/></clipPath>
+      <clipPath id="dngFrontVisorClip"><rect x="380" y="252" width="240" height="112" rx="52"/></clipPath>
+      <clipPath id="dngFrontPuckClip"><rect x="452" y="146" width="96" height="22" rx="8"/></clipPath>
+      <!-- glow & softness -->
+      <filter id="dngGlow" x="-20%" y="-400%" width="140%" height="900%"><feGaussianBlur stdDeviation="3.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngGlowL" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+      <filter id="dngSoft" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="1.6"/></filter>
+      <filter id="dngSoftL" x="-10%" y="-50%" width="120%" height="200%"><feGaussianBlur stdDeviation="2.5"/></filter>
+      <!-- drop shadows: S = objects on maps, M = props, L = devices -->
+      <filter id="dngDropS" x="-50%" y="-50%" width="200%" height="200%"><feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity=".18"/></filter>
+      <filter id="dngDropM" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000" flood-opacity=".14"/></filter>
+      <filter id="dngDropL" x="-30%" y="-30%" width="160%" height="160%"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#000" flood-opacity=".13"/></filter>
+    </defs>
+  </svg>
+
+
+  <header class="gnav" id="gnav">
+    <div class="container gnav-inner">
+      <a class="brand" href="./" aria-label="DeliveryNextGen — strona główna"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><mask id="lm-nav"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs><rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-nav)"/></svg><span>DeliveryNextGen</span></a>
+      <nav class="gnav-links" aria-label="Główna">
+        <a href="jak-to-dziala.html">Jak to działa</a>
+        <a href="rozwiazania.html">Rozwiązania</a>
+        <a href="cennik.html">Cennik</a>
+        <a href="o-nas.html">O nas</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="gnav-actions">
+        <a class="lang-toggle" href="../developers.html" hreflang="en" data-current="pl" aria-label="English — switch language to English"><span class="lt-thumb" aria-hidden="true"></span><span class="lt-opt lt-en" aria-hidden="true">EN</span><span class="lt-opt lt-pl" aria-hidden="true">PL</span></a>
+        <a class="btn btn--sm" href="kontakt.html">Umów demo</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otwórz menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobilna">
+      <a href="./">Start</a>
+      <a href="jak-to-dziala.html">Jak to działa</a>
+      <a href="rozwiazania.html">Rozwiązania</a>
+      <a href="cennik.html">Cennik</a>
+      <a href="o-nas.html">O nas</a>
+      <a href="faq.html">FAQ</a>
+      <a href="kontakt.html">Kontakt</a>
+    </nav>
+    <a class="btn" href="kontakt.html">Umów demo</a>
+  </div>
+
+  <main id="main" tabindex="-1">
+    <section class="page-hero center" aria-labelledby="page-title">
+      <div class="container">
+        <ol class="breadcrumbs" aria-label="Ścieżka nawigacji" data-reveal><li><a href="./">Start</a></li><li aria-current="page">Deweloperzy</li></ol>
+        <p class="eyebrow eyebrow--brand" data-reveal>Dla deweloperów</p>
+        <h1 class="headline-xl" id="page-title" data-split>Dostawa robotem w jednym zapytaniu.</h1>
+        <p class="lead" data-reveal data-delay="0.3">REST API do tworzenia i śledzenia dostaw oraz webhooki przy każdej zmianie statusu. Wypróbuj wszystko poniżej — w przeglądarce, bez konta.</p>
+        <p class="dev-preview" data-reveal data-delay="0.35"><b>Podgląd</b> Publiczne API jest w przygotowaniu. Przykłady pokazują planowany kształt i mogą się jeszcze zmienić. Klienci pilotażowi dostają dostęp do wersji beta.</p>
+        <div class="ctas" data-reveal data-delay="0.4">
+          <a class="btn btn--lg" href="kontakt.html?topic=api#demo-form">Poproś o dostęp do bety</a>
+          <a class="more" href="#playground">Wypróbuj plac zabaw</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="qs-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Przewodnik startowy</p>
+          <h2 class="headline-m" id="qs-title" data-split>Trzy kroki do pierwszej dostawy.</h2>
+        </div>
+        <ol class="dev-steps" role="list" data-stagger>
+          <li><span class="k">1</span><h3>Klucz API</h3><p>Wygenerujesz go w panelu, w zakładce Integracje. Klucze testowe zaczynają się od <code>dng_test_</code>, produkcyjne od <code>dng_live_</code>.</p><pre class="dev-mini"><code>Authorization: Bearer dng_test_…</code></pre></li>
+          <li><span class="k">2</span><h3>Pierwsza dostawa</h3><p>Wyślij adres odbioru i doręczenia. W odpowiedzi dostaniesz identyfikator i szacowany czas dotarcia.</p><pre class="dev-mini"><code>POST /v1/deliveries</code></pre></li>
+          <li><span class="k">3</span><h3>Webhook</h3><p>Podaj adres URL, a przy każdej zmianie statusu wyślemy podpisane zdarzenie — od przyjęcia do doręczenia.</p><pre class="dev-mini"><code>delivery.delivered</code></pre></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="band theme-dark dev-band" id="playground" aria-labelledby="pg-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Plac zabaw</p>
+          <h2 class="headline-m" id="pg-title" data-split>Wyślij zapytanie. Zobacz odpowiedź.</h2>
+          <p class="intro" data-reveal data-delay="0.2">Wszystko dzieje się w Twojej przeglądarce na danych symulowanych — nic nie jest wysyłane na serwer.</p>
+        </div>
+        <div class="dev-pg" data-playground data-reveal>
+          <div class="dev-req">
+            <div class="dev-eps" role="tablist" aria-label="Endpoint" data-eps></div>
+            <label class="dev-label" for="pg-key">Klucz API</label>
+            <input class="dev-input" id="pg-key" value="dng_test_4f1c9a2b7e" spellcheck="false" autocomplete="off" data-key>
+            <div data-id-wrap hidden>
+              <label class="dev-label" for="pg-id">Identyfikator dostawy</label>
+              <input class="dev-input" id="pg-id" value="dlv_4821" spellcheck="false" autocomplete="off" data-id>
+            </div>
+            <div data-body-wrap>
+              <label class="dev-label" for="pg-body">Treść zapytania (JSON)</label>
+              <textarea class="dev-input dev-body" id="pg-body" rows="9" spellcheck="false" data-body></textarea>
+            </div>
+            <button class="btn dev-send" type="button" data-send><span class="dev-spin" aria-hidden="true"></span><span data-send-label>Wyślij zapytanie</span></button>
+          </div>
+          <div class="dev-res">
+            <div class="dev-res-h"><span class="dev-line" data-line>POST /v1/deliveries</span><span class="dev-status" data-status hidden></span><span class="dev-ms" data-ms></span></div>
+            <pre class="dev-json" aria-live="polite" data-res><span class="dev-hint">Kliknij „Wyślij zapytanie”, aby zobaczyć odpowiedź.</span></pre>
+            <div class="dev-code">
+              <div class="dev-tabs" role="tablist" aria-label="Język" data-tabs>
+                <button type="button" role="tab" aria-selected="true" data-lang="curl">curl</button>
+                <button type="button" role="tab" aria-selected="false" data-lang="js">JavaScript</button>
+                <button type="button" role="tab" aria-selected="false" data-lang="php">PHP</button>
+                <button type="button" role="tab" aria-selected="false" data-lang="py">Python</button>
+                <button type="button" class="dev-copy" data-copy="code">Kopiuj</button>
+              </div>
+              <pre class="dev-snippet" data-code></pre>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="wh-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Webhooki</p>
+          <h2 class="headline-m" id="wh-title" data-split>Każda zmiana statusu, od razu u Ciebie.</h2>
+          <p class="intro" data-reveal data-delay="0.2">Uruchom testową dostawę i obserwuj, jak kolejne zdarzenia trafiają na Twój adres. Kliknij zdarzenie, aby zobaczyć jego treść.</p>
+        </div>
+        <div class="dev-wh" data-webhooks>
+          <div class="dev-wh-live">
+            <div class="dev-wh-bar">
+              <span class="dev-wh-url">POST https://twoja-firma.pl/webhooks/dng</span>
+              <button class="btn btn--sm" type="button" data-wh-run>Uruchom testową dostawę</button>
+            </div>
+            <ol class="dev-wh-log" role="list" aria-live="polite" data-wh-log><li class="dev-wh-empty">Brak zdarzeń. Uruchom testową dostawę.</li></ol>
+          </div>
+          <div class="dev-wh-sig">
+            <h3>Weryfikacja podpisu</h3>
+            <p>Każde zdarzenie ma nagłówek <code>DNG-Signature</code> z czasem i podpisem HMAC-SHA256 treści. Sprawdź go, zanim przetworzysz zdarzenie, i odrzucaj zdarzenia starsze niż 5 minut.</p>
+            <div class="dev-copywrap"><button type="button" class="dev-copy" data-copy="sig">Kopiuj</button><pre class="dev-snippet" data-sig></pre></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--surface" aria-labelledby="ref-title">
+      <div class="container">
+        <div class="band-head">
+          <p class="eyebrow eyebrow--brand" data-reveal>Skrót dokumentacji</p>
+          <h2 class="headline-m" id="ref-title" data-split>Endpointy, statusy, błędy.</h2>
+        </div>
+        <div class="dev-ref" data-stagger>
+          <div class="dev-ref-card">
+            <h3>Endpointy</h3>
+            <table><tbody>
+              <tr><th scope="row"><span class="m m--post">POST</span> /v1/deliveries</th><td>Utwórz dostawę</td></tr>
+              <tr><th scope="row"><span class="m m--get">GET</span> /v1/deliveries/{id}</th><td>Status dostawy</td></tr>
+              <tr><th scope="row"><span class="m m--post">POST</span> /v1/deliveries/{id}/cancel</th><td>Anuluj dostawę</td></tr>
+              <tr><th scope="row"><span class="m m--get">GET</span> /v1/robots</th><td>Roboty i ich stan</td></tr>
+            </tbody></table>
+          </div>
+          <div class="dev-ref-card">
+            <h3>Statusy i zdarzenia</h3>
+            <table><tbody>
+              <tr><th scope="row"><code>queued</code></th><td><code>delivery.created</code> — przyjęta</td></tr>
+              <tr><th scope="row"><code>assigned</code></th><td><code>delivery.assigned</code> — robot przydzielony</td></tr>
+              <tr><th scope="row"><code>en_route</code></th><td><code>delivery.en_route</code> — w drodze</td></tr>
+              <tr><th scope="row"><code>delivered</code></th><td><code>delivery.delivered</code> — odebrana PIN-em</td></tr>
+              <tr><th scope="row"><code>cancelled</code></th><td><code>delivery.cancelled</code> — anulowana</td></tr>
+            </tbody></table>
+          </div>
+          <div class="dev-ref-card">
+            <h3>Kody błędów</h3>
+            <table><tbody>
+              <tr><th scope="row">400</th><td>Niepoprawny JSON</td></tr>
+              <tr><th scope="row">401</th><td>Brak lub zły klucz API</td></tr>
+              <tr><th scope="row">404</th><td>Nie ma takiej dostawy</td></tr>
+              <tr><th scope="row">409</th><td>Dostawy nie można już anulować</td></tr>
+              <tr><th scope="row">422</th><td>Brakujące lub błędne pola</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+        <p class="dev-fine">Podgląd dokumentacji. Adres serwera, limity zapytań i pełną specyfikację przekazujemy klientom w wersji beta.</p>
+      </div>
+    </section>
+
+    <section class="band theme-dark cta" aria-labelledby="cta-title">
+      <div class="container">
+        <h2 class="headline-l" id="cta-title" data-split>Zobacz robota na swojej ulicy.</h2>
+        <p class="intro" data-reveal data-delay="0.2">Umów bezpłatne, 30-minutowe demo. Sprawdzimy zasięg w Twojej okolicy i przeprowadzimy Cię przez integrację — zanim cokolwiek podpiszesz.</p>
+        <div class="ctas" data-reveal data-delay="0.3">
+          <a class="btn btn--lg" href="kontakt.html">Umów demo</a>
+          <a class="more" href="cennik.html">Zobacz cennik</a>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      
+      <div class="footer-nav">
+        <div class="footer-col">
+          <a class="brand" href="./" aria-label="DeliveryNextGen — strona główna"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true" focusable="false"><defs><mask id="lm-footer"><rect width="32" height="32" rx="9" fill="#fff"/><rect x="8" y="13" width="5.5" height="7" rx="2.75" fill="#000"/><rect x="18.5" y="13" width="5.5" height="7" rx="2.75" fill="#000"/></mask></defs><rect width="32" height="32" rx="9" fill="currentColor" mask="url(#lm-footer)"/></svg><span>DeliveryNextGen</span></a>
+          <p>Autonomiczne roboty dostawcze ostatniej mili dla restauracji, handlu i firm logistycznych. Usługi wyłącznie dla przedsiębiorców.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Produkt</h2>
+          <ul>
+            <li><a href="jak-to-dziala.html">Jak to działa</a></li>
+            <li><a href="rozwiazania.html">Rozwiązania</a></li>
+            <li><a href="cennik.html">Cennik</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="zasieg.html">Zasięg</a></li>
+            <li><a href="deweloperzy.html">Deweloperzy</a></li>
+            <li><a href="../pl/app/">Demo na żywo</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Firma</h2>
+          <ul>
+            <li><a href="o-nas.html">O nas</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="mailto:deliverynextgen@ssujkowski.ucz.edu.pl">deliverynextgen@ssujkowski.ucz.edu.pl</a></li>
+            <li><a href="tel:+34683405430">+34 683 405 430</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h2>Informacje prawne</h2>
+          <ul>
+            <li><a href="nota-prawna.html">Nota prawna</a></li>
+            <li><a href="regulamin.html">Regulamin</a></li>
+            <li><a href="polityka-prywatnosci.html">Polityka prywatności</a></li>
+            <li><a href="polityka-cookies.html">Polityka cookies</a></li>
+            <li><a href="dostepnosc.html">Dostępność</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © <span data-year>2026</span> . Wszelkie prawa zastrzeżone. Oferta dla przedsiębiorców. Ceny netto (bez VAT).</p>
+        <div class="footer-legal">
+          <a href="polityka-prywatnosci.html">Polityka prywatności</a>
+          <a href="regulamin.html">Regulamin</a>
+          <a href="nota-prawna.html">Nota prawna</a>
+          <button type="button" data-cookie-settings>Ustawienia cookies</button>
+        </div>
+        <p class="footer-lang"><a href="../developers.html" hreflang="en" lang="en">English</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <div class="chat" id="dng-chat" data-links="{&quot;pricing&quot;: &quot;cennik.html&quot;, &quot;how&quot;: &quot;jak-to-dziala.html&quot;, &quot;solutions&quot;: &quot;rozwiazania.html&quot;, &quot;contact&quot;: &quot;kontakt.html&quot;, &quot;legal&quot;: &quot;nota-prawna.html&quot;, &quot;terms&quot;: &quot;regulamin.html&quot;, &quot;privacy&quot;: &quot;polityka-prywatnosci.html&quot;, &quot;cookies&quot;: &quot;polityka-cookies.html&quot;, &quot;coverage&quot;: &quot;zasieg.html&quot;, &quot;blog&quot;: &quot;blog.html&quot;, &quot;developers&quot;: &quot;deweloperzy.html&quot;, &quot;booking&quot;: &quot;kontakt.html#booking&quot;, &quot;app&quot;: &quot;../pl/app/&quot;, &quot;app_integrations&quot;: &quot;../pl/app/#integrations&quot;}" data-email="deliverynextgen@ssujkowski.ucz.edu.pl" data-phone="+34 683 405 430" hidden></div>
+
+  <button class="to-top" type="button" aria-label="Wróć na górę"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 19V5M6 11l6-6 6 6"/></svg></button>
+
+  <section class="cookie-banner" id="cookie-banner" aria-labelledby="cookie-banner-title" hidden>
+    <h2 id="cookie-banner-title">Twoje ustawienia prywatności</h2>
+    <p>Używamy wyłącznie technologii niezbędnych do działania strony. Kategorie opcjonalne są wyłączone, dopóki ich nie włączysz. <a href="polityka-cookies.html">Polityka cookies</a></p>
+    <div class="cookie-actions">
+      <button class="btn btn--secondary" type="button" data-consent-reject>Odrzuć wszystkie</button>
+      <button class="btn btn--secondary" type="button" data-cookie-settings>Ustawienia</button>
+      <button class="btn btn--secondary" type="button" data-consent-accept>Akceptuj wszystkie</button>
+    </div>
+  </section>
+
+  <dialog class="cookie-dialog" id="cookie-dialog" aria-labelledby="cookie-dialog-title" data-in-use="">
+    <div class="dlg-inner">
+      <h2 id="cookie-dialog-title">Twoje ustawienia prywatności</h2>
+      <p>Wybierz, na które kategorie opcjonalne się zgadzasz. Decyzję możesz zmienić w każdej chwili przez link „Ustawienia cookies” w stopce. <a href="polityka-cookies.html">Polityka cookies</a></p>
+      <div class="cat">
+        <div class="cat-head"><b>Niezbędne</b><span class="always">Zawsze aktywne</span></div>
+        <p>Bezpieczeństwo formularza kontaktowego (cookie sesyjne ustawiane dopiero, gdy korzystasz z formularza) oraz zapamiętanie Twoich wyborów prywatności. Nie można ich wyłączyć.</p>
+      </div>
+      <div class="cat">
+        <div class="cat-head">
+          <label for="consent-analytics"><b>Analityczne</b></label>
+          <span class="switch"><input type="checkbox" id="consent-analytics" name="consent-analytics" role="switch"><span></span></span>
+        </div>
+        <p>Anonimowe statystyki pomagające nam ulepszać stronę. <span class="unused">— Nieużywane na tej stronie</span></p>
+      </div>
+      <div class="cat">
+        <div class="cat-head">
+          <label for="consent-marketing"><b>Marketingowe</b></label>
+          <span class="switch"><input type="checkbox" id="consent-marketing" name="consent-marketing" role="switch"><span></span></span>
+        </div>
+        <p>Pomiar skuteczności naszych kampanii. <span class="unused">— Nieużywane na tej stronie</span></p>
+      </div>
+      <div class="dlg-actions">
+        <button class="btn btn--secondary" type="button" data-consent-reject>Odrzuć wszystkie</button>
+        <button class="btn btn--secondary" type="button" data-consent-save>Zapisz wybór</button>
+        <button class="btn btn--secondary" type="button" data-consent-accept>Akceptuj wszystkie</button>
+      </div>
+      <div class="dlg-actions"><button class="btn btn--block" type="button" data-consent-close>Zamknij</button></div>
+    </div>
+  </dialog>
+</body>
+</html>
