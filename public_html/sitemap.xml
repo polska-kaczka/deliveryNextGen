@@ -97,6 +97,18 @@
     <lastmod>2026-11-17</lastmod>
   </url>
   <url>
+    <loc>https://deliverynextgen.threecode.eu/developers.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/developers.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/deweloperzy.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
+    <loc>https://deliverynextgen.threecode.eu/pl/deweloperzy.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/developers.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/deweloperzy.html"/>
+    <lastmod>2026-11-17</lastmod>
+  </url>
+  <url>
     <loc>https://deliverynextgen.threecode.eu/contact.html</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://deliverynextgen.threecode.eu/contact.html"/>
     <xhtml:link rel="alternate" hreflang="pl" href="https://deliverynextgen.threecode.eu/pl/kontakt.html"/>
